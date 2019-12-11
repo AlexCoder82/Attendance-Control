@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceControl.API", "AttendanceControl.API\AttendanceControl.API.csproj", "{0ED8C9A1-D1AA-448B-BB64-95DD56C80610}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.0 Presentation", "1.0 Presentation", "{A2C94EF5-B6E7-40A4-BF4B-EE44D949D0C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.0 Application", "2.0 Application", "{9DD01327-C013-43B9-AACA-F4F69674048C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.0 Business", "3.0 Business", "{EFE83B54-9410-40BF-973B-EFBFE024B6F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0 DataAccess", "4.0 DataAccess", "{D799889A-4E30-47D8-B2A9-80B79E558BC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.0 CrossCutting", "5.0 CrossCutting", "{98246DA2-22D7-4770-BAE7-A697C06A8873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceControl.API.Application", "AttendanceControl.API.Application\AttendanceControl.API.Application.csproj", "{C92388DF-7F52-495D-AAB5-A9278D456EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceControl.API.Application.Contracts", "AttendanceControl.API.Application.Contracts\AttendanceControl.API.Application.Contracts.csproj", "{697BA814-6B42-4D22-87FA-79AA32C513E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceControl.API.Business", "AttendanceControl.API.Business\AttendanceControl.API.Business.csproj", "{AA9F0190-3C35-4939-A445-D36A3A32E75A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceControl.API.DataAccess", "AttendanceControl.API.DataAccess\AttendanceControl.API.DataAccess.csproj", "{C723C87C-2D29-4C1E-BEB4-5E5C1A69EF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceControl.API.DataAccess.Contracts", "AttendanceControl.API.DataAccess.Contracts\AttendanceControl.API.DataAccess.Contracts.csproj", "{72321280-8346-4608-A41A-A32628680C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceControl.API.CrossCutting", "AttendanceControl.API.CrossCutting\AttendanceControl.API.CrossCutting.csproj", "{B91FE1C2-20A0-4AB6-A148-7AD86EAF6E1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ED8C9A1-D1AA-448B-BB64-95DD56C80610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED8C9A1-D1AA-448B-BB64-95DD56C80610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED8C9A1-D1AA-448B-BB64-95DD56C80610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED8C9A1-D1AA-448B-BB64-95DD56C80610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92388DF-7F52-495D-AAB5-A9278D456EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92388DF-7F52-495D-AAB5-A9278D456EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92388DF-7F52-495D-AAB5-A9278D456EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92388DF-7F52-495D-AAB5-A9278D456EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{697BA814-6B42-4D22-87FA-79AA32C513E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697BA814-6B42-4D22-87FA-79AA32C513E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697BA814-6B42-4D22-87FA-79AA32C513E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697BA814-6B42-4D22-87FA-79AA32C513E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9F0190-3C35-4939-A445-D36A3A32E75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9F0190-3C35-4939-A445-D36A3A32E75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9F0190-3C35-4939-A445-D36A3A32E75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9F0190-3C35-4939-A445-D36A3A32E75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C723C87C-2D29-4C1E-BEB4-5E5C1A69EF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C723C87C-2D29-4C1E-BEB4-5E5C1A69EF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C723C87C-2D29-4C1E-BEB4-5E5C1A69EF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C723C87C-2D29-4C1E-BEB4-5E5C1A69EF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72321280-8346-4608-A41A-A32628680C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72321280-8346-4608-A41A-A32628680C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72321280-8346-4608-A41A-A32628680C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72321280-8346-4608-A41A-A32628680C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B91FE1C2-20A0-4AB6-A148-7AD86EAF6E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91FE1C2-20A0-4AB6-A148-7AD86EAF6E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91FE1C2-20A0-4AB6-A148-7AD86EAF6E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91FE1C2-20A0-4AB6-A148-7AD86EAF6E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0ED8C9A1-D1AA-448B-BB64-95DD56C80610} = {A2C94EF5-B6E7-40A4-BF4B-EE44D949D0C4}
+		{C92388DF-7F52-495D-AAB5-A9278D456EBF} = {9DD01327-C013-43B9-AACA-F4F69674048C}
+		{697BA814-6B42-4D22-87FA-79AA32C513E9} = {9DD01327-C013-43B9-AACA-F4F69674048C}
+		{AA9F0190-3C35-4939-A445-D36A3A32E75A} = {EFE83B54-9410-40BF-973B-EFBFE024B6F5}
+		{C723C87C-2D29-4C1E-BEB4-5E5C1A69EF49} = {D799889A-4E30-47D8-B2A9-80B79E558BC7}
+		{72321280-8346-4608-A41A-A32628680C56} = {D799889A-4E30-47D8-B2A9-80B79E558BC7}
+		{B91FE1C2-20A0-4AB6-A148-7AD86EAF6E1A} = {98246DA2-22D7-4770-BAE7-A697C06A8873}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEC8FDFF-86B9-40A9-98FE-EB502C2B10CA}
+	EndGlobalSection
+EndGlobal
