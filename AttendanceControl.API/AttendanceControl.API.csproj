@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AttendanceControl.API.DataAccess\AttendanceControl.API.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

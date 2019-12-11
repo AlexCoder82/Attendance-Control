@@ -1,0 +1,8 @@
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.deps.json
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.csprojAssemblyReference.cache
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.AssemblyInfoInputs.cache
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.AssemblyInfo.cs
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
+F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
