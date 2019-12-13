@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.0": {}
+    ".NETCoreApp,Version=v3.0": {
+      "AttendanceControl.API.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/AttendanceControl.API.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AttendanceControl.API.Business.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "AttendanceControl.API.Business/1.0.0": {
+      "type": "project",
+      "path": "../AttendanceControl.API.Business/AttendanceControl.API.Business.csproj",
+      "msbuildProject": "../AttendanceControl.API.Business/AttendanceControl.API.Business.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.0": []
+    ".NETCoreApp,Version=v3.0": [
+      "AttendanceControl.API.Business >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\alexm_000\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+              "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

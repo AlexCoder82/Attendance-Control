@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AttendanceControl.API.CrossCutting.IocRegister;
 using AttendanceControl.API.DataAccess;
+using AttendanceControl.API.DataAccess.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,14 +26,22 @@ namespace AttendanceControl.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ///Entity Framework
-            services.AddDbContext<AttendanceControlDBContext>(options =>
-                options.UseMySql(Configuration
-                .GetConnectionString("DefaultConnection"))
-            );
+            /// Register Entity Framework db context
+
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+            IOCRegister.AddDBContext(services, connectionString);
+
+            /// Register Application services 
+
+            IOCRegister.AddServices(services);
+
+            /// Register data repositories
+
+            IOCRegister.AddRepositories(services);
+
+            /// Register Controllers
 
             services.AddControllers();
         }

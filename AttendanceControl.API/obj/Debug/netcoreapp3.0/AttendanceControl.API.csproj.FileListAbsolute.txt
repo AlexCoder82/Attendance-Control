@@ -10,7 +10,6 @@ F:\AttendanceControl.API\AttendanceControl.API\bin\Debug\netcoreapp3.0\Attendanc
 F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\AttendanceControl.API.csprojAssemblyReference.cache
 F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\staticwebassets\AttendanceControl.API.StaticWebAssets.Manifest.cache
 F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\staticwebassets\AttendanceControl.API.StaticWebAssets.xml
-F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\AttendanceControl.API.MvcApplicationPartsAssemblyInfo.cache
 F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\AttendanceControl.API.AssemblyInfoInputs.cache
 F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\AttendanceControl.API.AssemblyInfo.cs
 F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\AttendanceControl.API.RazorTargetAssemblyInfo.cache
@@ -45,3 +44,7 @@ F:\AttendanceControl.API\AttendanceControl.API\bin\Debug\netcoreapp3.0\Attendanc
 F:\AttendanceControl.API\AttendanceControl.API\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.pdb
 F:\AttendanceControl.API\AttendanceControl.API\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
 F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\AttendanceControl.API.csproj.CopyComplete
+F:\AttendanceControl.API\AttendanceControl.API\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\AttendanceControl.API\AttendanceControl.API\obj\Debug\netcoreapp3.0\AttendanceControl.API.MvcApplicationPartsAssemblyInfo.cache
+F:\AttendanceControl.API\AttendanceControl.API\bin\Debug\netcoreapp3.0\AttendanceControl.API.CrossCutting.dll
+F:\AttendanceControl.API\AttendanceControl.API\bin\Debug\netcoreapp3.0\AttendanceControl.API.CrossCutting.pdb
