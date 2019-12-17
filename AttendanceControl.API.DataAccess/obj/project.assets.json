@@ -333,6 +333,16 @@
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "AttendanceControl.API.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/AttendanceControl.API.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AttendanceControl.API.Business.dll": {}
+        }
+      },
       "AttendanceControl.API.DataAccess.Contracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -1008,6 +1018,11 @@
         "version.txt"
       ]
     },
+    "AttendanceControl.API.Business/1.0.0": {
+      "type": "project",
+      "path": "../AttendanceControl.API.Business/AttendanceControl.API.Business.csproj",
+      "msbuildProject": "../AttendanceControl.API.Business/AttendanceControl.API.Business.csproj"
+    },
     "AttendanceControl.API.DataAccess.Contracts/1.0.0": {
       "type": "project",
       "path": "../AttendanceControl.API.DataAccess.Contracts/AttendanceControl.API.DataAccess.Contracts.csproj",
@@ -1016,6 +1031,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "AttendanceControl.API.Business >= 1.0.0",
       "AttendanceControl.API.DataAccess.Contracts >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.0",
@@ -1048,6 +1064,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+              "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+            },
             "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
               "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
             }

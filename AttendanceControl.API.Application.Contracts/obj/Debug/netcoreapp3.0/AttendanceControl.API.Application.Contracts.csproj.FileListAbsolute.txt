@@ -6,3 +6,17 @@ F:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\n
 F:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.AssemblyInfo.cs
 F:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.dll
 F:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.pdb
+F:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Business.dll
+F:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Business.pdb
+F:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.csproj.CopyComplete
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.deps.json
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.dll
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.pdb
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Business.dll
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Business.pdb
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.csprojAssemblyReference.cache
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.AssemblyInfoInputs.cache
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.AssemblyInfo.cs
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.csproj.CopyComplete
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.dll
+G:\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.pdb

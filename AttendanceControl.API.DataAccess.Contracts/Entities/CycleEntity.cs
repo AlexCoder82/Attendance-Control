@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
@@ -13,13 +15,9 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int Id { get; set; }
 
         [Required]
-        [Column("year", TypeName = "int")]
-        public int Year { get; set; }
-
-        [Required]
         [Column("name", TypeName = "varchar(255)")]
         public string Name { get; set; }
 
-        public virtual ICollection<CycleSubjectEntity> CycleSubjectEntities { get; set; }
+        public virtual ICollection<CourseEntity> CourseEntities { get; set; }
     }
 }

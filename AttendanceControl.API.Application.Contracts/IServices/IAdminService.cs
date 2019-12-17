@@ -5,7 +5,6 @@ namespace AttendanceControl.API.Application.Contracts.IServices
 {
     public interface IAdminService
     {     
-        public Task<Admin> SignIn(Admin admin);
-        public Task<Admin> Update(int id, Admin admin);
+        public Task<string> SignIn(Admin admin);
     }
 }

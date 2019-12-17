@@ -1,4 +1,6 @@
-﻿using AttendanceControl.API.Application.Contracts.IServices;
+﻿using AttendanceControl.API.Application.Auth;
+using AttendanceControl.API.Application.Contracts.IAuth;
+using AttendanceControl.API.Application.Contracts.IServices;
 using AttendanceControl.API.Application.Services;
 using AttendanceControl.API.DataAccess;
 using AttendanceControl.API.DataAccess.Contracts;
@@ -6,9 +8,7 @@ using AttendanceControl.API.DataAccess.Contracts.IRepositories;
 using AttendanceControl.API.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace AttendanceControl.API.CrossCutting.IocRegister
 {
@@ -28,7 +28,9 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
         //Application services IOC 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
+            services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IAdminService, AdminService>();
+            services.AddTransient<ICycleService, CycleService>();
 
             return services;
         }
@@ -37,6 +39,7 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddTransient<IAdminRepository, AdminRepository>();
+            services.AddTransient<ICycleRepository, CycleRepository>();
 
             return services;
         }

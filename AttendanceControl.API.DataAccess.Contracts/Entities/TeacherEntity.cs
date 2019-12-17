@@ -28,7 +28,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int PersonDataId { get; set; }
 
         public virtual PersonDataEntity PersonDataEntity {get;set;}
-        public virtual ICollection<SubjectEntity> SubjectEntities { get; set; }
+        public virtual ICollection<SchoolClassEntity> SchoolClassEntities { get; set; }
 
     }
 }

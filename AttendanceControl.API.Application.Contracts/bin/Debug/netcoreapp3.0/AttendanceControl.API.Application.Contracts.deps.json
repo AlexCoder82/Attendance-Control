@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.0": {
       "AttendanceControl.API.Application.Contracts/1.0.0": {
+        "dependencies": {
+          "AttendanceControl.API.Business": "1.0.0"
+        },
         "runtime": {
           "AttendanceControl.API.Application.Contracts.dll": {}
+        }
+      },
+      "AttendanceControl.API.Business/1.0.0": {
+        "runtime": {
+          "AttendanceControl.API.Business.dll": {}
         }
       }
     }
   },
   "libraries": {
     "AttendanceControl.API.Application.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AttendanceControl.API.Business/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

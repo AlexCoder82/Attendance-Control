@@ -5,4 +5,11 @@ F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\ne
 F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
 F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
 F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
+G:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.deps.json
+G:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
+G:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
+G:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.AssemblyInfoInputs.cache
+G:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.AssemblyInfo.cs
+G:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
+G:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
 F:\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.csprojAssemblyReference.cache

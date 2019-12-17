@@ -1,55 +1,38 @@
-﻿using AttendanceControl.API.DataAccess.Contracts;
+﻿using AttendanceControl.API.Business.Exceptions;
+using AttendanceControl.API.DataAccess.Contracts;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
 using AttendanceControl.API.DataAccess.Contracts.IRepositories;
+using AttendanceControl.API.DataAccess.Utils;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace AttendanceControl.API.DataAccess.Repositories
 {
-    public class AdminRepository : IRepository<AdminEntity>, IAdminRepository
+    public class AdminRepository : IAdminRepository
     {
         private readonly IAttendanceControlDBContext _dbBContext;
-
-        public AdminRepository(IAttendanceControlDBContext attendanceControlDBContext)
+        private ILogger<AdminRepository> _logger;
+        public AdminRepository(IAttendanceControlDBContext dbContext, ILogger<AdminRepository> logger)
         {
-            _dbBContext = attendanceControlDBContext;
+            _dbBContext = dbContext;
+            _logger = logger;
         }
 
-        public Task<AdminEntity> Delete(int id)
+        public async Task<AdminEntity> Exists(AdminEntity adminEntity)//Throw WrongCredentialsException
         {
-            throw new NotImplementedException();
-        }
+            var adminNameMD5 = MD5handler.GenerateMD5(adminEntity.AdminName);
+            var passwordMD5 = MD5handler.GenerateMD5(adminEntity.Password);
 
-        public async Task<AdminEntity> Exists(AdminEntity adminEntity)
-        {
             var result = await _dbBContext.AdminEntities
-                .FirstOrDefaultAsync(a => a.AdminName == adminEntity.AdminName
-                    && a.Password == adminEntity.Password);
+                .FirstOrDefaultAsync(a => a.AdminName == adminNameMD5 && a.Password == passwordMD5);
+
+            if (result is null)
+            {
+                throw new WrongCredentialsException();
+            }
 
             return result;
-        }
-
-        public Task<AdminEntity> Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<AdminEntity>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<AdminEntity> Save(AdminEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<AdminEntity> Update(int id, AdminEntity entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

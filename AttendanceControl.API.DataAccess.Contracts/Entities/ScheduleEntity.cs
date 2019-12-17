@@ -15,7 +15,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int Id { get; set; }
 
         [Required]
-        [Column("day", TypeName = "int")]
+        [Column("day", TypeName = "int(1)")]
         public Day Day { get; set; }
 
         [Required]
@@ -25,13 +25,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Required]
         [Column("end", TypeName = "timestamp")]
         public DateTime End { get; set; }
-
-        [Required]
-        [ForeignKey("SubjectEntity")]
-        [Column("subjectId", TypeName = "int")]
-        public int SubjectId { get; set; }
-
-        public virtual SubjectEntity SubjectEntity { get; set; }
-        public virtual ICollection<AbsenceEntity> AbsenceEntities { get; set; }        
+     
     }
 }

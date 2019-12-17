@@ -1,20 +1,23 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
     [Table("student_has_subjects")]
     public class StudentSubjectEntity
     {
+
         [Key]
         [ForeignKey("StudentEntity")]
-        [Column("studentId")]
+        [Column("student_id")]
         public int StudentId { get; set; }
 
         [Key]
         [ForeignKey("SubjectEntity")]
-        [Column("subjectId")]
+        [Column("subject_id")]
         public int SubjectId { get; set; }
 
         public virtual StudentEntity StudentEntity { get; set; }

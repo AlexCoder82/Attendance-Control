@@ -103,6 +103,12 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -330,6 +336,9 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
+              "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+                "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+              },
               "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
                 "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
               }
@@ -417,11 +426,37 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Serilog.Extensions.Logging.File": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [

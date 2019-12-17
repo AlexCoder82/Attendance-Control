@@ -103,6 +103,12 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -330,6 +336,9 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
+              "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+                "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+              },
               "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
                 "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
               }

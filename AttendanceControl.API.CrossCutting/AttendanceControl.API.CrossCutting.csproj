@@ -9,6 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AttendanceControl.API.Application.Contracts\AttendanceControl.API.Application.Contracts.csproj" />
+    <ProjectReference Include="..\AttendanceControl.API.Application\AttendanceControl.API.Application.csproj" />
     <ProjectReference Include="..\AttendanceControl.API.DataAccess.Contracts\AttendanceControl.API.DataAccess.Contracts.csproj" />
     <ProjectReference Include="..\AttendanceControl.API.DataAccess\AttendanceControl.API.DataAccess.csproj" />
   </ItemGroup>

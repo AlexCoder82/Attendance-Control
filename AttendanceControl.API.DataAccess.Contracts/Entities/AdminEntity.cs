@@ -19,7 +19,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public string AdminName { get; set; }
 
         [Required]
-        [Column("admin_name", TypeName = "varchar(32)")]
+        [Column("password", TypeName = "varchar(32)")]
         public string Password { get; set; }
     }
 }

@@ -18,23 +18,29 @@ namespace AttendanceControl.API.DataAccess
 
         public DbSet<AbsenceEntity> AbsenceEntities { get; set; }
         public DbSet<AdminEntity> AdminEntities { get; set; }
-        public DbSet<CycleEntity> CycleEntities { get; set; }
-        public DbSet<CycleSubjectEntity> CycleSubjectEntities { get; set; }
+        public DbSet<CourseEntity> CourseEntities { get; set; }
+        public DbSet<SchoolClassEntity> SchoolClassEntities { get; set; }
         public DbSet<ScheduleEntity> ScheduleEntities { get; set; }
         public DbSet<TeacherEntity> TeacherEntities { get; set; }
         public DbSet<SubjectEntity> SubjectEntities { get; set; }
         public DbSet<StudentEntity> StudentEntities { get; set; }
         public DbSet<PersonDataEntity> PersonDataEntities { get; set; }
-        public DbSet<StudentSubjectEntity> PersonSubjectEntities { get; set; }
+        public DbSet<CycleEntity> CycleEntities { get; set; }
+        public DbSet<SchoolClassStudentEntity> SchoolClassStudentEntities { get; set; }
+
+        public DbSet<StudentSubjectEntity> StudentSubjectEntities { get; set; }
+        public DbSet<CourseSubjectEntity> CourseSubjectEntities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /// CYCLESUBJECTENTITY PRIMARY KEY
+            
 
-            modelBuilder.Entity<CycleSubjectEntity>().HasKey(cs => new
+            /// STUDENTSCHOOLCLASSTENTITY PRIMARY KEY
+
+            modelBuilder.Entity<SchoolClassStudentEntity>().HasKey(scs => new
             {
-                cs.CycleId,
-                cs.SubjectId
+                scs.StudentId,
+                scs.SchoolClassId
             });
 
             /// STUDENTSUBJECTENTITY PRIMARY KEY
@@ -43,6 +49,14 @@ namespace AttendanceControl.API.DataAccess
             {
                 ss.StudentId,
                 ss.SubjectId
+            });
+
+            /// CYCLESUBJECTENTITY PRIMARY KEY
+
+            modelBuilder.Entity<CourseSubjectEntity>().HasKey(cs => new
+            {
+                cs.CourseId,
+                cs.SubjectId
             });
 
             /// ONE TO ONE STUDENT/PERSONDATA
@@ -61,20 +75,9 @@ namespace AttendanceControl.API.DataAccess
 
             base.OnModelCreating(modelBuilder);
 
-            //DEFAULT INSERTS
-            // SaveDefaultAdmin();
 
         }
 
-        //private void SaveDefaultAdmin()
-        //{
-        //    AdminEntities.AddAsync(new AdminEntity
-        //    {
-        //        AdminName = "admin1",
-        //        Password = "admin1"
-        //    });
-
-        //    this.SaveChangesAsync();
-        //}
+        
     }
 }
