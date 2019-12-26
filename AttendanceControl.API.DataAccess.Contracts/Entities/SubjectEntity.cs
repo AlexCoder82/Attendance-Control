@@ -18,6 +18,11 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Column("name", TypeName = "varchar(255)")]
         public string Name { get; set; }
 
+        [ForeignKey("TeacherEntity")]//OPTIONAL
+        [Column("teacher_id", TypeName = "int)")]
+        public int? TeacherId { get; set; }
+
+        public TeacherEntity TeacherEntity { get; set; }
         public virtual ICollection<CourseSubjectEntity> CourseSubjectEntities { get; set; }
         public virtual ICollection<StudentSubjectEntity> StudentSubjectEntities { get; set; }
 

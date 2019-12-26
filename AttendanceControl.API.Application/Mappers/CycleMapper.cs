@@ -1,9 +1,8 @@
 ﻿using AttendanceControl.API.Business.Models;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 
 namespace AttendanceControl.API.Application.Mappers
 {
@@ -13,9 +12,9 @@ namespace AttendanceControl.API.Application.Mappers
         {
             return new CycleEntity()
             {
-                Id= cycle.Id,
+                Id = cycle.Id,
                 Name = cycle.Name,
-                CourseEntities =  new List<CourseEntity>()
+                CourseEntities = new List<CourseEntity>()
                 {
                     new CourseEntity()
                     {
@@ -29,14 +28,33 @@ namespace AttendanceControl.API.Application.Mappers
             };
         }
 
+        public static Cycle MapIncludingCourses(CycleEntity cycleEntity)
+        {
+            if (cycleEntity is null)
+                return null;
+            else
+                return new Cycle()
+                {
+                    Id = cycleEntity.Id,
+                    Name = cycleEntity.Name,
+                    FirstCourse = CourseMapper
+                    .MapIncludingSubjects(cycleEntity.CourseEntities.FirstOrDefault(c => c.Year == 1)),
+                    SecondCourse = CourseMapper
+                    .MapIncludingSubjects(cycleEntity.CourseEntities.FirstOrDefault(c => c.Year == 2))
+                };
+        }
+
         public static Cycle Map(CycleEntity cycleEntity)
         {
-            return new Cycle()
-            {
-                Id = cycleEntity.Id,
-                Name = cycleEntity.Name,
-                Courses = cycleEntity.CourseEntities.Select(c => CourseMapper.Map(c)).ToArray()
-            };
+            if (cycleEntity is null)
+                return null;
+            else
+                return new Cycle()
+                {
+                    Id = cycleEntity.Id,
+                    Name = cycleEntity.Name
+
+                };
         }
     }
 }

@@ -8,6 +8,7 @@ namespace AttendanceControl.API.Business.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Course[] Courses { get; set; }
+        public Course FirstCourse { get; set; }
+        public Course SecondCourse { get; set; }
     }
 }

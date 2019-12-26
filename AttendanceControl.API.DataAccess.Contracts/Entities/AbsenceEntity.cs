@@ -33,6 +33,10 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Column("student_id", TypeName = "int")]
         public int StudentId { get; set; }
 
+        [Required]
+        [Column("is_excused", TypeName = "boolean")]
+        public bool IsExcused { get; set; }
+
         public virtual SchoolClassEntity SchoolClassEntity { get; set; }
         public virtual StudentEntity StudentEntity { get; set; }
     }

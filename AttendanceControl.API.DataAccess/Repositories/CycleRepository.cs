@@ -4,13 +4,14 @@ using AttendanceControl.API.DataAccess.Contracts.Entities;
 using AttendanceControl.API.DataAccess.Contracts.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AttendanceControl.API.DataAccess.Repositories
 {
-    public class CycleRepository : IRepository<CycleEntity>,ICycleRepository
+    public class CycleRepository : IRepository<CycleEntity>, ICycleRepository
     {
         private readonly IAttendanceControlDBContext _dbContext;
         private readonly ILogger<CycleRepository> _logger;
@@ -23,30 +24,34 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
         public async Task<bool> Delete(int id)
         {
-            
             var cycleEntity = await _dbContext.CycleEntities.FindAsync(id);
-            var result = _dbContext.CycleEntities.Remove(cycleEntity);
+
+            if (cycleEntity is null)
+            {
+                throw new DataNotFoundException("No se ha encontrado el ciclo a borrar en la base de datos.");
+            }
+
+            _dbContext.CycleEntities.Remove(cycleEntity);
             await _dbContext.SaveChangesAsync();
 
-            bool deleted;
+            _logger.LogInformation("El ciclo ha sido borrado correctamente");
 
-            if(result is null)
-            {
-                _logger.LogWarning("El ciclo no ha sido borrado");
-                deleted = false;
-            }
-            else
-            {
-                _logger.LogInformation("El ciclo ha sido borrado correctamente");
-                deleted = true;
-            }
-
-            return deleted;
+            return true;
         }
 
         public async Task<CycleEntity> Get(int id)
         {
-            return await _dbContext.CycleEntities.FindAsync(id);
+            var cycleEntity = await _dbContext.CycleEntities
+                .Include(c => c.CourseEntities)
+                .ThenInclude(co => co.CourseSubjectEntities)
+                .ThenInclude(cs => cs.SubjectEntity).FirstOrDefaultAsync(c => c.Id == id);
+
+            if (cycleEntity is null)
+            {
+                throw new DataNotFoundException("No se ha encontrado el ciclo en la base de datos.");
+            }
+
+            return cycleEntity;
         }
 
         /// <summary>
@@ -60,15 +65,15 @@ namespace AttendanceControl.API.DataAccess.Repositories
         public async Task<List<CycleEntity>> GetAll()
         {
             return await _dbContext.CycleEntities
-                .Include(c=>c.CourseEntities)
-                .ThenInclude(co=>co.CourseSubjectEntities)
-                .ThenInclude(cs=>cs.SubjectEntity)        
+                .Include(c => c.CourseEntities)
+                .ThenInclude(co => co.CourseSubjectEntities)
+                .ThenInclude(cs => cs.SubjectEntity)
                 .OrderBy(c => c.Name)
                 .ToListAsync();
         }
 
         public async Task<CycleEntity> Save(CycleEntity cycleEntity)
-        {         
+        {
             try
             {
                 await _dbContext.CycleEntities.AddAsync(cycleEntity);
@@ -78,10 +83,10 @@ namespace AttendanceControl.API.DataAccess.Repositories
             }
             catch (DbUpdateException ex)
             {
-                if (ex.InnerException.Message.Contains("username_constraint"))
+                if (ex.InnerException.Message.Contains("UQ_cycle_name"))
                 {
                     _logger.LogWarning("El ciclo no se ha guardado porque su nombre ya existe");
-                   throw new GradeNameDuplicateEntryException();
+                    throw new GradeNameDuplicateEntryException();
                 }
                 else
                 {
@@ -95,14 +100,14 @@ namespace AttendanceControl.API.DataAccess.Repositories
         {
             try
             {
-                 _dbContext.CycleEntities.Update(cycleEntity);
+                _dbContext.CycleEntities.Update(cycleEntity);
                 await _dbContext.SaveChangesAsync();
 
                 _logger.LogInformation("El ciclo se ha actualizado correctamente");
             }
             catch (DbUpdateException ex)
             {
-                if (ex.InnerException.Message.Contains("username_constraint"))
+                if (ex.InnerException.Message.Contains("UQ_cycle_name"))
                 {
                     _logger.LogWarning("El ciclo no se ha actualizado porque su nombre ya existe");
                     throw new GradeNameDuplicateEntryException();

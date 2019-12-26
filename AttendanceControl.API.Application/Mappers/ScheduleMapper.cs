@@ -15,10 +15,9 @@ namespace AttendanceControl.API.Application.Mappers
             return new Schedule()
             {
                 Id = scheduleEntity.Id,
-                Day = (AttendanceControl.API.Business.Enums.Day)scheduleEntity.Day,
-                Start = scheduleEntity.Start,
-                End = scheduleEntity.End
-            };
+                Start = scheduleEntity.Start.ToString(@"hh\:mm"),
+                End = scheduleEntity.End.ToString(@"hh\:mm")
+        };
         }
 
         public static ScheduleEntity Map(Schedule schedule)
@@ -26,9 +25,8 @@ namespace AttendanceControl.API.Application.Mappers
             return new ScheduleEntity()
             {
                 Id = schedule.Id,
-                Day = (AttendanceControl.API.DataAccess.Contracts.Enums.Day)schedule.Day,
-                Start = schedule.Start,
-                End = schedule.End
+                Start = TimeSpan.Parse(schedule.Start),
+                End = TimeSpan.Parse(schedule.End)
             };
         }
     }

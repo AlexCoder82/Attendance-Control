@@ -3,6 +3,7 @@ using AttendanceControl.API.DataAccess.Contracts.Entities;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
+using System;
 
 namespace AttendanceControl.API.Application.Mappers
 {
@@ -10,16 +11,20 @@ namespace AttendanceControl.API.Application.Mappers
     {
         public static Teacher Map(TeacherEntity teacherEntity)
         {
-            return new Teacher()
+           
+            if (teacherEntity is null)
             {
-                Id = teacherEntity.Id,
-                Dni = teacherEntity.PersonDataEntity.Dni,
-                FirstName = teacherEntity.PersonDataEntity.FirstName,
-                LastName1 = teacherEntity.PersonDataEntity.LastName1,
-                LastName2 = teacherEntity.PersonDataEntity.LastName2,
-                Username = teacherEntity.Username,
-                Password = teacherEntity.Password
-            };
+                return null;
+            }
+            else
+                return new Teacher()
+                {
+                    Id = teacherEntity.Id,
+                    Dni = teacherEntity.PersonDataEntity.Dni,
+                    FirstName = teacherEntity.PersonDataEntity.FirstName,
+                    LastName1 = teacherEntity.PersonDataEntity.LastName1,
+                    LastName2 = teacherEntity.PersonDataEntity.LastName2
+                };
         }
 
         public static TeacherEntity Map(Teacher teacher)
@@ -27,9 +32,7 @@ namespace AttendanceControl.API.Application.Mappers
             return new TeacherEntity()
             {
                 Id = teacher.Id,
-                Username = teacher.Username,
-                Password = teacher.Password,
-               
+
                 PersonDataEntity = new PersonDataEntity()
                 {
                     Dni = teacher.Dni,

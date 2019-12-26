@@ -15,7 +15,7 @@ namespace AttendanceControl.API.Application.Mappers
                 Type = (AttendanceControl.API.Business.Enums.AbsenceType)absenceEntity.Type,
                 Date = absenceEntity.Date,
                 Schedule = ScheduleMapper.Map(absenceEntity.SchoolClassEntity.ScheduleEntity),
-                Subject = SubjectMapper.Map(absenceEntity.SchoolClassEntity.SubjectEntity)              
+                Subject = SubjectMapper.MapIncludingTeacher(absenceEntity.SchoolClassEntity.SubjectEntity)              
             };
         }
     }

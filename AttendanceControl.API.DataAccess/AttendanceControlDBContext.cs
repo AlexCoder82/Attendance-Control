@@ -33,7 +33,9 @@ namespace AttendanceControl.API.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Entity<SchoolClassEntity>()
+            .Property(sc => sc.IsCurrent)
+            .HasDefaultValue(true);
 
             /// STUDENTSCHOOLCLASSTENTITY PRIMARY KEY
 

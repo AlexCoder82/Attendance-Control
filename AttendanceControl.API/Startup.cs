@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using AttendanceControl.API.CrossCutting.IocRegister;
@@ -42,7 +43,6 @@ namespace AttendanceControl.API
             IOCRegister.AddDBContext(services, connectionString);
 
 
-
             /// Register data repositories
 
             IOCRegister.AddRepositories(services);
@@ -76,6 +76,8 @@ namespace AttendanceControl.API
                             .GetBytes("AAfjoègfjèjf`jeof`jeòfjpo`jfo51561f456a4f"))
                     };
                 });
+
+           
 
 
         }

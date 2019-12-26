@@ -23,7 +23,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
 
         public virtual CycleEntity CycleEntity { get; set; }
 
-        public virtual ICollection<CourseSubjectEntity> CourseSubjectEntities { get; set; }
+        public virtual List<CourseSubjectEntity> CourseSubjectEntities { get; set; }
 
         public virtual ICollection<SchoolClassEntity> SchoolClassEntities { get; set; }
     }

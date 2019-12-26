@@ -16,9 +16,9 @@ namespace AttendanceControl.API.Application.Mappers
                 FirstName = studentEntity.PersonDataEntity.FirstName,
                 LastName1 = studentEntity.PersonDataEntity.LastName1,
                 LastName2 = studentEntity.PersonDataEntity.LastName2,
-                Course = CourseMapper.Map(studentEntity.CourseEntity),
+                Course = CourseMapper.MapIncludingSubjects(studentEntity.CourseEntity),
                 Subjects = studentEntity.StudentSubjectEntities
-                .Select(ss=> SubjectMapper.Map(ss.SubjectEntity)).ToList(),
+                .Select(ss=> SubjectMapper.MapIncludingTeacher(ss.SubjectEntity)).ToList(),
                 TotalAbsences = studentEntity.TotalAbsences,
                 TotalDelays = studentEntity.TotalDelays,
                 Absences = studentEntity.AbsenceEntities.Select(a => AbsenceMapper.Map(a)).ToList()

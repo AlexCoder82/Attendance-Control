@@ -8,8 +8,12 @@ namespace AttendanceControl.API.Application.Contracts.IServices
 {
     public interface ICycleService
     {
-        public Task<bool> Save(Cycle grade);
+        public Task<Cycle> Save(Cycle cycle);
 
         public Task<List<Cycle>> GetAll();
+
+        public Task<bool> Delete(int id);
+
+        public Task<Cycle> Update(Cycle cycle);
     }
 }

@@ -13,18 +13,14 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
         public int Id { get; set; }
+     
+        [Required]
+        [Column("start", TypeName = "time")]
+        public TimeSpan Start { get; set; }
 
         [Required]
-        [Column("day", TypeName = "int(1)")]
-        public Day Day { get; set; }
-
-        [Required]
-        [Column("start", TypeName = "timestamp")]
-        public DateTime Start { get; set; }
-
-        [Required]
-        [Column("end", TypeName = "timestamp")]
-        public DateTime End { get; set; }
+        [Column("end", TypeName = "time")]
+        public TimeSpan End { get; set; }
      
     }
 }

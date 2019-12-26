@@ -31,6 +31,11 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IAdminService, AdminService>();
             services.AddTransient<ICycleService, CycleService>();
+            services.AddTransient<ICourseService, CourseService>();
+            services.AddTransient<ISubjectService, SubjectService>();
+            services.AddTransient<ITeacherService, TeacherService>();
+            services.AddTransient<IScheduleService, ScheduleService>();
+            services.AddTransient<ISchoolClassService, SchoolClassService>();
 
             return services;
         }
@@ -40,6 +45,13 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
         {
             services.AddTransient<IAdminRepository, AdminRepository>();
             services.AddTransient<ICycleRepository, CycleRepository>();
+            services.AddTransient<ICourseRepository, CourseRepository>();
+            services.AddTransient<ISubjectRepository, SubjectRepository>();
+            services.AddTransient<ITeacherRepository, TeacherRepository>();
+            services.AddTransient<IScheduleRepository, ScheduleRepository>();
+            services.AddTransient<ISchoolClassRepository, SchoolClassRepository>();
+            
+
 
             return services;
         }

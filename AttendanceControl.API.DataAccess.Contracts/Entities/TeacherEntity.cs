@@ -14,11 +14,11 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Column("id")]
         public int Id { get; set; }
 
-        [Required]
+  
         [Column("username", TypeName = "varchar(32)")]
         public string Username { get; set; }
 
-        [Required]
+
         [Column("password", TypeName = "varchar(32)")]
         public string Password { get; set; }
 
@@ -28,7 +28,10 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int PersonDataId { get; set; }
 
         public virtual PersonDataEntity PersonDataEntity {get;set;}
-        public virtual ICollection<SchoolClassEntity> SchoolClassEntities { get; set; }
+        //public virtual ICollection<SchoolClassEntity> SchoolClassEntities { get; set; }
+
+        public virtual ICollection<SubjectEntity> SubjectEntities { get; set; }
+
 
     }
 }

@@ -23,21 +23,42 @@ namespace AttendanceControl.API.Application.Services
             _logger = logger;
         }
 
+        public async Task<bool> Delete(int id)
+        {
+           return await _cycleRepository.Delete(id);
+        }
+
         public async Task<List<Cycle>> GetAll()
         {
             List<CycleEntity> gradeEntities = await _cycleRepository.GetAll();
 
             
-            List<Cycle> grades = gradeEntities.Select(g => CycleMapper.Map(g)).ToList();
+            List<Cycle> grades = gradeEntities.Select(g => CycleMapper.MapIncludingCourses(g)).ToList();
             return grades;
         }
 
-        public async Task<bool> Save(Cycle cycle)
+        public async Task<Cycle> Save(Cycle cycle)
         {
             CycleEntity cycleEntity = CycleMapper.Map(cycle);
-            await _cycleRepository.Save(cycleEntity);
+            cycleEntity = await _cycleRepository.Save(cycleEntity);
 
-            return true;
+            cycleEntity = await _cycleRepository.Get(cycleEntity.Id);
+           // Console.WriteLine("\n\nAAAAAAAAAAAAAAAAAAAAAAAAAA" +cycleEntity.Id);
+            cycle = CycleMapper.Map(cycleEntity);
+
+            return cycle;
+        }
+
+        public async Task<Cycle> Update(Cycle cycle)
+        {
+            CycleEntity cycleEntity = CycleMapper.Map(cycle);
+            cycleEntity = await _cycleRepository.Update(cycleEntity);
+
+            cycleEntity = await _cycleRepository.Get(cycleEntity.Id);
+            // Console.WriteLine("\n\nAAAAAAAAAAAAAAAAAAAAAAAAAA" +cycleEntity.Id);
+            cycle = CycleMapper.Map(cycleEntity);
+
+            return cycle;
         }
     }
 }

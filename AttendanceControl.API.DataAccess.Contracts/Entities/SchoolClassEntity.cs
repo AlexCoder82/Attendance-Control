@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AttendanceControl.API.DataAccess.Contracts.Enums;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -24,20 +26,28 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Column("subject_id", TypeName = "int")]
         public int SubjectId { get; set; }
 
-        [Required]
-        [ForeignKey("TeacherEntity")]
-        [Column("teacher_id", TypeName = "int")]
-        public int TeacherId { get; set; }
+        //[Required]
+        //[ForeignKey("TeacherEntity")]
+        //[Column("teacher_id", TypeName = "int")]
+        //public int TeacherId { get; set; }
 
         [Required]
         [ForeignKey("ScheduleEntity")]
         [Column("schedule_id", TypeName = "int")]
         public int ScheduleId { get; set; }
 
+        [Required]
+        [Column("day", TypeName = "int(1)")]
+        public Day Day { get; set; }
+
+        [DefaultValue("true")]
+        [Column("is_current", TypeName = "boolean")]
+        public bool IsCurrent { get; set; }
+
         public virtual CourseEntity CourseEntity { get; set; }
         public virtual SubjectEntity SubjectEntity { get; set; }
         public virtual ScheduleEntity ScheduleEntity { get; set; }
-        public virtual TeacherEntity TeacherEntity { get; set; }
+       // public virtual TeacherEntity TeacherEntity { get; set; }
 
         public virtual ICollection<SchoolClassStudentEntity> SchoolClassStudentEntities { get; set; }
     }
