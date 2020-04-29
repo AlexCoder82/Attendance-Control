@@ -1,0 +1,1410 @@
+2019-12-31T11:39:18.2804657+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2019-12-31T11:39:18.2903367+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2019-12-31T11:39:18.2956310+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2019-12-31T11:39:18.2987601+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2019-12-31T11:39:18.3025532+01:00  [INF] Content root path: "F:\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2019-12-31T11:39:33.4472633+01:00 0HLSDRMSACKH2:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T11:39:33.5551766+01:00 0HLSDRMSACKH2:00000001 [INF] Request finished in 112.12610000000001ms 404  (791a596a)
+2019-12-31T11:41:58.2116499+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2019-12-31T11:41:58.2193402+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2019-12-31T11:41:58.2230710+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2019-12-31T11:41:58.2263826+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2019-12-31T11:41:58.2294492+01:00  [INF] Content root path: "F:\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2019-12-31T11:42:02.6053060+01:00 0HLSDRO93U2AT:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T11:42:02.6647208+01:00 0HLSDRO93U2AT:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:42:02.7400439+01:00 0HLSDRO93U2AT:00000001 [INF] Route matched with "{action = \"GetALLIncludingTotalAbsences\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALLIncludingTotalAbsences()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:42:03.1707555+01:00 0HLSDRO93U2AT:00000001 [INF] Petición de listado de todos los cursos con su total de ausencias recibida (d348e34c)
+2019-12-31T11:42:04.0557881+01:00 0HLSDRO93U2AT:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-12-31T11:42:04.1161721+01:00 0HLSDRO93U2AT:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:42:04.7791448+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("59"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T11:42:04.9350225+01:00 0HLSDRO93U2AT:00000001 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T11:42:05.0876264+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("60"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.1081859+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.1233420+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.1306486+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.1387011+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.1468079+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.1539683+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.1611704+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.1699571+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.1776608+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.1942015+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.2076560+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.2180129+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.2275107+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.2366661+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.2443107+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.2537774+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.2624035+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.2707430+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.2797622+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.2879997+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.2962249+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.3059517+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.3152704+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.3242669+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.3335183+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.3415938+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.3489462+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.3553443+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.3619964+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.3699246+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:42:05.3776817+01:00 0HLSDRO93U2AT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:42:05.3830913+01:00 0HLSDRO93U2AT:00000001 [INF] listado de todos los cursos con su total de ausencias retornado al cliente (557c553a)
+2019-12-31T11:42:05.4007321+01:00 0HLSDRO93U2AT:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:42:05.4552977+01:00 0HLSDRO93U2AT:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)" in 2702.5840000000003ms (afa2e885)
+2019-12-31T11:42:05.4609927+01:00 0HLSDRO93U2AT:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:42:05.4750664+01:00 0HLSDRO93U2AT:00000001 [INF] Request finished in 2874.8857000000003ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:43:27.4931632+01:00 0HLSDRO93U2AU:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/cycles   (ca22a1cb)
+2019-12-31T11:43:27.4992379+01:00 0HLSDRO93U2AU:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:43:27.5102293+01:00 0HLSDRO93U2AU:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Cycle\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CycleController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:43:27.5162925+01:00 0HLSDRO93U2AU:00000001 [INF] Petición de listado de grados recibida (7cfff5cc)
+2019-12-31T11:43:27.5597721+01:00 0HLSDRO93U2AU:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:43:27.6429980+01:00 0HLSDRO93U2AU:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`name`, `t0`.`id`, `t0`.`cycle_id`, `t0`.`year`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`, `t0`.`name`, `t0`.`teacher_id`
+FROM `cycle` AS `c`
+LEFT JOIN (
+    SELECT `c0`.`id`, `c0`.`cycle_id`, `c0`.`year`, `t`.`course_id`, `t`.`subject_id`, `t`.`id` AS `id0`, `t`.`name`, `t`.`teacher_id`
+    FROM `course` AS `c0`
+    LEFT JOIN (
+        SELECT `c1`.`course_id`, `c1`.`subject_id`, `s`.`id`, `s`.`name`, `s`.`teacher_id`
+        FROM `course_has_subjects` AS `c1`
+        INNER JOIN `subject` AS `s` ON `c1`.`subject_id` = `s`.`id`
+    ) AS `t` ON `c0`.`id` = `t`.`course_id`
+) AS `t0` ON `c`.`id` = `t0`.`cycle_id`
+ORDER BY `c`.`name`, `c`.`id`, `t0`.`id`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`" (0723d8ff)
+2019-12-31T11:43:27.7054412+01:00 0HLSDRO93U2AU:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Cycle, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:43:27.7150075+01:00 0HLSDRO93U2AU:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)" in 200.0538ms (afa2e885)
+2019-12-31T11:43:27.7197327+01:00 0HLSDRO93U2AU:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:43:27.7294568+01:00 0HLSDRO93U2AU:00000001 [INF] Request finished in 231.4017ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:43:29.6165005+01:00 0HLSDRO93U2AU:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/subjects   (ca22a1cb)
+2019-12-31T11:43:29.6213429+01:00 0HLSDRO93U2AU:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:43:29.6328840+01:00 0HLSDRO93U2AU:00000002 [INF] Route matched with "{action = \"GetAllIncludingAssignedTeacher\", controller = \"Subject\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllIncludingAssignedTeacher()" on controller "AttendanceControl.API.Controllers.SubjectController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:43:29.6406517+01:00 0HLSDRO93U2AU:00000002 [INF] Petición de listado de asignaturas recibida (ea283cf1)
+2019-12-31T11:43:29.6561904+01:00 0HLSDRO93U2AU:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:43:29.7185291+01:00 0HLSDRO93U2AU:00000002 [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`, `t`.`id`, `t`.`password`, `t`.`person_data_id`, `t`.`username`, `p`.`id`, `p`.`dni`, `p`.`firstname`, `p`.`lastname1`, `p`.`lastname2`
+FROM `subject` AS `s`
+LEFT JOIN `teacher` AS `t` ON `s`.`teacher_id` = `t`.`id`
+LEFT JOIN `person_data` AS `p` ON `t`.`person_data_id` = `p`.`id`
+ORDER BY `s`.`name`" (0723d8ff)
+2019-12-31T11:43:29.7563792+01:00 0HLSDRO93U2AU:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Subject, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:43:29.7664283+01:00 0HLSDRO93U2AU:00000002 [INF] Executed action "AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)" in 130.0962ms (afa2e885)
+2019-12-31T11:43:29.7701384+01:00 0HLSDRO93U2AU:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:43:29.7818994+01:00 0HLSDRO93U2AU:00000002 [INF] Request finished in 159.45870000000002ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:43:33.1271787+01:00 0HLSDRO93U2AU:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students?lastname=a   (ca22a1cb)
+2019-12-31T11:43:33.1313812+01:00 0HLSDRO93U2AU:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:43:33.1520509+01:00 0HLSDRO93U2AU:00000003 [INF] Route matched with "{action = \"GetLikeLastNameIncludingCourseAndSubjects\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLikeLastNameIncludingCourseAndSubjects(System.String)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:43:33.1807340+01:00 0HLSDRO93U2AU:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:43:33.2534492+01:00 0HLSDRO93U2AU:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__ToLower_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`person_data_id`, `s`.`total_absences`, `s`.`total_delays`, `p`.`id`, `p`.`dni`, `p`.`firstname`, `p`.`lastname1`, `p`.`lastname2`, `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`, `t`.`name`, `t`.`teacher_id`
+FROM `student` AS `s`
+INNER JOIN `person_data` AS `p` ON `s`.`person_data_id` = `p`.`id`
+LEFT JOIN `course` AS `c` ON `s`.`course_id` = `c`.`id`
+LEFT JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+LEFT JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+    FROM `student_has_subjects` AS `s0`
+    INNER JOIN `subject` AS `s1` ON `s0`.`subject_id` = `s1`.`id`
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE (@__ToLower_0 = '') OR (LOWER(`p`.`lastname1`) IS NOT NULL AND ((LOWER(`p`.`lastname1`) LIKE CONCAT(@__ToLower_0, '%')) AND ((LEFT(LOWER(`p`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) = CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin) OR (LEFT(LOWER(`p`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) IS NULL AND CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin IS NULL))))
+ORDER BY `s`.`id`, `p`.`id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`" (0723d8ff)
+2019-12-31T11:43:33.2853478+01:00 0HLSDRO93U2AU:00000003 [INF] La lista de alumnos ha sido recuperada de la base de datos. (c1b33ff7)
+2019-12-31T11:43:33.2932663+01:00 0HLSDRO93U2AU:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:43:33.3068926+01:00 0HLSDRO93U2AU:00000003 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)" in 149.1175ms (afa2e885)
+2019-12-31T11:43:33.3107360+01:00 0HLSDRO93U2AU:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:43:33.3148986+01:00 0HLSDRO93U2AU:00000003 [INF] Request finished in 188.4999ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:43:57.2622463+01:00 0HLSDRO93U2AU:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students?lastname=g   (ca22a1cb)
+2019-12-31T11:43:57.2668086+01:00 0HLSDRO93U2AU:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:43:57.2714950+01:00 0HLSDRO93U2AU:00000004 [INF] Route matched with "{action = \"GetLikeLastNameIncludingCourseAndSubjects\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLikeLastNameIncludingCourseAndSubjects(System.String)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:43:57.2781673+01:00 0HLSDRO93U2AU:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:43:57.2946359+01:00 0HLSDRO93U2AU:00000004 [INF] Executed DbCommand ("8"ms) [Parameters=["@__ToLower_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`person_data_id`, `s`.`total_absences`, `s`.`total_delays`, `p`.`id`, `p`.`dni`, `p`.`firstname`, `p`.`lastname1`, `p`.`lastname2`, `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`, `t`.`name`, `t`.`teacher_id`
+FROM `student` AS `s`
+INNER JOIN `person_data` AS `p` ON `s`.`person_data_id` = `p`.`id`
+LEFT JOIN `course` AS `c` ON `s`.`course_id` = `c`.`id`
+LEFT JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+LEFT JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+    FROM `student_has_subjects` AS `s0`
+    INNER JOIN `subject` AS `s1` ON `s0`.`subject_id` = `s1`.`id`
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE (@__ToLower_0 = '') OR (LOWER(`p`.`lastname1`) IS NOT NULL AND ((LOWER(`p`.`lastname1`) LIKE CONCAT(@__ToLower_0, '%')) AND ((LEFT(LOWER(`p`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) = CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin) OR (LEFT(LOWER(`p`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) IS NULL AND CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin IS NULL))))
+ORDER BY `s`.`id`, `p`.`id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`" (0723d8ff)
+2019-12-31T11:43:57.2988171+01:00 0HLSDRO93U2AU:00000004 [INF] La lista de alumnos ha sido recuperada de la base de datos. (c1b33ff7)
+2019-12-31T11:43:57.3024355+01:00 0HLSDRO93U2AU:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:43:57.3078427+01:00 0HLSDRO93U2AU:00000004 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)" in 31.7848ms (afa2e885)
+2019-12-31T11:43:57.3111002+01:00 0HLSDRO93U2AU:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:43:57.3166299+01:00 0HLSDRO93U2AU:00000004 [INF] Request finished in 54.0951ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:43:59.0131717+01:00 0HLSDRO93U2AU:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2019-12-31T11:43:59.0171103+01:00 0HLSDRO93U2AU:00000005 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:43:59.0285200+01:00 0HLSDRO93U2AU:00000005 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:43:59.0338281+01:00 0HLSDRO93U2AU:00000005 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2019-12-31T11:43:59.0383292+01:00 0HLSDRO93U2AU:00000005 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:43:59.0462197+01:00 0HLSDRO93U2AU:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T11:43:59.0516806+01:00 0HLSDRO93U2AU:00000005 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T11:43:59.0553662+01:00 0HLSDRO93U2AU:00000005 [INF] listado de todos los cursos retornado al cliente (8f341c97)
+2019-12-31T11:43:59.0591072+01:00 0HLSDRO93U2AU:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:43:59.0636601+01:00 0HLSDRO93U2AU:00000005 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 31.748ms (afa2e885)
+2019-12-31T11:43:59.0668544+01:00 0HLSDRO93U2AU:00000005 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:43:59.0733505+01:00 0HLSDRO93U2AU:00000005 [INF] Request finished in 58.8487ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:44:00.7530009+01:00 0HLSDRO93U2AU:00000006 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/api/students/1/courses/2  0 (ca22a1cb)
+2019-12-31T11:44:00.7571314+01:00 0HLSDRO93U2AU:00000006 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.UpdateCourse (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:44:00.7690531+01:00 0HLSDRO93U2AU:00000006 [INF] Route matched with "{action = \"UpdateCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateCourse(Int32, Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:44:00.7902140+01:00 0HLSDRO93U2AU:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:44:00.8240852+01:00 0HLSDRO93U2AU:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:44:00.8892807+01:00 0HLSDRO93U2AU:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`course_id`, `t`.`person_data_id`, `t`.`total_absences`, `t`.`total_delays`, `t`.`id0`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`, `t`.`id1`, `t`.`cycle_id`, `t`.`year`, `t`.`id2`, `t`.`name`, `t0`.`student_id`, `t0`.`subject_id`, `t0`.`id`, `t0`.`name`, `t0`.`teacher_id`, `s2`.`student_id`, `s2`.`school_class_id`
+FROM (
+    SELECT `s`.`id`, `s`.`course_id`, `s`.`person_data_id`, `s`.`total_absences`, `s`.`total_delays`, `p`.`id` AS `id0`, `p`.`dni`, `p`.`firstname`, `p`.`lastname1`, `p`.`lastname2`, `c`.`id` AS `id1`, `c`.`cycle_id`, `c`.`year`, `c0`.`id` AS `id2`, `c0`.`name`
+    FROM `student` AS `s`
+    INNER JOIN `person_data` AS `p` ON `s`.`person_data_id` = `p`.`id`
+    LEFT JOIN `course` AS `c` ON `s`.`course_id` = `c`.`id`
+    LEFT JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+    WHERE `s`.`id` = @__studentId_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+    FROM `student_has_subjects` AS `s0`
+    INNER JOIN `subject` AS `s1` ON `s0`.`subject_id` = `s1`.`id`
+) AS `t0` ON `t`.`id` = `t0`.`student_id`
+LEFT JOIN `school_class_has_students` AS `s2` ON `t`.`id` = `s2`.`student_id`
+ORDER BY `t`.`id`, `t`.`id0`, `t0`.`student_id`, `t0`.`subject_id`, `t0`.`id`, `s2`.`student_id`, `s2`.`school_class_id`" (0723d8ff)
+2019-12-31T11:44:00.8945023+01:00 0HLSDRO93U2AU:00000006 [INF] El alumno ha sido recuperado de la base de datos. (3942e64b)
+2019-12-31T11:44:00.9202533+01:00 0HLSDRO93U2AU:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`cycle_id`, `t`.`year`, `t`.`id0`, `t`.`name`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id`, `t0`.`name`, `t0`.`teacher_id`
+FROM (
+    SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id` AS `id0`, `c0`.`name`
+    FROM `course` AS `c`
+    INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+    WHERE `c`.`id` = @__courseId_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `c1`.`course_id`, `c1`.`subject_id`, `s`.`id`, `s`.`name`, `s`.`teacher_id`
+    FROM `course_has_subjects` AS `c1`
+    INNER JOIN `subject` AS `s` ON `c1`.`subject_id` = `s`.`id`
+) AS `t0` ON `t`.`id` = `t0`.`course_id`
+ORDER BY `t`.`id`, `t`.`id0`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id`" (0723d8ff)
+2019-12-31T11:44:00.9241191+01:00 0HLSDRO93U2AU:00000006 [INF] Curso recuperado de la base de datos. (3fdf76e3)
+2019-12-31T11:44:01.1339870+01:00 0HLSDRO93U2AU:00000006 [INF] Executed DbCommand ("25"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE `student` SET `course_id` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();" (0723d8ff)
+2019-12-31T11:44:01.1506086+01:00 0HLSDRO93U2AU:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `student_has_subjects` (`student_id`, `subject_id`)
+VALUES (@p0, @p1);" (0723d8ff)
+2019-12-31T11:44:01.1552808+01:00 0HLSDRO93U2AU:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `student_has_subjects` (`student_id`, `subject_id`)
+VALUES (@p0, @p1);" (0723d8ff)
+2019-12-31T11:44:01.3282610+01:00 0HLSDRO93U2AU:00000006 [INF] Asignaturas cursadas por el alumno actualizadas en la base de datos. (d425f6bc)
+2019-12-31T11:44:01.3657519+01:00 0HLSDRO93U2AU:00000006 [INF] Executed DbCommand ("4"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2019-12-31T11:44:01.4350030+01:00 0HLSDRO93U2AU:00000006 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2019-12-31T11:44:01.5057943+01:00 0HLSDRO93U2AU:00000006 [INF] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (DbType = Int32), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class_has_students` (`student_id`, `school_class_id`)
+VALUES (@p0, @p1),
+(@p2, @p3),
+(@p4, @p5),
+(@p6, @p7),
+(@p8, @p9),
+(@p10, @p11),
+(@p12, @p13),
+(@p14, @p15),
+(@p16, @p17),
+(@p18, @p19),
+(@p20, @p21);" (0723d8ff)
+2019-12-31T11:44:01.5643199+01:00 0HLSDRO93U2AU:00000006 [INF] Clases presenciales del alumnos actualizadas en la base de datos. (b692039e)
+2019-12-31T11:44:01.5704682+01:00 0HLSDRO93U2AU:00000006 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Business.Models.Student"'. (8a1b66c8)
+2019-12-31T11:44:01.5772823+01:00 0HLSDRO93U2AU:00000006 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.UpdateCourse (AttendanceControl.API)" in 802.8395ms (afa2e885)
+2019-12-31T11:44:01.5847742+01:00 0HLSDRO93U2AU:00000006 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.UpdateCourse (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:44:01.5944012+01:00 0HLSDRO93U2AU:00000006 [INF] Request finished in 838.8191ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:44:24.3043510+01:00 0HLSDRO93U2AT:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T11:44:24.3085997+01:00 0HLSDRO93U2AT:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:44:24.3133935+01:00 0HLSDRO93U2AT:00000002 [INF] Route matched with "{action = \"GetALLIncludingTotalAbsences\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALLIncludingTotalAbsences()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:44:24.3201461+01:00 0HLSDRO93U2AT:00000002 [INF] Petición de listado de todos los cursos con su total de ausencias recibida (d348e34c)
+2019-12-31T11:44:24.3266257+01:00 0HLSDRO93U2AT:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:44:24.3477727+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T11:44:24.3526437+01:00 0HLSDRO93U2AT:00000002 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T11:44:24.3721913+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.3784653+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.3843354+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.3902434+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.3962335+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.4019822+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.4076631+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.4139791+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.4197812+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.4258821+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.4318146+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.4380950+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.4448992+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.4512176+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.4602278+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.4776255+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.4864435+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.4938298+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5019773+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.5085821+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5160680+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.5239533+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5300925+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.5373581+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5436928+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.5499456+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5570637+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.5637227+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5697926+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.5756602+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5825760+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:44:24.5894174+01:00 0HLSDRO93U2AT:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:44:24.5925968+01:00 0HLSDRO93U2AT:00000002 [INF] listado de todos los cursos con su total de ausencias retornado al cliente (557c553a)
+2019-12-31T11:44:24.5966959+01:00 0HLSDRO93U2AT:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:44:24.6014009+01:00 0HLSDRO93U2AT:00000002 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)" in 284.26550000000003ms (afa2e885)
+2019-12-31T11:44:24.6044394+01:00 0HLSDRO93U2AT:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:44:24.6090220+01:00 0HLSDRO93U2AT:00000002 [INF] Request finished in 305.399ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:45:35.4670864+01:00 0HLSDRO93U2AT:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T11:45:35.5089336+01:00 0HLSDRO93U2AT:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:45:35.5142805+01:00 0HLSDRO93U2AT:00000003 [INF] Route matched with "{action = \"GetALLIncludingTotalAbsences\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALLIncludingTotalAbsences()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:45:35.5199851+01:00 0HLSDRO93U2AT:00000003 [INF] Petición de listado de todos los cursos con su total de ausencias recibida (d348e34c)
+2019-12-31T11:45:35.5259812+01:00 0HLSDRO93U2AT:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:45:35.5439550+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T11:45:35.5563380+01:00 0HLSDRO93U2AT:00000003 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T11:45:35.5807997+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("8"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.5903162+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.5986212+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.6072903+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.6178759+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.6261828+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.6345831+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.6423831+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.6528939+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.6837463+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.7005010+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.7089805+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.7176999+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.7236532+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.7303285+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.7366581+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.7505918+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.7566909+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.7628823+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.7694381+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.7758245+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.7819154+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.7880856+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.7943784+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.8006506+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.8069503+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.8130020+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.8194085+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.8260809+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.8327716+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.8396944+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:45:35.8462865+01:00 0HLSDRO93U2AT:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:45:35.8507211+01:00 0HLSDRO93U2AT:00000003 [INF] listado de todos los cursos con su total de ausencias retornado al cliente (557c553a)
+2019-12-31T11:45:35.8549199+01:00 0HLSDRO93U2AT:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:45:35.8610724+01:00 0HLSDRO93U2AT:00000003 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)" in 341.2628ms (afa2e885)
+2019-12-31T11:45:35.8867925+01:00 0HLSDRO93U2AT:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:45:35.9029606+01:00 0HLSDRO93U2AT:00000003 [INF] Request finished in 429.5803ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:46:11.2530767+01:00 0HLSDRO93U2AT:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T11:46:11.2574007+01:00 0HLSDRO93U2AT:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:46:11.2619572+01:00 0HLSDRO93U2AT:00000004 [INF] Route matched with "{action = \"GetALLIncludingTotalAbsences\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALLIncludingTotalAbsences()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:46:11.2665512+01:00 0HLSDRO93U2AT:00000004 [INF] Petición de listado de todos los cursos con su total de ausencias recibida (d348e34c)
+2019-12-31T11:46:11.2706474+01:00 0HLSDRO93U2AT:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:46:11.3005232+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T11:46:11.3053045+01:00 0HLSDRO93U2AT:00000004 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T11:46:11.3129330+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.3217167+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.3301744+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.3391472+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.3460869+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.3549918+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.3614499+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.3682291+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.3737425+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.3798301+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.3920547+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("7"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.3981499+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4034632+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4088899+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4147346+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4203238+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4262659+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4321130+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4374683+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4439122+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4500589+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4558970+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4617649+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4674276+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4732714+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4798294+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4856074+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.4914705+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.4971987+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.5027697+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.5088132+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:11.5160553+01:00 0HLSDRO93U2AT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:11.5221871+01:00 0HLSDRO93U2AT:00000004 [INF] listado de todos los cursos con su total de ausencias retornado al cliente (557c553a)
+2019-12-31T11:46:11.5268448+01:00 0HLSDRO93U2AT:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:46:11.5329189+01:00 0HLSDRO93U2AT:00000004 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)" in 266.9279ms (afa2e885)
+2019-12-31T11:46:11.5366921+01:00 0HLSDRO93U2AT:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:46:11.5437033+01:00 0HLSDRO93U2AT:00000004 [INF] Request finished in 288.9488ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T11:46:27.6630115+01:00 0HLSDRO93U2AT:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T11:46:27.6881645+01:00 0HLSDRO93U2AT:00000005 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (500cc934)
+2019-12-31T11:46:27.6919476+01:00 0HLSDRO93U2AT:00000005 [INF] Route matched with "{action = \"GetALLIncludingTotalAbsences\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALLIncludingTotalAbsences()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T11:46:27.7001926+01:00 0HLSDRO93U2AT:00000005 [INF] Petición de listado de todos los cursos con su total de ausencias recibida (d348e34c)
+2019-12-31T11:46:27.7070394+01:00 0HLSDRO93U2AT:00000005 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T11:46:27.7150011+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T11:46:27.7207245+01:00 0HLSDRO93U2AT:00000005 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T11:46:27.7356407+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.7508311+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.7654815+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.7731468+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.7807174+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.7876937+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.7952332+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.8020223+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.8082221+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.8147002+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.8212023+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.8337113+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.8412614+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.8482058+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.8632126+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.8787216+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("9"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.8869428+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.8971485+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.9049878+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.9237573+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.9392855+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.9478896+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.9548229+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.9630377+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.9694340+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.9763940+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.9828593+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:27.9896898+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:27.9961660+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:28.0021878+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:28.0094636+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T11:46:28.0168010+01:00 0HLSDRO93U2AT:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T11:46:28.0202501+01:00 0HLSDRO93U2AT:00000005 [INF] listado de todos los cursos con su total de ausencias retornado al cliente (557c553a)
+2019-12-31T11:46:28.0247352+01:00 0HLSDRO93U2AT:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T11:46:28.0510070+01:00 0HLSDRO93U2AT:00000005 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)" in 335.2594ms (afa2e885)
+2019-12-31T11:46:28.0577186+01:00 0HLSDRO93U2AT:00000005 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (99874f2b)
+2019-12-31T11:46:28.0660077+01:00 0HLSDRO93U2AT:00000005 [INF] Request finished in 399.2944ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T12:40:36.5363822+01:00 0HLSDRO93U2AT:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T12:40:36.5397456+01:00 0HLSDRO93U2AT:00000006 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (500cc934)
+2019-12-31T12:40:36.5439709+01:00 0HLSDRO93U2AT:00000006 [INF] Route matched with "{action = \"GetALLIncludingTotalAbsences\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALLIncludingTotalAbsences()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T12:40:36.5483183+01:00 0HLSDRO93U2AT:00000006 [INF] Petición de listado de todos los cursos con su total de ausencias recibida (d348e34c)
+2019-12-31T12:40:36.5588602+01:00 0HLSDRO93U2AT:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T12:40:36.5831529+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T12:40:36.5881382+01:00 0HLSDRO93U2AT:00000006 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T12:40:36.5955127+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6020418+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6074936+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6202752+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("8"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6256039+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6314634+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6368057+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6424042+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6482935+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6536300+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6592376+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6647684+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6709688+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6765128+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6820475+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6873291+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.6934270+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.6991437+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.7045044+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.7101672+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.7159889+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.7215361+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.7269903+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.7327713+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.7386664+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.7448433+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.7571920+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.7635041+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.7695952+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.7759318+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.7913717+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:40:36.8000347+01:00 0HLSDRO93U2AT:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:40:36.8038140+01:00 0HLSDRO93U2AT:00000006 [INF] listado de todos los cursos con su total de ausencias retornado al cliente (557c553a)
+2019-12-31T12:40:36.8086620+01:00 0HLSDRO93U2AT:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T12:40:36.8138706+01:00 0HLSDRO93U2AT:00000006 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)" in 265.9228ms (afa2e885)
+2019-12-31T12:40:36.8179266+01:00 0HLSDRO93U2AT:00000006 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (99874f2b)
+2019-12-31T12:40:36.8229524+01:00 0HLSDRO93U2AT:00000006 [INF] Request finished in 285.51980000000003ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-31T12:42:11.1078669+01:00 0HLSDRO93U2AT:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses/absences application/json 0 (ca22a1cb)
+2019-12-31T12:42:11.1122524+01:00 0HLSDRO93U2AT:00000007 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (500cc934)
+2019-12-31T12:42:11.1161858+01:00 0HLSDRO93U2AT:00000007 [INF] Route matched with "{action = \"GetALLIncludingTotalAbsences\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALLIncludingTotalAbsences()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2019-12-31T12:42:11.1207319+01:00 0HLSDRO93U2AT:00000007 [INF] Petición de listado de todos los cursos con su total de ausencias recibida (d348e34c)
+2019-12-31T12:42:11.1323199+01:00 0HLSDRO93U2AT:00000007 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2019-12-31T12:42:11.1451175+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2019-12-31T12:42:11.1493005+01:00 0HLSDRO93U2AT:00000007 [INF] Lista de los cursos recuperada de la base de datos. (135bc508)
+2019-12-31T12:42:11.1873861+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("7"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.1935219+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.1991083+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.2044415+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.2162241+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.2223567+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.2283992+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.2341857+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.2413816+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.2476509+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.2560524+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.2637097+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.2706678+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.2787674+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.2846132+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.2907189+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.2967320+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3021928+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3083290+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3138786+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3190797+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3253263+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3305684+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3361958+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3421292+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3479202+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3534695+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3590046+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3646326+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3702289+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3767498+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 0)" (0723d8ff)
+2019-12-31T12:42:11.3822312+01:00 0HLSDRO93U2AT:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM `absence` AS `a`
+INNER JOIN `student` AS `s` ON `a`.`student_id` = `s`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`a`.`type` = 1)" (0723d8ff)
+2019-12-31T12:42:11.3854607+01:00 0HLSDRO93U2AT:00000007 [INF] listado de todos los cursos con su total de ausencias retornado al cliente (557c553a)
+2019-12-31T12:42:11.3891411+01:00 0HLSDRO93U2AT:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-12-31T12:42:11.3934306+01:00 0HLSDRO93U2AT:00000007 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)" in 273.7481ms (afa2e885)
+2019-12-31T12:42:11.3966568+01:00 0HLSDRO93U2AT:00000007 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALLIncludingTotalAbsences (AttendanceControl.API)"' (99874f2b)
+2019-12-31T12:42:11.4010857+01:00 0HLSDRO93U2AT:00000007 [INF] Request finished in 293.1571ms 200 application/json; charset=utf-8 (791a596a)

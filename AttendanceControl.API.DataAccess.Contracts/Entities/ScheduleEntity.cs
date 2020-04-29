@@ -1,4 +1,5 @@
-﻿using AttendanceControl.API.DataAccess.Contracts.Enums;
+﻿
+using AttendanceControl.API.Business.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,6 +22,12 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Required]
         [Column("end", TypeName = "time")]
         public TimeSpan End { get; set; }
-     
+
+        [Required]
+        [ForeignKey("ShiftEntity")]
+        [Column("shift_id")]
+        public int ShiftId { get; set; }
+
+        public virtual ShiftEntity ShiftEntity { get; set; }
     }
 }

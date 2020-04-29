@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
 {
-    public interface ISchoolClassRepository: IRepository<SchoolClassEntity>
+    public interface ISchoolClassRepository
     {
         public Task<List<SchoolClassEntity>> GetByCourse(int courseId);
-
+        public Task<List<SchoolClassEntity>> GetByCourseAndSubject(int courseId,int subjectId);
+        public Task<List<SchoolClassEntity>> GetByTeacher(int teacherId);
+        public Task<SchoolClassEntity> GetCurrentIncludingSubjectAndSchedules(int schoolClassId);
+        public Task<SchoolClassEntity> Get(int schoolClassId);
         public Task<SchoolClassEntity> Save(SchoolClassEntity schoolClassEntity);
-
-        public  Task<bool> SetNotCurrent(int id);
+        public Task<SchoolClassEntity> UpdateStudents(SchoolClassEntity schoolClassEntity, List<StudentEntity> studentEntities);
+        public Task<bool> Cancel(int schoolClassId);
+       
     }
 }

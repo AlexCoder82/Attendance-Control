@@ -24,10 +24,9 @@ namespace AttendanceControl.API.Application.Services
         }
 
       
-        public async Task<List<Schedule>> GetAll()
+        public async Task<List<Schedule>> GetByShift(int shiftId)
         {
-            List<ScheduleEntity> scheduleEntities = await _scheduleRepository.GetAll();
-
+            List<ScheduleEntity> scheduleEntities = await _scheduleRepository.GetByShift(shiftId);
 
             List<Schedule> schedules = scheduleEntities.Select(s => ScheduleMapper.Map(s)).ToList();
 

@@ -28,6 +28,7 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
         //Application services IOC 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
+            services.AddTransient<IShiftService, ShiftService>();
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IAdminService, AdminService>();
             services.AddTransient<ICycleService, CycleService>();
@@ -36,6 +37,9 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
             services.AddTransient<ITeacherService, TeacherService>();
             services.AddTransient<IScheduleService, ScheduleService>();
             services.AddTransient<ISchoolClassService, SchoolClassService>();
+            services.AddTransient<IStudentService, StudentService>();
+            services.AddTransient<IAbsenceService, AbsenceService>();
+            services.AddTransient<ICallListService, CallListService>();
 
             return services;
         }
@@ -43,6 +47,7 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
         //Repositories IOC 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            services.AddTransient<IShiftRepository, ShiftRepository>();
             services.AddTransient<IAdminRepository, AdminRepository>();
             services.AddTransient<ICycleRepository, CycleRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
@@ -50,6 +55,10 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
             services.AddTransient<ITeacherRepository, TeacherRepository>();
             services.AddTransient<IScheduleRepository, ScheduleRepository>();
             services.AddTransient<ISchoolClassRepository, SchoolClassRepository>();
+            services.AddTransient<IStudentRepository, StudentRepository>();
+            services.AddTransient<IDatabaseTransaction, DatabaseTransaction>();
+            services.AddTransient<IAbsenceRepository, AbsenceRepository>();
+            
             
 
 

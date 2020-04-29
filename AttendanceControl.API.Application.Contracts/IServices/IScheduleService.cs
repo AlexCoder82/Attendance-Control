@@ -8,6 +8,6 @@ namespace AttendanceControl.API.Application.Contracts.IServices
 {
     public interface IScheduleService
     {
-        public Task<List<Schedule>> GetAll();
+        public Task<List<Schedule>> GetByShift(int shiftId);
     }
 }

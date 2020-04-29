@@ -14,22 +14,27 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Column("id")]
         public int Id { get; set; }
 
-  
-        [Column("username", TypeName = "varchar(32)")]
-        public string Username { get; set; }
-
-
-        [Column("password", TypeName = "varchar(32)")]
-        public string Password { get; set; }
+        [Required]
+        [Column("dni", TypeName = "varchar(9)")]
+        public string Dni { get; set; }
 
         [Required]
-        [ForeignKey("PersonDataEntity")]
-        [Column("person_data_id", TypeName = "int")]
-        public int PersonDataId { get; set; }
+        [Column("firstname", TypeName = "varchar(255)")]
+        public string FirstName { get; set; }
 
-        public virtual PersonDataEntity PersonDataEntity {get;set;}
-        //public virtual ICollection<SchoolClassEntity> SchoolClassEntities { get; set; }
+        [Required]
+        [Column("lastname1", TypeName = "varchar(255)")]
+        public string LastName1 { get; set; }
 
+        [Column("lastname2", TypeName = "varchar(255)")]
+        public string LastName2 { get; set; }
+
+
+        [ForeignKey("TeacherCredentialsEntity")]//OPTIONAL
+        [Column("credentials_id", TypeName = "int)")]
+        public int? CredentialsId { get; set; }
+
+        public virtual TeacherCredentialsEntity TeacherCredentialsEntity { get; set; }
         public virtual ICollection<SubjectEntity> SubjectEntities { get; set; }
 
 

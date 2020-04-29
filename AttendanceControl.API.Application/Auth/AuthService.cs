@@ -25,7 +25,7 @@ namespace AttendanceControl.API.Application.Auth
             return true;
         }
 
-        public string GenerateToken(string username,string password, string role)
+        public string GenerateToken(string sub, string role)
         {
             DateTime date = DateTime.UtcNow;
             TimeSpan validTime = TimeSpan.FromMinutes(30);
@@ -34,7 +34,7 @@ namespace AttendanceControl.API.Application.Auth
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Sub, username+password ),
+                new Claim(JwtRegisteredClaimNames.Sub, sub ),
                 new Claim(JwtRegisteredClaimNames.Iat,
                     new DateTimeOffset(date).ToUniversalTime()
                         .ToUnixTimeMilliseconds().ToString(),ClaimValueTypes.Integer64),

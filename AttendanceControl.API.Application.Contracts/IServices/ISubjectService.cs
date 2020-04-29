@@ -8,13 +8,16 @@ namespace AttendanceControl.API.Application.Contracts.IServices
 {
     public interface ISubjectService
     {
-        public Task<Subject> Get(int id);
-        public Task<List<Subject>> GetAll();
+        public Task<List<Subject>> GetAllIncludingAssignedTeacher();
 
         public Task<Subject> Save(Subject subject);
 
         public Task<Subject> Update(Subject subject);
 
-        public Task<Subject> UpdateAssignedTeacher(int subjectId, int? teacherId);
+        public Task<Subject> UpdateAssignedTeacher(int subjectId, int teacherId);
+
+        public Task<Subject> RemoveAssignedTeacher(int subjectId);
+
+        public Task<List<Subject>> GetByCourse(int courseId);
     }
 }

@@ -105,7 +105,7 @@ namespace AttendanceControl.API.Controllers
             _logger.LogInformation("Petición para retirar la asignación de un profesor a una asignatura");
 
 
-            var result = await _subjectService.UpdateAssignedTeacher(subjectId,null);
+            var result = await _subjectService.RemoveAssignedTeacher(subjectId);
 
             return Ok(result);
 
@@ -113,16 +113,31 @@ namespace AttendanceControl.API.Controllers
 
         // GET api/subjects
         [HttpGet]
-        public async Task<IActionResult> GetALL()
+        public async Task<IActionResult> GetAllIncludingAssignedTeacher()
         {
 
             _logger.LogInformation("Petición de listado de asignaturas recibida");
 
-            var result = await _subjectService.GetAll();
+            var result = await _subjectService.GetAllIncludingAssignedTeacher();
 
             return Ok(result);
 
         }
+
+        // GET api/subjects/courses/1
+        [HttpGet("courses/{courseId}")]
+        public async Task<IActionResult> GetByCourse(int courseId)
+        {
+
+            _logger.LogInformation("Petición de listado de asignaturas de un curso recibida");
+
+            var result = await _subjectService.GetByCourse(courseId);
+
+            return Ok(result);
+
+        }
+
+
 
     }
 }

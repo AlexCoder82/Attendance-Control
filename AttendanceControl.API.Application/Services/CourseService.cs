@@ -15,44 +15,61 @@ namespace AttendanceControl.API.Application.Services
     public class CourseService : ICourseService
     {
         private readonly ICourseRepository _courseRepository;
+        private readonly ISubjectRepository _subjectRepository;
+        private readonly IStudentRepository _studentRepository;
         private readonly ISchoolClassRepository _schoolClassRepository;
+        private readonly IDatabaseTransaction _databaseTransaction;
         private readonly ILogger<CourseService> _logger;
 
-        public CourseService(ICourseRepository courseRepository, ISchoolClassRepository schoolClassRepository, ILogger<CourseService> logger)
+        public CourseService(ICourseRepository courseRepository,
+                             ISubjectRepository subjectRepository,
+                             IStudentRepository studentRepository,
+                             ISchoolClassRepository schoolClassRepository,
+                             IDatabaseTransaction databaseTransaction,
+                             ILogger<CourseService> logger)
         {
             _courseRepository = courseRepository;
+            _subjectRepository = subjectRepository;
+            _studentRepository = studentRepository;
             _schoolClassRepository = schoolClassRepository;
+            _databaseTransaction = databaseTransaction;
             _logger = logger;
         }
 
-        public async Task<List<SchoolClass>> GetSchoolClasses(int courseId)
+
+        /// <summary>
+        ///     Asigna una asignatura a un curso y actualiza la relación de todos los 
+        ///     alumnos del curso con la asignatura
+        /// </summary>
+        /// <param name="courseId"></param>
+        /// <param name="subjectId"></param>
+        /// <returns></returns>
+        public async Task<bool> AssignSubject(int courseId, int subjectId)
         {
-            List<SchoolClassEntity> schoolClassEntities = await _schoolClassRepository.GetByCourse(courseId);
 
-            List<SchoolClass> schoolClasses = schoolClassEntities
-                .Select(sc => SchoolClassMapper.Map(sc)).ToList();
+            bool isAssigned = await _courseRepository.AssignSubject(courseId, subjectId);
 
-            return schoolClasses;
+            return isAssigned;
         }
 
-        public async Task<Course> UpdateCourse(Course course)
+        public async Task<List<Course>> GetAll()
         {
-            CourseEntity courseEntity = CourseMapper.MapIncludingSubjects(course);
-            Console.WriteLine("\n\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + "\n\n");
+            List<CourseEntity> courseEntities = await _courseRepository.GetAll();
 
-            courseEntity.CourseSubjectEntities.ForEach(cs =>
-            {
+            List<Course> courses = courseEntities
+                .Select(c => CourseMapper.MapIncludingCycle(c))
+                .ToList();
 
-                Console.WriteLine("\n\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + cs.SubjectId + "\n\n");
-            });
+            return courses;
+        }
 
-            courseEntity = await _courseRepository.Update(courseEntity);
+        public async Task<bool> RemoveAssignedSubject(int courseId, int subjectId)
+        {
 
-            //  courseEntity = await _courseRepository.Get(courseEntity.Id);
-            // Console.WriteLine("\n\nAAAAAAAAAAAAAAAAAAAAAAAAAA" +cycleEntity.Id);
-            //course = CourseMapper.MapIncludingSubjects(courseEntity);
+            bool isRemoved = await _courseRepository.RenoveAssignedSubject(courseId, subjectId);
 
-            return course;
+            
+            return isRemoved;
         }
     }
 }

@@ -397,6 +397,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "AttendanceControl.API.Business": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.0",
           "Pomelo.EntityFrameworkCore.MySql": "3.0.1"
         },
@@ -1204,11 +1205,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
+      "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
       "projectName": "AttendanceControl.API.Application",
-      "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
+      "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
       "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-      "outputPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Application\\obj\\",
+      "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1224,14 +1225,14 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "F:\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
-              "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj"
+            "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
+              "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj"
             },
-            "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
-              "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+            "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+              "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
             },
-            "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
-              "projectPath": "F:\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
+            "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
+              "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
             }
           }
         }

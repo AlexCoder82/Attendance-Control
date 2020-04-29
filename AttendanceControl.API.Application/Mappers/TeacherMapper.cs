@@ -11,7 +11,7 @@ namespace AttendanceControl.API.Application.Mappers
     {
         public static Teacher Map(TeacherEntity teacherEntity)
         {
-           
+
             if (teacherEntity is null)
             {
                 return null;
@@ -20,10 +20,30 @@ namespace AttendanceControl.API.Application.Mappers
                 return new Teacher()
                 {
                     Id = teacherEntity.Id,
-                    Dni = teacherEntity.PersonDataEntity.Dni,
-                    FirstName = teacherEntity.PersonDataEntity.FirstName,
-                    LastName1 = teacherEntity.PersonDataEntity.LastName1,
-                    LastName2 = teacherEntity.PersonDataEntity.LastName2
+                    Dni = teacherEntity.Dni,
+                    FirstName = teacherEntity.FirstName,
+                    LastName1 = teacherEntity.LastName1,
+                    LastName2 = teacherEntity.LastName2
+                };
+        }
+
+        public static Teacher MapIncludingCredentials(TeacherEntity teacherEntity)
+        {
+
+            if (teacherEntity is null)
+            {
+                return null;
+            }
+            else
+                return new Teacher()
+                {
+                    Id = teacherEntity.Id,
+                    Dni = teacherEntity.Dni,
+                    FirstName = teacherEntity.FirstName,
+                    LastName1 = teacherEntity.LastName1,
+                    LastName2 = teacherEntity.LastName2,
+                    Username = teacherEntity.TeacherCredentialsEntity.Username,
+                    Password = teacherEntity.TeacherCredentialsEntity.Password
                 };
         }
 
@@ -33,13 +53,11 @@ namespace AttendanceControl.API.Application.Mappers
             {
                 Id = teacher.Id,
 
-                PersonDataEntity = new PersonDataEntity()
-                {
-                    Dni = teacher.Dni,
-                    FirstName = teacher.FirstName,
-                    LastName1 = teacher.LastName1,
-                    LastName2 = teacher.LastName2,
-                }
+                Dni = teacher.Dni,
+                FirstName = teacher.FirstName,
+                LastName1 = teacher.LastName1,
+                LastName2 = teacher.LastName2,
+
 
             };
         }

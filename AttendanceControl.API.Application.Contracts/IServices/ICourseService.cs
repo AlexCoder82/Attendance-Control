@@ -7,8 +7,9 @@ namespace AttendanceControl.API.Application.Contracts.IServices
 {
     public interface ICourseService
     {
-        public Task<Course> UpdateCourse(Course course);
+        public Task<bool> AssignSubject(int courseId,int subjectId);
+        public Task<bool> RemoveAssignedSubject(int courseId,int subjectId);
+        public Task<List<Course>> GetAll();
 
-        public Task<List<SchoolClass>> GetSchoolClasses(int courseId);
     }
 }

@@ -14,6 +14,6 @@ namespace AttendanceControl.API.Application.Contracts.IServices
 
         public Task<bool> Delete(int id);
 
-        public Task<Cycle> Update(Cycle cycle);
+        public Task<bool> UpdateName(int cycleId,string name);
     }
 }

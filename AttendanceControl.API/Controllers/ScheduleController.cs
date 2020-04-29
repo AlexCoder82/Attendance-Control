@@ -22,14 +22,14 @@ namespace AttendanceControl.API.Controllers
             _logger = logger;
         }
 
-        // GET api/schedules
-        [HttpGet]
-        public async Task<IActionResult> GetALL()
+        // GET api/schedules/shifts/{shiftId}
+        [HttpGet("/shifts/{shiftId}")]
+        public async Task<IActionResult> GetByShift(int shiftId)
         {
 
             _logger.LogInformation("Petición de listado de horarios");
 
-            var result = await _scheduleService.GetAll();
+            var result = await _scheduleService.GetByShift(shiftId);
 
             return Ok(result);
 

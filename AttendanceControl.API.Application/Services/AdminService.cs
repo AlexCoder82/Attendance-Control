@@ -31,7 +31,7 @@ namespace AttendanceControl.API.Application.Services
             var signedInAdmin = await _adminRepository.Exists(adminEntity);
           
             string token = _authService
-                    .GenerateToken(signedInAdmin.AdminName, signedInAdmin.Password, Role.ADMIN);
+                    .GenerateToken(signedInAdmin.AdminName + signedInAdmin.Password, Role.ADMIN);
 
             return token;
         }

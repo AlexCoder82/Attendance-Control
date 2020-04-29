@@ -11,5 +11,6 @@ namespace AttendanceControl.API.Business.Models
         public DateTime Date { get; set; }
         public  Schedule Schedule { get; set; }
         public Subject Subject { get; set; }
+        public bool IsExcused { get; set; }
     }
 }

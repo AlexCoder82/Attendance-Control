@@ -23,6 +23,7 @@ namespace AttendanceControl.API.Application.Mappers
             };
         }
 
+        
         // Si el cliente pide un listado de las a 
         public static Course MapIncludingCycle(CourseEntity courseEntity)
         {

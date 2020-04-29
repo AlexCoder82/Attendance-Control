@@ -13,10 +13,13 @@ namespace AttendanceControl.API.DataAccess
 
         public AttendanceControlDBContext(DbContextOptions<AttendanceControlDBContext> options) : base(options)
         {
-            Console.WriteLine("AAAAAAAAA");
+
         }
 
+       
         public DbSet<AbsenceEntity> AbsenceEntities { get; set; }
+        public DbSet<ShiftEntity> ShiftEntities { get; set; }
+
         public DbSet<AdminEntity> AdminEntities { get; set; }
         public DbSet<CourseEntity> CourseEntities { get; set; }
         public DbSet<SchoolClassEntity> SchoolClassEntities { get; set; }
@@ -24,18 +27,31 @@ namespace AttendanceControl.API.DataAccess
         public DbSet<TeacherEntity> TeacherEntities { get; set; }
         public DbSet<SubjectEntity> SubjectEntities { get; set; }
         public DbSet<StudentEntity> StudentEntities { get; set; }
-        public DbSet<PersonDataEntity> PersonDataEntities { get; set; }
         public DbSet<CycleEntity> CycleEntities { get; set; }
         public DbSet<SchoolClassStudentEntity> SchoolClassStudentEntities { get; set; }
 
         public DbSet<StudentSubjectEntity> StudentSubjectEntities { get; set; }
         public DbSet<CourseSubjectEntity> CourseSubjectEntities { get; set; }
+        public DbSet<TeacherCredentialsEntity> TeacherCredentialsEntities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SchoolClassEntity>()
             .Property(sc => sc.IsCurrent)
             .HasDefaultValue(true);
+
+            modelBuilder.Entity<StudentEntity>()
+           .Property(s => s.TotalAbsences)
+           .HasDefaultValue(0);
+
+            modelBuilder.Entity<StudentEntity>()
+          .Property(s => s.TotalDelays)
+          .HasDefaultValue(0);
+            modelBuilder.Entity<StudentEntity>()
+          .Property(s => s.CourseId)
+          .HasDefaultValue(null);
+
+
 
             /// STUDENTSCHOOLCLASSTENTITY PRIMARY KEY
 
@@ -61,25 +77,21 @@ namespace AttendanceControl.API.DataAccess
                 cs.SubjectId
             });
 
-            /// ONE TO ONE STUDENT/PERSONDATA
+            /// TEACHER HAS CREDENTIALS
 
-            modelBuilder.Entity<PersonDataEntity>()
-            .HasOne(pd => pd.StudentEntity)
-            .WithOne(s => s.PersonDataEntity)
-            .HasForeignKey<StudentEntity>(s => s.PersonDataId);
+            modelBuilder.Entity<TeacherCredentialsEntity>()
+            .HasOne(tc =>tc.TeacherEntity)
+            .WithOne(t => t.TeacherCredentialsEntity)
+            .HasForeignKey<TeacherEntity>(t => t.CredentialsId);
 
-            /// ONE TO ONE TEACHER/PERSONDATA
 
-            modelBuilder.Entity<PersonDataEntity>()
-            .HasOne(pd => pd.TeacherEntity)
-            .WithOne(t => t.PersonDataEntity)
-            .HasForeignKey<TeacherEntity>(t => t.PersonDataId);
+
 
             base.OnModelCreating(modelBuilder);
 
 
         }
 
-        
+
     }
 }

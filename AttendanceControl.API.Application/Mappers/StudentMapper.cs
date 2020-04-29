@@ -7,22 +7,69 @@ namespace AttendanceControl.API.Application.Mappers
 {
     public static class StudentMapper
     {
+
+        public static Student MapIncludingCourse(StudentEntity studentEntity)
+        {
+            if (studentEntity is null)
+            {
+                return null;
+            }
+            else
+                return new Student()
+                {
+                    Id = studentEntity.Id,
+                    Dni = studentEntity.Dni,
+                    FirstName = studentEntity.FirstName,
+                    LastName1 = studentEntity.LastName1,
+                    LastName2 = studentEntity.LastName2,
+                    Course = CourseMapper.MapIncludingCycle(studentEntity.CourseEntity),
+                    TotalAbsences = studentEntity.TotalAbsences,
+                    TotalDelays = studentEntity.TotalDelays
+
+                };
+        }
+
         public static Student Map(StudentEntity studentEntity)
         {
-            return new Student()
+            if (studentEntity is null)
             {
-                Id = studentEntity.Id,
-                Dni = studentEntity.PersonDataEntity.Dni,
-                FirstName = studentEntity.PersonDataEntity.FirstName,
-                LastName1 = studentEntity.PersonDataEntity.LastName1,
-                LastName2 = studentEntity.PersonDataEntity.LastName2,
-                Course = CourseMapper.MapIncludingSubjects(studentEntity.CourseEntity),
-                Subjects = studentEntity.StudentSubjectEntities
-                .Select(ss=> SubjectMapper.MapIncludingTeacher(ss.SubjectEntity)).ToList(),
-                TotalAbsences = studentEntity.TotalAbsences,
-                TotalDelays = studentEntity.TotalDelays,
-                Absences = studentEntity.AbsenceEntities.Select(a => AbsenceMapper.Map(a)).ToList()
-            };
+                return null;
+            }
+            else
+                return new Student()
+                {
+                    Id = studentEntity.Id,
+                    Dni = studentEntity.Dni,
+                    FirstName = studentEntity.FirstName,
+                    LastName1 = studentEntity.LastName1,
+                    LastName2 = studentEntity.LastName2,
+                    TotalAbsences = studentEntity.TotalAbsences,
+                    TotalDelays = studentEntity.TotalDelays
+
+                };
+        }
+
+        public static Student MapIncludingAssignedSubjects(StudentEntity studentEntity)
+        {
+            if (studentEntity is null)
+            {
+                return null;
+            }
+            else
+                return new Student()
+                {
+                    Id = studentEntity.Id,
+                    Dni = studentEntity.Dni,
+                    FirstName = studentEntity.FirstName,
+                    LastName1 = studentEntity.LastName1,
+                    LastName2 = studentEntity.LastName2,
+                    Course = CourseMapper.MapIncludingCycle(studentEntity.CourseEntity),
+                    Subjects = studentEntity.StudentSubjectEntities
+                    .Select(ss => SubjectMapper.Map(ss.SubjectEntity)).ToList(),
+                    TotalAbsences = studentEntity.TotalAbsences,
+                    TotalDelays = studentEntity.TotalDelays
+
+                };
         }
 
         public static StudentEntity Map(Student student)
@@ -32,14 +79,12 @@ namespace AttendanceControl.API.Application.Mappers
                 Id = student.Id,
                 TotalAbsences = student.TotalAbsences,
                 TotalDelays = student.TotalDelays,
- 
-                PersonDataEntity = new PersonDataEntity()
-                {
-                    Dni = student.Dni,
-                    FirstName = student.FirstName,
-                    LastName1 = student.LastName1,
-                    LastName2 = student.LastName2,
-                }
+
+                Dni = student.Dni,
+                FirstName = student.FirstName,
+                LastName1 = student.LastName1,
+                LastName2 = student.LastName2,
+
 
             };
         }

@@ -1,4 +1,5 @@
-﻿using AttendanceControl.API.DataAccess.Contracts.Enums;
+﻿
+using AttendanceControl.API.Business.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,8 +38,8 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int ScheduleId { get; set; }
 
         [Required]
-        [Column("day", TypeName = "int(1)")]
-        public Day Day { get; set; }
+        [Column("day_of_week", TypeName = "int(1)")]
+        public DayOfWeek Day { get; set; }
 
         [DefaultValue("true")]
         [Column("is_current", TypeName = "boolean")]

@@ -1,9 +1,8 @@
-﻿using AttendanceControl.API.DataAccess.Contracts.Enums;
+﻿
+using AttendanceControl.API.Business.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {

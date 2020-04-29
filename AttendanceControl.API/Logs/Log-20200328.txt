@@ -1,0 +1,1012 @@
+2020-03-28T15:51:29.8977279+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T15:51:29.9061769+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T15:51:29.9101943+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T15:51:29.9133981+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T15:51:29.9167182+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T16:00:17.0780631+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T16:00:17.0883584+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T16:00:17.0925750+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T16:00:17.0962914+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T16:00:17.1010692+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T16:15:52.3493214+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T16:15:52.3614072+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T16:15:52.3708610+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T16:15:52.3766598+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T16:15:52.3799889+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T16:16:37.4459359+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T16:16:37.4567387+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T16:16:37.4620542+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T16:16:37.4667734+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T16:16:37.4703936+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T16:18:29.7832790+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T16:18:29.7925765+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T16:18:29.7967230+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T16:18:29.8002760+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T16:18:29.8039681+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T16:18:46.5999727+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T16:18:46.6082654+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T16:18:46.6127860+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T16:18:46.6168045+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T16:18:46.6203542+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T16:18:52.5119987+01:00 0HLUJ5D9D7IHM:00000001 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/teachers/sign-in   (ca22a1cb)
+2020-03-28T16:18:52.5397590+01:00 0HLUJ5D9D7IHM:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-03-28T16:18:52.5863385+01:00 0HLUJ5D9D7IHM:00000001 [INF] Request finished in 73.9895ms 204  (791a596a)
+2020-03-28T16:18:52.6485662+01:00 0HLUJ5D9D7IHM:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/teachers/sign-in application/json 15 (ca22a1cb)
+2020-03-28T16:18:52.6525223+01:00 0HLUJ5D9D7IHM:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-03-28T16:18:52.7834112+01:00 0HLUJ5D9D7IHM:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (500cc934)
+2020-03-28T16:18:52.9700838+01:00 0HLUJ5D9D7IHM:00000002 [INF] Route matched with "{action = \"SignIn\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(AttendanceControl.API.Business.Models.TeacherCredentials)" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T16:18:53.3772902+01:00 0HLUJ5D9D7IHM:00000002 [INF] Petición de registro de credenciales de un profesor (d347c7cd)
+2020-03-28T16:18:54.2721002+01:00 0HLUJ5D9D7IHM:00000002 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-28T16:18:54.3449923+01:00 0HLUJ5D9D7IHM:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T16:18:55.1587077+01:00 0HLUJ5D9D7IHM:00000002 [ERR] An error occurred using the connection to database '"attendance_control"' on server '"localhost"'. (5fc3407c)
+2020-03-28T16:18:55.4621211+01:00 0HLUJ5D9D7IHM:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"AttendanceControl.API.DataAccess.AttendanceControlDBContext"'."
+""System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication method 'caching_sha2_password' failed. Either use a secure connection, specify the server's RSA public key with ServerRSAPublicKeyFile, or set AllowPublicKeyRetrieval=True.
+   at MySqlConnector.Core.ServerSession.GetRsaPublicKeyAsync(String switchRequestName, ConnectionSettings cs, IOBehavior ioBehavior, CancellationToken cancellationToken)
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 573
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 431
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 645
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 312
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication method 'caching_sha2_password' failed. Either use a secure connection, specify the server's RSA public key with ServerRSAPublicKeyFile, or set AllowPublicKeyRetrieval=True.
+   at MySqlConnector.Core.ServerSession.GetRsaPublicKeyAsync(String switchRequestName, ConnectionSettings cs, IOBehavior ioBehavior, CancellationToken cancellationToken)
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 573
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 431
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 645
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 312
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2020-03-28T16:18:56.1633699+01:00 0HLUJ5D9D7IHM:00000002 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)" in 3174.5550000000003ms (afa2e885)
+2020-03-28T16:18:56.2045528+01:00 0HLUJ5D9D7IHM:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (99874f2b)
+2020-03-28T16:18:56.3337467+01:00 0HLUJ5D9D7IHM:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication method 'caching_sha2_password' failed. Either use a secure connection, specify the server's RSA public key with ServerRSAPublicKeyFile, or set AllowPublicKeyRetrieval=True.
+   at MySqlConnector.Core.ServerSession.GetRsaPublicKeyAsync(String switchRequestName, ConnectionSettings cs, IOBehavior ioBehavior, CancellationToken cancellationToken)
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 573
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 431
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 645
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 312
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AttendanceControl.API.DataAccess.Repositories.TeacherRepository.GetByCredentials(String username, String password) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess\Repositories\TeacherRepository.cs:line 32
+   at AttendanceControl.API.Application.Services.TeacherService.SignIn(TeacherCredentials teacherCredentials) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\TeacherService.cs:line 67
+   at AttendanceControl.API.Controllers.TeacherController.SignIn(TeacherCredentials teacherCredentials) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\TeacherController.cs:line 81
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-28T16:18:56.3645686+01:00 0HLUJ5D9D7IHM:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-28T16:18:56.3747543+01:00 0HLUJ5D9D7IHM:00000002 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T16:18:56.3873453+01:00 0HLUJ5D9D7IHM:00000002 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-28T16:18:56.4284501+01:00 0HLUJ5D9D7IHM:00000002 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 48.9457ms (afa2e885)
+2020-03-28T16:18:56.4336843+01:00 0HLUJ5D9D7IHM:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-28T16:18:56.4579557+01:00 0HLUJ5D9D7IHM:00000002 [INF] Request finished in 3806.6432ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-28T16:23:31.2841378+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T16:23:31.2955037+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T16:23:31.2999326+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T16:23:31.3048109+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T16:23:31.3084188+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T16:23:36.9899026+01:00 0HLUJ5FU6SKHL:00000001 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/teachers/sign-in   (ca22a1cb)
+2020-03-28T16:23:37.0113207+01:00 0HLUJ5FU6SKHL:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-03-28T16:23:37.0403073+01:00 0HLUJ5FU6SKHL:00000001 [INF] Request finished in 56.6008ms 204  (791a596a)
+2020-03-28T16:23:37.0778711+01:00 0HLUJ5FU6SKHL:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/teachers/sign-in application/json 54 (ca22a1cb)
+2020-03-28T16:23:37.0833633+01:00 0HLUJ5FU6SKHL:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-03-28T16:23:37.1410421+01:00 0HLUJ5FU6SKHL:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (500cc934)
+2020-03-28T16:23:37.2393705+01:00 0HLUJ5FU6SKHL:00000002 [INF] Route matched with "{action = \"SignIn\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(AttendanceControl.API.Business.Models.TeacherCredentials)" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T16:23:37.5468345+01:00 0HLUJ5FU6SKHL:00000002 [INF] Petición de registro de credenciales de un profesor (d347c7cd)
+2020-03-28T16:23:37.5513814+01:00 0HLUJ5FU6SKHL:00000002 [INF]    (55b10749)
+2020-03-28T16:23:38.3952675+01:00 0HLUJ5FU6SKHL:00000002 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-28T16:23:38.4406947+01:00 0HLUJ5FU6SKHL:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T16:23:38.9932399+01:00 0HLUJ5FU6SKHL:00000002 [ERR] An error occurred using the connection to database '"attendance_control"' on server '"localhost"'. (5fc3407c)
+2020-03-28T16:23:39.1380591+01:00 0HLUJ5FU6SKHL:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"AttendanceControl.API.DataAccess.AttendanceControlDBContext"'."
+""System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication method 'caching_sha2_password' failed. Either use a secure connection, specify the server's RSA public key with ServerRSAPublicKeyFile, or set AllowPublicKeyRetrieval=True.
+   at MySqlConnector.Core.ServerSession.GetRsaPublicKeyAsync(String switchRequestName, ConnectionSettings cs, IOBehavior ioBehavior, CancellationToken cancellationToken)
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 573
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 431
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 645
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 312
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication method 'caching_sha2_password' failed. Either use a secure connection, specify the server's RSA public key with ServerRSAPublicKeyFile, or set AllowPublicKeyRetrieval=True.
+   at MySqlConnector.Core.ServerSession.GetRsaPublicKeyAsync(String switchRequestName, ConnectionSettings cs, IOBehavior ioBehavior, CancellationToken cancellationToken)
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 573
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 431
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 645
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 312
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AttendanceControl.API.DataAccess.Repositories.TeacherRepository.GetByCredentials(String username, String password) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess\Repositories\TeacherRepository.cs:line 32
+   at AttendanceControl.API.Application.Services.TeacherService.SignIn(TeacherCredentials teacherCredentials) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\TeacherService.cs:line 67
+   at AttendanceControl.API.Controllers.TeacherController.SignIn(TeacherCredentials teacherCredentials) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\TeacherController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+2020-03-28T16:23:39.6540420+01:00 0HLUJ5FU6SKHL:00000002 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)" in 2402.8571ms (afa2e885)
+2020-03-28T16:23:39.6584220+01:00 0HLUJ5FU6SKHL:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (99874f2b)
+2020-03-28T16:23:39.6980162+01:00 0HLUJ5FU6SKHL:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseMySql' call.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication method 'caching_sha2_password' failed. Either use a secure connection, specify the server's RSA public key with ServerRSAPublicKeyFile, or set AllowPublicKeyRetrieval=True.
+   at MySqlConnector.Core.ServerSession.GetRsaPublicKeyAsync(String switchRequestName, ConnectionSettings cs, IOBehavior ioBehavior, CancellationToken cancellationToken)
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 573
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 431
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 645
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 312
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AttendanceControl.API.DataAccess.Repositories.TeacherRepository.GetByCredentials(String username, String password) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess\Repositories\TeacherRepository.cs:line 32
+   at AttendanceControl.API.Application.Services.TeacherService.SignIn(TeacherCredentials teacherCredentials) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\TeacherService.cs:line 67
+   at AttendanceControl.API.Controllers.TeacherController.SignIn(TeacherCredentials teacherCredentials) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\TeacherController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-28T16:23:39.7174856+01:00 0HLUJ5FU6SKHL:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-28T16:23:39.7262092+01:00 0HLUJ5FU6SKHL:00000002 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T16:23:39.7371110+01:00 0HLUJ5FU6SKHL:00000002 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-28T16:23:39.7557870+01:00 0HLUJ5FU6SKHL:00000002 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 23.475ms (afa2e885)
+2020-03-28T16:23:39.7638210+01:00 0HLUJ5FU6SKHL:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-28T16:23:39.7938227+01:00 0HLUJ5FU6SKHL:00000002 [INF] Request finished in 2711.0054ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-28T16:24:34.5042015+01:00 0HLUJ5FU6SKHL:00000003 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/teachers/sign-in   (ca22a1cb)
+2020-03-28T16:24:34.5082360+01:00 0HLUJ5FU6SKHL:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-03-28T16:24:34.5193744+01:00 0HLUJ5FU6SKHL:00000003 [INF] Request finished in 11.0318ms 204  (791a596a)
+2020-03-28T16:24:34.5375558+01:00 0HLUJ5FU6SKHL:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/teachers/sign-in application/json 54 (ca22a1cb)
+2020-03-28T16:24:34.5411842+01:00 0HLUJ5FU6SKHL:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-03-28T16:24:34.5482672+01:00 0HLUJ5FU6SKHL:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (500cc934)
+2020-03-28T16:24:34.5520658+01:00 0HLUJ5FU6SKHL:00000004 [INF] Route matched with "{action = \"SignIn\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(AttendanceControl.API.Business.Models.TeacherCredentials)" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T16:24:34.5649978+01:00 0HLUJ5FU6SKHL:00000004 [INF] Petición de registro de credenciales de un profesor (d347c7cd)
+2020-03-28T16:24:34.5681875+01:00 0HLUJ5FU6SKHL:00000004 [INF]    (55b10749)
+2020-03-28T16:24:34.6026765+01:00 0HLUJ5FU6SKHL:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T16:24:35.0110192+01:00 0HLUJ5FU6SKHL:00000004 [INF] Executed DbCommand ("349"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`, `t0`.`id`, `t0`.`password`, `t0`.`username`
+FROM `teacher` AS `t`
+LEFT JOIN `teacher_credentials` AS `t0` ON `t`.`credentials_id` = `t0`.`id`
+WHERE `t0`.`username` IS NULL AND `t0`.`password` IS NULL
+LIMIT 1" (0723d8ff)
+2020-03-28T16:24:35.5618216+01:00 0HLUJ5FU6SKHL:00000004 [INF] Token de administrador generado (be26e111)
+2020-03-28T16:24:35.5679119+01:00 0HLUJ5FU6SKHL:00000004 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Application.Contracts.DTOs.TeacherSignInResponse"'. (8a1b66c8)
+2020-03-28T16:24:35.5789489+01:00 0HLUJ5FU6SKHL:00000004 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)" in 1018.719ms (afa2e885)
+2020-03-28T16:24:35.5834309+01:00 0HLUJ5FU6SKHL:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (99874f2b)
+2020-03-28T16:24:35.5890035+01:00 0HLUJ5FU6SKHL:00000004 [INF] Request finished in 1049.4846ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T16:34:58.3691248+01:00  [INF] Application is shutting down... (90f52c38)
+2020-03-28T18:06:58.7330755+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-28T18:06:58.7412843+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-28T18:06:58.7454187+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-28T18:06:58.7483405+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-28T18:06:58.7515446+01:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-28T18:13:28.8146948+01:00 0HLUJ7DAMBRM1:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2020-03-28T18:13:28.8933205+01:00 0HLUJ7DAMBRM1:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:13:28.9881291+01:00 0HLUJ7DAMBRM1:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:13:29.4018872+01:00 0HLUJ7DAMBRM1:00000001 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2020-03-28T18:13:31.1919278+01:00 0HLUJ7DAMBRM1:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-28T18:13:31.2799002+01:00 0HLUJ7DAMBRM1:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:13:32.5793057+01:00 0HLUJ7DAMBRM1:00000001 [INF] Executed DbCommand ("148"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2020-03-28T18:13:33.0139842+01:00 0HLUJ7DAMBRM1:00000001 [INF] Lista de cursos recuperada de la base de datos. (f4c6377e)
+2020-03-28T18:13:33.0252845+01:00 0HLUJ7DAMBRM1:00000001 [INF] Listado de todos los cursos retornado (886159b3)
+2020-03-28T18:13:33.0710899+01:00 0HLUJ7DAMBRM1:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:13:33.2648757+01:00 0HLUJ7DAMBRM1:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 4221.4806ms (afa2e885)
+2020-03-28T18:13:33.2781200+01:00 0HLUJ7DAMBRM1:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:13:33.3287594+01:00 0HLUJ7DAMBRM1:00000001 [INF] Request finished in 4535.0062ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:14:40.4222649+01:00 0HLUJ7DAMBRM1:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/cycles   (ca22a1cb)
+2020-03-28T18:14:40.4357423+01:00 0HLUJ7DAMBRM1:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:14:40.4446111+01:00 0HLUJ7DAMBRM1:00000002 [INF] Route matched with "{action = \"GetALL\", controller = \"Cycle\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CycleController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:14:40.4637827+01:00 0HLUJ7DAMBRM1:00000002 [INF] Petición de listado de grados recibida (7cfff5cc)
+2020-03-28T18:14:40.5019144+01:00 0HLUJ7DAMBRM1:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:14:40.7942836+01:00 0HLUJ7DAMBRM1:00000002 [INF] Executed DbCommand ("140"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`name`, `c`.`shift_id`, `s`.`id`, `s`.`description`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `t0`.`id`, `t0`.`cycle_id`, `t0`.`year`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`, `t0`.`name`, `t0`.`teacher_id`
+FROM `cycle` AS `c`
+INNER JOIN `shift` AS `s` ON `c`.`shift_id` = `s`.`id`
+LEFT JOIN `schedule` AS `s0` ON `s`.`id` = `s0`.`shift_id`
+LEFT JOIN (
+    SELECT `c0`.`id`, `c0`.`cycle_id`, `c0`.`year`, `t`.`course_id`, `t`.`subject_id`, `t`.`id` AS `id0`, `t`.`name`, `t`.`teacher_id`
+    FROM `course` AS `c0`
+    LEFT JOIN (
+        SELECT `c1`.`course_id`, `c1`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+        FROM `course_has_subjects` AS `c1`
+        INNER JOIN `subject` AS `s1` ON `c1`.`subject_id` = `s1`.`id`
+    ) AS `t` ON `c0`.`id` = `t`.`course_id`
+) AS `t0` ON `c`.`id` = `t0`.`cycle_id`
+ORDER BY `c`.`name`, `c`.`id`, `s`.`id`, `s0`.`id`, `t0`.`id`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`" (0723d8ff)
+2020-03-28T18:14:40.8658465+01:00 0HLUJ7DAMBRM1:00000002 [INF] Lista de ciclos recuperada de la base de datos. (0a4d7ca5)
+2020-03-28T18:14:40.8963053+01:00 0HLUJ7DAMBRM1:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Cycle, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:14:40.9071019+01:00 0HLUJ7DAMBRM1:00000002 [INF] Executed action "AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)" in 459.14230000000003ms (afa2e885)
+2020-03-28T18:14:40.9106376+01:00 0HLUJ7DAMBRM1:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:14:40.9250939+01:00 0HLUJ7DAMBRM1:00000002 [INF] Request finished in 492.47520000000003ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:19:47.5498512+01:00 0HLUJ7DAMBRM2:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/subjects   (ca22a1cb)
+2020-03-28T18:19:47.5543603+01:00 0HLUJ7DAMBRM2:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:19:47.5643077+01:00 0HLUJ7DAMBRM2:00000001 [INF] Route matched with "{action = \"GetAllIncludingAssignedTeacher\", controller = \"Subject\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllIncludingAssignedTeacher()" on controller "AttendanceControl.API.Controllers.SubjectController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:19:47.5710124+01:00 0HLUJ7DAMBRM2:00000001 [INF] Petición de listado de asignaturas recibida (ea283cf1)
+2020-03-28T18:19:47.5919269+01:00 0HLUJ7DAMBRM2:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:19:47.6304837+01:00 0HLUJ7DAMBRM2:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`, `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `subject` AS `s`
+LEFT JOIN `teacher` AS `t` ON `s`.`teacher_id` = `t`.`id`
+ORDER BY `s`.`name`" (0723d8ff)
+2020-03-28T18:19:47.6466706+01:00 0HLUJ7DAMBRM2:00000001 [INF] Lista de asignaturas recuperada de la base de datos (970cc203)
+2020-03-28T18:19:47.6524281+01:00 0HLUJ7DAMBRM2:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Subject, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:19:47.6605593+01:00 0HLUJ7DAMBRM2:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)" in 92.7432ms (afa2e885)
+2020-03-28T18:19:47.6640152+01:00 0HLUJ7DAMBRM2:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:19:47.6688222+01:00 0HLUJ7DAMBRM2:00000001 [INF] Request finished in 118.5627ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:21:26.3176090+01:00 0HLUJ7DAMBRM2:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/teachers   (ca22a1cb)
+2020-03-28T18:21:26.3227497+01:00 0HLUJ7DAMBRM2:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:21:26.3385816+01:00 0HLUJ7DAMBRM2:00000002 [INF] Route matched with "{action = \"GetALL\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:21:26.3452920+01:00 0HLUJ7DAMBRM2:00000002 [INF] Petición de listado deprofesores recibida (65ac107c)
+2020-03-28T18:21:26.3590052+01:00 0HLUJ7DAMBRM2:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:21:26.3830756+01:00 0HLUJ7DAMBRM2:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`" (0723d8ff)
+2020-03-28T18:21:26.3877024+01:00 0HLUJ7DAMBRM2:00000002 [INF] Lista de profesores recuperada de la base de datos (afbac3cd)
+2020-03-28T18:21:26.3922144+01:00 0HLUJ7DAMBRM2:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Teacher, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:21:26.3973792+01:00 0HLUJ7DAMBRM2:00000002 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)" in 54.9204ms (afa2e885)
+2020-03-28T18:21:26.4022315+01:00 0HLUJ7DAMBRM2:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:21:26.4058789+01:00 0HLUJ7DAMBRM2:00000002 [INF] Request finished in 89.5592ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:24:11.9308919+01:00 0HLUJ7DAMBRM3:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/teachers   (ca22a1cb)
+2020-03-28T18:24:11.9360977+01:00 0HLUJ7DAMBRM3:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:24:11.9418504+01:00 0HLUJ7DAMBRM3:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:24:11.9470237+01:00 0HLUJ7DAMBRM3:00000001 [INF] Petición de listado deprofesores recibida (65ac107c)
+2020-03-28T18:24:11.9516841+01:00 0HLUJ7DAMBRM3:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:24:11.9619758+01:00 0HLUJ7DAMBRM3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`" (0723d8ff)
+2020-03-28T18:24:11.9669615+01:00 0HLUJ7DAMBRM3:00000001 [INF] Lista de profesores recuperada de la base de datos (afbac3cd)
+2020-03-28T18:24:11.9715736+01:00 0HLUJ7DAMBRM3:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Teacher, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:24:11.9763727+01:00 0HLUJ7DAMBRM3:00000001 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)" in 30.902600000000003ms (afa2e885)
+2020-03-28T18:24:11.9794131+01:00 0HLUJ7DAMBRM3:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:24:11.9837189+01:00 0HLUJ7DAMBRM3:00000001 [INF] Request finished in 52.723800000000004ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:26:44.7054361+01:00 0HLUJ7DAMBRM4:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/cycles   (ca22a1cb)
+2020-03-28T18:26:44.7093406+01:00 0HLUJ7DAMBRM4:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:26:44.7131045+01:00 0HLUJ7DAMBRM4:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Cycle\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CycleController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:26:44.7174849+01:00 0HLUJ7DAMBRM4:00000001 [INF] Petición de listado de grados recibida (7cfff5cc)
+2020-03-28T18:26:44.7218399+01:00 0HLUJ7DAMBRM4:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:26:44.7372699+01:00 0HLUJ7DAMBRM4:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`name`, `c`.`shift_id`, `s`.`id`, `s`.`description`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `t0`.`id`, `t0`.`cycle_id`, `t0`.`year`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`, `t0`.`name`, `t0`.`teacher_id`
+FROM `cycle` AS `c`
+INNER JOIN `shift` AS `s` ON `c`.`shift_id` = `s`.`id`
+LEFT JOIN `schedule` AS `s0` ON `s`.`id` = `s0`.`shift_id`
+LEFT JOIN (
+    SELECT `c0`.`id`, `c0`.`cycle_id`, `c0`.`year`, `t`.`course_id`, `t`.`subject_id`, `t`.`id` AS `id0`, `t`.`name`, `t`.`teacher_id`
+    FROM `course` AS `c0`
+    LEFT JOIN (
+        SELECT `c1`.`course_id`, `c1`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+        FROM `course_has_subjects` AS `c1`
+        INNER JOIN `subject` AS `s1` ON `c1`.`subject_id` = `s1`.`id`
+    ) AS `t` ON `c0`.`id` = `t`.`course_id`
+) AS `t0` ON `c`.`id` = `t0`.`cycle_id`
+ORDER BY `c`.`name`, `c`.`id`, `s`.`id`, `s0`.`id`, `t0`.`id`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`" (0723d8ff)
+2020-03-28T18:26:44.7477370+01:00 0HLUJ7DAMBRM4:00000001 [INF] Lista de ciclos recuperada de la base de datos. (0a4d7ca5)
+2020-03-28T18:26:44.7515377+01:00 0HLUJ7DAMBRM4:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Cycle, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:26:44.7648725+01:00 0HLUJ7DAMBRM4:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)" in 46.9904ms (afa2e885)
+2020-03-28T18:26:44.7690325+01:00 0HLUJ7DAMBRM4:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:26:44.7766725+01:00 0HLUJ7DAMBRM4:00000001 [INF] Request finished in 68.0162ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:28:11.4896991+01:00 0HLUJ7DAMBRM4:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students?lastname=a   (ca22a1cb)
+2020-03-28T18:28:11.4933009+01:00 0HLUJ7DAMBRM4:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:28:11.5189433+01:00 0HLUJ7DAMBRM4:00000002 [INF] Route matched with "{action = \"GetLikeLastNameIncludingCourseAndSubjects\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLikeLastNameIncludingCourseAndSubjects(System.String)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:28:11.6092742+01:00 0HLUJ7DAMBRM4:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:11.8878454+01:00 0HLUJ7DAMBRM4:00000002 [INF] Executed DbCommand ("146"ms) [Parameters=["@__ToLower_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`, `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`, `t`.`name`, `t`.`teacher_id`
+FROM `student` AS `s`
+LEFT JOIN `course` AS `c` ON `s`.`course_id` = `c`.`id`
+LEFT JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+LEFT JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+    FROM `student_has_subjects` AS `s0`
+    INNER JOIN `subject` AS `s1` ON `s0`.`subject_id` = `s1`.`id`
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE (@__ToLower_0 = '') OR (LOWER(`s`.`lastname1`) IS NOT NULL AND ((LOWER(`s`.`lastname1`) LIKE CONCAT(@__ToLower_0, '%')) AND ((LEFT(LOWER(`s`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) = CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin) OR (LEFT(LOWER(`s`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) IS NULL AND CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin IS NULL))))
+ORDER BY `s`.`id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`" (0723d8ff)
+2020-03-28T18:28:11.9242898+01:00 0HLUJ7DAMBRM4:00000002 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:28:11.9316176+01:00 0HLUJ7DAMBRM4:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:28:11.9449336+01:00 0HLUJ7DAMBRM4:00000002 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)" in 421.6207ms (afa2e885)
+2020-03-28T18:28:11.9486163+01:00 0HLUJ7DAMBRM4:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:28:11.9555690+01:00 0HLUJ7DAMBRM4:00000002 [INF] Request finished in 462.8917ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:28:16.9719157+01:00 0HLUJ7DAMBRM4:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2020-03-28T18:28:16.9825464+01:00 0HLUJ7DAMBRM4:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:28:17.0292435+01:00 0HLUJ7DAMBRM4:00000003 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:28:17.0363746+01:00 0HLUJ7DAMBRM4:00000003 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2020-03-28T18:28:17.0423605+01:00 0HLUJ7DAMBRM4:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:17.0828641+01:00 0HLUJ7DAMBRM4:00000003 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2020-03-28T18:28:17.0929060+01:00 0HLUJ7DAMBRM4:00000003 [INF] Lista de cursos recuperada de la base de datos. (f4c6377e)
+2020-03-28T18:28:17.0966072+01:00 0HLUJ7DAMBRM4:00000003 [INF] Listado de todos los cursos retornado (886159b3)
+2020-03-28T18:28:17.1005068+01:00 0HLUJ7DAMBRM4:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:28:17.1068624+01:00 0HLUJ7DAMBRM4:00000003 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 73.7752ms (afa2e885)
+2020-03-28T18:28:17.1104112+01:00 0HLUJ7DAMBRM4:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:28:17.1155908+01:00 0HLUJ7DAMBRM4:00000003 [INF] Request finished in 148.9669ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:28:26.5007488+01:00 0HLUJ7DAMBRM4:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/subjects/courses/2   (ca22a1cb)
+2020-03-28T18:28:26.5061246+01:00 0HLUJ7DAMBRM4:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:28:26.5182409+01:00 0HLUJ7DAMBRM4:00000004 [INF] Route matched with "{action = \"GetByCourse\", controller = \"Subject\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SubjectController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:28:26.5560051+01:00 0HLUJ7DAMBRM4:00000004 [INF] Petición de listado de asignaturas de un curso recibida (05b6e964)
+2020-03-28T18:28:26.5641446+01:00 0HLUJ7DAMBRM4:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:26.6314382+01:00 0HLUJ7DAMBRM4:00000004 [INF] Executed DbCommand ("45"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`
+FROM `subject` AS `s`
+INNER JOIN (
+    SELECT `c`.`course_id`, `c`.`subject_id`
+    FROM `course_has_subjects` AS `c`
+    WHERE `c`.`course_id` = @__courseId_0
+) AS `t` ON `s`.`id` = `t`.`subject_id`" (0723d8ff)
+2020-03-28T18:28:26.6405567+01:00 0HLUJ7DAMBRM4:00000004 [INF] Lista de asignaturas del curso recuperada de la base de datos (a628ec3e)
+2020-03-28T18:28:26.6468464+01:00 0HLUJ7DAMBRM4:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Subject, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:28:26.6523824+01:00 0HLUJ7DAMBRM4:00000004 [INF] Executed action "AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)" in 130.6706ms (afa2e885)
+2020-03-28T18:28:26.6561026+01:00 0HLUJ7DAMBRM4:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:28:26.6609742+01:00 0HLUJ7DAMBRM4:00000004 [INF] Request finished in 161.1071ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:28:32.5333952+01:00 0HLUJ7DAMBRM4:00000005 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/api/students/3/subjects?subjectIds=7  0 (ca22a1cb)
+2020-03-28T18:28:32.5398882+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.UpdateSubjects (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:28:32.5556560+01:00 0HLUJ7DAMBRM4:00000005 [INF] Route matched with "{action = \"UpdateSubjects\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateSubjects(Int32, Int32[])" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:28:32.6163901+01:00 0HLUJ7DAMBRM4:00000005 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:32.6914095+01:00 0HLUJ7DAMBRM4:00000005 [INF] Transacción empezada (86f8810d)
+2020-03-28T18:28:32.7009408+01:00 0HLUJ7DAMBRM4:00000005 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:32.7334689+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`
+FROM `subject` AS `s`
+WHERE `s`.`id` = @__subjectId_0
+LIMIT 1" (0723d8ff)
+2020-03-28T18:28:32.7390623+01:00 0HLUJ7DAMBRM4:00000005 [INF] Asignatura recuperada de la base de datos (f5b52237)
+2020-03-28T18:28:32.8058903+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executed DbCommand ("20"ms) [Parameters=["@__studentId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`course_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`, `t`.`total_absences`, `t`.`total_delays`, `t`.`id0`, `t`.`cycle_id`, `t`.`year`, `t`.`id1`, `t`.`name`, `t`.`shift_id`, `t0`.`student_id`, `t0`.`subject_id`, `t0`.`id`, `t0`.`name`, `t0`.`teacher_id`, `s2`.`student_id`, `s2`.`school_class_id`
+FROM (
+    SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`, `c`.`id` AS `id0`, `c`.`cycle_id`, `c`.`year`, `c0`.`id` AS `id1`, `c0`.`name`, `c0`.`shift_id`
+    FROM `student` AS `s`
+    LEFT JOIN `course` AS `c` ON `s`.`course_id` = `c`.`id`
+    LEFT JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+    WHERE `s`.`id` = @__studentId_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+    FROM `student_has_subjects` AS `s0`
+    INNER JOIN `subject` AS `s1` ON `s0`.`subject_id` = `s1`.`id`
+) AS `t0` ON `t`.`id` = `t0`.`student_id`
+LEFT JOIN `school_class_has_students` AS `s2` ON `t`.`id` = `s2`.`student_id`
+ORDER BY `t`.`id`, `t0`.`student_id`, `t0`.`subject_id`, `t0`.`id`, `s2`.`student_id`, `s2`.`school_class_id`" (0723d8ff)
+2020-03-28T18:28:32.8109908+01:00 0HLUJ7DAMBRM4:00000005 [INF] El alumno ha sido recuperado de la base de datos. (3942e64b)
+2020-03-28T18:28:32.8494515+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executed DbCommand ("11"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-28T18:28:32.8795944+01:00 0HLUJ7DAMBRM4:00000005 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-28T18:28:32.9862212+01:00 0HLUJ7DAMBRM4:00000005 [INF] Clases presenciales del alumnos actualizadas en la base de datos. (b692039e)
+2020-03-28T18:28:33.1840329+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executed DbCommand ("85"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `student_has_subjects` (`student_id`, `subject_id`)
+VALUES (@p0, @p1);" (0723d8ff)
+2020-03-28T18:28:33.3479213+01:00 0HLUJ7DAMBRM4:00000005 [INF] Asignaturas cursadas por el alumno actualizadas en la base de datos. (d425f6bc)
+2020-03-28T18:28:33.3524182+01:00 0HLUJ7DAMBRM4:00000005 [INF] Transacción terminada con éxito (795e800b)
+2020-03-28T18:28:33.3575746+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Business.Models.Student"'. (8a1b66c8)
+2020-03-28T18:28:33.3624492+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.UpdateSubjects (AttendanceControl.API)" in 803.236ms (afa2e885)
+2020-03-28T18:28:33.3671180+01:00 0HLUJ7DAMBRM4:00000005 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.UpdateSubjects (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:28:33.3740792+01:00 0HLUJ7DAMBRM4:00000005 [INF] Request finished in 838.8735ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:28:35.5801144+01:00 0HLUJ7DAMBRM4:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/subjects/courses/2   (ca22a1cb)
+2020-03-28T18:28:35.5851079+01:00 0HLUJ7DAMBRM4:00000006 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:28:35.5916571+01:00 0HLUJ7DAMBRM4:00000006 [INF] Route matched with "{action = \"GetByCourse\", controller = \"Subject\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SubjectController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:28:35.6001038+01:00 0HLUJ7DAMBRM4:00000006 [INF] Petición de listado de asignaturas de un curso recibida (05b6e964)
+2020-03-28T18:28:35.6045215+01:00 0HLUJ7DAMBRM4:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:35.6147091+01:00 0HLUJ7DAMBRM4:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`
+FROM `subject` AS `s`
+INNER JOIN (
+    SELECT `c`.`course_id`, `c`.`subject_id`
+    FROM `course_has_subjects` AS `c`
+    WHERE `c`.`course_id` = @__courseId_0
+) AS `t` ON `s`.`id` = `t`.`subject_id`" (0723d8ff)
+2020-03-28T18:28:35.6185880+01:00 0HLUJ7DAMBRM4:00000006 [INF] Lista de asignaturas del curso recuperada de la base de datos (a628ec3e)
+2020-03-28T18:28:35.6219970+01:00 0HLUJ7DAMBRM4:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Subject, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:28:35.6264564+01:00 0HLUJ7DAMBRM4:00000006 [INF] Executed action "AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)" in 31.2523ms (afa2e885)
+2020-03-28T18:28:35.6295640+01:00 0HLUJ7DAMBRM4:00000006 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:28:35.6333729+01:00 0HLUJ7DAMBRM4:00000006 [INF] Request finished in 58.7776ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:28:39.2289413+01:00 0HLUJ7DAMBRM4:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students?lastname=a   (ca22a1cb)
+2020-03-28T18:28:39.2328609+01:00 0HLUJ7DAMBRM4:00000007 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:28:39.2365732+01:00 0HLUJ7DAMBRM4:00000007 [INF] Route matched with "{action = \"GetLikeLastNameIncludingCourseAndSubjects\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLikeLastNameIncludingCourseAndSubjects(System.String)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:28:39.2441834+01:00 0HLUJ7DAMBRM4:00000007 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:39.2564379+01:00 0HLUJ7DAMBRM4:00000007 [INF] Executed DbCommand ("2"ms) [Parameters=["@__ToLower_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`, `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`, `t`.`name`, `t`.`teacher_id`
+FROM `student` AS `s`
+LEFT JOIN `course` AS `c` ON `s`.`course_id` = `c`.`id`
+LEFT JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+LEFT JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+    FROM `student_has_subjects` AS `s0`
+    INNER JOIN `subject` AS `s1` ON `s0`.`subject_id` = `s1`.`id`
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE (@__ToLower_0 = '') OR (LOWER(`s`.`lastname1`) IS NOT NULL AND ((LOWER(`s`.`lastname1`) LIKE CONCAT(@__ToLower_0, '%')) AND ((LEFT(LOWER(`s`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) = CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin) OR (LEFT(LOWER(`s`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) IS NULL AND CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin IS NULL))))
+ORDER BY `s`.`id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`" (0723d8ff)
+2020-03-28T18:28:39.2632451+01:00 0HLUJ7DAMBRM4:00000007 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:28:39.2669408+01:00 0HLUJ7DAMBRM4:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:28:39.2713423+01:00 0HLUJ7DAMBRM4:00000007 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)" in 31.4101ms (afa2e885)
+2020-03-28T18:28:39.2749629+01:00 0HLUJ7DAMBRM4:00000007 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:28:39.2794429+01:00 0HLUJ7DAMBRM4:00000007 [INF] Request finished in 50.2948ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:28:41.3219371+01:00 0HLUJ7DAMBRM4:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/subjects/courses/2   (ca22a1cb)
+2020-03-28T18:28:41.3272004+01:00 0HLUJ7DAMBRM4:00000008 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:28:41.3315236+01:00 0HLUJ7DAMBRM4:00000008 [INF] Route matched with "{action = \"GetByCourse\", controller = \"Subject\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SubjectController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:28:41.3366088+01:00 0HLUJ7DAMBRM4:00000008 [INF] Petición de listado de asignaturas de un curso recibida (05b6e964)
+2020-03-28T18:28:41.3417798+01:00 0HLUJ7DAMBRM4:00000008 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:28:41.3509207+01:00 0HLUJ7DAMBRM4:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`
+FROM `subject` AS `s`
+INNER JOIN (
+    SELECT `c`.`course_id`, `c`.`subject_id`
+    FROM `course_has_subjects` AS `c`
+    WHERE `c`.`course_id` = @__courseId_0
+) AS `t` ON `s`.`id` = `t`.`subject_id`" (0723d8ff)
+2020-03-28T18:28:41.3550811+01:00 0HLUJ7DAMBRM4:00000008 [INF] Lista de asignaturas del curso recuperada de la base de datos (a628ec3e)
+2020-03-28T18:28:41.3608059+01:00 0HLUJ7DAMBRM4:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Subject, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:28:41.3663281+01:00 0HLUJ7DAMBRM4:00000008 [INF] Executed action "AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)" in 30.1428ms (afa2e885)
+2020-03-28T18:28:41.3702731+01:00 0HLUJ7DAMBRM4:00000008 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SubjectController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:28:41.3757922+01:00 0HLUJ7DAMBRM4:00000008 [INF] Request finished in 53.8508ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:30:41.9984658+01:00 0HLUJ7DAMBRM5:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2020-03-28T18:30:42.0024439+01:00 0HLUJ7DAMBRM5:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:30:42.0068831+01:00 0HLUJ7DAMBRM5:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:30:42.0120767+01:00 0HLUJ7DAMBRM5:00000001 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2020-03-28T18:30:42.0167138+01:00 0HLUJ7DAMBRM5:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:30:42.0249295+01:00 0HLUJ7DAMBRM5:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2020-03-28T18:30:42.0301494+01:00 0HLUJ7DAMBRM5:00000001 [INF] Lista de cursos recuperada de la base de datos. (f4c6377e)
+2020-03-28T18:30:42.0339105+01:00 0HLUJ7DAMBRM5:00000001 [INF] Listado de todos los cursos retornado (886159b3)
+2020-03-28T18:30:42.0382218+01:00 0HLUJ7DAMBRM5:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:30:42.0437774+01:00 0HLUJ7DAMBRM5:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 32.4731ms (afa2e885)
+2020-03-28T18:30:42.0471808+01:00 0HLUJ7DAMBRM5:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:30:42.0508423+01:00 0HLUJ7DAMBRM5:00000001 [INF] Request finished in 52.481500000000004ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:30:43.2086590+01:00 0HLUJ7DAMBRM5:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/cycles   (ca22a1cb)
+2020-03-28T18:30:43.2131199+01:00 0HLUJ7DAMBRM5:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:30:43.2167495+01:00 0HLUJ7DAMBRM5:00000002 [INF] Route matched with "{action = \"GetALL\", controller = \"Cycle\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CycleController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:30:43.2219533+01:00 0HLUJ7DAMBRM5:00000002 [INF] Petición de listado de grados recibida (7cfff5cc)
+2020-03-28T18:30:43.2260054+01:00 0HLUJ7DAMBRM5:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:30:43.2361294+01:00 0HLUJ7DAMBRM5:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`name`, `c`.`shift_id`, `s`.`id`, `s`.`description`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `t0`.`id`, `t0`.`cycle_id`, `t0`.`year`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`, `t0`.`name`, `t0`.`teacher_id`
+FROM `cycle` AS `c`
+INNER JOIN `shift` AS `s` ON `c`.`shift_id` = `s`.`id`
+LEFT JOIN `schedule` AS `s0` ON `s`.`id` = `s0`.`shift_id`
+LEFT JOIN (
+    SELECT `c0`.`id`, `c0`.`cycle_id`, `c0`.`year`, `t`.`course_id`, `t`.`subject_id`, `t`.`id` AS `id0`, `t`.`name`, `t`.`teacher_id`
+    FROM `course` AS `c0`
+    LEFT JOIN (
+        SELECT `c1`.`course_id`, `c1`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+        FROM `course_has_subjects` AS `c1`
+        INNER JOIN `subject` AS `s1` ON `c1`.`subject_id` = `s1`.`id`
+    ) AS `t` ON `c0`.`id` = `t`.`course_id`
+) AS `t0` ON `c`.`id` = `t0`.`cycle_id`
+ORDER BY `c`.`name`, `c`.`id`, `s`.`id`, `s0`.`id`, `t0`.`id`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`" (0723d8ff)
+2020-03-28T18:30:43.2442612+01:00 0HLUJ7DAMBRM5:00000002 [INF] Lista de ciclos recuperada de la base de datos. (0a4d7ca5)
+2020-03-28T18:30:43.2482752+01:00 0HLUJ7DAMBRM5:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Cycle, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:30:43.2530871+01:00 0HLUJ7DAMBRM5:00000002 [INF] Executed action "AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)" in 32.816500000000005ms (afa2e885)
+2020-03-28T18:30:43.2574979+01:00 0HLUJ7DAMBRM5:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:30:43.2759197+01:00 0HLUJ7DAMBRM5:00000002 [INF] Request finished in 56.8673ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:31:31.4705691+01:00 0HLUJ7DAMBRM5:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/4   (ca22a1cb)
+2020-03-28T18:31:31.5112010+01:00 0HLUJ7DAMBRM5:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:31:31.5233083+01:00 0HLUJ7DAMBRM5:00000003 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:31:31.5305971+01:00 0HLUJ7DAMBRM5:00000003 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-28T18:31:31.5355680+01:00 0HLUJ7DAMBRM5:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:31:31.5571791+01:00 0HLUJ7DAMBRM5:00000003 [INF] Executed DbCommand ("8"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-28T18:31:31.5607216+01:00 0HLUJ7DAMBRM5:00000003 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-28T18:31:31.5643075+01:00 0HLUJ7DAMBRM5:00000003 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-28T18:31:31.5680185+01:00 0HLUJ7DAMBRM5:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:31:31.5761100+01:00 0HLUJ7DAMBRM5:00000003 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 46.3601ms (afa2e885)
+2020-03-28T18:31:31.5794915+01:00 0HLUJ7DAMBRM5:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:31:31.5835249+01:00 0HLUJ7DAMBRM5:00000003 [INF] Request finished in 122.1106ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:31:33.2805637+01:00 0HLUJ7DAMBRM5:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/3   (ca22a1cb)
+2020-03-28T18:31:33.2852374+01:00 0HLUJ7DAMBRM5:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:31:33.2889826+01:00 0HLUJ7DAMBRM5:00000004 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:31:33.2936831+01:00 0HLUJ7DAMBRM5:00000004 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-28T18:31:33.2981274+01:00 0HLUJ7DAMBRM5:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:31:33.3115961+01:00 0HLUJ7DAMBRM5:00000004 [INF] Executed DbCommand ("4"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-28T18:31:33.3238326+01:00 0HLUJ7DAMBRM5:00000004 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-28T18:31:33.3421730+01:00 0HLUJ7DAMBRM5:00000004 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-28T18:31:33.3494436+01:00 0HLUJ7DAMBRM5:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:31:33.3570632+01:00 0HLUJ7DAMBRM5:00000004 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 62.3438ms (afa2e885)
+2020-03-28T18:31:33.3606934+01:00 0HLUJ7DAMBRM5:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:31:33.3655302+01:00 0HLUJ7DAMBRM5:00000004 [INF] Request finished in 84.2423ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:31:35.6891781+01:00 0HLUJ7DAMBRM5:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/1   (ca22a1cb)
+2020-03-28T18:31:35.6931767+01:00 0HLUJ7DAMBRM5:00000005 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:31:35.6969964+01:00 0HLUJ7DAMBRM5:00000005 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:31:35.7022504+01:00 0HLUJ7DAMBRM5:00000005 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-28T18:31:35.7066805+01:00 0HLUJ7DAMBRM5:00000005 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:31:35.7149176+01:00 0HLUJ7DAMBRM5:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-28T18:31:35.7193955+01:00 0HLUJ7DAMBRM5:00000005 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-28T18:31:35.7241467+01:00 0HLUJ7DAMBRM5:00000005 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-28T18:31:35.7279136+01:00 0HLUJ7DAMBRM5:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:31:35.7510687+01:00 0HLUJ7DAMBRM5:00000005 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 50.3277ms (afa2e885)
+2020-03-28T18:31:35.7544096+01:00 0HLUJ7DAMBRM5:00000005 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:31:35.7582951+01:00 0HLUJ7DAMBRM5:00000005 [INF] Request finished in 69.426ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:31:36.9930128+01:00 0HLUJ7DAMBRM5:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-28T18:31:36.9974064+01:00 0HLUJ7DAMBRM5:00000006 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:31:37.0015716+01:00 0HLUJ7DAMBRM5:00000006 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:31:37.0062848+01:00 0HLUJ7DAMBRM5:00000006 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-28T18:31:37.0102207+01:00 0HLUJ7DAMBRM5:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:31:37.0181908+01:00 0HLUJ7DAMBRM5:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-28T18:31:37.0220452+01:00 0HLUJ7DAMBRM5:00000006 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-28T18:31:37.0254419+01:00 0HLUJ7DAMBRM5:00000006 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-28T18:31:37.0289584+01:00 0HLUJ7DAMBRM5:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:31:37.0329096+01:00 0HLUJ7DAMBRM5:00000006 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 28.2225ms (afa2e885)
+2020-03-28T18:31:37.0361847+01:00 0HLUJ7DAMBRM5:00000006 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:31:37.0397628+01:00 0HLUJ7DAMBRM5:00000006 [INF] Request finished in 47.52ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:32:40.4465956+01:00 0HLUJ7DAMBRM5:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2020-03-28T18:32:40.4511594+01:00 0HLUJ7DAMBRM5:00000007 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:32:40.4560449+01:00 0HLUJ7DAMBRM5:00000007 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:32:40.4608416+01:00 0HLUJ7DAMBRM5:00000007 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2020-03-28T18:32:40.4733487+01:00 0HLUJ7DAMBRM5:00000007 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:32:40.4990461+01:00 0HLUJ7DAMBRM5:00000007 [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2020-03-28T18:32:40.5028775+01:00 0HLUJ7DAMBRM5:00000007 [INF] Lista de cursos recuperada de la base de datos. (f4c6377e)
+2020-03-28T18:32:40.5063261+01:00 0HLUJ7DAMBRM5:00000007 [INF] Listado de todos los cursos retornado (886159b3)
+2020-03-28T18:32:40.5104231+01:00 0HLUJ7DAMBRM5:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:32:40.5213183+01:00 0HLUJ7DAMBRM5:00000007 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 57.499100000000006ms (afa2e885)
+2020-03-28T18:32:40.5249664+01:00 0HLUJ7DAMBRM5:00000007 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:32:40.5288096+01:00 0HLUJ7DAMBRM5:00000007 [INF] Request finished in 81.84740000000001ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:32:41.3451885+01:00 0HLUJ7DAMBRM5:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/2   (ca22a1cb)
+2020-03-28T18:32:41.3497382+01:00 0HLUJ7DAMBRM5:00000008 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:32:41.3605576+01:00 0HLUJ7DAMBRM5:00000008 [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:32:41.3688413+01:00 0HLUJ7DAMBRM5:00000008 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:32:41.4077644+01:00 0HLUJ7DAMBRM5:00000008 [INF] Executed DbCommand ("27"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T18:32:41.4112477+01:00 0HLUJ7DAMBRM5:00000008 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:32:41.4154530+01:00 0HLUJ7DAMBRM5:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:32:41.4197794+01:00 0HLUJ7DAMBRM5:00000008 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 55.9491ms (afa2e885)
+2020-03-28T18:32:41.4235445+01:00 0HLUJ7DAMBRM5:00000008 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:32:41.4273720+01:00 0HLUJ7DAMBRM5:00000008 [INF] Request finished in 85.5216ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:32:44.4961330+01:00 0HLUJ7DAMBRM5:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/absences/students/1   (ca22a1cb)
+2020-03-28T18:32:44.5008191+01:00 0HLUJ7DAMBRM5:00000009 [INF] Executing endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:32:44.5119228+01:00 0HLUJ7DAMBRM5:00000009 [INF] Route matched with "{action = \"GetByStudent\", controller = \"Absence\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByStudent(Int32)" on controller "AttendanceControl.API.Controllers.AbsenceController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:32:44.5213301+01:00 0HLUJ7DAMBRM5:00000009 [INF] Petición de listado de todas las ausencias de un alumno recibida (605bbc22)
+2020-03-28T18:32:44.5308023+01:00 0HLUJ7DAMBRM5:00000009 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:32:44.6174752+01:00 0HLUJ7DAMBRM5:00000009 [INF] Executed DbCommand ("59"ms) [Parameters=["@__studentId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`, `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+FROM `absence` AS `a`
+INNER JOIN `school_class` AS `s` ON `a`.`school_class_id` = `s`.`id`
+INNER JOIN `schedule` AS `s0` ON `s`.`schedule_id` = `s0`.`id`
+INNER JOIN `subject` AS `s1` ON `s`.`subject_id` = `s1`.`id`
+WHERE `a`.`student_id` = @__studentId_0" (0723d8ff)
+2020-03-28T18:32:44.6552263+01:00 0HLUJ7DAMBRM5:00000009 [INF] Listado de todas las ausencias de un alumno retornado al cliente (8402f208)
+2020-03-28T18:32:44.6589350+01:00 0HLUJ7DAMBRM5:00000009 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Absence, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:32:44.6690723+01:00 0HLUJ7DAMBRM5:00000009 [INF] Executed action "AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)" in 153.4966ms (afa2e885)
+2020-03-28T18:32:44.6726286+01:00 0HLUJ7DAMBRM5:00000009 [INF] Executed endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:32:44.6770913+01:00 0HLUJ7DAMBRM5:00000009 [INF] Request finished in 182.3459ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:33:26.4546638+01:00 0HLUJ7DAMBRM5:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/1   (ca22a1cb)
+2020-03-28T18:33:26.4649694+01:00 0HLUJ7DAMBRM5:0000000A [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:33:26.4691515+01:00 0HLUJ7DAMBRM5:0000000A [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:33:26.4744268+01:00 0HLUJ7DAMBRM5:0000000A [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:33:26.4984459+01:00 0HLUJ7DAMBRM5:0000000A [INF] Executed DbCommand ("3"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T18:33:26.5021168+01:00 0HLUJ7DAMBRM5:0000000A [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:33:26.5060802+01:00 0HLUJ7DAMBRM5:0000000A [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:33:26.5154918+01:00 0HLUJ7DAMBRM5:0000000A [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 37.7491ms (afa2e885)
+2020-03-28T18:33:26.5211141+01:00 0HLUJ7DAMBRM5:0000000A [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:33:26.5346353+01:00 0HLUJ7DAMBRM5:0000000A [INF] Request finished in 79.9702ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:33:28.5929539+01:00 0HLUJ7DAMBRM5:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/2   (ca22a1cb)
+2020-03-28T18:33:28.5965799+01:00 0HLUJ7DAMBRM5:0000000B [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:33:28.6003593+01:00 0HLUJ7DAMBRM5:0000000B [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:33:28.6055721+01:00 0HLUJ7DAMBRM5:0000000B [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:33:28.6143651+01:00 0HLUJ7DAMBRM5:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T18:33:28.6182096+01:00 0HLUJ7DAMBRM5:0000000B [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:33:28.6223898+01:00 0HLUJ7DAMBRM5:0000000B [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:33:28.6269853+01:00 0HLUJ7DAMBRM5:0000000B [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 23.2236ms (afa2e885)
+2020-03-28T18:33:28.6306802+01:00 0HLUJ7DAMBRM5:0000000B [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:33:28.6361642+01:00 0HLUJ7DAMBRM5:0000000B [INF] Request finished in 41.545500000000004ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:33:29.9781442+01:00 0HLUJ7DAMBRM5:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/1   (ca22a1cb)
+2020-03-28T18:33:29.9816804+01:00 0HLUJ7DAMBRM5:0000000C [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:33:29.9853190+01:00 0HLUJ7DAMBRM5:0000000C [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:33:29.9901140+01:00 0HLUJ7DAMBRM5:0000000C [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:33:29.9977697+01:00 0HLUJ7DAMBRM5:0000000C [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T18:33:30.0011030+01:00 0HLUJ7DAMBRM5:0000000C [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:33:30.0051352+01:00 0HLUJ7DAMBRM5:0000000C [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:33:30.0095091+01:00 0HLUJ7DAMBRM5:0000000C [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 20.5225ms (afa2e885)
+2020-03-28T18:33:30.0131165+01:00 0HLUJ7DAMBRM5:0000000C [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:33:30.0171621+01:00 0HLUJ7DAMBRM5:0000000C [INF] Request finished in 39.0885ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:33:30.7046341+01:00 0HLUJ7DAMBRM5:0000000D [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/2   (ca22a1cb)
+2020-03-28T18:33:30.7099030+01:00 0HLUJ7DAMBRM5:0000000D [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:33:30.7202023+01:00 0HLUJ7DAMBRM5:0000000D [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:33:30.7387188+01:00 0HLUJ7DAMBRM5:0000000D [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:33:30.7459546+01:00 0HLUJ7DAMBRM5:0000000D [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T18:33:30.7518876+01:00 0HLUJ7DAMBRM5:0000000D [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:33:30.7562650+01:00 0HLUJ7DAMBRM5:0000000D [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:33:30.7611948+01:00 0HLUJ7DAMBRM5:0000000D [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 37.398700000000005ms (afa2e885)
+2020-03-28T18:33:30.7644886+01:00 0HLUJ7DAMBRM5:0000000D [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:33:30.7683771+01:00 0HLUJ7DAMBRM5:0000000D [INF] Request finished in 64.4491ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:33:31.0781555+01:00 0HLUJ7DAMBRM5:0000000E [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/3   (ca22a1cb)
+2020-03-28T18:33:31.0857388+01:00 0HLUJ7DAMBRM5:0000000E [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:33:31.0960188+01:00 0HLUJ7DAMBRM5:0000000E [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:33:31.1054553+01:00 0HLUJ7DAMBRM5:0000000E [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:33:31.1140455+01:00 0HLUJ7DAMBRM5:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T18:33:31.1174845+01:00 0HLUJ7DAMBRM5:0000000E [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:33:31.1210994+01:00 0HLUJ7DAMBRM5:0000000E [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:33:31.1297931+01:00 0HLUJ7DAMBRM5:0000000E [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 28.0825ms (afa2e885)
+2020-03-28T18:33:31.1396638+01:00 0HLUJ7DAMBRM5:0000000E [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:33:31.1439564+01:00 0HLUJ7DAMBRM5:0000000E [INF] Request finished in 69.6987ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:33:31.5097406+01:00 0HLUJ7DAMBRM5:0000000F [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/2   (ca22a1cb)
+2020-03-28T18:33:31.5139251+01:00 0HLUJ7DAMBRM5:0000000F [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:33:31.5181522+01:00 0HLUJ7DAMBRM5:0000000F [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:33:31.5298470+01:00 0HLUJ7DAMBRM5:0000000F [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:33:31.5417428+01:00 0HLUJ7DAMBRM5:0000000F [INF] Executed DbCommand ("3"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T18:33:31.5455903+01:00 0HLUJ7DAMBRM5:0000000F [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T18:33:31.5573955+01:00 0HLUJ7DAMBRM5:0000000F [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:33:31.5638301+01:00 0HLUJ7DAMBRM5:0000000F [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 40.545300000000005ms (afa2e885)
+2020-03-28T18:33:31.5675711+01:00 0HLUJ7DAMBRM5:0000000F [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:33:31.5712469+01:00 0HLUJ7DAMBRM5:0000000F [INF] Request finished in 61.480900000000005ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:33:59.7979872+01:00 0HLUJ7DAMBRM5:00000010 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/absences/students/1   (ca22a1cb)
+2020-03-28T18:33:59.8017796+01:00 0HLUJ7DAMBRM5:00000010 [INF] Executing endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:33:59.8069952+01:00 0HLUJ7DAMBRM5:00000010 [INF] Route matched with "{action = \"GetByStudent\", controller = \"Absence\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByStudent(Int32)" on controller "AttendanceControl.API.Controllers.AbsenceController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:33:59.8184752+01:00 0HLUJ7DAMBRM5:00000010 [INF] Petición de listado de todas las ausencias de un alumno recibida (605bbc22)
+2020-03-28T18:33:59.8223861+01:00 0HLUJ7DAMBRM5:00000010 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:33:59.8371976+01:00 0HLUJ7DAMBRM5:00000010 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`, `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+FROM `absence` AS `a`
+INNER JOIN `school_class` AS `s` ON `a`.`school_class_id` = `s`.`id`
+INNER JOIN `schedule` AS `s0` ON `s`.`schedule_id` = `s0`.`id`
+INNER JOIN `subject` AS `s1` ON `s`.`subject_id` = `s1`.`id`
+WHERE `a`.`student_id` = @__studentId_0" (0723d8ff)
+2020-03-28T18:33:59.8409819+01:00 0HLUJ7DAMBRM5:00000010 [INF] Listado de todas las ausencias de un alumno retornado al cliente (8402f208)
+2020-03-28T18:33:59.8453928+01:00 0HLUJ7DAMBRM5:00000010 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Absence, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:33:59.8501316+01:00 0HLUJ7DAMBRM5:00000010 [INF] Executed action "AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)" in 39.2611ms (afa2e885)
+2020-03-28T18:33:59.8540222+01:00 0HLUJ7DAMBRM5:00000010 [INF] Executed endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:33:59.8677106+01:00 0HLUJ7DAMBRM5:00000010 [INF] Request finished in 61.4558ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:34:07.4319971+01:00 0HLUJ7DAMBRM5:00000011 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/absences/students/1   (ca22a1cb)
+2020-03-28T18:34:07.4357191+01:00 0HLUJ7DAMBRM5:00000011 [INF] Executing endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:34:07.4399006+01:00 0HLUJ7DAMBRM5:00000011 [INF] Route matched with "{action = \"GetByStudent\", controller = \"Absence\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByStudent(Int32)" on controller "AttendanceControl.API.Controllers.AbsenceController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:34:07.4450175+01:00 0HLUJ7DAMBRM5:00000011 [INF] Petición de listado de todas las ausencias de un alumno recibida (605bbc22)
+2020-03-28T18:34:07.4492633+01:00 0HLUJ7DAMBRM5:00000011 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:34:07.4587871+01:00 0HLUJ7DAMBRM5:00000011 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`, `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+FROM `absence` AS `a`
+INNER JOIN `school_class` AS `s` ON `a`.`school_class_id` = `s`.`id`
+INNER JOIN `schedule` AS `s0` ON `s`.`schedule_id` = `s0`.`id`
+INNER JOIN `subject` AS `s1` ON `s`.`subject_id` = `s1`.`id`
+WHERE `a`.`student_id` = @__studentId_0" (0723d8ff)
+2020-03-28T18:34:07.4633216+01:00 0HLUJ7DAMBRM5:00000011 [INF] Listado de todas las ausencias de un alumno retornado al cliente (8402f208)
+2020-03-28T18:34:07.4678425+01:00 0HLUJ7DAMBRM5:00000011 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Absence, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:34:07.4811185+01:00 0HLUJ7DAMBRM5:00000011 [INF] Executed action "AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)" in 29.2829ms (afa2e885)
+2020-03-28T18:34:07.4884362+01:00 0HLUJ7DAMBRM5:00000011 [INF] Executed endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:34:07.5146046+01:00 0HLUJ7DAMBRM5:00000011 [INF] Request finished in 60.358700000000006ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:56:09.9194795+01:00 0HLUJ7DAMBRM6:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/subjects   (ca22a1cb)
+2020-03-28T18:56:09.9228661+01:00 0HLUJ7DAMBRM6:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:56:09.9265058+01:00 0HLUJ7DAMBRM6:00000001 [INF] Route matched with "{action = \"GetAllIncludingAssignedTeacher\", controller = \"Subject\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllIncludingAssignedTeacher()" on controller "AttendanceControl.API.Controllers.SubjectController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:56:09.9303626+01:00 0HLUJ7DAMBRM6:00000001 [INF] Petición de listado de asignaturas recibida (ea283cf1)
+2020-03-28T18:56:09.9351509+01:00 0HLUJ7DAMBRM6:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:56:09.9552322+01:00 0HLUJ7DAMBRM6:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`, `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `subject` AS `s`
+LEFT JOIN `teacher` AS `t` ON `s`.`teacher_id` = `t`.`id`
+ORDER BY `s`.`name`" (0723d8ff)
+2020-03-28T18:56:09.9672780+01:00 0HLUJ7DAMBRM6:00000001 [INF] Lista de asignaturas recuperada de la base de datos (970cc203)
+2020-03-28T18:56:09.9729926+01:00 0HLUJ7DAMBRM6:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Subject, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:56:09.9778180+01:00 0HLUJ7DAMBRM6:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)" in 47.5218ms (afa2e885)
+2020-03-28T18:56:09.9815446+01:00 0HLUJ7DAMBRM6:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:56:09.9867429+01:00 0HLUJ7DAMBRM6:00000001 [INF] Request finished in 65.589ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:57:54.1973431+01:00 0HLUJ7DAMBRM7:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/teachers   (ca22a1cb)
+2020-03-28T18:57:54.2056213+01:00 0HLUJ7DAMBRM7:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:57:54.2111911+01:00 0HLUJ7DAMBRM7:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:57:54.2151633+01:00 0HLUJ7DAMBRM7:00000001 [INF] Petición de listado deprofesores recibida (65ac107c)
+2020-03-28T18:57:54.2188001+01:00 0HLUJ7DAMBRM7:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:57:54.2258457+01:00 0HLUJ7DAMBRM7:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`" (0723d8ff)
+2020-03-28T18:57:54.2300776+01:00 0HLUJ7DAMBRM7:00000001 [INF] Lista de profesores recuperada de la base de datos (afbac3cd)
+2020-03-28T18:57:54.2351170+01:00 0HLUJ7DAMBRM7:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Teacher, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:57:54.2480649+01:00 0HLUJ7DAMBRM7:00000001 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)" in 26.681ms (afa2e885)
+2020-03-28T18:57:54.2523876+01:00 0HLUJ7DAMBRM7:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:57:54.2581798+01:00 0HLUJ7DAMBRM7:00000001 [INF] Request finished in 58.155100000000004ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T18:59:54.7443411+01:00 0HLUJ7DAMBRM8:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/teachers   (ca22a1cb)
+2020-03-28T18:59:54.7481820+01:00 0HLUJ7DAMBRM8:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T18:59:54.7517065+01:00 0HLUJ7DAMBRM8:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T18:59:54.7615547+01:00 0HLUJ7DAMBRM8:00000001 [INF] Petición de listado deprofesores recibida (65ac107c)
+2020-03-28T18:59:54.7659625+01:00 0HLUJ7DAMBRM8:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T18:59:54.7815037+01:00 0HLUJ7DAMBRM8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`" (0723d8ff)
+2020-03-28T18:59:54.7862657+01:00 0HLUJ7DAMBRM8:00000001 [INF] Lista de profesores recuperada de la base de datos (afbac3cd)
+2020-03-28T18:59:54.8029953+01:00 0HLUJ7DAMBRM8:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Teacher, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T18:59:54.8167716+01:00 0HLUJ7DAMBRM8:00000001 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)" in 56.741400000000006ms (afa2e885)
+2020-03-28T18:59:54.8228175+01:00 0HLUJ7DAMBRM8:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T18:59:54.8278164+01:00 0HLUJ7DAMBRM8:00000001 [INF] Request finished in 81.9418ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:23:21.0696171+01:00 0HLUJ7DAMBRM9:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/cycles   (ca22a1cb)
+2020-03-28T19:23:21.0728267+01:00 0HLUJ7DAMBRM9:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:23:21.0768721+01:00 0HLUJ7DAMBRM9:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Cycle\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CycleController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:23:21.0800195+01:00 0HLUJ7DAMBRM9:00000001 [INF] Petición de listado de grados recibida (7cfff5cc)
+2020-03-28T19:23:21.0835393+01:00 0HLUJ7DAMBRM9:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:23:21.1081386+01:00 0HLUJ7DAMBRM9:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`name`, `c`.`shift_id`, `s`.`id`, `s`.`description`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `t0`.`id`, `t0`.`cycle_id`, `t0`.`year`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`, `t0`.`name`, `t0`.`teacher_id`
+FROM `cycle` AS `c`
+INNER JOIN `shift` AS `s` ON `c`.`shift_id` = `s`.`id`
+LEFT JOIN `schedule` AS `s0` ON `s`.`id` = `s0`.`shift_id`
+LEFT JOIN (
+    SELECT `c0`.`id`, `c0`.`cycle_id`, `c0`.`year`, `t`.`course_id`, `t`.`subject_id`, `t`.`id` AS `id0`, `t`.`name`, `t`.`teacher_id`
+    FROM `course` AS `c0`
+    LEFT JOIN (
+        SELECT `c1`.`course_id`, `c1`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+        FROM `course_has_subjects` AS `c1`
+        INNER JOIN `subject` AS `s1` ON `c1`.`subject_id` = `s1`.`id`
+    ) AS `t` ON `c0`.`id` = `t`.`course_id`
+) AS `t0` ON `c`.`id` = `t0`.`cycle_id`
+ORDER BY `c`.`name`, `c`.`id`, `s`.`id`, `s0`.`id`, `t0`.`id`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`" (0723d8ff)
+2020-03-28T19:23:21.1159308+01:00 0HLUJ7DAMBRM9:00000001 [INF] Lista de ciclos recuperada de la base de datos. (0a4d7ca5)
+2020-03-28T19:23:21.1194898+01:00 0HLUJ7DAMBRM9:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Cycle, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:23:21.1254808+01:00 0HLUJ7DAMBRM9:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)" in 43.2655ms (afa2e885)
+2020-03-28T19:23:21.1300205+01:00 0HLUJ7DAMBRM9:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:23:21.1348975+01:00 0HLUJ7DAMBRM9:00000001 [INF] Request finished in 63.478100000000005ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:25:55.2297604+01:00 0HLUJ7DAMBRMA:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/teachers   (ca22a1cb)
+2020-03-28T19:25:55.2333460+01:00 0HLUJ7DAMBRMA:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:25:55.2369974+01:00 0HLUJ7DAMBRMA:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:25:55.2407295+01:00 0HLUJ7DAMBRMA:00000001 [INF] Petición de listado deprofesores recibida (65ac107c)
+2020-03-28T19:25:55.2443589+01:00 0HLUJ7DAMBRMA:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:25:55.2627409+01:00 0HLUJ7DAMBRMA:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`" (0723d8ff)
+2020-03-28T19:25:55.2661481+01:00 0HLUJ7DAMBRMA:00000001 [INF] Lista de profesores recuperada de la base de datos (afbac3cd)
+2020-03-28T19:25:55.2693927+01:00 0HLUJ7DAMBRMA:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Teacher, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:25:55.2734629+01:00 0HLUJ7DAMBRMA:00000001 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)" in 32.662ms (afa2e885)
+2020-03-28T19:25:55.2767615+01:00 0HLUJ7DAMBRMA:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:25:55.2801534+01:00 0HLUJ7DAMBRMA:00000001 [INF] Request finished in 50.2438ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:30:55.8839960+01:00 0HLUJ7DAMBRMB:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/subjects   (ca22a1cb)
+2020-03-28T19:30:55.8876546+01:00 0HLUJ7DAMBRMB:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:30:55.8911672+01:00 0HLUJ7DAMBRMB:00000001 [INF] Route matched with "{action = \"GetAllIncludingAssignedTeacher\", controller = \"Subject\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllIncludingAssignedTeacher()" on controller "AttendanceControl.API.Controllers.SubjectController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:30:55.8945150+01:00 0HLUJ7DAMBRMB:00000001 [INF] Petición de listado de asignaturas recibida (ea283cf1)
+2020-03-28T19:30:55.8983917+01:00 0HLUJ7DAMBRMB:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:30:55.9237674+01:00 0HLUJ7DAMBRMB:00000001 [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`name`, `s`.`teacher_id`, `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `subject` AS `s`
+LEFT JOIN `teacher` AS `t` ON `s`.`teacher_id` = `t`.`id`
+ORDER BY `s`.`name`" (0723d8ff)
+2020-03-28T19:30:55.9285032+01:00 0HLUJ7DAMBRMB:00000001 [INF] Lista de asignaturas recuperada de la base de datos (970cc203)
+2020-03-28T19:30:55.9321192+01:00 0HLUJ7DAMBRMB:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Subject, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:30:55.9363204+01:00 0HLUJ7DAMBRMB:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)" in 41.7381ms (afa2e885)
+2020-03-28T19:30:55.9396289+01:00 0HLUJ7DAMBRMB:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SubjectController.GetAllIncludingAssignedTeacher (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:30:55.9444006+01:00 0HLUJ7DAMBRMB:00000001 [INF] Request finished in 58.9339ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:31:02.7955927+01:00 0HLUJ7DAMBRMB:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students?lastname=a   (ca22a1cb)
+2020-03-28T19:31:02.7992624+01:00 0HLUJ7DAMBRMB:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:31:02.8028154+01:00 0HLUJ7DAMBRMB:00000002 [INF] Route matched with "{action = \"GetLikeLastNameIncludingCourseAndSubjects\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLikeLastNameIncludingCourseAndSubjects(System.String)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:31:02.8091628+01:00 0HLUJ7DAMBRMB:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:31:02.8194742+01:00 0HLUJ7DAMBRMB:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__ToLower_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`, `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`, `t`.`name`, `t`.`teacher_id`
+FROM `student` AS `s`
+LEFT JOIN `course` AS `c` ON `s`.`course_id` = `c`.`id`
+LEFT JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`
+LEFT JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+    FROM `student_has_subjects` AS `s0`
+    INNER JOIN `subject` AS `s1` ON `s0`.`subject_id` = `s1`.`id`
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE (@__ToLower_0 = '') OR (LOWER(`s`.`lastname1`) IS NOT NULL AND ((LOWER(`s`.`lastname1`) LIKE CONCAT(@__ToLower_0, '%')) AND ((LEFT(LOWER(`s`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) = CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin) OR (LEFT(LOWER(`s`.`lastname1`), CHAR_LENGTH(CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin)) IS NULL AND CONVERT(@__ToLower_0 USING utf8mb4) COLLATE utf8mb4_bin IS NULL))))
+ORDER BY `s`.`id`, `t`.`student_id`, `t`.`subject_id`, `t`.`id`" (0723d8ff)
+2020-03-28T19:31:02.8265572+01:00 0HLUJ7DAMBRMB:00000002 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T19:31:02.8310371+01:00 0HLUJ7DAMBRMB:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:31:02.8348007+01:00 0HLUJ7DAMBRMB:00000002 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)" in 28.8212ms (afa2e885)
+2020-03-28T19:31:02.8543616+01:00 0HLUJ7DAMBRMB:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetLikeLastNameIncludingCourseAndSubjects (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:31:02.8606912+01:00 0HLUJ7DAMBRMB:00000002 [INF] Request finished in 63.9026ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:31:16.1364927+01:00 0HLUJ7DAMBRMB:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2020-03-28T19:31:16.1417596+01:00 0HLUJ7DAMBRMB:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:31:16.1463111+01:00 0HLUJ7DAMBRMB:00000003 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:31:16.1518559+01:00 0HLUJ7DAMBRMB:00000003 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2020-03-28T19:31:16.1584425+01:00 0HLUJ7DAMBRMB:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:31:16.1833098+01:00 0HLUJ7DAMBRMB:00000003 [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2020-03-28T19:31:16.1869396+01:00 0HLUJ7DAMBRMB:00000003 [INF] Lista de cursos recuperada de la base de datos. (f4c6377e)
+2020-03-28T19:31:16.1901206+01:00 0HLUJ7DAMBRMB:00000003 [INF] Listado de todos los cursos retornado (886159b3)
+2020-03-28T19:31:16.1935746+01:00 0HLUJ7DAMBRMB:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:31:16.1972296+01:00 0HLUJ7DAMBRMB:00000003 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 47.5221ms (afa2e885)
+2020-03-28T19:31:16.2005536+01:00 0HLUJ7DAMBRMB:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:31:16.2040724+01:00 0HLUJ7DAMBRMB:00000003 [INF] Request finished in 79.43220000000001ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:40:28.7215986+01:00 0HLUJ7DAMBRMC:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2020-03-28T19:40:28.7252874+01:00 0HLUJ7DAMBRMC:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:40:28.7288492+01:00 0HLUJ7DAMBRMC:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:40:28.7325123+01:00 0HLUJ7DAMBRMC:00000001 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2020-03-28T19:40:28.7361340+01:00 0HLUJ7DAMBRMC:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:40:28.7482784+01:00 0HLUJ7DAMBRMC:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2020-03-28T19:40:28.7521824+01:00 0HLUJ7DAMBRMC:00000001 [INF] Lista de cursos recuperada de la base de datos. (f4c6377e)
+2020-03-28T19:40:28.7557438+01:00 0HLUJ7DAMBRMC:00000001 [INF] Listado de todos los cursos retornado (886159b3)
+2020-03-28T19:40:28.7602150+01:00 0HLUJ7DAMBRMC:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:40:28.7650612+01:00 0HLUJ7DAMBRMC:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 31.681700000000003ms (afa2e885)
+2020-03-28T19:40:28.7689594+01:00 0HLUJ7DAMBRMC:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:40:28.7724970+01:00 0HLUJ7DAMBRMC:00000001 [INF] Request finished in 50.6469ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:40:31.5785606+01:00 0HLUJ7DAMBRMC:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/1   (ca22a1cb)
+2020-03-28T19:40:31.5817587+01:00 0HLUJ7DAMBRMC:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:40:31.5850591+01:00 0HLUJ7DAMBRMC:00000002 [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:40:31.5894872+01:00 0HLUJ7DAMBRMC:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:40:31.5961771+01:00 0HLUJ7DAMBRMC:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T19:40:31.5999816+01:00 0HLUJ7DAMBRMC:00000002 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T19:40:31.6031617+01:00 0HLUJ7DAMBRMC:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:40:31.6072545+01:00 0HLUJ7DAMBRMC:00000002 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 18.303800000000003ms (afa2e885)
+2020-03-28T19:40:31.6106081+01:00 0HLUJ7DAMBRMC:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:40:31.6142431+01:00 0HLUJ7DAMBRMC:00000002 [INF] Request finished in 35.3273ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:41:46.2750680+01:00 0HLUJ7DAMBRMC:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/3   (ca22a1cb)
+2020-03-28T19:41:46.2780447+01:00 0HLUJ7DAMBRMC:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:41:46.2813542+01:00 0HLUJ7DAMBRMC:00000003 [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:41:46.2856809+01:00 0HLUJ7DAMBRMC:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:41:46.2980033+01:00 0HLUJ7DAMBRMC:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T19:41:46.3012757+01:00 0HLUJ7DAMBRMC:00000003 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T19:41:46.3045302+01:00 0HLUJ7DAMBRMC:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:41:46.3084259+01:00 0HLUJ7DAMBRMC:00000003 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 23.560100000000002ms (afa2e885)
+2020-03-28T19:41:46.3145395+01:00 0HLUJ7DAMBRMC:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:41:46.3232067+01:00 0HLUJ7DAMBRMC:00000003 [INF] Request finished in 53.1447ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:41:47.1783646+01:00 0HLUJ7DAMBRMC:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students/courses/4   (ca22a1cb)
+2020-03-28T19:41:47.1865305+01:00 0HLUJ7DAMBRMC:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:41:47.1984341+01:00 0HLUJ7DAMBRMC:00000004 [INF] Route matched with "{action = \"GetByCourse\", controller = \"Student\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.StudentController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:41:47.2143337+01:00 0HLUJ7DAMBRMC:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:41:47.2212018+01:00 0HLUJ7DAMBRMC:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+WHERE `s`.`course_id` = @__courseId_0" (0723d8ff)
+2020-03-28T19:41:47.2250264+01:00 0HLUJ7DAMBRMC:00000004 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-28T19:41:47.2341836+01:00 0HLUJ7DAMBRMC:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Student, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:41:47.2448039+01:00 0HLUJ7DAMBRMC:00000004 [INF] Executed action "AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)" in 35.8846ms (afa2e885)
+2020-03-28T19:41:47.2487995+01:00 0HLUJ7DAMBRMC:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.StudentController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:41:47.2524965+01:00 0HLUJ7DAMBRMC:00000004 [INF] Request finished in 79.1721ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:41:51.7196926+01:00 0HLUJ7DAMBRMC:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/absences/students/4   (ca22a1cb)
+2020-03-28T19:41:51.7233656+01:00 0HLUJ7DAMBRMC:00000005 [INF] Executing endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:41:51.7276168+01:00 0HLUJ7DAMBRMC:00000005 [INF] Route matched with "{action = \"GetByStudent\", controller = \"Absence\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByStudent(Int32)" on controller "AttendanceControl.API.Controllers.AbsenceController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:41:51.7318360+01:00 0HLUJ7DAMBRMC:00000005 [INF] Petición de listado de todas las ausencias de un alumno recibida (605bbc22)
+2020-03-28T19:41:51.7357523+01:00 0HLUJ7DAMBRMC:00000005 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:41:51.7440110+01:00 0HLUJ7DAMBRMC:00000005 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`, `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+FROM `absence` AS `a`
+INNER JOIN `school_class` AS `s` ON `a`.`school_class_id` = `s`.`id`
+INNER JOIN `schedule` AS `s0` ON `s`.`schedule_id` = `s0`.`id`
+INNER JOIN `subject` AS `s1` ON `s`.`subject_id` = `s1`.`id`
+WHERE `a`.`student_id` = @__studentId_0" (0723d8ff)
+2020-03-28T19:41:51.7485578+01:00 0HLUJ7DAMBRMC:00000005 [INF] Listado de todas las ausencias de un alumno retornado al cliente (8402f208)
+2020-03-28T19:41:51.7519367+01:00 0HLUJ7DAMBRMC:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Absence, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:41:51.7555251+01:00 0HLUJ7DAMBRMC:00000005 [INF] Executed action "AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)" in 24.5009ms (afa2e885)
+2020-03-28T19:41:51.7592439+01:00 0HLUJ7DAMBRMC:00000005 [INF] Executed endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:41:51.7712580+01:00 0HLUJ7DAMBRMC:00000005 [INF] Request finished in 44.1505ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-28T19:41:57.9518038+01:00 0HLUJ7DAMBRMC:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/absences/students/4   (ca22a1cb)
+2020-03-28T19:41:57.9563543+01:00 0HLUJ7DAMBRMC:00000006 [INF] Executing endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (500cc934)
+2020-03-28T19:41:57.9605923+01:00 0HLUJ7DAMBRMC:00000006 [INF] Route matched with "{action = \"GetByStudent\", controller = \"Absence\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByStudent(Int32)" on controller "AttendanceControl.API.Controllers.AbsenceController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-28T19:41:57.9661980+01:00 0HLUJ7DAMBRMC:00000006 [INF] Petición de listado de todas las ausencias de un alumno recibida (605bbc22)
+2020-03-28T19:41:57.9697424+01:00 0HLUJ7DAMBRMC:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-28T19:41:57.9758439+01:00 0HLUJ7DAMBRMC:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`, `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+FROM `absence` AS `a`
+INNER JOIN `school_class` AS `s` ON `a`.`school_class_id` = `s`.`id`
+INNER JOIN `schedule` AS `s0` ON `s`.`schedule_id` = `s0`.`id`
+INNER JOIN `subject` AS `s1` ON `s`.`subject_id` = `s1`.`id`
+WHERE `a`.`student_id` = @__studentId_0" (0723d8ff)
+2020-03-28T19:41:57.9792781+01:00 0HLUJ7DAMBRMC:00000006 [INF] Listado de todas las ausencias de un alumno retornado al cliente (8402f208)
+2020-03-28T19:41:57.9828036+01:00 0HLUJ7DAMBRMC:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Absence, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-28T19:41:57.9862554+01:00 0HLUJ7DAMBRMC:00000006 [INF] Executed action "AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)" in 22.4545ms (afa2e885)
+2020-03-28T19:41:57.9893299+01:00 0HLUJ7DAMBRMC:00000006 [INF] Executed endpoint '"AttendanceControl.API.Controllers.AbsenceController.GetByStudent (AttendanceControl.API)"' (99874f2b)
+2020-03-28T19:41:57.9932380+01:00 0HLUJ7DAMBRMC:00000006 [INF] Request finished in 43.3629ms 200 application/json; charset=utf-8 (791a596a)

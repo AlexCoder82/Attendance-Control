@@ -1,4 +1,5 @@
-﻿using AttendanceControl.API.Business.Models;
+﻿using AttendanceControl.API.Application.Contracts.DTOs;
+using AttendanceControl.API.Business.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,11 @@ namespace AttendanceControl.API.Application.Contracts.IServices
     {
         public Task<SchoolClass> Save( SchoolClass schoolClass);
 
-        public Task<bool> SetNotCurrent(int id);
-        public Task<SchoolClass> Update(int courseId, SchoolClass schoolClass);
+        public Task<bool> Cancel(int schoolClassId);
+     
+        public Task<List<SchoolClass>> GetByCourse(int courseId);
+
+        public Task<List<SchoolClass>> GetByTeacher(int teacherId);
+
     }
 }

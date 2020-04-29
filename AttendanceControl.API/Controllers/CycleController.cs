@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AttendanceControl.API.Application.Contracts.IServices;
 using AttendanceControl.API.Business.Exceptions;
 using AttendanceControl.API.Business.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -24,49 +20,55 @@ namespace AttendanceControl.API.Controllers
             _logger = logger;
         }
 
-        // POST api/grades
+        // POST api/cycles
+        /// <summary>
+        ///     Ruta de la petición para crear un nuevo ciclo formativo
+        /// </summary>
+        /// <param name="cycle"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Save([FromBody] Cycle cycle)
         {
-
-            _logger.LogInformation("Petición de creación de grado recibida");
+            _logger.LogInformation("Petición de creación de ciclo formativo recibida");
 
             try
             {
                 var result = await _cycleService.Save(cycle);
 
-                _logger.LogInformation("Petición de creación de grado exitosa");
+                _logger.LogInformation("Ciclo formativo creado retornado");
 
                 return Ok(result);
             }
             catch (GradeNameDuplicateEntryException ex)
             {
-                return NotFound(ex.Message);
+                _logger.LogWarning(ex.Message);
+
+                return Conflict(ex.Message);
             }
         }
 
-        // PUT api/cycles
-        [HttpPut]
-        public async Task<IActionResult> UpdateName([FromBody] Cycle cycle)
+        // PUT api/cycles/{id}
+        [HttpPut("{cycleId}")]
+        public async Task<IActionResult> UpdateName(int cycleId,[FromBody] string name)
         {
 
-            _logger.LogInformation("Petición de creación de grado recibida");
+            _logger.LogInformation("Petición de creación de ciclo recibida");
 
             try
             {
-                var result = await _cycleService.Update(cycle);
+                var result = await _cycleService.UpdateName(cycleId,name);
 
-                _logger.LogInformation("Petición de creación de grado exitosa");
+                _logger.LogInformation("Petición de creación de ciclo exitosa");
 
                 return Ok(result);
             }
             catch (GradeNameDuplicateEntryException ex)
             {
-                return NotFound(ex.Message);
+                return Conflict(ex.Message);
             }
         }
 
-        // GET api/grades
+        // GET api/cycles
         [HttpGet]
         public async Task<IActionResult> GetALL()
         {
@@ -75,11 +77,12 @@ namespace AttendanceControl.API.Controllers
 
             var result = await _cycleService.GetAll();
 
+            _logger.LogInformation("AAAAAAAAAAAAAAAAAAAA" + result[0].Shift);
             return Ok(result);
 
         }
 
-        // DELETE api/grades/{id}
+        // DELETE api/cycless/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

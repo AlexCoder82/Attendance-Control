@@ -1,0 +1,1072 @@
+2020-03-31T12:49:45.5562555+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T12:49:45.5697737+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T12:49:45.5744743+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T12:49:45.5801331+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T12:49:45.5848728+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T12:50:04.5371865+02:00 0HLULC52DGEUC:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/courses   (ca22a1cb)
+2020-03-31T12:50:04.7986362+02:00 0HLULC52DGEUC:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-31T12:50:05.2314370+02:00 0HLULC52DGEUC:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Course\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CourseController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T12:50:05.9605565+02:00 0HLULC52DGEUC:00000001 [INF] Petición de listado de todos los cursos recibida (0aa300c9)
+2020-03-31T12:50:07.7786535+02:00 0HLULC52DGEUD:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/cycles   (ca22a1cb)
+2020-03-31T12:50:07.7992198+02:00 0HLULC52DGEUD:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-31T12:50:07.8362501+02:00 0HLULC52DGEUD:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Cycle\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CycleController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T12:50:07.8474361+02:00 0HLULC52DGEUD:00000001 [INF] Petición de listado de grados recibida (7cfff5cc)
+2020-03-31T12:50:08.0140850+02:00 0HLULC52DGEUC:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T12:50:08.0736396+02:00 0HLULC52DGEUC:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T12:50:08.0742757+02:00 0HLULC52DGEUD:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T12:50:09.2954607+02:00 0HLULC52DGEUD:00000001 [INF] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`name`, `c`.`shift_id`, `s`.`id`, `s`.`description`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `t0`.`id`, `t0`.`cycle_id`, `t0`.`year`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`, `t0`.`name`, `t0`.`teacher_id`
+FROM `cycle` AS `c`
+INNER JOIN `shift` AS `s` ON `c`.`shift_id` = `s`.`id`
+LEFT JOIN `schedule` AS `s0` ON `s`.`id` = `s0`.`shift_id`
+LEFT JOIN (
+    SELECT `c0`.`id`, `c0`.`cycle_id`, `c0`.`year`, `t`.`course_id`, `t`.`subject_id`, `t`.`id` AS `id0`, `t`.`name`, `t`.`teacher_id`
+    FROM `course` AS `c0`
+    LEFT JOIN (
+        SELECT `c1`.`course_id`, `c1`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+        FROM `course_has_subjects` AS `c1`
+        INNER JOIN `subject` AS `s1` ON `c1`.`subject_id` = `s1`.`id`
+    ) AS `t` ON `c0`.`id` = `t`.`course_id`
+) AS `t0` ON `c`.`id` = `t0`.`cycle_id`
+ORDER BY `c`.`name`, `c`.`id`, `s`.`id`, `s0`.`id`, `t0`.`id`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`" (0723d8ff)
+2020-03-31T12:50:09.2954821+02:00 0HLULC52DGEUC:00000001 [INF] Executed DbCommand ("95"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`cycle_id`, `c`.`year`, `c0`.`id`, `c0`.`name`, `c0`.`shift_id`
+FROM `course` AS `c`
+INNER JOIN `cycle` AS `c0` ON `c`.`cycle_id` = `c0`.`id`" (0723d8ff)
+2020-03-31T12:50:09.6749469+02:00 0HLULC52DGEUD:00000001 [INF] Lista de ciclos recuperada de la base de datos. (0a4d7ca5)
+2020-03-31T12:50:09.6762383+02:00 0HLULC52DGEUC:00000001 [INF] Lista de cursos recuperada de la base de datos. (f4c6377e)
+2020-03-31T12:50:09.6869949+02:00 0HLULC52DGEUC:00000001 [INF] Listado de todos los cursos retornado (886159b3)
+2020-03-31T12:50:09.7086032+02:00 0HLULC52DGEUD:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Cycle, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T12:50:09.7097564+02:00 0HLULC52DGEUC:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Course, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T12:50:09.8549236+02:00 0HLULC52DGEUC:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)" in 4599.9376ms (afa2e885)
+2020-03-31T12:50:09.8549456+02:00 0HLULC52DGEUD:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)" in 1995.5921ms (afa2e885)
+2020-03-31T12:50:09.8685927+02:00 0HLULC52DGEUC:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CourseController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-31T12:50:09.8673718+02:00 0HLULC52DGEUD:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-31T12:50:09.8926681+02:00 0HLULC52DGEUD:00000001 [INF] Request finished in 2120.9459ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T12:50:09.8926850+02:00 0HLULC52DGEUC:00000001 [INF] Request finished in 5418.113600000001ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:11:59.3314266+02:00 0HLULC52DGEUE:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/4   (ca22a1cb)
+2020-03-31T14:11:59.3362481+02:00 0HLULC52DGEUE:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:11:59.3655681+02:00 0HLULC52DGEUE:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:11:59.4048983+02:00 0HLULC52DGEUE:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:11:59.4489520+02:00 0HLULC52DGEUE:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:11:59.5563595+02:00 0HLULC52DGEUE:00000001 [INF] Executed DbCommand ("28"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:11:59.5606560+02:00 0HLULC52DGEUE:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:11:59.5654388+02:00 0HLULC52DGEUE:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:11:59.5691668+02:00 0HLULC52DGEUE:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:11:59.5738637+02:00 0HLULC52DGEUE:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 205.0977ms (afa2e885)
+2020-03-31T14:11:59.5772371+02:00 0HLULC52DGEUE:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:11:59.5815317+02:00 0HLULC52DGEUE:00000001 [INF] Request finished in 250.3522ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:25:58.1615863+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:25:58.1751069+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:25:58.1803749+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:25:58.1850365+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:25:58.1901953+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:25:59.5061750+02:00 0HLULDQLKP7DC:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/3   (ca22a1cb)
+2020-03-31T14:25:59.5628577+02:00 0HLULDQLKP7DC:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:25:59.6512154+02:00 0HLULDQLKP7DC:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:26:00.1152457+02:00 0HLULDQLKP7DC:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:26:00.6497248+02:00 0HLULDQLKP7DD:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/4   (ca22a1cb)
+2020-03-31T14:26:00.6657675+02:00 0HLULDQLKP7DD:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:26:00.6758642+02:00 0HLULDQLKP7DD:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:26:00.6838778+02:00 0HLULDQLKP7DD:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:26:01.0539564+02:00 0HLULDQLKP7DC:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:26:01.0969231+02:00 0HLULDQLKP7DD:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:26:01.0969246+02:00 0HLULDQLKP7DC:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:26:01.9660760+02:00 0HLULDQLKP7DC:00000001 [INF] Executed DbCommand ("98"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:26:01.9660796+02:00 0HLULDQLKP7DD:00000001 [INF] Executed DbCommand ("98"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:26:02.0273846+02:00 0HLULDQLKP7DD:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:26:02.0287859+02:00 0HLULDQLKP7DC:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:26:02.0347948+02:00 0HLULDQLKP7DC:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:26:02.0361332+02:00 0HLULDQLKP7DD:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:26:02.0502878+02:00 0HLULDQLKP7DC:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:26:02.0517902+02:00 0HLULDQLKP7DD:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:26:02.0925977+02:00 0HLULDQLKP7DD:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 1399.54ms (afa2e885)
+2020-03-31T14:26:02.0926315+02:00 0HLULDQLKP7DC:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 2423.9456ms (afa2e885)
+2020-03-31T14:26:02.1008172+02:00 0HLULDQLKP7DC:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:26:02.1023753+02:00 0HLULDQLKP7DD:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:26:02.1126598+02:00 0HLULDQLKP7DE:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-31T14:26:02.1264517+02:00 0HLULDQLKP7DE:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:26:02.1358071+02:00 0HLULDQLKP7DE:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:26:02.1512100+02:00 0HLULDQLKP7DC:00000001 [INF] Request finished in 2649.4385ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:26:02.1518904+02:00 0HLULDQLKP7DE:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:26:02.1583126+02:00 0HLULDQLKP7DD:00000001 [INF] Request finished in 1510.4338ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:26:02.2341667+02:00 0HLULDQLKP7DE:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:26:02.2745188+02:00 0HLULDQLKP7DE:00000001 [INF] Executed DbCommand ("21"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:26:02.4159667+02:00 0HLULDQLKP7DE:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:26:02.4254437+02:00 0HLULDQLKP7DE:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:26:02.4296597+02:00 0HLULDQLKP7DE:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:26:02.4634605+02:00 0HLULDQLKP7DE:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 323.5787ms (afa2e885)
+2020-03-31T14:26:02.4675585+02:00 0HLULDQLKP7DE:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:26:02.4724943+02:00 0HLULDQLKP7DE:00000001 [INF] Request finished in 362.3012ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:26:05.3809402+02:00 0HLULDQLKP7DC:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 923 (ca22a1cb)
+2020-03-31T14:26:05.3870887+02:00 0HLULDQLKP7DC:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:26:05.4013849+02:00 0HLULDQLKP7DC:00000002 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:26:05.5363418+02:00 0HLULDQLKP7DC:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:26:05.5857133+02:00 0HLULDQLKP7DC:00000002 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:26:05.5950638+02:00 0HLULDQLKP7DC:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:26:05.9397136+02:00 0HLULDQLKP7DC:00000002 [INF] Executed DbCommand ("115"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:26:06.3150210+02:00 0HLULDQLKP7DC:00000002 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:26:06.3492006+02:00 0HLULDQLKP7DC:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE `s`.`id` = @__schoolClassId_0
+LIMIT 1" (0723d8ff)
+2020-03-31T14:26:06.3570702+02:00 0HLULDQLKP7DC:00000002 [INF] Classe vigente con su asignatura y horarios recuperada de la base de datos. (da72e3cd)
+2020-03-31T14:26:06.4005252+02:00 0HLULDQLKP7DC:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:26:06.4058953+02:00 0HLULDQLKP7DC:00000002 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:26:06.4283456+02:00 0HLULDQLKP7DC:00000002 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:26:06.4333867+02:00 0HLULDQLKP7DC:00000002 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:26:06.4378791+02:00 0HLULDQLKP7DC:00000002 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Business.Models.SchoolClass"'. (8a1b66c8)
+2020-03-31T14:26:06.4426529+02:00 0HLULDQLKP7DC:00000002 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 1037.5321000000001ms (afa2e885)
+2020-03-31T14:26:06.4466313+02:00 0HLULDQLKP7DC:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:26:06.4529636+02:00 0HLULDQLKP7DC:00000002 [INF] Request finished in 1071.7877ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:26:54.1718415+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:26:54.1798505+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:26:54.1832025+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:26:54.1865362+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:26:54.1899709+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:27:00.7089442+02:00 0HLULDR7SN34U:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 923 (ca22a1cb)
+2020-03-31T14:27:00.7608320+02:00 0HLULDR7SN34U:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:27:00.8399655+02:00 0HLULDR7SN34U:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:27:02.0706984+02:00 0HLULDR7SN34U:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:27:02.1337924+02:00 0HLULDR7SN34U:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:27:02.4344269+02:00 0HLULDR7SN34U:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:27:02.4453465+02:00 0HLULDR7SN34U:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:27:02.8621696+02:00 0HLULDR7SN34U:00000001 [INF] Executed DbCommand ("55"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:27:03.0737303+02:00 0HLULDR7SN34U:00000001 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:27:03.5034498+02:00 0HLULDR7SN34U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE `s`.`id` = @__schoolClassId_0
+LIMIT 1" (0723d8ff)
+2020-03-31T14:27:03.5599323+02:00 0HLULDR7SN34U:00000001 [INF] Classe vigente con su asignatura y horarios recuperada de la base de datos. (da72e3cd)
+2020-03-31T14:27:03.6053734+02:00 0HLULDR7SN34U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:27:03.6120319+02:00 0HLULDR7SN34U:00000001 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:27:03.6309467+02:00 0HLULDR7SN34U:00000001 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:27:03.6370931+02:00 0HLULDR7SN34U:00000001 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:27:03.6520220+02:00 0HLULDR7SN34U:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Business.Models.SchoolClass"'. (8a1b66c8)
+2020-03-31T14:27:03.6880370+02:00 0HLULDR7SN34U:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 2834.4274ms (afa2e885)
+2020-03-31T14:27:03.6937227+02:00 0HLULDR7SN34U:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:27:03.7106327+02:00 0HLULDR7SN34U:00000001 [INF] Request finished in 3006.5914000000002ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:27:33.7449101+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:27:33.7544493+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:27:33.7583323+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:27:33.7615163+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:27:33.7875449+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:27:40.1550632+02:00 0HLULDRJKNU0Q:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 923 (ca22a1cb)
+2020-03-31T14:27:40.2095637+02:00 0HLULDRJKNU0Q:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:27:40.2909443+02:00 0HLULDRJKNU0Q:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:27:41.4771133+02:00 0HLULDRJKNU0Q:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:27:41.5316934+02:00 0HLULDRJKNU0Q:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:27:41.8789442+02:00 0HLULDRJKNU0Q:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:27:41.8927356+02:00 0HLULDRJKNU0Q:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:27:42.2963792+02:00 0HLULDRJKNU0Q:00000001 [INF] Executed DbCommand ("53"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:27:42.4393102+02:00 0HLULDRJKNU0Q:00000001 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:27:42.8280628+02:00 0HLULDRJKNU0Q:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE `s`.`id` = @__schoolClassId_0
+LIMIT 1" (0723d8ff)
+2020-03-31T14:27:42.8759841+02:00 0HLULDRJKNU0Q:00000001 [INF] Classe vigente con su asignatura y horarios recuperada de la base de datos. (da72e3cd)
+2020-03-31T14:27:42.9302526+02:00 0HLULDRJKNU0Q:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:27:42.9381084+02:00 0HLULDRJKNU0Q:00000001 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:27:42.9604105+02:00 0HLULDRJKNU0Q:00000001 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:27:42.9655887+02:00 0HLULDRJKNU0Q:00000001 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:27:42.9811551+02:00 0HLULDRJKNU0Q:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Business.Models.SchoolClass"'. (8a1b66c8)
+2020-03-31T14:27:43.0177510+02:00 0HLULDRJKNU0Q:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 2712.7582ms (afa2e885)
+2020-03-31T14:27:43.0232064+02:00 0HLULDRJKNU0Q:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:27:43.0379720+02:00 0HLULDRJKNU0Q:00000001 [INF] Request finished in 2888.4976ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:29:01.4219300+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:29:01.4304010+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:29:01.4544738+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:29:01.4576005+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:29:01.4606281+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:29:03.5246342+02:00 0HLULDSCFOC4N:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 923 (ca22a1cb)
+2020-03-31T14:29:03.5821087+02:00 0HLULDSCFOC4N:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:29:03.6689897+02:00 0HLULDSCFOC4N:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:29:04.4702153+02:00 0HLULDSCFOC4N:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 785.9342ms (afa2e885)
+2020-03-31T14:29:04.4754652+02:00 0HLULDSCFOC4N:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:29:04.8056647+02:00 0HLULDSCFOC4N:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 66
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:29:04.8357001+02:00 0HLULDSCFOC4N:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:29:04.8426974+02:00 0HLULDSCFOC4N:00000001 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:29:04.8873139+02:00 0HLULDSCFOC4N:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:29:04.9202448+02:00 0HLULDSCFOC4N:00000001 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 73.5869ms (afa2e885)
+2020-03-31T14:29:04.9241327+02:00 0HLULDSCFOC4N:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:29:04.9321378+02:00 0HLULDSCFOC4N:00000001 [INF] Request finished in 1413.2414ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:30:11.8770291+02:00 0HLULDSCFOC4N:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/teachers   (ca22a1cb)
+2020-03-31T14:30:11.8895878+02:00 0HLULDSCFOC4N:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:30:11.8989076+02:00 0HLULDSCFOC4N:00000002 [INF] Route matched with "{action = \"GetALL\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:30:11.9058967+02:00 0HLULDSCFOC4N:00000002 [INF] Petición de listado deprofesores recibida (65ac107c)
+2020-03-31T14:30:12.3047772+02:00 0HLULDSCFOC4O:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/cycles   (ca22a1cb)
+2020-03-31T14:30:12.3088438+02:00 0HLULDSCFOC4O:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:30:12.3168468+02:00 0HLULDSCFOC4O:00000001 [INF] Route matched with "{action = \"GetALL\", controller = \"Cycle\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetALL()" on controller "AttendanceControl.API.Controllers.CycleController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:30:12.3228339+02:00 0HLULDSCFOC4O:00000001 [INF] Petición de listado de grados recibida (7cfff5cc)
+2020-03-31T14:30:12.8611241+02:00 0HLULDSCFOC4N:00000002 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:30:12.9351609+02:00 0HLULDSCFOC4O:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:30:12.9352663+02:00 0HLULDSCFOC4N:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:30:13.5188463+02:00 0HLULDSCFOC4O:00000001 [INF] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `c`.`id`, `c`.`name`, `c`.`shift_id`, `s`.`id`, `s`.`description`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`, `t0`.`id`, `t0`.`cycle_id`, `t0`.`year`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`, `t0`.`name`, `t0`.`teacher_id`
+FROM `cycle` AS `c`
+INNER JOIN `shift` AS `s` ON `c`.`shift_id` = `s`.`id`
+LEFT JOIN `schedule` AS `s0` ON `s`.`id` = `s0`.`shift_id`
+LEFT JOIN (
+    SELECT `c0`.`id`, `c0`.`cycle_id`, `c0`.`year`, `t`.`course_id`, `t`.`subject_id`, `t`.`id` AS `id0`, `t`.`name`, `t`.`teacher_id`
+    FROM `course` AS `c0`
+    LEFT JOIN (
+        SELECT `c1`.`course_id`, `c1`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`
+        FROM `course_has_subjects` AS `c1`
+        INNER JOIN `subject` AS `s1` ON `c1`.`subject_id` = `s1`.`id`
+    ) AS `t` ON `c0`.`id` = `t`.`course_id`
+) AS `t0` ON `c`.`id` = `t0`.`cycle_id`
+ORDER BY `c`.`name`, `c`.`id`, `s`.`id`, `s0`.`id`, `t0`.`id`, `t0`.`course_id`, `t0`.`subject_id`, `t0`.`id0`" (0723d8ff)
+2020-03-31T14:30:13.5188360+02:00 0HLULDSCFOC4N:00000002 [INF] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`credentials_id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`" (0723d8ff)
+2020-03-31T14:30:13.6495260+02:00 0HLULDSCFOC4N:00000002 [INF] Lista de profesores recuperada de la base de datos (afbac3cd)
+2020-03-31T14:30:13.6618394+02:00 0HLULDSCFOC4N:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Teacher, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:30:13.6751370+02:00 0HLULDSCFOC4N:00000002 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)" in 1771.9869ms (afa2e885)
+2020-03-31T14:30:13.6796362+02:00 0HLULDSCFOC4N:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:30:13.6901706+02:00 0HLULDSCFOC4N:00000002 [INF] Request finished in 1812.7136ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:30:13.7399482+02:00 0HLULDSCFOC4O:00000001 [INF] Lista de ciclos recuperada de la base de datos. (0a4d7ca5)
+2020-03-31T14:30:13.7525912+02:00 0HLULDSCFOC4O:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.Cycle, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:30:13.7678371+02:00 0HLULDSCFOC4O:00000001 [INF] Executed action "AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)" in 1446.6832000000002ms (afa2e885)
+2020-03-31T14:30:13.7715953+02:00 0HLULDSCFOC4O:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CycleController.GetALL (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:30:13.7762122+02:00 0HLULDSCFOC4O:00000001 [INF] Request finished in 1470.9593ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:30:16.7904332+02:00 0HLULDSCFOC4N:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-31T14:30:16.7971139+02:00 0HLULDSCFOC4N:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:30:16.8100532+02:00 0HLULDSCFOC4N:00000003 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:30:16.8188573+02:00 0HLULDSCFOC4N:00000003 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:30:16.8635552+02:00 0HLULDSCFOC4N:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:30:17.0030303+02:00 0HLULDSCFOC4N:00000003 [INF] Executed DbCommand ("52"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:30:17.0357878+02:00 0HLULDSCFOC4N:00000003 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:30:17.0418693+02:00 0HLULDSCFOC4N:00000003 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:30:17.0463616+02:00 0HLULDSCFOC4N:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:30:17.0549823+02:00 0HLULDSCFOC4N:00000003 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 240.97420000000002ms (afa2e885)
+2020-03-31T14:30:17.0585422+02:00 0HLULDSCFOC4N:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:30:17.0629244+02:00 0HLULDSCFOC4N:00000003 [INF] Request finished in 272.9039ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:30:18.8610113+02:00 0HLULDSCFOC4N:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 923 (ca22a1cb)
+2020-03-31T14:30:18.8653405+02:00 0HLULDSCFOC4N:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:30:18.8702997+02:00 0HLULDSCFOC4N:00000004 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:30:19.0298054+02:00 0HLULDSCFOC4N:00000004 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 156.01940000000002ms (afa2e885)
+2020-03-31T14:30:19.0343279+02:00 0HLULDSCFOC4N:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:30:19.0452325+02:00 0HLULDSCFOC4N:00000004 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 66
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:30:19.0496654+02:00 0HLULDSCFOC4N:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:30:19.0536863+02:00 0HLULDSCFOC4N:00000004 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:30:19.0584294+02:00 0HLULDSCFOC4N:00000004 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:30:19.0631769+02:00 0HLULDSCFOC4N:00000004 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 6.0728ms (afa2e885)
+2020-03-31T14:30:19.0667830+02:00 0HLULDSCFOC4N:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:30:19.0713055+02:00 0HLULDSCFOC4N:00000004 [INF] Request finished in 211.0483ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:32:08.3366555+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:32:08.3464016+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:32:08.3507367+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:32:08.3541554+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:32:08.3586881+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:32:12.6347975+02:00 0HLULDU4REUO9:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-31T14:32:12.6865041+02:00 0HLULDU4REUO9:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:32:12.7709444+02:00 0HLULDU4REUO9:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:32:13.0677984+02:00 0HLULDU4REUO9:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:32:13.4141451+02:00 0HLULDU4REUOA:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/1   (ca22a1cb)
+2020-03-31T14:32:13.4233241+02:00 0HLULDU4REUOA:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:32:13.4272707+02:00 0HLULDU4REUOA:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:32:13.4324067+02:00 0HLULDU4REUOA:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:32:13.9425729+02:00 0HLULDU4REUO9:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:32:13.9988880+02:00 0HLULDU4REUOA:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:32:14.0002425+02:00 0HLULDU4REUO9:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:32:14.8423387+02:00 0HLULDU4REUO9:00000001 [INF] Executed DbCommand ("87"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:32:14.8423492+02:00 0HLULDU4REUOA:00000001 [INF] Executed DbCommand ("87"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:32:15.0390197+02:00 0HLULDU4REUO9:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:32:15.0403018+02:00 0HLULDU4REUOA:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:32:15.0559717+02:00 0HLULDU4REUO9:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:32:15.0567100+02:00 0HLULDU4REUOA:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:32:15.0735893+02:00 0HLULDU4REUO9:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:32:15.0748995+02:00 0HLULDU4REUOA:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:32:15.1289881+02:00 0HLULDU4REUOA:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 1685.5308ms (afa2e885)
+2020-03-31T14:32:15.1289932+02:00 0HLULDU4REUO9:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 2341.4736000000003ms (afa2e885)
+2020-03-31T14:32:15.1368221+02:00 0HLULDU4REUO9:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:32:15.1379670+02:00 0HLULDU4REUOA:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:32:15.1567840+02:00 0HLULDU4REUOA:00000001 [INF] Request finished in 1736.4828ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:32:15.1571223+02:00 0HLULDU4REUO9:00000001 [INF] Request finished in 2522.5704ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:32:18.6905547+02:00 0HLULDU4REUO9:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-31T14:32:18.6952036+02:00 0HLULDU4REUO9:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:32:18.6995800+02:00 0HLULDU4REUO9:00000002 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:32:18.7077258+02:00 0HLULDU4REUO9:00000002 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:32:18.7595094+02:00 0HLULDU4REUO9:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:32:18.7831250+02:00 0HLULDU4REUO9:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:32:18.7891670+02:00 0HLULDU4REUO9:00000002 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:32:18.7927400+02:00 0HLULDU4REUO9:00000002 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:32:18.7972458+02:00 0HLULDU4REUO9:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:32:18.8029056+02:00 0HLULDU4REUO9:00000002 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 99.49640000000001ms (afa2e885)
+2020-03-31T14:32:18.8067859+02:00 0HLULDU4REUO9:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:32:18.8115350+02:00 0HLULDU4REUO9:00000002 [INF] Request finished in 120.8617ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:32:20.5582245+02:00 0HLULDU4REUO9:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/1   (ca22a1cb)
+2020-03-31T14:32:20.5645736+02:00 0HLULDU4REUO9:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:32:20.5711649+02:00 0HLULDU4REUO9:00000003 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:32:20.5793550+02:00 0HLULDU4REUO9:00000003 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:32:20.5866315+02:00 0HLULDU4REUO9:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:32:20.5974609+02:00 0HLULDU4REUO9:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:32:20.6026972+02:00 0HLULDU4REUO9:00000003 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:32:20.6070818+02:00 0HLULDU4REUO9:00000003 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:32:20.6114815+02:00 0HLULDU4REUO9:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:32:20.6163633+02:00 0HLULDU4REUO9:00000003 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 40.8971ms (afa2e885)
+2020-03-31T14:32:20.6202332+02:00 0HLULDU4REUO9:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:32:20.6248917+02:00 0HLULDU4REUO9:00000003 [INF] Request finished in 67.11580000000001ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:32:22.8098685+02:00 0HLULDU4REUO9:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 758 (ca22a1cb)
+2020-03-31T14:32:22.8166986+02:00 0HLULDU4REUO9:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:32:22.8366020+02:00 0HLULDU4REUO9:00000004 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:32:22.9146620+02:00 0HLULDU4REUO9:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:32:22.9473038+02:00 0HLULDU4REUO9:00000004 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:32:22.9553926+02:00 0HLULDU4REUO9:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:32:23.1505392+02:00 0HLULDU4REUO9:00000004 [INF] Executed DbCommand ("22"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:32:23.2833807+02:00 0HLULDU4REUO9:00000004 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:32:23.3276968+02:00 0HLULDU4REUO9:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:32:23.3325738+02:00 0HLULDU4REUO9:00000004 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:32:23.3386867+02:00 0HLULDU4REUO9:00000004 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:32:23.3442026+02:00 0HLULDU4REUO9:00000004 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:32:23.7670007+02:00 0HLULDU4REUO9:00000004 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 926.5780000000001ms (afa2e885)
+2020-03-31T14:32:23.7711044+02:00 0HLULDU4REUO9:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:32:23.8669485+02:00 0HLULDU4REUO9:00000004 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 89
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:32:23.8869810+02:00 0HLULDU4REUO9:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:32:23.8954946+02:00 0HLULDU4REUO9:00000004 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:32:23.9040718+02:00 0HLULDU4REUO9:00000004 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:32:23.9173815+02:00 0HLULDU4REUO9:00000004 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 15.8971ms (afa2e885)
+2020-03-31T14:32:23.9239380+02:00 0HLULDU4REUO9:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:32:23.9306074+02:00 0HLULDU4REUO9:00000004 [INF] Request finished in 1118.5612ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:38:05.7834349+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:38:05.7927008+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:38:05.7962437+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:38:05.7998037+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:38:05.8041976+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:38:09.5473422+02:00 0HLULE1F77UHM:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-31T14:38:09.6033870+02:00 0HLULE1F77UHM:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:38:09.6991486+02:00 0HLULE1F77UHM:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:38:09.9792433+02:00 0HLULE1F77UHM:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:38:10.8284478+02:00 0HLULE1F77UHM:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:38:10.8835050+02:00 0HLULE1F77UHM:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:38:11.5815607+02:00 0HLULE1F77UHM:00000001 [INF] Executed DbCommand ("91"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:38:11.8035954+02:00 0HLULE1F77UHM:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:38:11.8125431+02:00 0HLULE1F77UHM:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:38:11.8242195+02:00 0HLULE1F77UHM:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:38:11.8784141+02:00 0HLULE1F77UHM:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 2164.6788ms (afa2e885)
+2020-03-31T14:38:11.8844080+02:00 0HLULE1F77UHM:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:38:11.8996085+02:00 0HLULE1F77UHM:00000001 [INF] Request finished in 2357.5286ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:38:13.3782943+02:00 0HLULE1F77UHM:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 923 (ca22a1cb)
+2020-03-31T14:38:13.3867336+02:00 0HLULE1F77UHM:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:38:13.3973177+02:00 0HLULE1F77UHM:00000002 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:38:13.4964357+02:00 0HLULE1F77UHM:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:38:13.5400356+02:00 0HLULE1F77UHM:00000002 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:38:13.5582333+02:00 0HLULE1F77UHM:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:38:13.7821263+02:00 0HLULE1F77UHM:00000002 [INF] Executed DbCommand ("19"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:38:13.9714448+02:00 0HLULE1F77UHM:00000002 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:38:14.0187421+02:00 0HLULE1F77UHM:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:38:14.0230109+02:00 0HLULE1F77UHM:00000002 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:38:14.0286341+02:00 0HLULE1F77UHM:00000002 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:38:14.0339022+02:00 0HLULE1F77UHM:00000002 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:38:14.4085207+02:00 0HLULE1F77UHM:00000002 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 1006.8995000000001ms (afa2e885)
+2020-03-31T14:38:14.4130504+02:00 0HLULE1F77UHM:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:38:14.5741198+02:00 0HLULE1F77UHM:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 89
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:38:14.5918971+02:00 0HLULE1F77UHM:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:38:14.5994741+02:00 0HLULE1F77UHM:00000002 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:38:14.6066898+02:00 0HLULE1F77UHM:00000002 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:38:14.6163238+02:00 0HLULE1F77UHM:00000002 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 12.9084ms (afa2e885)
+2020-03-31T14:38:14.6202117+02:00 0HLULE1F77UHM:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:38:14.6252127+02:00 0HLULE1F77UHM:00000002 [INF] Request finished in 1247.2214000000001ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:40:51.5071315+02:00 0HLULE1F77UHN:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/1   (ca22a1cb)
+2020-03-31T14:40:51.5127834+02:00 0HLULE1F77UHN:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:40:51.5171876+02:00 0HLULE1F77UHN:00000001 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:40:51.5255998+02:00 0HLULE1F77UHN:00000001 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:40:51.5311205+02:00 0HLULE1F77UHN:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:40:51.5449561+02:00 0HLULE1F77UHN:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:40:51.5506017+02:00 0HLULE1F77UHN:00000001 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:40:51.5539605+02:00 0HLULE1F77UHN:00000001 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:40:51.5576445+02:00 0HLULE1F77UHN:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:40:51.5626027+02:00 0HLULE1F77UHN:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 41.6653ms (afa2e885)
+2020-03-31T14:40:51.5660983+02:00 0HLULE1F77UHN:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:40:51.5711411+02:00 0HLULE1F77UHN:00000001 [INF] Request finished in 63.017300000000006ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:40:53.1166098+02:00 0HLULE1F77UHN:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 758 (ca22a1cb)
+2020-03-31T14:40:53.1216365+02:00 0HLULE1F77UHN:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:40:53.1273880+02:00 0HLULE1F77UHN:00000002 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:40:53.1437413+02:00 0HLULE1F77UHN:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:40:53.1719026+02:00 0HLULE1F77UHN:00000002 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:40:53.1768697+02:00 0HLULE1F77UHN:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:40:53.2197700+02:00 0HLULE1F77UHN:00000002 [INF] Executed DbCommand ("26"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:40:53.5553374+02:00 0HLULE1F77UHN:00000002 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:40:53.5685744+02:00 0HLULE1F77UHN:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:40:53.5730263+02:00 0HLULE1F77UHN:00000002 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:40:53.5778249+02:00 0HLULE1F77UHN:00000002 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:40:53.5827625+02:00 0HLULE1F77UHN:00000002 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:40:53.9202257+02:00 0HLULE1F77UHN:00000002 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 788.9414ms (afa2e885)
+2020-03-31T14:40:53.9246964+02:00 0HLULE1F77UHN:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:40:53.9372433+02:00 0HLULE1F77UHN:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 89
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:40:53.9413062+02:00 0HLULE1F77UHN:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:40:53.9464795+02:00 0HLULE1F77UHN:00000002 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:40:53.9508604+02:00 0HLULE1F77UHN:00000002 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:40:53.9557115+02:00 0HLULE1F77UHN:00000002 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 5.7125ms (afa2e885)
+2020-03-31T14:40:53.9601655+02:00 0HLULE1F77UHN:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:40:53.9656565+02:00 0HLULE1F77UHN:00000002 [INF] Request finished in 848.9785ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:40:57.4270571+02:00 0HLULE1F77UHN:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-31T14:40:57.4308681+02:00 0HLULE1F77UHN:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:40:57.4345273+02:00 0HLULE1F77UHN:00000003 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:40:57.4399113+02:00 0HLULE1F77UHN:00000003 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:40:57.4442916+02:00 0HLULE1F77UHN:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:40:57.4533552+02:00 0HLULE1F77UHN:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:40:57.4583807+02:00 0HLULE1F77UHN:00000003 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:40:57.4619766+02:00 0HLULE1F77UHN:00000003 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:40:57.4659836+02:00 0HLULE1F77UHN:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:40:57.4703263+02:00 0HLULE1F77UHN:00000003 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 32.717600000000004ms (afa2e885)
+2020-03-31T14:40:57.4735389+02:00 0HLULE1F77UHN:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:40:57.4773330+02:00 0HLULE1F77UHN:00000003 [INF] Request finished in 50.8343ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:40:58.2771352+02:00 0HLULE1F77UHN:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/1   (ca22a1cb)
+2020-03-31T14:40:58.2808240+02:00 0HLULE1F77UHN:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:40:58.2848568+02:00 0HLULE1F77UHN:00000004 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:40:58.2905061+02:00 0HLULE1F77UHN:00000004 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:40:58.2951587+02:00 0HLULE1F77UHN:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:40:58.3049273+02:00 0HLULE1F77UHN:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:40:58.3103295+02:00 0HLULE1F77UHN:00000004 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:40:58.3137518+02:00 0HLULE1F77UHN:00000004 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:40:58.3177309+02:00 0HLULE1F77UHN:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:40:58.3228363+02:00 0HLULE1F77UHN:00000004 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 34.363800000000005ms (afa2e885)
+2020-03-31T14:40:58.3267182+02:00 0HLULE1F77UHN:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:40:58.3308605+02:00 0HLULE1F77UHN:00000004 [INF] Request finished in 54.594300000000004ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:42:32.3403822+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:42:32.3545736+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:42:32.3584947+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:42:32.3624158+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:42:32.3659311+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:42:35.7950105+02:00 0HLULE3UI65UK:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 758 (ca22a1cb)
+2020-03-31T14:42:35.8457347+02:00 0HLULE3UI65UK:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:42:35.9399526+02:00 0HLULE3UI65UK:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:42:37.1649268+02:00 0HLULE3UI65UK:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:42:37.2146736+02:00 0HLULE3UI65UK:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:42:37.5094613+02:00 0HLULE3UI65UK:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:42:37.5211178+02:00 0HLULE3UI65UK:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:42:37.9478304+02:00 0HLULE3UI65UK:00000001 [INF] Executed DbCommand ("55"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:42:38.1150700+02:00 0HLULE3UI65UK:00000001 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:42:38.5048088+02:00 0HLULE3UI65UK:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:42:38.5153968+02:00 0HLULE3UI65UK:00000001 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:42:38.5209780+02:00 0HLULE3UI65UK:00000001 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:42:38.5259766+02:00 0HLULE3UI65UK:00000001 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:42:38.7507918+02:00 0HLULE3UI65UK:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 2795.0818ms (afa2e885)
+2020-03-31T14:42:38.7586078+02:00 0HLULE3UI65UK:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:42:38.8528151+02:00 0HLULE3UI65UK:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 89
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:42:38.8716864+02:00 0HLULE3UI65UK:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:42:38.8777587+02:00 0HLULE3UI65UK:00000001 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:42:38.8877842+02:00 0HLULE3UI65UK:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:42:38.9092787+02:00 0HLULE3UI65UK:00000001 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 28.2195ms (afa2e885)
+2020-03-31T14:42:38.9128171+02:00 0HLULE3UI65UK:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:42:38.9283485+02:00 0HLULE3UI65UK:00000001 [INF] Request finished in 3138.3378000000002ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:44:31.5502096+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:44:31.5609468+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:44:31.5653425+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:44:31.5685105+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:44:31.5741264+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:44:43.0979729+02:00 0HLULE54GDP7G:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 758 (ca22a1cb)
+2020-03-31T14:44:43.1652110+02:00 0HLULE54GDP7G:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:44:43.2514553+02:00 0HLULE54GDP7G:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:44:44.4513816+02:00 0HLULE54GDP7G:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:44:44.5001432+02:00 0HLULE54GDP7G:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:44:44.7996900+02:00 0HLULE54GDP7G:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:44:44.8133784+02:00 0HLULE54GDP7G:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:44:45.1952356+02:00 0HLULE54GDP7G:00000001 [INF] Executed DbCommand ("41"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:44:45.3994148+02:00 0HLULE54GDP7G:00000001 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:44:45.7832224+02:00 0HLULE54GDP7G:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:44:45.7963569+02:00 0HLULE54GDP7G:00000001 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:44:45.8030932+02:00 0HLULE54GDP7G:00000001 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:44:45.8082361+02:00 0HLULE54GDP7G:00000001 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:44:45.8760104+02:00 0HLULE54GDP7G:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE `s`.`id` = @__schoolClassId_0
+LIMIT 1" (0723d8ff)
+2020-03-31T14:44:45.9176332+02:00 0HLULE54GDP7G:00000001 [INF] Classe vigente con su asignatura y horarios recuperada de la base de datos. (da72e3cd)
+2020-03-31T14:44:45.9340089+02:00 0HLULE54GDP7G:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Business.Models.SchoolClass"'. (8a1b66c8)
+2020-03-31T14:44:45.9707487+02:00 0HLULE54GDP7G:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 2705.6532ms (afa2e885)
+2020-03-31T14:44:45.9759052+02:00 0HLULE54GDP7G:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:44:46.0069716+02:00 0HLULE54GDP7G:00000001 [INF] Request finished in 2909.6872000000003ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:54:58.2499962+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:54:58.2584597+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:54:58.2622591+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:54:58.2656175+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:54:58.2688723+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:55:01.7187181+02:00 0HLULEASS3FQ5:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 758 (ca22a1cb)
+2020-03-31T14:55:01.7712757+02:00 0HLULEASS3FQ5:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:55:01.8621104+02:00 0HLULEASS3FQ5:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:55:03.0356090+02:00 0HLULEASS3FQ5:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:55:03.0919016+02:00 0HLULEASS3FQ5:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:55:03.4025538+02:00 0HLULEASS3FQ5:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:55:03.4133454+02:00 0HLULEASS3FQ5:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:55:03.9539149+02:00 0HLULEASS3FQ5:00000001 [ERR] Failed executing DbCommand ("123"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Time), @p2='?' (DbType = Int32), @p3='?' (DbType = Time)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `schedule` (`id`, `end`, `shift_id`, `start`)
+VALUES (@p0, @p1, @p2, @p3);" (627a98df)
+2020-03-31T14:55:04.1469328+02:00 0HLULEASS3FQ5:00000001 [ERR] An exception occurred in the database while saving changes for context type '"AttendanceControl.API.DataAccess.AttendanceControlDBContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '2' for key 'PRIMARY'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '2' for key 'PRIMARY'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '2' for key 'PRIMARY'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '2' for key 'PRIMARY'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 91
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+2020-03-31T14:55:04.5432141+02:00 0HLULEASS3FQ5:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 2667.9605ms (afa2e885)
+2020-03-31T14:55:04.5488947+02:00 0HLULEASS3FQ5:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:55:04.6080102+02:00 0HLULEASS3FQ5:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '2' for key 'PRIMARY'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '2' for key 'PRIMARY'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 91
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:55:04.6270768+02:00 0HLULEASS3FQ5:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:55:04.6344996+02:00 0HLULEASS3FQ5:00000001 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:55:04.6454075+02:00 0HLULEASS3FQ5:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:55:04.6655459+02:00 0HLULEASS3FQ5:00000001 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 26.973000000000003ms (afa2e885)
+2020-03-31T14:55:04.6696592+02:00 0HLULEASS3FQ5:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:55:04.6844936+02:00 0HLULEASS3FQ5:00000001 [INF] Request finished in 2970.5399ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:56:03.1127472+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:56:03.1234505+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:56:03.1455007+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:56:03.1515189+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:56:03.1587197+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:56:07.9676476+02:00 0HLULEBGJQKC1:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 758 (ca22a1cb)
+2020-03-31T14:56:08.0225138+02:00 0HLULEBGJQKC1:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:56:08.1146280+02:00 0HLULEBGJQKC1:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:56:09.3673265+02:00 0HLULEBGJQKC1:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:56:09.4159085+02:00 0HLULEBGJQKC1:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:56:09.7273862+02:00 0HLULEBGJQKC1:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:56:09.7383489+02:00 0HLULEBGJQKC1:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:56:10.1831427+02:00 0HLULEBGJQKC1:00000001 [ERR] Failed executing DbCommand ("32"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Time), @p2='?' (DbType = Int32), @p3='?' (DbType = Time)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `schedule` (`id`, `end`, `shift_id`, `start`)
+VALUES (@p0, @p1, @p2, @p3);" (627a98df)
+2020-03-31T14:56:10.3391254+02:00 0HLULEBGJQKC1:00000001 [ERR] An exception occurred in the database while saving changes for context type '"AttendanceControl.API.DataAccess.AttendanceControlDBContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '3' for key 'PRIMARY'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '3' for key 'PRIMARY'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '3' for key 'PRIMARY'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '3' for key 'PRIMARY'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 91
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+2020-03-31T14:56:10.7175673+02:00 0HLULEBGJQKC1:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 2586.9166ms (afa2e885)
+2020-03-31T14:56:10.7254034+02:00 0HLULEBGJQKC1:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:56:10.7958940+02:00 0HLULEBGJQKC1:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '3' for key 'PRIMARY'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '3' for key 'PRIMARY'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at AttendanceControl.API.Application.Services.SchoolClassService.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\SchoolClassService.cs:line 91
+   at AttendanceControl.API.Controllers.SchoolClassController.Save(SchoolClass schoolClass) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\SchoolClassController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-03-31T14:56:10.8226875+02:00 0HLULEBGJQKC1:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:56:10.8305505+02:00 0HLULEBGJQKC1:00000001 [INF] Route matched with "{action = \"Error\", controller = \"Error\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "AttendanceControl.API.Controllers.ErrorController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:56:10.8424249+02:00 0HLULEBGJQKC1:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Errors.ApiError"'. (8a1b66c8)
+2020-03-31T14:56:10.8659265+02:00 0HLULEBGJQKC1:00000001 [INF] Executed action "AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)" in 31.495800000000003ms (afa2e885)
+2020-03-31T14:56:10.8704432+02:00 0HLULEBGJQKC1:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.ErrorController.Error (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:56:10.8875379+02:00 0HLULEBGJQKC1:00000001 [INF] Request finished in 2925.3258ms 500 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:58:40.3997973+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T14:58:40.4419714+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T14:58:40.4509600+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T14:58:40.4777717+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T14:58:40.4877803+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T14:58:44.3058508+02:00 0HLULECV6S15U:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/schoolclasses application/json; charset=utf-8 758 (ca22a1cb)
+2020-03-31T14:58:44.3567916+02:00 0HLULECV6S15U:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:58:44.4411957+02:00 0HLULECV6S15U:00000001 [INF] Route matched with "{action = \"Save\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(AttendanceControl.API.Business.Models.SchoolClass)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:58:45.5789551+02:00 0HLULECV6S15U:00000001 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-03-31T14:58:45.6282117+02:00 0HLULECV6S15U:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:58:45.9445212+02:00 0HLULECV6S15U:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:58:45.9565878+02:00 0HLULECV6S15U:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:58:46.3778781+02:00 0HLULECV6S15U:00000001 [INF] Executed DbCommand ("56"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `school_class` (`course_id`, `day_of_week`, `schedule_id`, `subject_id`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`, `is_current`
+FROM `school_class`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (0723d8ff)
+2020-03-31T14:58:46.5487921+02:00 0HLULECV6S15U:00000001 [INF] Nueva clase guardada en la base de datos. (47a13c77)
+2020-03-31T14:58:46.9112813+02:00 0HLULECV6S15U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__subjectId_0='?' (DbType = Int32), @__courseId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN (
+    SELECT `s0`.`student_id`, `s0`.`subject_id`
+    FROM `student_has_subjects` AS `s0`
+    WHERE `s0`.`subject_id` = @__subjectId_0
+) AS `t` ON `s`.`id` = `t`.`student_id`
+WHERE `s`.`course_id` = @__courseId_1" (0723d8ff)
+2020-03-31T14:58:46.9215832+02:00 0HLULECV6S15U:00000001 [INF] Lista de alumnos recuperada de la base de datos. (774a032c)
+2020-03-31T14:58:46.9265888+02:00 0HLULECV6S15U:00000001 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:58:46.9308207+02:00 0HLULECV6S15U:00000001 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:58:46.9423309+02:00 0HLULECV6S15U:00000001 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Business.Models.SchoolClass"'. (8a1b66c8)
+2020-03-31T14:58:46.9785643+02:00 0HLULECV6S15U:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)" in 2523.4246000000003ms (afa2e885)
+2020-03-31T14:58:46.9838140+02:00 0HLULECV6S15U:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.Save (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:58:47.0009627+02:00 0HLULECV6S15U:00000001 [INF] Request finished in 2700.3217ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:58:49.6895022+02:00 0HLULECV6S15U:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/2   (ca22a1cb)
+2020-03-31T14:58:49.6966769+02:00 0HLULECV6S15U:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:58:49.7066978+02:00 0HLULECV6S15U:00000002 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:58:49.7181128+02:00 0HLULECV6S15U:00000002 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:58:49.7666531+02:00 0HLULECV6S15U:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:58:49.8356262+02:00 0HLULECV6S15U:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:58:49.8807763+02:00 0HLULECV6S15U:00000002 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:58:49.8885054+02:00 0HLULECV6S15U:00000002 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:58:49.8923531+02:00 0HLULECV6S15U:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:58:49.8969761+02:00 0HLULECV6S15U:00000002 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 186.9836ms (afa2e885)
+2020-03-31T14:58:49.9005759+02:00 0HLULECV6S15U:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:58:49.9053802+02:00 0HLULECV6S15U:00000002 [INF] Request finished in 215.5937ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:58:50.7385608+02:00 0HLULECV6S15U:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/schoolclasses/courses/1   (ca22a1cb)
+2020-03-31T14:58:50.7451068+02:00 0HLULECV6S15U:00000003 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:58:50.7498803+02:00 0HLULECV6S15U:00000003 [INF] Route matched with "{action = \"GetByCourse\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCourse(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:58:50.7582263+02:00 0HLULECV6S15U:00000003 [INF] Petición de listado de clases de un curso recibida (51e4908d)
+2020-03-31T14:58:50.7628381+02:00 0HLULECV6S15U:00000003 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:58:50.7764749+02:00 0HLULECV6S15U:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__courseId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s0`.`id`, `s0`.`name`, `s0`.`teacher_id`, `s1`.`id`, `s1`.`end`, `s1`.`shift_id`, `s1`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `subject` AS `s0` ON `s`.`subject_id` = `s0`.`id`
+INNER JOIN `schedule` AS `s1` ON `s`.`schedule_id` = `s1`.`id`
+WHERE (`s`.`course_id` = @__courseId_0) AND (`s`.`is_current` = TRUE)" (0723d8ff)
+2020-03-31T14:58:50.7813770+02:00 0HLULECV6S15U:00000003 [INF] La lista de clases ha sido recuperadada de la base de datos. (76d03c4f)
+2020-03-31T14:58:50.7848127+02:00 0HLULECV6S15U:00000003 [INF] Listado de clases de un curso exitosa devuelto (95c25676)
+2020-03-31T14:58:50.7888595+02:00 0HLULECV6S15U:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Business.Models.SchoolClass, AttendanceControl.API.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-03-31T14:58:50.7938935+02:00 0HLULECV6S15U:00000003 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)" in 40.0399ms (afa2e885)
+2020-03-31T14:58:50.7975400+02:00 0HLULECV6S15U:00000003 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.GetByCourse (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:58:50.8015112+02:00 0HLULECV6S15U:00000003 [INF] Request finished in 64.1313ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T14:58:52.4795347+02:00 0HLULECV6S15U:00000004 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/api/schoolclasses/16  0 (ca22a1cb)
+2020-03-31T14:58:52.4849183+02:00 0HLULECV6S15U:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.SetNotCurrent (AttendanceControl.API)"' (500cc934)
+2020-03-31T14:58:52.4948103+02:00 0HLULECV6S15U:00000004 [INF] Route matched with "{action = \"SetNotCurrent\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SetNotCurrent(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T14:58:52.5030203+02:00 0HLULECV6S15U:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:58:52.5122755+02:00 0HLULECV6S15U:00000004 [INF] Transacción empezada (86f8810d)
+2020-03-31T14:58:52.5210311+02:00 0HLULECV6S15U:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T14:58:52.6101436+02:00 0HLULECV6S15U:00000004 [INF] Executed DbCommand ("42"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`course_id`, `t`.`day_of_week`, `t`.`is_current`, `t`.`schedule_id`, `t`.`subject_id`, `s0`.`student_id`, `s0`.`school_class_id`
+FROM (
+    SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`
+    FROM `school_class` AS `s`
+    WHERE `s`.`id` = @__schoolClassId_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN `school_class_has_students` AS `s0` ON `t`.`id` = `s0`.`school_class_id`
+ORDER BY `t`.`id`, `s0`.`student_id`, `s0`.`school_class_id`" (0723d8ff)
+2020-03-31T14:58:52.6181369+02:00 0HLULECV6S15U:00000004 [INF] Clase de escuela recuperadada de la base de datos. (bf190477)
+2020-03-31T14:58:52.6520425+02:00 0HLULECV6S15U:00000004 [INF] Executed DbCommand ("20"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE `school_class` SET `is_current` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();" (0723d8ff)
+2020-03-31T14:58:52.7571374+02:00 0HLULECV6S15U:00000004 [INF] La classe ha sido modificada como no vigente en la base de datos. (61aa67b0)
+2020-03-31T14:58:52.7616791+02:00 0HLULECV6S15U:00000004 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T14:58:52.7660846+02:00 0HLULECV6S15U:00000004 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T14:58:52.7704646+02:00 0HLULECV6S15U:00000004 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-03-31T14:58:52.7782389+02:00 0HLULECV6S15U:00000004 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.SetNotCurrent (AttendanceControl.API)" in 279.3349ms (afa2e885)
+2020-03-31T14:58:52.7821905+02:00 0HLULECV6S15U:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.SetNotCurrent (AttendanceControl.API)"' (99874f2b)
+2020-03-31T14:58:52.7863859+02:00 0HLULECV6S15U:00000004 [INF] Request finished in 307.9123ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T15:51:10.6810329+02:00 0HLULECV6S15V:00000001 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/api/schoolclasses/14  0 (ca22a1cb)
+2020-03-31T15:51:10.6849657+02:00 0HLULECV6S15V:00000001 [INF] Executing endpoint '"AttendanceControl.API.Controllers.SchoolClassController.SetNotCurrent (AttendanceControl.API)"' (500cc934)
+2020-03-31T15:51:10.6886729+02:00 0HLULECV6S15V:00000001 [INF] Route matched with "{action = \"SetNotCurrent\", controller = \"SchoolClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SetNotCurrent(Int32)" on controller "AttendanceControl.API.Controllers.SchoolClassController" ("AttendanceControl.API"). (122b2fdf)
+2020-03-31T15:51:10.6948082+02:00 0HLULECV6S15V:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T15:51:10.7176538+02:00 0HLULECV6S15V:00000001 [INF] Transacción empezada (86f8810d)
+2020-03-31T15:51:10.7213159+02:00 0HLULECV6S15V:00000001 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-03-31T15:51:10.7374316+02:00 0HLULECV6S15V:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`course_id`, `t`.`day_of_week`, `t`.`is_current`, `t`.`schedule_id`, `t`.`subject_id`, `s0`.`student_id`, `s0`.`school_class_id`
+FROM (
+    SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`
+    FROM `school_class` AS `s`
+    WHERE `s`.`id` = @__schoolClassId_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN `school_class_has_students` AS `s0` ON `t`.`id` = `s0`.`school_class_id`
+ORDER BY `t`.`id`, `s0`.`student_id`, `s0`.`school_class_id`" (0723d8ff)
+2020-03-31T15:51:10.7416586+02:00 0HLULECV6S15V:00000001 [INF] Clase de escuela recuperadada de la base de datos. (bf190477)
+2020-03-31T15:51:10.8120671+02:00 0HLULECV6S15V:00000001 [INF] Executed DbCommand ("63"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE `school_class` SET `is_current` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();" (0723d8ff)
+2020-03-31T15:51:10.9548590+02:00 0HLULECV6S15V:00000001 [INF] La classe ha sido modificada como no vigente en la base de datos. (61aa67b0)
+2020-03-31T15:51:10.9674873+02:00 0HLULECV6S15V:00000001 [INF] Lista de alumnos de la clase de escuela actualizada. (0c2f95c9)
+2020-03-31T15:51:10.9762670+02:00 0HLULECV6S15V:00000001 [INF] Transacción terminada con éxito (795e800b)
+2020-03-31T15:51:10.9832176+02:00 0HLULECV6S15V:00000001 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-03-31T15:51:10.9882172+02:00 0HLULECV6S15V:00000001 [INF] Executed action "AttendanceControl.API.Controllers.SchoolClassController.SetNotCurrent (AttendanceControl.API)" in 295.7269ms (afa2e885)
+2020-03-31T15:51:10.9919186+02:00 0HLULECV6S15V:00000001 [INF] Executed endpoint '"AttendanceControl.API.Controllers.SchoolClassController.SetNotCurrent (AttendanceControl.API)"' (99874f2b)
+2020-03-31T15:51:10.9962898+02:00 0HLULECV6S15V:00000001 [INF] Request finished in 315.2153ms 200 application/json; charset=utf-8 (791a596a)
+2020-03-31T16:53:11.8325517+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T16:53:11.8424691+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T16:53:11.8466425+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T16:53:11.8501009+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T16:53:11.8534744+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-03-31T16:53:41.6372232+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-03-31T16:53:41.6484066+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-03-31T16:53:41.6526409+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-31T16:53:41.6570631+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-31T16:53:41.6605751+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)

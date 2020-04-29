@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using AttendanceControl.API.CrossCutting.IocRegister;
 using AttendanceControl.API.DataAccess;
 using AttendanceControl.API.DataAccess.Contracts;
+using AttendanceControl.API.Filters;
+using AttendanceControl.API.Validators;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -19,6 +22,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 
 namespace AttendanceControl.API
 {
@@ -33,15 +37,25 @@ namespace AttendanceControl.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            /// Register Application services 
-
-            IOCRegister.AddServices(services);
+            services.AddMvc(options =>
+            {
+                options.EnableEndpointRouting = false;
+                options.Filters.Add(new ValidationFilter());
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+              .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CycleValidator>());
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
 
             /// Register Entity Framework db context
 
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             IOCRegister.AddDBContext(services, connectionString);
 
+            /// Register Application services 
+            /// 
+            IOCRegister.AddServices(services);
 
             /// Register data repositories
 
@@ -77,7 +91,30 @@ namespace AttendanceControl.API
                     };
                 });
 
-           
+            //CORS
+            services.AddCors(Options =>
+            {
+                Options.AddPolicy("EnableCORS", builder =>
+                {
+                    builder.AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowCredentials()
+                       .WithExposedHeaders(HeaderNames.ContentDisposition)
+                       .WithOrigins("http://localhost:4200")
+                       .Build();
+                });
+            });
+
+            //services.AddMvc().AddJsonOptions(
+            //    options => options
+            //        .SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json
+            //           .ReferenceLoopHandling.Ignore
+            //);
+            //FLUENTVALIDATIOn
+
+
+
+
 
 
         }
@@ -90,20 +127,35 @@ namespace AttendanceControl.API
                 //app.UseDeveloperExceptionPage();
             }
 
+            // CORS 
+            app.UseCors("EnableCORS");
+
             loggerFactory.AddFile("Logs/Log-{Date}.txt");
 
+
+            //Exceptions handler middleware
+            app.UseExceptionHandler("/error");
+            app.UseAuthorization();
+            app.UseAuthentication();
             app.UseRouting();
 
-            //app.UseAuthorization();
+            
 
             //HTTPS
-            app.UseHttpsRedirection();
+            //  app.UseHttpsRedirection();
+
+
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+            
+
+            //HTTPS
+            app.UseHttpsRedirection();
             //MVC
-            // app.UseMvc();
+             app.UseMvc();
         }
     }
 }

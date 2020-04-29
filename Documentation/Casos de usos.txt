@@ -39,10 +39,10 @@ HORARIOS
 
 Alumnos 
 
-- Crear alumno
+- Crear alumno*
 - Modificar
 - Borrar
-- Asignar a curso y asignaturas
+- Asignar a curso y asignaturas*
 
 4
 

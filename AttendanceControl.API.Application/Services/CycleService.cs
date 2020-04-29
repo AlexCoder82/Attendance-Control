@@ -30,35 +30,51 @@ namespace AttendanceControl.API.Application.Services
 
         public async Task<List<Cycle>> GetAll()
         {
-            List<CycleEntity> gradeEntities = await _cycleRepository.GetAll();
+            List<CycleEntity> cycleEntities = await _cycleRepository.GetAllIncludingCoursesSubjectsAndSchedules();
+
+            List<Cycle> cycles = cycleEntities.Select(c => new Cycle
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Courses = c.CourseEntities.Select(co => new Course
+                {
+                    Id = co.Id,
+                    Year = co.Year
+                }).ToList(),
+                Shift = new Shift
+                {
+                    Id = c.ShiftEntity.Id,
+                    Description = c.ShiftEntity.Description,
+                    Schedules = c.ShiftEntity.ScheduleEntities.Select(s => new Schedule
+                    {
+                        Id = s.Id,
+                        Start = s.Start.ToString(@"hh\:mm"),
+                        End = s.End.ToString(@"hh\:mm"),
+                    }).ToList()
+                }
+
+            }).ToList();
 
             
-            List<Cycle> grades = gradeEntities.Select(g => CycleMapper.MapIncludingCourses(g)).ToList();
-            return grades;
+            return cycles;
         }
 
         public async Task<Cycle> Save(Cycle cycle)
         {
+     
             CycleEntity cycleEntity = CycleMapper.Map(cycle);
             cycleEntity = await _cycleRepository.Save(cycleEntity);
 
-            cycleEntity = await _cycleRepository.Get(cycleEntity.Id);
-           // Console.WriteLine("\n\nAAAAAAAAAAAAAAAAAAAAAAAAAA" +cycleEntity.Id);
-            cycle = CycleMapper.Map(cycleEntity);
+            cycleEntity = await _cycleRepository.GetIncludingCoursesAndAssignedSubjects(cycleEntity.Id);
+ 
+            cycle = CycleMapper.MapIncludingCourses(cycleEntity);
 
             return cycle;
         }
 
-        public async Task<Cycle> Update(Cycle cycle)
+        public async Task<bool> UpdateName(int cycleId, string name)
         {
-            CycleEntity cycleEntity = CycleMapper.Map(cycle);
-            cycleEntity = await _cycleRepository.Update(cycleEntity);
-
-            cycleEntity = await _cycleRepository.Get(cycleEntity.Id);
-            // Console.WriteLine("\n\nAAAAAAAAAAAAAAAAAAAAAAAAAA" +cycleEntity.Id);
-            cycle = CycleMapper.Map(cycleEntity);
-
-            return cycle;
+            return await _cycleRepository.UpdateName(cycleId,name);
         }
     }
 }
