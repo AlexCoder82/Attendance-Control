@@ -152,7 +152,7 @@ namespace AttendanceControl.API.Controllers
         ///     El id de la asignatura
         /// </param>
         /// <returns>
-        ///     Retorna un objeto Subject actualizado
+        ///     Retorna true
         /// </returns>
         [Authorize(Roles = Role.ADMIN)]
         [HttpPut("{subjectId}/teachers")]
@@ -161,7 +161,7 @@ namespace AttendanceControl.API.Controllers
             _logger.LogInformation("Petición para retirar la asignación " +
                 "de profesor a la asignatura con id " + subjectId);
 
-            var result = await _subjectService.RemoveAssignedTeacher(subjectId);
+            bool result = await _subjectService.RemoveAssignedTeacher(subjectId);
 
             _logger.LogInformation("Asignatura actualizada retornada");
 

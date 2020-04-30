@@ -13,34 +13,51 @@ using System.Threading.Tasks;
 
 namespace AttendanceControl.API.Application.Services
 {
+    /// <summary>
+    ///     Lógica relacionada con las clases
+    /// </summary>
     public class SchoolClassService : ISchoolClassService
     {
         private readonly ISchoolClassRepository _schoolClassRepository;
         private readonly IStudentRepository _studentRepository;
-        private readonly IDatabaseTransaction _databaseTransaction;
         private readonly ILogger<SchoolClassService> _logger;
 
         public SchoolClassService(ISchoolClassRepository schoolClassRepository,
                                   IStudentRepository studentRepository,
-                                  IDatabaseTransaction databaseTransaction,
                                   ILogger<SchoolClassService> logger)
         {
             _schoolClassRepository = schoolClassRepository;
             _studentRepository = studentRepository;
-            _databaseTransaction = databaseTransaction;
             _logger = logger;
         }
 
+        /// <summary>
+        ///     Cancela una clase
+        /// </summary>
+        /// <param name="schoolClassId">
+        ///     El id de la clase
+        /// </param>
+        /// <returns>
+        ///     Retorna true;
+        /// </returns>
         public async Task<bool> Cancel(int schoolClassId)
         {
-    
-                await _schoolClassRepository.Cancel(schoolClassId);
 
+            await _schoolClassRepository.Cancel(schoolClassId);
 
-                return true;
-          
+            return true;
+
         }
 
+        /// <summary>
+        ///     Crea una nueva clase
+        /// </summary>
+        /// <param name="schoolClass">
+        ///     El objeto SchoolClass que contiene los datos de la clase
+        /// </param>
+        /// <returns>
+        ///     Retorna el mismo objeto SchooClass con el id generado
+        /// </returns>
         public async Task<SchoolClass> Save(SchoolClass schoolClass)
         {
 
@@ -55,6 +72,15 @@ namespace AttendanceControl.API.Application.Services
 
         }
 
+        /// <summary>
+        ///     Lista todas las clases de un curso
+        /// </summary>
+        /// <param name="courseId">
+        ///     El id del curso
+        /// </param>
+        /// <returns>
+        ///     Retorna una lista de objetos SchoolClass
+        /// </returns>
         public async Task<List<SchoolClass>> GetByCourse(int courseId)
         {
             List<SchoolClassEntity> schoolClassEntities = await _schoolClassRepository.GetByCourse(courseId);
@@ -65,14 +91,29 @@ namespace AttendanceControl.API.Application.Services
             return schoolClasses;
         }
 
+        /// <summary>
+        ///     Retorna la lista de clases con su asignatura y horarios 
+        ///     que un profesor imparte "hoy"
+        /// </summary>
+        /// <param name="teacherId">
+        ///     El id del profesor 
+        /// </param>
+        /// <returns>
+        ///     Retorna una lista de objetos SchoolClass que contienen 
+        ///     cada uno un objeto Subject y un objeto Schedules
+        /// </returns>
         public async Task<List<SchoolClass>> GetByTeacher(int teacherId)
         {
+
             List<SchoolClassEntity> schoolClassEntities = await _schoolClassRepository
                 .GetByTeacher(teacherId);
+
             List<SchoolClass> schoolClasses = schoolClassEntities
-                 .Select(sc => SchoolClassMapper.MapIncludingSubjectScheduleAndStudents(sc)).ToList();
+                 .Select(sc => SchoolClassMapper
+                        .Map(sc)).ToList();
 
             return schoolClasses;
+
         }
 
     }

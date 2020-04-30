@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
@@ -21,6 +18,8 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int SubjectId { get; set; }
 
         public virtual StudentEntity StudentEntity { get; set; }
+
         public virtual SubjectEntity SubjectEntity { get; set; }
+
     }
 }

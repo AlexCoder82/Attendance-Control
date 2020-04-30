@@ -1,12 +1,9 @@
 ﻿using AttendanceControl.API.Application.Contracts.IServices;
-using AttendanceControl.API.Application.DTOs;
 using AttendanceControl.API.Application.Mappers;
-using AttendanceControl.API.Business.Enums;
 using AttendanceControl.API.Business.Models;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
 using AttendanceControl.API.DataAccess.Contracts.IRepositories;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

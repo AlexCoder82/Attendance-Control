@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace AttendanceControl.API.Business.Models
 {
@@ -8,6 +6,6 @@ namespace AttendanceControl.API.Business.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public List<Schedule> Schedules { get; set; }
+        public IEnumerable<Schedule> Schedules { get; set; }
     }
 }

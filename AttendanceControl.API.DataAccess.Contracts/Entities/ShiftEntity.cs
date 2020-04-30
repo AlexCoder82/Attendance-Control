@@ -9,6 +9,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
     [Table("shift")]
     public class ShiftEntity
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
@@ -19,6 +20,8 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public string Description { get; set; }
 
         public virtual ICollection<CycleEntity> CycleEntities { get; set; }
+
         public virtual ICollection<ScheduleEntity> ScheduleEntities { get; set; }
+
     }
 }

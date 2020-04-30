@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
     [Table("subject")]
     public class SubjectEntity
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
@@ -23,7 +22,9 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int? TeacherId { get; set; }
 
         public TeacherEntity TeacherEntity { get; set; }
+
         public virtual ICollection<CourseSubjectEntity> CourseSubjectEntities { get; set; }
+      
         public virtual ICollection<StudentSubjectEntity> StudentSubjectEntities { get; set; }
 
         public virtual ICollection<SchoolClassEntity> SchoolClassEntities { get; set; }

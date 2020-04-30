@@ -11,6 +11,9 @@ using Microsoft.Extensions.Logging;
 
 namespace AttendanceControl.API.Application.Services
 {    
+    /// <summary>
+    ///     Lógica relacionada a los admins
+    /// </summary>
     public class AdminService:IAdminService
     {
         private readonly IAdminRepository _adminRepository;
@@ -24,8 +27,26 @@ namespace AttendanceControl.API.Application.Services
             _authService = authService;
         }
 
+        /// <summary>
+        ///     Abre una sesión de administrador.
+        ///     Envia al repositorio las credenciales del administrador.
+        ///     Si el repositorio reconoce las credenciales, instancia 
+        ///     un token para el role Admin.
+        /// </summary>
+        /// <param name="admin">
+        ///     Objeto Admin con las credenciales
+        /// </param>
+        /// <exception cref="WrongCredentialsException">
+        ///     Lanza WrongCredentialsException 
+        /// </exception>
+        /// <returns>
+        ///     retorna un objeto que contiene el token creado, 
+        ///     el id del administrador
+        ///     y el role del administrador
+        /// </returns>
         public async Task<AdminSignInResponse> SignIn(Admin admin)//Throw WrongCredentialsException
         {
+
             AdminEntity adminEntity = AdminMapper.Map(admin);
 
             var signedInAdmin = await _adminRepository.Exists(adminEntity);
@@ -41,6 +62,7 @@ namespace AttendanceControl.API.Application.Services
             };
 
             return response;
+
         }
 
     }

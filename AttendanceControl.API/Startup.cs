@@ -5,8 +5,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using AttendanceControl.API.CrossCutting.IocRegister;
-using AttendanceControl.API.DataAccess;
-using AttendanceControl.API.DataAccess.Contracts;
 using AttendanceControl.API.Filters;
 using AttendanceControl.API.Validators;
 using FluentValidation.AspNetCore;
@@ -14,12 +12,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
@@ -37,35 +32,35 @@ namespace AttendanceControl.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Agrega el filtro de validación de datos indicandole el paquete donde se encuentran 
+            //todas las clases de validacion de datos
             services.AddMvc(options =>
             {
                 options.EnableEndpointRouting = false;
                 options.Filters.Add(new ValidationFilter());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
-              .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CycleValidator>());
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+            .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CycleValidator>());
+
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
 
-            /// Register Entity Framework db context
-
+            /// Registra el contexto de la base de datos
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             IOCRegister.AddDBContext(services, connectionString);
 
-            /// Register Application services 
-            /// 
+            /// Registra todos los servicios
             IOCRegister.AddServices(services);
 
-            /// Register data repositories
-
+            /// Registra todos los repositorios
             IOCRegister.AddRepositories(services);
 
-            /// Register Controllers
-
+            /// Agrega los controladores
             services.AddControllers();
 
-            //JWT AUTHORIZATION
+            //Agrega un middleware para autorizar el acceso a las rutas
             services.AddAuthorization(options =>
             {
                 options.DefaultPolicy = new AuthorizationPolicyBuilder(JwtBearerDefaults
@@ -73,7 +68,8 @@ namespace AttendanceControl.API
                         .RequireAuthenticatedUser()
                         .Build();
             });
-            //JWT AUTHENTIFICATION
+
+            //Agrega json web token 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -91,7 +87,7 @@ namespace AttendanceControl.API
                     };
                 });
 
-            //CORS
+            //Agrega el cors para permitir peticiones desde el mismo ip local
             services.AddCors(Options =>
             {
                 Options.AddPolicy("EnableCORS", builder =>
@@ -105,57 +101,34 @@ namespace AttendanceControl.API
                 });
             });
 
-            //services.AddMvc().AddJsonOptions(
-            //    options => options
-            //        .SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json
-            //           .ReferenceLoopHandling.Ignore
-            //);
-            //FLUENTVALIDATIOn
-
-
-
-
-
-
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+       
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            if (env.IsDevelopment())
-            {
-                //app.UseDeveloperExceptionPage();
-            }
-
+            
             // CORS 
             app.UseCors("EnableCORS");
 
+            //Logs
             loggerFactory.AddFile("Logs/Log-{Date}.txt");
 
-
-            //Exceptions handler middleware
+            //Controlador de errores
             app.UseExceptionHandler("/error");
+            //Middleware de autorizacion
             app.UseAuthorization();
+            //Middleware de autenticacion
             app.UseAuthentication();
+            //Routing
             app.UseRouting();
-
-            
-
-            //HTTPS
-            //  app.UseHttpsRedirection();
-
-
-
+            //Endpoints
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            
-
             //HTTPS
             app.UseHttpsRedirection();
             //MVC
-             app.UseMvc();
+            app.UseMvc();
         }
     }
 }

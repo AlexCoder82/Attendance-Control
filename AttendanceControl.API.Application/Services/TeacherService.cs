@@ -6,11 +6,8 @@ using AttendanceControl.API.Business.Enums;
 using AttendanceControl.API.Business.Models;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
 using AttendanceControl.API.DataAccess.Contracts.IRepositories;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AttendanceControl.API.Application.Services
@@ -20,65 +17,112 @@ namespace AttendanceControl.API.Application.Services
         private readonly ITeacherRepository _teacherRepository;
         private readonly IAuthService _authService;
         private readonly ISchoolClassService _schoolClassService;
-        private readonly ILogger<TeacherService> _logger;
 
         public TeacherService(ITeacherRepository teacherRepository,
                               IAuthService authService,
-                              ISchoolClassService schoolClassService,
-                              ILogger<TeacherService> logger)
+                              ISchoolClassService schoolClassService)
         {
             _teacherRepository = teacherRepository;
             _authService = authService;
             _schoolClassService = schoolClassService;
-            _logger = logger;
         }
 
+        /// <summary>
+        ///     Lista todos los profesores
+        /// </summary>
+        /// <returns>
+        ///     Retorna una lista de objetos Teacher
+        /// </returns>
         public async Task<List<Teacher>> GetAll()
         {
+
             List<TeacherEntity> teacherEntities = await _teacherRepository.GetAll();
 
             List<Teacher> teachers = teacherEntities
                 .Select(t => TeacherMapper.Map(t)).ToList();
 
             return teachers;
+
         }
 
-        public async Task<Teacher> Register(string dni, TeacherCredentials teacherCredentials)
+        /// <summary>
+        ///     Crea un nuevo profesor
+        /// </summary>
+        /// <param name="teacher">
+        ///     El objeto Teacher que contiene los datos del profesor
+        /// </param>
+        /// <exception cref="DniDuplicateEntryException">
+        ///     Lanza DniDuplicateEntryException
+        /// </exception>
+        /// <returns>
+        ///     Retorna el objeto Teacher creado con su id generado
+        /// </returns>
+        public async Task<Teacher> Save(Teacher teacher)//throw DniDuplicateEntryException
         {
-            TeacherEntity teacherEntity = await _teacherRepository.GetByDni(dni);
 
-            TeacherCredentialsEntity teacherCredentialsEntity = new TeacherCredentialsEntity()
-            {
-                Username= teacherCredentials.Username,
-                Password = teacherCredentials.Password
-            };
-            await _teacherRepository.Register(teacherEntity, teacherCredentialsEntity);
-
-            teacherEntity.TeacherCredentialsEntity = teacherCredentialsEntity;
-
-            Teacher teacher = TeacherMapper.MapIncludingCredentials(teacherEntity);
-            return teacher;
-        }
-
-        public async Task<Teacher> Save(Teacher teacher)
-        {
             TeacherEntity teacherEntity = TeacherMapper.Map(teacher);
+
             teacherEntity = await _teacherRepository.Save(teacherEntity);
+
             teacher = TeacherMapper.Map(teacherEntity);
+
             return teacher;
+
         }
 
+        /// <summary>
+        ///     Actualiza un  profesor
+        /// </summary>
+        /// <param name="teacher">
+        ///     El objeto Teacher que contiene los nuevos datos del profesor
+        /// </param>
+        /// <exception cref="DniDuplicateEntryException">
+        ///     Lanza DniDuplicateEntryException
+        /// </exception>
+        /// <returns>
+        ///     Retorna el objeto Teacher actualizado
+        /// </returns>
+        public async Task<Teacher> Update(Teacher teacher)
+        {
+
+            TeacherEntity teacherEntity = TeacherMapper.Map(teacher);
+
+            teacherEntity = await _teacherRepository.Update(teacherEntity);
+
+            teacher = TeacherMapper.Map(teacherEntity);
+
+            return teacher;
+
+        }
+
+        /// <summary>
+        ///     Abre una sesión de profesor si el dni es reconocido 
+        ///     por el repositorio
+        /// </summary>
+        /// <param name="dni">
+        ///     dni del profesor
+        /// </param>
+        /// <returns>
+        ///     Retorna un objeto TeacherSignInResponse que contiene 
+        ///     el id del profesor,su nombre, el token generado, 
+        ///     el Role profesor y la lista de clases que imparte
+        ///     el profesor "hoy"
+        /// </returns>
         public async Task<TeacherSignInResponse> SignIn(string dni)
         {
+
             TeacherEntity teacherEntity = await _teacherRepository
                  .GetByDni(dni);
 
+            //Token único de sessión
             string token = _authService
                         .GenerateToken(teacherEntity.Dni,
                              Role.TEACHER);
 
+            //Lista de las clases del dia del profesor
             List<SchoolClass> schoolClasses = await _schoolClassService
                 .GetByTeacher(teacherEntity.Id);
+
             TeacherSignInResponse signInResponse = new TeacherSignInResponse()
             {
                 TeacherId = teacherEntity.Id,
@@ -89,14 +133,8 @@ namespace AttendanceControl.API.Application.Services
             };
 
             return signInResponse;
-        }
 
-        public async Task<Teacher> Update(Teacher teacher)
-        {
-            TeacherEntity teacherEntity = TeacherMapper.Map(teacher);
-            teacherEntity = await _teacherRepository.Update(teacherEntity);
-            teacher = TeacherMapper.Map(teacherEntity);
-            return teacher;
         }
+       
     }
 }

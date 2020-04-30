@@ -1,5 +1,8 @@
 ﻿namespace AttendanceControl.API.Business.Enums
 {
+    /// <summary>
+    ///     Tipos de ausencia
+    /// </summary>
     public enum AbsenceType
     {
         TOTAL = 0,

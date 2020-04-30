@@ -13,49 +13,57 @@ using System.Threading.Tasks;
 
 namespace AttendanceControl.API.DataAccess.Repositories
 {
+    /// <summary>
+    ///     Repositorio de cursos 
+    /// </summary>
     public class CourseRepository : ICourseRepository
     {
         private readonly IAttendanceControlDBContext _dbContext;
         private readonly ILogger<CourseRepository> _logger;
 
-        public CourseRepository(IAttendanceControlDBContext dbContext,
-                                ILogger<CourseRepository> logger)
+        public CourseRepository(
+                    IAttendanceControlDBContext dbContext,
+                    ILogger<CourseRepository> logger)
         {
             _dbContext = dbContext;
             _logger = logger;
         }
 
         /// <summary>
-        ///     Recupera la lista completa de cursos incluyendo el ciclo
+        ///     Obtiene la lista completa de entidades curso incluyendo el ciclo
         ///     al que peternecen
         /// </summary>
         /// <returns>
-        ///     Retorna la lista de cursos
+        ///     Retorna la lista de entidades curso
         /// </returns>
         public async Task<List<CourseEntity>> GetAll()
         {
+
             List<CourseEntity> courseEntities = await _dbContext.CourseEntities
                 .Include(c => c.CycleEntity)
-
                 .ToListAsync();
 
-            _logger.LogInformation("Lista de cursos recuperada de la base de datos.");
+            _logger.LogInformation("Lista de cursos obtenida de la base de datos.");
 
             return courseEntities;
+
         }
 
 
         /// <summary>
-        ///     Recupera un curso por su Id, incluyendo 
+        ///     Obtiene un curso por su Id, incluyendo 
         ///     las asignaturas asignadas 
         /// </summary>
         /// <param name="courseId"></param>
+        /// <exception cref="DataNotFoundException">
+        ///     Lanza DataNotFoundException si el id no existe
+        /// </exception>
         /// <returns>
-        ///     Retorna el curso o lanza
-        ///     DataNotFoundException si el id no existe en la tabla
+        ///     Retorna la entidad curso
         /// </returns>
         public async Task<CourseEntity> GetIncludingAssignedSubjects(int courseId)
         {
+
             CourseEntity courseEntity = await _dbContext.CourseEntities
                     .Include(c => c.CourseSubjectEntities)
                     .FirstOrDefaultAsync(c => c.Id == courseId);
@@ -69,48 +77,33 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Curso recuperado de la base de datos.");
 
             return courseEntity;
+
         }
 
         /// <summary>
-        ///     Recupera un curso dado un id, incluyendo
-        ///     el ciclo al que pertenece y las asignaturas
-        ///     asignadas
+        ///     Agrega una nueva asignatura a un curso
+        ///     llamando un procedimiento de la base de datos que:
+        ///     - inserta la relacion entre la asignatura y el curso
+        ///     - inserta las relaciones entre la asignatura y cada alumno
+        ///       que cursa el curso
         /// </summary>
-        /// <param name="courseId"></param>
-        /// <returns>
-        ///     Retorna el curso o lanza DataNotFoundException
-        ///     si el id no existe en la tabla
-        /// </returns>
-        public async Task<CourseEntity> GetIncludingCycleAndAssignedSubjects(int courseId)
-        {
-            CourseEntity entityToUpdate = await _dbContext.CourseEntities
-                    .Include(c => c.CourseSubjectEntities).ThenInclude(cs => cs.SubjectEntity)
-                    .Include(c => c.CycleEntity)
-                    .FirstOrDefaultAsync(c => c.Id == courseId);
-
-            if (entityToUpdate is null)
-            {
-                throw new DataNotFoundException("No se ha encontrado el curso " +
-                    "en la base de datos, el id no existe.");
-            }
-
-            _logger.LogInformation("Curso recuperado de la base de datos.");
-
-            return entityToUpdate;
-        }
-
-        /// <summary>
-        ///     Actualiza la lista de asignaturas asignadas a un curso
-        /// </summary>
-        /// <param name="courseEntity">
-        ///     El curso incluyendo las nuevas asignaturas
+        /// <param name="courseId">
+        ///     El id del curso
         /// </param>
+        /// <param name="subjectId">
+        ///     El id de la asignatura
+        /// </param>
+        /// <exception cref="CourseSubjectDuplicateEntryException">
+        ///     Lanza CourseSubjectDuplicateEntryException si se intenta
+        ///     insertar una relacion entre el curso y la asignatura que
+        ///     ya existe.
+        /// </exception>
         /// <returns>
-        ///     El aciclo actualizado o lanza CourseSubjectDuplicateEntryException si 
-        ///     se intenta asignar una asignatura ya asignada
+        ///     Retorna true
         /// </returns>
         public async Task<bool> AssignSubject(int courseId, int subjectId)
         {
+
             var course_id = new MySqlParameter("@courseId", courseId);
             var subject_id = new MySqlParameter("@subjectId", subjectId);
 
@@ -120,7 +113,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
                 await _dbContext.SaveChangesAsync();
 
-                _logger.LogInformation("Asignaturas del curso actualizadas.");
+                _logger.LogInformation("La asignatura ha sido agregada al curso");
             }
             catch (DbUpdateException ex)
             {
@@ -128,7 +121,8 @@ namespace AttendanceControl.API.DataAccess.Repositories
                 //curso una asignatura que ya tiene asignada
                 if (ex.InnerException.Message.Contains("UQ_course_subject"))
                 {
-                    _logger.LogWarning("No se ha asignado la asignatura porque el curso ya la tiene asignada");
+                    _logger.LogWarning("Error: se ha intentado agregar a a un curso " +
+                        "una asignatura que ya tiene");
 
                     throw new CourseSubjectDuplicateEntryException();
                 }
@@ -140,23 +134,37 @@ namespace AttendanceControl.API.DataAccess.Repositories
             }
 
             return true;
+
         }
 
+        /// <summary>
+        ///     Retira una asignatura de un curso llamando a
+        ///     un procedimiento de la base de datos que :
+        ///     -borra la relacion entre el curso y la asignatura 
+        ///     -borra la relacion entre los alumnos que cursan el curso
+        ///      y la asignatura
+        ///     -borra la relacion entre los alumnos y las clases de la asignatura
+        /// </summary>
+        /// <param name="courseId"></param>
+        /// <param name="subjectId"></param>
+        /// <returns>
+        ///     Retorna true
+        /// </returns>
         public async Task<bool> RenoveAssignedSubject(int courseId, int subjectId)
         {
 
             var course_id = new MySqlParameter("@courseId", courseId);
             var subject_id = new MySqlParameter("@subjectId", subjectId);
 
-
             _dbContext.Database.ExecuteSqlRaw("call remove_subject_from_course(@subjectId,@courseId)", subject_id, course_id);
 
             await _dbContext.SaveChangesAsync();
 
-
             _logger.LogInformation("Asignaturas del curso actualizadas.");
 
             return true;
+
         }
     }
+
 }

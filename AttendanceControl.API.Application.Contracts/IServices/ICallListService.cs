@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AttendanceControl.API.Application.Contracts.IServices
 {
+    /// <summary>
+    ///  Contratos de la lógica relacionada con los listados de alumnos
+    /// </summary>
     public interface ICallListService
     {
         public Task<List<SchoolClassStudent>> Get(int[] schoolClassIds);

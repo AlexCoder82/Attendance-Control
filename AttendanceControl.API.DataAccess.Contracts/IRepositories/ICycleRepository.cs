@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
 {
+    /// <summary>
+    ///     Contratos del repositorio de ciclos formativos
+    /// </summary>
     public interface ICycleRepository
     {
         public Task<CycleEntity> GetIncludingCoursesAndAssignedSubjects(int id);

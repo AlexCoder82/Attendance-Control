@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace AttendanceControl.API.DataAccess.Repositories
 {
     /// <summary>
-    ///     Clase con los métodos de acceso a la tabla de profesores
+    ///     Repositorio de profesores
     /// </summary>
     public class TeacherRepository : ITeacherRepository
     {
@@ -27,42 +27,24 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger = logger;
         }
 
-        public async Task<TeacherEntity> GetByCredentials(string username, string password)
-        {
-            TeacherEntity teacherEntity = await _dbContext.TeacherEntities
-                .Include(t => t.TeacherCredentialsEntity)
-                .FirstOrDefaultAsync(t => t.TeacherCredentialsEntity.Username == username
-                    && t.TeacherCredentialsEntity.Password == password);
-
-            return teacherEntity;
-        }
 
         /// <summary>
-        ///     Recupera el profesor que corresponde al id introducido 
-        ///     en parámetro
+        ///     Recupera una entidad profesor por su id
         /// </summary>
         /// <param name="id">
         ///     El id del profesor
         /// </param>
+        /// <exception cref="DataNotFoundException">
+        ///     Lanza DataNotFoundException si el id no existe
+        /// </exception>
         /// <returns>
-        ///     Retorna la entidad profesor con sus datos personales
-        ///     pero sin sus credenciales delogin
+        ///     Retorna la entidad profesor 
         /// </returns>
         public async Task<TeacherEntity> Get(int id)
         {
+
             TeacherEntity teacherEntity = await _dbContext.TeacherEntities
-               .Where(t => t.Id == id)
-               //.Select(t => new TeacherEntity()
-               //{
-               //    Id = t.Id,
-               //    PersonDataEntity = new PersonDataEntity()
-               //    {
-               //        Dni = t.PersonDataEntity.Dni,
-               //        FirstName = t.PersonDataEntity.FirstName,
-               //        LastName1 = t.PersonDataEntity.LastName1,
-               //        LastName2 = t.PersonDataEntity.LastName2
-               //    }
-               //})
+               .Where(t => t.Id == id)            
                .FirstOrDefaultAsync();
 
             if (teacherEntity is null)
@@ -73,25 +55,38 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Profesor recuperado de la base de datos");
 
             return teacherEntity;
+
         }
 
         /// <summary>
-        ///     Recupera la lista completa de los profesores
+        ///     Recupera la lista completa de todas las entidades profesor
         /// </summary>
         /// <returns>
         ///     Retorna una lista de entidades de profesores
-        ///     con sus datos personales pero sin los credenciales de login
         /// </returns>
         public async Task<List<TeacherEntity>> GetAll()
         {
+
             List<TeacherEntity> teacherEntities = await _dbContext.TeacherEntities.OrderBy(t=>t.LastName1)     
                 .ToListAsync();
 
             _logger.LogInformation("Lista de profesores recuperada de la base de datos");
 
             return teacherEntities;
+
         }
-      
+
+        /// <summary>
+        ///     Comprueba si una entidad profesor existe 
+        ///     por su dni
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <exception cref="WrongDniException">
+        ///     Lanza WrongDniException si no existe
+        /// </exception>
+        /// <returns>
+        ///     Retorna la entidad profesor
+        /// </returns>
 
         public async Task<TeacherEntity> GetByDni(string dni)
         {
@@ -104,47 +99,32 @@ namespace AttendanceControl.API.DataAccess.Repositories
             {
                 throw new WrongDniException();
             }       
+
             _logger.LogInformation("Profesor con dni " +dni +"reconocido");
 
             return teacherEntity;
+
         }
 
-        public async Task<bool> Register(TeacherEntity teacherEntity, TeacherCredentialsEntity teacherCredentialsEntity)
-        {
-            try
-            {
-                teacherEntity.TeacherCredentialsEntity = teacherCredentialsEntity;
-                await _dbContext.SaveChangesAsync();
-            }
-            catch (DbUpdateException ex)
-            {
-                if (ex.InnerException.Message.Contains("UQ_username"))
-                {
-                    throw new TeacherUserNameDuplicateEntryException();
-                }
-                if (ex.InnerException.Message.Contains("UQ_password"))
-                {
-                    throw new TeacherPasswordDuplicateEntryException();
-                }
-            }
 
-            return true;
-        }
 
         /// <summary>
-        ///     Guarda un nuevo profesor
+        ///     Inserta una nueva entidad profesor
         /// </summary>
         /// <param name="entity">
         ///     La entidad profesor a guardar
         /// </param>
+        /// <exception cref="DniDuplicateEntryException">
+        ///     Lanza DniDuplicateEntryException si ya existe
+        ///     un profesor con el mismo dni
+        /// </exception>
         /// <returns>
         ///     Retorna la entidad profesor guardada 
-        ///     con su Id generado por la base de datos o
-        ///     lanza DniDuplicateEntryException si el dni
-        ///     ya existe en la tabla
+        ///     con su Id generado 
         /// </returns>
         public async Task<TeacherEntity> Save(TeacherEntity entity)
         {
+
             try
             {
                 await _dbContext.TeacherEntities.AddAsync(entity);
@@ -169,21 +149,25 @@ namespace AttendanceControl.API.DataAccess.Repositories
             }
 
             return entity;
+
         }
 
         /// <summary>
-        ///     Actualiza los datos personales de un profesor
+        ///     Actualiza una entidad profesor
         /// </summary>
         /// <param name="entity">
         ///     La entidad profesor con los nuevos datos
         /// </param>
+        /// <exception cref="DniDuplicateEntryException">
+        ///     Lanza DniDuplicateEntryException si ya existe
+        ///     un profesor con el mismo dni
+        /// </exception>
         /// <returns>
-        ///     Retorna la entidad profesor o lanza 
-        ///     DniDuplicateEntryException si 
-        ///     el dni ya existe en la tabla
+        ///     Retorna la entidad profesor actualizada
         /// </returns>
         public async Task<TeacherEntity> Update(TeacherEntity entity)
         {
+
             //Recupera la entidad a modificar
             TeacherEntity entityToUpdate = await this.Get(entity.Id);
 
@@ -214,6 +198,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
             }
 
             return entityToUpdate;
+
         }
 
     }

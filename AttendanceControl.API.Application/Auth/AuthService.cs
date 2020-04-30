@@ -9,15 +9,16 @@ using Microsoft.Extensions.Logging;
 
 namespace AttendanceControl.API.Application.Auth
 {
-    public class AuthService:IAuthService
+    /// <summary>
+    ///     Objeto que genera un token de sesion
+    /// </summary>
+    public class AuthService : IAuthService
     {
-        // private readonly IOptions<AppSettings> _appSettings;
         private ILogger<AuthService> _logger;
 
         public AuthService(ILogger<AuthService> logger)
         {
             _logger = logger;
-            // _appSettings = appSettings;
         }
 
         public bool ValidateToken()
@@ -25,12 +26,26 @@ namespace AttendanceControl.API.Application.Auth
             return true;
         }
 
+        /// <summary>
+        ///     Genera un token tanto para administrador como para
+        ///     un profesor
+        /// </summary>
+        /// <param name="sub">
+        ///     Cadena a partir de la cual se va crear el token
+        /// </param>
+        /// <param name="role">
+        ///     Role de la sesión
+        /// </param>
+        /// <returns></returns>
         public string GenerateToken(string sub, string role)
         {
+
+            //Tiempo de sesión
             DateTime date = DateTime.UtcNow;
             TimeSpan validTime = TimeSpan.FromMinutes(30);
             var expire = date.Add(validTime);
 
+            //Reclamaciones
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
@@ -42,7 +57,7 @@ namespace AttendanceControl.API.Application.Auth
             };
 
 
-            var signingCredentials = new SigningCredentials( new SymmetricSecurityKey(Encoding
+            var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding
                             .ASCII.GetBytes("AAfjoègfjèjf`jeof`jeòfjpo`jfo51561f456a4f")),
                             SecurityAlgorithms.HmacSha256Signature);
 
@@ -62,6 +77,7 @@ namespace AttendanceControl.API.Application.Auth
             _logger.LogInformation("Token de administrador generado");
 
             return token;
+
         }
     }
 }

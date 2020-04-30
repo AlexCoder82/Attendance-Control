@@ -1,11 +1,12 @@
-﻿using AttendanceControl.API.Business.Enums;
-using AttendanceControl.API.Business.Models;
-using System;
+﻿using AttendanceControl.API.Business.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AttendanceControl.API.Application.Contracts.DTOs
 {
+    /// <summary>
+    ///     Objeto que se instancia y retorna cuando un 
+    ///     profesor abre una sesión
+    /// </summary>
     public class TeacherSignInResponse
     {
         public int TeacherId { get; set; }

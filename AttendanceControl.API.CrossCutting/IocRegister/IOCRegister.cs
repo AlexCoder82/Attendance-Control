@@ -12,9 +12,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AttendanceControl.API.CrossCutting.IocRegister
 {
+    /// <summary>
+    ///     Objeto que registra todas las dependencias 
+    /// </summary>
     public static class IOCRegister
     {
-        //DBContext IOC
+        
         public static IServiceCollection AddDBContext(this IServiceCollection services, string connection)
         {
             services.AddScoped<IAttendanceControlDBContext, AttendanceControlDBContext>();
@@ -25,9 +28,10 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
             return services;
         }
 
-        //Application services IOC 
+        //Registra los servicios
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
+
             services.AddTransient<IShiftService, ShiftService>();
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IAdminService, AdminService>();
@@ -35,34 +39,31 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
             services.AddTransient<ICourseService, CourseService>();
             services.AddTransient<ISubjectService, SubjectService>();
             services.AddTransient<ITeacherService, TeacherService>();
-            services.AddTransient<IScheduleService, ScheduleService>();
             services.AddTransient<ISchoolClassService, SchoolClassService>();
             services.AddTransient<IStudentService, StudentService>();
             services.AddTransient<IAbsenceService, AbsenceService>();
             services.AddTransient<ICallListService, CallListService>();
 
             return services;
+
         }
 
-        //Repositories IOC 
+        //Registra los repositorios
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+
             services.AddTransient<IShiftRepository, ShiftRepository>();
             services.AddTransient<IAdminRepository, AdminRepository>();
             services.AddTransient<ICycleRepository, CycleRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
             services.AddTransient<ISubjectRepository, SubjectRepository>();
             services.AddTransient<ITeacherRepository, TeacherRepository>();
-            services.AddTransient<IScheduleRepository, ScheduleRepository>();
             services.AddTransient<ISchoolClassRepository, SchoolClassRepository>();
             services.AddTransient<IStudentRepository, StudentRepository>();
-            services.AddTransient<IDatabaseTransaction, DatabaseTransaction>();
             services.AddTransient<IAbsenceRepository, AbsenceRepository>();
-            
-            
-
-
+                  
             return services;
+
         }
     }
 }

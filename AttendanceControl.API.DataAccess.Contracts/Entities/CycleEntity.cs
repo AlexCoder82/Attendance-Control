@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
     [Table("cycle")]
     public class CycleEntity
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
@@ -24,6 +23,8 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int ShiftId { get; set; }
 
         public virtual ICollection<CourseEntity> CourseEntities { get; set; }
+
         public virtual ShiftEntity ShiftEntity { get; set; }
+
     }
 }

@@ -1,6 +1,4 @@
-﻿using AttendanceControl.API.Business.Enums;
-using AttendanceControl.API.Business.Exceptions;
-using AttendanceControl.API.DataAccess.Contracts;
+﻿using AttendanceControl.API.DataAccess.Contracts;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
 using AttendanceControl.API.DataAccess.Contracts.IRepositories;
 using Microsoft.EntityFrameworkCore;
@@ -22,18 +20,26 @@ namespace AttendanceControl.API.DataAccess.Repositories
         private readonly IAttendanceControlDBContext _dbContext;
         private readonly ILogger<SchoolClassRepository> _logger;
 
-        public SchoolClassRepository(IAttendanceControlDBContext dbContext, ILogger<SchoolClassRepository> logger)
+        public SchoolClassRepository(IAttendanceControlDBContext dbContext,
+                                     ILogger<SchoolClassRepository> logger)
         {
             _dbContext = dbContext;
             _logger = logger;
         }
 
         /// <summary>
-        ///     Cancela la vigencia de una clase: estable 
-        ///     al campo IsCurrent el valor false
+        ///     Cancela la vigencia de una clase llamando a un
+        ///     procedimiento de la base de datos que:
+        ///     -cancela la clase estableciendo el valor false al
+        ///      campo "isCurrent"
+        ///     -Borra todas las relaciones entre los alumnos y la clase
         /// </summary>
-        /// <param name="schoolClassEntity"></param>
-        /// <returns></returns>
+        /// <param name="schoolClassEntity">
+        ///     El id de la clase
+        /// </param>
+        /// <returns><
+        ///     Retorna true
+        /// /returns>
         public async Task<bool> Cancel(int schoolClassId)
         {
 
@@ -41,149 +47,61 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
             _dbContext.Database.ExecuteSqlRaw("call cancel_school_class(@schoolClassId)", id);
 
-
             await _dbContext.SaveChangesAsync();
 
-
             return true;
+
         }
 
         /// <summary>
-        ///     Recupera la lista de clases de un curso incluyendo
-        ///     las asignaturas y los horarios
+        ///     Recupera la lista de entidades clase de un curso incluyendo
+        ///     las asignaturas y los horarios.
         /// </summary>
         /// <param name="courseId">
         ///     El id del curso
         /// </param>
         /// <returns>
-        ///     Retorna la lista de clases
+        ///     Retorna la lista de entidades clase
         /// </returns>
         public async Task<List<SchoolClassEntity>> GetByCourse(int courseId)
         {
+
             List<SchoolClassEntity> schoolClassEntities = await _dbContext.SchoolClassEntities
                 .Include(sc => sc.SubjectEntity)
                 .Include(sc => sc.ScheduleEntity)
                 .Where(sc => sc.CourseId == courseId && sc.IsCurrent == true)
                 .ToListAsync();
 
-            _logger.LogInformation("La lista de clases ha sido recuperadada de la base de datos.");
+            _logger.LogInformation("La lista de clases ha sido obtenida de la base de datos.");
 
             return schoolClassEntities;
+
         }
 
-        public async Task<List<SchoolClassEntity>> GetByCourseAndSubject(int courseId, int subjectId)
-        {
-            List<SchoolClassEntity> schoolClassEntities = await _dbContext.SchoolClassEntities
-              .Include(sc => sc.SubjectEntity)
-              .Include(sc => sc.ScheduleEntity)
-              .Include(sc => sc.SchoolClassStudentEntities)
-              .Where(sc => sc.CourseId == courseId && sc.IsCurrent == true
-                && sc.SubjectEntity.Id == subjectId)
-              .ToListAsync();
-
-            _logger.LogInformation("La lista de clases ha sido recuperadada de la base de datos.");
-
-            return schoolClassEntities;
-        }
+    
 
         /// <summary>
-        ///     Guarda una nueva clase 
+        ///     Guarda una nueva entidad clase 
         /// </summary>
         /// <param name="schoolClassEntity"></param>
         /// <returns>
-        ///     Retorna la clase guardada con su id generado por la base de datos
+        ///     Retorna la entidad clase guardada con su id generado por la base de datos
         /// </returns>
         public async Task<SchoolClassEntity> Save(SchoolClassEntity schoolClassEntity)
         {
+
             await _dbContext.SchoolClassEntities.AddAsync(schoolClassEntity);
             await _dbContext.SaveChangesAsync();
 
             _logger.LogInformation("Nueva clase guardada en la base de datos.");
 
             return schoolClassEntity;
+
         }
+    
 
         /// <summary>
-        ///     Recupera una clase dado su id incluyendo 
-        ///     la asignatura y el horario
-        /// </summary>
-        /// <param name="schoolClassId"></param>
-        /// <returns>
-        ///     Retorna la clase
-        /// </returns>
-        public async Task<SchoolClassEntity> GetCurrentIncludingSubjectAndSchedules(int schoolClassId)
-        {
-            SchoolClassEntity schoolClassEntity = await _dbContext.SchoolClassEntities
-               .Include(sc => sc.SubjectEntity)
-               .Include(sc => sc.ScheduleEntity)
-               .FirstOrDefaultAsync(sc => sc.Id == schoolClassId);
-
-            if (schoolClassEntity is null)
-            {
-                throw new DataNotFoundException("No se ha encontrado la clase de escuela, " +
-                    "el id no existe en la tabla");
-            }
-
-            _logger.LogInformation("Classe vigente con su asignatura y horarios recuperada de la base de datos.");
-
-            return schoolClassEntity;
-        }
-
-        /// <summary>
-        ///     Actualiza la lista de alumnos que deben acudir a una clase
-        /// </summary>
-        /// <param name="schoolClassEntity">
-        ///     El id de la clase 
-        /// </param>
-        /// <param name="studentEntities">
-        ///     La lista de alumnos
-        /// </param>
-        /// <returns>
-        ///     Retorna la clase modificada
-        /// </returns>
-        public async Task<SchoolClassEntity> UpdateStudents(SchoolClassEntity schoolClassEntity, List<StudentEntity>? studentEntities)
-        {
-            List<SchoolClassStudentEntity> schoolClassStudentEntities = new List<SchoolClassStudentEntity>();
-            if (!(studentEntities is null))
-            {
-                studentEntities.ForEach(s =>
-                {
-                    schoolClassStudentEntities.Add(new SchoolClassStudentEntity()
-                    {
-                        StudentEntity = s,
-                        SchoolClassEntity = schoolClassEntity
-                    });
-                });
-            }
-            schoolClassEntity.SchoolClassStudentEntities = schoolClassStudentEntities;
-
-            await _dbContext.SaveChangesAsync();
-
-            _logger.LogInformation("Lista de alumnos de la clase de escuela actualizada.");
-
-            return schoolClassEntity;
-        }
-
-        /// <summary>
-        ///     Recupera una clase dado su id 
-        /// </summary>
-        /// <param name="schoolClassId"></param>
-        /// <returns>
-        ///     Retorna la clase
-        /// </returns>
-        public async Task<SchoolClassEntity> Get(int schoolClassId)
-        {
-            SchoolClassEntity schoolClassEntity = await _dbContext.SchoolClassEntities
-                .Include(sc => sc.SchoolClassStudentEntities)
-                .FirstOrDefaultAsync(sc => sc.Id == schoolClassId);
-
-            _logger.LogInformation("Clase de escuela recuperadada de la base de datos.");
-
-            return schoolClassEntity;
-        }
-
-        /// <summary>
-        ///     Recupera la lista de clases a la hora actual,
+        ///     Recupera la lista de entidades clase a la hora actual,
         ///     el dia de la semana actual
         ///     dado el id del profesor que imparte las clases (Listado de alumnos) 
         /// </summary>
@@ -193,9 +111,8 @@ namespace AttendanceControl.API.DataAccess.Repositories
         /// </returns>
         public async Task<List<SchoolClassEntity>> GetByTeacher(int teacherId)
         {
-            DayOfWeek day = DayOfWeek.Thursday;
 
-            // TimeSpan now = new TimeSpan(12,50, 00);// DateTime.Now.TimeOfDay;
+            DayOfWeek day = DayOfWeek.Thursday;
 
             List<SchoolClassEntity> schoolClassEntities = await _dbContext.SchoolClassEntities
                 .Include(sc => sc.SubjectEntity)
@@ -207,6 +124,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
                 .ToListAsync();
 
             return schoolClassEntities;
+
         }
 
     }

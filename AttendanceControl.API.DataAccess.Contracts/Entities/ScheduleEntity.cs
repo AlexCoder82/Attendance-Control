@@ -1,7 +1,5 @@
 ﻿
-using AttendanceControl.API.Business.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -10,6 +8,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
     [Table("schedule")]
     public class ScheduleEntity
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
@@ -29,5 +28,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public int ShiftId { get; set; }
 
         public virtual ShiftEntity ShiftEntity { get; set; }
+
     }
 }

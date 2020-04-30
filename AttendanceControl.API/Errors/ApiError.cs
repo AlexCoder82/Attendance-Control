@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AttendanceControl.API.Errors
 {
+    /// <summary>
+    ///     Objecto instanciado y retornado al cliente si se lanza 
+    ///     una excepción, contiene información
+    ///     sobre la excepción.
+    /// </summary>
     public class ApiError
     {
         public DateTime Timestamp { get; set; }
@@ -14,7 +16,8 @@ namespace AttendanceControl.API.Errors
         public string Path { get; set; }
         public override string ToString()
         {
-            return String.Format("\n\nERROR RETORNADO:\t {0}\t{1}\t{2}\t{3}\n\n", Timestamp, StatusCode, Error, Message);
+            return String.Format("\n\nERROR RETORNADO:\t {0}\t{1}\t{2}\t{3}\n\n",
+                Timestamp, StatusCode, Error, Message);
         }
     }
 }

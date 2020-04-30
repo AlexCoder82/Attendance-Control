@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace AttendanceControl.API.DataAccess.Repositories
 {
     /// <summary>
-    ///     Clase con los métodos de acceso a la tabla de alumnos
+    ///     Repositorio de alumnos
     /// </summary>
     public class StudentRepository : IStudentRepository
     {
@@ -32,17 +32,20 @@ namespace AttendanceControl.API.DataAccess.Repositories
         }
 
         /// <summary>
-        ///     Recupera un alumno con el id introducido por parámetro
+        ///     Recupera una entidad alumno por id
         /// </summary>
         /// <param name="studentId">
         ///     El id del alumno
         /// </param>
+        /// <exception cref="DataNotFoundException">
+        ///     Lanza DataNotFoundException si el id no existe
+        /// </exception>
         /// <returns>
-        ///     Retorna la entidad alumno con sus datos personales o  lanza 
-        ///     DataNotFoundException si el id no existe en la tabla
+        ///     Retorna la entidad alumno 
         /// </returns>
         public async Task<StudentEntity> Get(int studentId)
         {
+
             StudentEntity studentEntity = await _dbContext.StudentEntities
                 .FirstOrDefaultAsync(s => s.Id == studentId);
 
@@ -55,67 +58,12 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Alumno recuperado de la base de datos.");
 
             return studentEntity;
+
         }
+    
 
         /// <summary>
-        ///     Recupera el alumno con el id introducido por parámetro 
-        ///     incluyendo el curso y las asignaturas que cursa
-        /// </summary>
-        /// <param name="studentId">
-        ///     El id del alumno
-        /// </param>
-        /// <returns>
-        ///     Retorna la entidad alumno o lanza DataNotFoundException 
-        ///     si no existe el id en la tabla
-        /// </returns>
-        public async Task<StudentEntity> GetIncludingCourseAndSubjectsAndSchoolCLasses(int studentId)
-        {
-            StudentEntity studentEntity = await _dbContext.StudentEntities
-                .Include(s => s.CourseEntity).ThenInclude(c => c.CycleEntity)
-                .Include(s => s.StudentSubjectEntities).ThenInclude(ss => ss.SubjectEntity)
-                .Include(s => s.SchoolClassStudentEntities)
-                .FirstOrDefaultAsync(s => s.Id == studentId);
-
-            if (studentEntity is null)
-            {
-                throw new DataNotFoundException("No se ha encontrado el alumno en " +
-                    "la base de datos, el Id no existe.");
-            }
-
-            _logger.LogInformation("El alumno ha sido recuperado de la base de datos.");
-
-            return studentEntity;
-        }
-
-        /// <summary>
-        ///     Recupera el alumno con el id introducido por parámetro
-        ///     incluyendo el curso que cursa
-        /// </summary>
-        /// <param name="studentId"></param>
-        /// <returns>
-        ///     Retorna la entidad alumno o lanza DataNotFoundException
-        ///     si no existe el id en la tabla
-        /// </returns>
-        public async Task<StudentEntity> GetIncludingCourse(int studentId)
-        {
-            StudentEntity studentEntity = await _dbContext.StudentEntities
-                .Include(s => s.CourseEntity)
-                .FirstOrDefaultAsync(s => s.Id == studentId);
-
-            if (studentEntity is null)
-            {
-                throw new DataNotFoundException("No se ha encontrado el alumno en " +
-                    "la base de datos, el Id no existe.");
-            }
-
-            _logger.LogInformation("El alumno ha sido recuperado de la base de datos.");
-
-            return studentEntity;
-        }
-
-
-        /// <summary>
-        ///     Recupera una lista de alumnos cuyo primer apellido 
+        ///     Recupera una lista de entidades alumnos por página y cuyo primer apellido 
         ///     empieza por la cadena lastname introducida por parametro 
         ///     incluyendo el curso y las asignaturas que cursa
         /// </summary>
@@ -146,57 +94,113 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
 
         /// <summary>
-        ///     Guarda un nuevo alumno en la base de datos
+        ///     Inserta una nueva ebtidad alumno 
         /// </summary>
         /// <param name="studentEntity"></param>
+        /// <exception cref="DniDuplicateEntryException">
+        ///     Lanza DniDuplicateEntryException si el dni del alumno ya existe
+        /// </exception>
         /// <returns>
-        ///     Retorna la entidad alumno guardada con su id generado por la base de datos
+        ///     Retorna la entidad alumno guardada con su id generado 
         /// </returns>
         public async Task<StudentEntity> Save(StudentEntity studentEntity)
         {
-            await _dbContext.StudentEntities.AddAsync(studentEntity);
-            await _dbContext.SaveChangesAsync();
 
-            _logger.LogInformation("Alumno guardado en la base de datos.");
+            try
+            {
+                await _dbContext.StudentEntities.AddAsync(studentEntity);
+                await _dbContext.SaveChangesAsync();
+
+                _logger.LogInformation("Alumno guardado en la base de datos.");
+            }
+            catch (DbUpdateException ex)
+            {
+                if (ex.InnerException.Message.Contains("UQ_dni"))
+                {
+                    _logger.LogWarning("El alumno no se ha guardado " +
+                        "porque su dni ya existe en la base de datos");
+
+                    throw new DniDuplicateEntryException();
+                }
+                //Por cualquier otra razon lanzo la excepción
+                else
+                {
+                    throw ex;
+                }
+            }
+
 
             return studentEntity;
+
         }
 
         /// <summary>
-        ///     Actualiza los datos personales de un alumno 
+        ///     Actualiza una entidad alumno
         /// </summary>
         /// <param name="studentEntity">
         ///     La entidad alumno con los nuevos datos
         /// </param>
+        /// <exception cref="DniDuplicateEntryException">
+        ///     Lanza DniDuplicateEntryException si el dni del alumno ya existe
+        /// </exception>
         /// <returns>
-        ///     Retorna el alumno actualizado
+        ///     Retorna la entidad alumno actualizada
         /// </returns>
         public async Task<StudentEntity> Update(StudentEntity studentEntity)
         {
+
             StudentEntity studentToUpdate = await this.Get(studentEntity.Id);
             studentToUpdate.LastName1 = studentEntity.LastName1;
             studentToUpdate.LastName2 = studentEntity.LastName2;
             studentToUpdate.FirstName = studentEntity.FirstName;
             studentToUpdate.Dni = studentEntity.Dni;
 
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                await _dbContext.SaveChangesAsync();
 
-            _logger.LogInformation("Datos del Alumno actualizados en la base de datos.");
+                _logger.LogInformation("Datos del Alumno actualizados en la base de datos.");
+            }
+            catch (DbUpdateException ex)
+            {
+                if (ex.InnerException.Message.Contains("UQ_dni"))
+                {
+                    _logger.LogWarning("El alumno no se ha actualizado " +
+                        "porque su dni ya existe en la base de datos");
+
+                    throw new DniDuplicateEntryException();
+                }
+                //Por cualquier otra razon lanzo la excepción
+                else
+                {
+                    throw ex;
+                }
+            }
 
             return studentEntity;
+
         }
 
         /// <summary>
-        ///     Actualiza el curso cursado por un alumno
+        ///     Inserta una relacion entre una entidad curso
+        ///     y una entidad alumno llamando a un
+        ///     procedimiento de la base de datos que:
+        ///     -Actualiza el id del curso en la tabla alumno
+        ///     -Borra las posibles relaciones entre el alumno y 
+        ///      las asignaturas que podria estar cursando hasta ahora
+        ///     -Inserta las nuevas relaciones entre el alumno y las 
+        ///      asignaturas del nuevo curso
+        ///     -Borra las relaciones entre el alumno y las clases 
+        ///     -Inserta las relaciones entre el alumno y las clases del nuevo curso
         /// </summary>
         /// <param name="studentId">
         ///     El id del alumno
         /// </param>
         /// <param name="courseId">
-        ///     El id del curso que va a cursar(opcional)
+        ///     El id del curso 
         /// </param>
         /// <returns>
-        ///     Retorna el alumno incluyendo el curso asignado
+        ///     Retorna true
         /// </returns>
         public async Task<bool> UpdateCourse(int studentId, int courseId)
         {
@@ -213,10 +217,23 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Curso cursado por el Alumno actualizado en la base de datos.");
 
             return true;
+
         }
 
+        /// <summary>
+        ///     Establece el valor null al id del curso en la tabla
+        ///     alumno llamando un procedimiento que:
+        ///     -estable el valor null al id del curso
+        ///     -borra las relaciones entre el alumno y las asignaturas del curso
+        ///     -borra las relaciones entre el alumno y las clases del curso
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns>
+        ///     Retorna true
+        /// </returns>
         public async Task<bool> RemoveCourse(int studentId)
         {
+
             var student_id = new MySqlParameter("@studentId", studentId);
 
             _dbContext.Database.ExecuteSqlRaw("call remove_student_from_course(@studentId)", student_id);
@@ -226,24 +243,17 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("El alumno con id " + studentId + " ya no tiene curso asignado");
 
             return true;
-        }
-
-
-        public async Task<List<StudentSubjectEntity>> GetAssignedSubjects(int studentId)
-        {
-            List<StudentSubjectEntity> studentSubjectEntities = await _dbContext.StudentSubjectEntities
-                .Where(ss => ss.StudentId == studentId)
-                        .ToListAsync();
-
-            return studentSubjectEntities;
-
 
         }
+
 
         /// <summary>
-        ///     Actualiza las asignaturas cursadas por un alumno, llama a un procedimiento
-        ///     que borra las relaciones entre el alumno y las antiguas asignatira y clases, 
-        ///     y crea las nuevas relaciones.
+        ///     Actualiza las asignaturas cursadas por un alumno 
+        ///     llamando a un procedimiento de la base de datos que:
+        ///     -borra las relaciones entre el alumno y las asignaturas que cursa
+        ///     -borra las relaciones entre el alumno y las clases 
+        ///     -inserta las relaciones entre el alumno y las nuevas asignaturas 
+        ///     -inserta las relaciones entre el alumno y las clases de las nuevas asignaturas
         /// </summary>
         /// <param name="studentId">
         ///     El id del alumno 
@@ -253,146 +263,26 @@ namespace AttendanceControl.API.DataAccess.Repositories
         ///     va a cursar el alumno
         /// </param>
         /// <returns>
-        ///     Retorna true o lanza excepción si falla la transacción 
+        ///     Retorna true 
         /// </returns>
         public async Task<bool> UpdateSubjects(int studentId, int[] subjectIds)
         {
 
-            _dbContext.Database.ExecuteSqlRaw("call update_student_assigned_subjects({0},{1})", 
+            //Paso el array en formato JSON al procedimiento
+            _dbContext.Database.ExecuteSqlRaw("call update_student_assigned_subjects({0},{1})",
                             studentId, JsonConvert.SerializeObject(subjectIds));
 
             await _dbContext.SaveChangesAsync();
 
             return true;
 
-
         }
 
 
-        public async Task<bool> AddSubject(StudentEntity studentEntity, SubjectEntity subjectEntity)
-        {
-            studentEntity.StudentSubjectEntities.Add(new StudentSubjectEntity()
-            {
-                StudentEntity = studentEntity,
-                SubjectEntity = subjectEntity
-            });
 
-            await _dbContext.SaveChangesAsync();
+       
 
-            _logger.LogInformation("Asignaturas cursadas por el alumno " +
-                "actualizadas en la base de datos.");
 
-            return true;
-        }
-
-        public async Task<bool> RemoveSubject(StudentEntity studentEntity, SubjectEntity subjectEntity)
-        {
-            StudentSubjectEntity studentSubjectEntity = studentEntity.StudentSubjectEntities
-                .FirstOrDefault(ss => ss.SubjectEntity == subjectEntity);
-            studentEntity.StudentSubjectEntities.Remove(studentSubjectEntity);
-
-            await _dbContext.SaveChangesAsync();
-
-            _logger.LogInformation("Asignaturas cursadas por el alumno " +
-                "actualizadas en la base de datos.");
-
-            return true;
-        }
-
-        /// <summary>
-        ///     Actualiza las clases a las que el alumno debe acudir
-        /// </summary>
-        /// <param name="studentEntity">
-        ///     La entidad alumno
-        /// </param>
-        /// <param name="schoolClassEntities">
-        ///     La lista de entidades clase
-        /// </param>
-        /// <returns>
-        ///     Retorna el alumno actualizado
-        /// </returns>
-        public async Task<StudentEntity> UpdateShoolClasses(StudentEntity studentEntity, List<SchoolClassEntity>? schoolClassEntities)
-        {
-            List<SchoolClassStudentEntity> schoolClassStudentEntities = new List<SchoolClassStudentEntity>();
-
-            if (!(schoolClassEntities is null))
-            {
-                //Rellena la nueva lista de clases del alumno
-                schoolClassEntities.ForEach(sc =>
-                {
-                    schoolClassStudentEntities.Add(new SchoolClassStudentEntity()
-                    {
-                        StudentEntity = studentEntity,
-                        SchoolClassEntity = sc
-                    });
-                });
-            }
-            //Se actualiza la lista de clases del alumno
-            studentEntity.SchoolClassStudentEntities = schoolClassStudentEntities;
-
-            await _dbContext.SaveChangesAsync();
-
-            _logger.LogInformation("Clases presenciales del alumnos actualizadas en la base de datos.");
-
-            return studentEntity;
-        }
-
-        /// <summary>
-        ///     Recupera la lista de alumnos cursando el ciclo y la asignatura
-        ///     introducidos por parámetro
-        /// </summary>
-        /// <param name="courseId"></param>
-        /// <param name="subjectId"></param>
-        /// <returns>
-        ///     Retorna la lista de alumnos 
-        /// </returns>
-        public async Task<List<StudentEntity>> GetByCourseAndSubject(int courseId, int subjectId)
-        {
-            List<StudentEntity> studentEntities = await _dbContext.StudentEntities
-
-                .Join(_dbContext.StudentSubjectEntities
-                    .Where(ss => ss.SubjectId == subjectId),
-                    s => s.Id,
-                    ss => ss.StudentId,
-                    (s, cs) => s)
-                 .Where(s => s.CourseId == courseId)
-                .ToListAsync();
-
-            _logger.LogInformation("Lista de alumnos recuperada de la base de datos.");
-
-            return studentEntities;
-        }
-
-        /// <summary>
-        ///     Recupera la lista de los alumnos cursando el curso
-        ///     pasado por parametro
-        /// </summary>
-        /// <param name="courseId"></param>
-        /// <returns>
-        ///     Retorna la lista de alumnos 
-        ///</returns>
-        public async Task<List<StudentEntity>> GetByCourse(int courseId)
-        {
-            List<StudentEntity> studentEntities = await _dbContext.StudentEntities
-                .Where(s => s.CourseId == courseId)
-                .ToListAsync();
-
-            _logger.LogInformation("Lista de alumnos recuperada de la base de datos.");
-
-            return studentEntities;
-        }
-
-        public async Task<List<StudentEntity>> GetByCourseIncludeAssignedSubjects(int courseId)
-        {
-            List<StudentEntity> studentEntities = await _dbContext.StudentEntities
-                .Include(s => s.StudentSubjectEntities)
-                .Where(s => s.CourseId == courseId)
-                .ToListAsync();
-
-            _logger.LogInformation("Lista de alumnos recuperada de la base de datos.");
-
-            return studentEntities;
-        }
 
         public async Task<List<StudentEntity>> GetByCurrentSchoolClass(int schoolClassId)
         {

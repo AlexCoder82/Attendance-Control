@@ -1,12 +1,19 @@
-﻿using AttendanceControl.API.Application.DTOs;
-using AttendanceControl.API.Business.Models;
+﻿using AttendanceControl.API.Business.Models;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
-using System;
 
 namespace AttendanceControl.API.Application.Mappers
 {
+    /// <summary>
+    ///     Mapeos entre objetos AbsenceEntity y Absence
+    /// </summary>
     public static class AbsenceMapper
     {
+        /// <summary>
+        ///     Mapea una entidad AbsenceEntity en un objeto Absence
+        ///     incluyendo el objeto Schedule y el objeto Subject
+        /// </summary>
+        /// <param name="absenceEntity"></param>
+        /// <returns></returns>
         public static Absence MapIncludingSchedule(AbsenceEntity absenceEntity)
         {
             if (absenceEntity is null)
@@ -14,6 +21,7 @@ namespace AttendanceControl.API.Application.Mappers
                 return null;
             }
             else
+            {
                 return new Absence()
                 {
                     Id = absenceEntity.Id,
@@ -24,7 +32,14 @@ namespace AttendanceControl.API.Application.Mappers
                     IsExcused = absenceEntity.IsExcused
 
                 };
+            }
         }
+
+        /// <summary>
+        ///     Mapea un objeto AbsenceEntity en un objeto Absence
+        /// </summary>
+        /// <param name="absenceEntity"></param>
+        /// <returns></returns>
         public static Absence Map(AbsenceEntity absenceEntity)
         {
             if (absenceEntity is null)
@@ -32,24 +47,15 @@ namespace AttendanceControl.API.Application.Mappers
                 return null;
             }
             else
+            {
                 return new Absence()
                 {
                     Id = absenceEntity.Id,
                     Type = absenceEntity.Type,
                     Date = absenceEntity.Date
-
                 };
+            }
         }
 
-        public static AbsenceEntity Map(AbsenceDto createAbsenceDto)
-        {
-            return new AbsenceEntity()
-            {
-                Type = createAbsenceDto.Type,
-                Date = DateTime.Today,
-                SchoolClassId = createAbsenceDto.SchoolClassId,
-                StudentId = createAbsenceDto.StudentId
-            };
-        }
     }
 }

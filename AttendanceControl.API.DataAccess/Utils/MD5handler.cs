@@ -4,16 +4,25 @@ using System.Text;
 
 namespace AttendanceControl.API.DataAccess.Utils
 {
+    /// <summary>
+    ///     Ojeto que gestiona las conversiones de cadenas en MD5
+    /// </summary>
     public static class MD5handler
     {
-        //Create and return the MD5 hash value of a string value
+        /// <summary>
+        ///     Genera un md5 a partir de un string
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static string GenerateMD5(string data)
         {
+
             var hashvalue = string
                 .Join("", MD5.Create().ComputeHash(Encoding.ASCII.GetBytes(data))
                     .Select(s => s.ToString("x2")));
 
             return hashvalue;
+
         }
     }
 }

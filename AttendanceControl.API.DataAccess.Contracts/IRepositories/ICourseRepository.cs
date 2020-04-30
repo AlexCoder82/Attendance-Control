@@ -4,12 +4,13 @@ using System.Threading.Tasks;
 
 namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
 {
+    /// <summary>
+    ///     Contratos del repositorio de cursos
+    /// </summary>
     public interface ICourseRepository 
     {
         public Task<bool> AssignSubject(int courseId, int subjectID);
         public Task<bool> RenoveAssignedSubject(int courseId, int subjectId);
-        public Task<CourseEntity> GetIncludingAssignedSubjects(int courseId);
-        public  Task<CourseEntity> GetIncludingCycleAndAssignedSubjects(int courseId);
         public Task<List<CourseEntity>> GetAll();
     }
 }

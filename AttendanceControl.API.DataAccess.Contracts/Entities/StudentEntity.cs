@@ -8,6 +8,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
     [Table("student")]
     public class StudentEntity 
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
@@ -42,11 +43,13 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Column("total_delays", TypeName = "int")]
         public int TotalDelays { get; set; }
 
-
         public virtual CourseEntity CourseEntity { get; set; }
+
         public virtual ICollection<StudentSubjectEntity> StudentSubjectEntities { get; set; }
 
         public virtual ICollection<SchoolClassStudentEntity> SchoolClassStudentEntities { get; set; }
+       
         public virtual ICollection<AbsenceEntity> AbsenceEntities { get; set; }
+
     }
 }

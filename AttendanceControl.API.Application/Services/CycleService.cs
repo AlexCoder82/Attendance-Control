@@ -12,66 +12,90 @@ using System.Threading.Tasks;
 
 namespace AttendanceControl.API.Application.Services
 {
+    /// <summary>
+    ///     Lógica relacionada a los ciclos formativos
+    /// </summary>
     public class CycleService : ICycleService
     {
         private readonly ICycleRepository _cycleRepository;
         private readonly ILogger<CycleService> _logger;
 
-        public CycleService(ICycleRepository cycleRepository, ILogger<CycleService> logger)
+        public CycleService(ICycleRepository cycleRepository,
+                            ILogger<CycleService> logger)
         {
             _cycleRepository = cycleRepository;
             _logger = logger;
         }
 
+        /// <summary>
+        ///     Lista todos los ciclos formativos disponibles
+        ///     con sus cursos y horarios
+        /// </summary>
+        /// <returns>
+        ///     Retorna una lista de objetos Cycle que contienen
+        ///     cada uno un objeto Shift el cual contiene un objeto
+        ///     Schedules
+        /// </returns>
         public async Task<List<Cycle>> GetAll()
         {
+
             List<CycleEntity> cycleEntities = await _cycleRepository.GetAllIncludingCoursesSubjectsAndSchedules();
 
-            List<Cycle> cycles = cycleEntities.Select(c => new Cycle
-            {
-                Id = c.Id,
-                Name = c.Name,
-                Courses = c.CourseEntities.Select(co => new Course
-                {
-                    Id = co.Id,
-                    Year = co.Year
-                }).ToList(),
-                Shift = new Shift
-                {
-                    Id = c.ShiftEntity.Id,
-                    Description = c.ShiftEntity.Description,
-                    Schedules = c.ShiftEntity.ScheduleEntities.Select(s => new Schedule
-                    {
-                        Id = s.Id,
-                        Start = s.Start.ToString(@"hh\:mm"),
-                        End = s.End.ToString(@"hh\:mm"),
-                    }).ToList()
-                }
-
-            }).ToList();
-
-            
+            List<Cycle> cycles = cycleEntities
+                .Select(c => CycleMapper.MapIncludingCoursesAndSchedules(c))
+                .ToList();
+          
             return cycles;
+
         }
 
-        public async Task<Cycle> Save(Cycle cycle)
+        /// <summary>
+        ///     Crea un nuevo ciclo formativo
+        /// </summary>
+        /// <param name="cycle">
+        ///     EL objeto Cycle que contiene los datos sobre el ciclo
+        /// </param>
+        /// <exception cref="GradeNameDuplicateEntryException">
+        ///     Lanza GradeNameDuplicateEntryException
+        /// </exception>
+        /// <returns>
+        ///     Retorna el objeto Cycle guardado con su id generado
+        /// </returns>
+        public async Task<Cycle> Save(Cycle cycle)//Throw GradeNameDuplicateEntryException
         {
      
             CycleEntity cycleEntity = CycleMapper.Map(cycle);
+
             cycleEntity = await _cycleRepository.Save(cycleEntity);
 
-            cycleEntity = await _cycleRepository.GetIncludingCoursesAndAssignedSubjects(cycleEntity.Id);
+            cycleEntity = await _cycleRepository
+                .GetIncludingCoursesAndAssignedSubjects(cycleEntity.Id);
  
             cycle = CycleMapper.MapIncludingCourses(cycleEntity);
 
             return cycle;
+
         }
 
+        /// <summary>
+        ///     Actualiza un ciclo
+        /// </summary>
+        /// <param name="cycle">
+        ///     El objeto Cycle con los nuevos datos del ciclo
+        /// </param>
+        /// <returns>
+        ///     Retorna true
+        /// </returns>
         public async Task<bool> Update(Cycle cycle)
         {
+
             CycleEntity cycleEntity = CycleMapper.Map(cycle);
 
-            return await _cycleRepository.Update(cycleEntity);
+            bool result = await _cycleRepository.Update(cycleEntity);
+
+            return result;
+
         }
+
     }
 }

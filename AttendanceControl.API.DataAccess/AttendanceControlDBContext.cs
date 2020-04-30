@@ -1,25 +1,22 @@
 ﻿using AttendanceControl.API.DataAccess.Contracts;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
-
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
 
 namespace AttendanceControl.API.DataAccess
 {
+    /// <summary>
+    ///     Configuración del contexto de la base de datos
+    /// </summary>
     public class AttendanceControlDBContext : DbContext, IAttendanceControlDBContext
     {
-
 
         public AttendanceControlDBContext(DbContextOptions<AttendanceControlDBContext> options) : base(options)
         {
 
         }
 
-       
         public DbSet<AbsenceEntity> AbsenceEntities { get; set; }
         public DbSet<ShiftEntity> ShiftEntities { get; set; }
-
         public DbSet<AdminEntity> AdminEntities { get; set; }
         public DbSet<CourseEntity> CourseEntities { get; set; }
         public DbSet<SchoolClassEntity> SchoolClassEntities { get; set; }
@@ -29,31 +26,36 @@ namespace AttendanceControl.API.DataAccess
         public DbSet<StudentEntity> StudentEntities { get; set; }
         public DbSet<CycleEntity> CycleEntities { get; set; }
         public DbSet<SchoolClassStudentEntity> SchoolClassStudentEntities { get; set; }
-
         public DbSet<StudentSubjectEntity> StudentSubjectEntities { get; set; }
         public DbSet<CourseSubjectEntity> CourseSubjectEntities { get; set; }
-        public DbSet<TeacherCredentialsEntity> TeacherCredentialsEntities { get; set; }
 
+        /// <summary>
+        ///     Creación del modelo
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            //Propriedades que tienen un valor por defecto en la base de datos
+
             modelBuilder.Entity<SchoolClassEntity>()
             .Property(sc => sc.IsCurrent)
             .HasDefaultValue(true);
 
             modelBuilder.Entity<StudentEntity>()
-           .Property(s => s.TotalAbsences)
-           .HasDefaultValue(0);
+            .Property(s => s.TotalAbsences)
+            .HasDefaultValue(0);
 
             modelBuilder.Entity<StudentEntity>()
-          .Property(s => s.TotalDelays)
-          .HasDefaultValue(0);
+             .Property(s => s.TotalDelays)
+             .HasDefaultValue(0);
+
             modelBuilder.Entity<StudentEntity>()
-          .Property(s => s.CourseId)
-          .HasDefaultValue(null);
+             .Property(s => s.CourseId)
+            .HasDefaultValue(null);
 
 
-
-            /// STUDENTSCHOOLCLASSTENTITY PRIMARY KEY
+            // Primary keys de las relaciones n/m
 
             modelBuilder.Entity<SchoolClassStudentEntity>().HasKey(scs => new
             {
@@ -61,15 +63,11 @@ namespace AttendanceControl.API.DataAccess
                 scs.SchoolClassId
             });
 
-            /// STUDENTSUBJECTENTITY PRIMARY KEY
-
             modelBuilder.Entity<StudentSubjectEntity>().HasKey(ss => new
             {
                 ss.StudentId,
                 ss.SubjectId
             });
-
-            /// CYCLESUBJECTENTITY PRIMARY KEY
 
             modelBuilder.Entity<CourseSubjectEntity>().HasKey(cs => new
             {
@@ -77,21 +75,9 @@ namespace AttendanceControl.API.DataAccess
                 cs.SubjectId
             });
 
-            /// TEACHER HAS CREDENTIALS
-
-            modelBuilder.Entity<TeacherCredentialsEntity>()
-            .HasOne(tc =>tc.TeacherEntity)
-            .WithOne(t => t.TeacherCredentialsEntity)
-            .HasForeignKey<TeacherEntity>(t => t.CredentialsId);
-
-
-
-
             base.OnModelCreating(modelBuilder);
 
-
         }
-
 
     }
 }

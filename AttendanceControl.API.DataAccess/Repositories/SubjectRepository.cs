@@ -5,7 +5,6 @@ using AttendanceControl.API.DataAccess.Contracts.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +12,7 @@ using System.Threading.Tasks;
 namespace AttendanceControl.API.DataAccess.Repositories
 {
     /// <summary>
-    ///     Clase con los métodos de acceso a la tabla de las asignaturas
+    ///     Repositorio de asignaturas
     /// </summary>
     public class SubjectRepository : ISubjectRepository
     {
@@ -28,18 +27,21 @@ namespace AttendanceControl.API.DataAccess.Repositories
         }
 
         /// <summary>
-        ///     Recupera la asignatura con el id introducido en parámetro
-        ///     incluyendo el profesor asignado y sus datos personales  
+        ///     Recupera una entidad asignatura por id
+        ///     incluyendo el profesor asignado  
         /// </summary>
         /// <param name="id">
         ///     El id de la asignatura
         /// </param>
+        /// <exception cref="DataNotFoundException">
+        ///     lanza DataNotFoundException si no existe el id
+        /// </exception>
         /// <returns>
-        ///     Retorna la entidad asignatura o lanza DataNotFoundException 
-        ///     si el id no existe
+        ///     Retorna la entidad asignatura 
         /// </returns>
         public async Task<SubjectEntity> GetIncludingAssignedTeacher(int subjectId)
         {
+
             SubjectEntity subjectEntity = await _dbContext.SubjectEntities
                  .Include(s => s.TeacherEntity)
                  .FirstOrDefaultAsync(s => s.Id == subjectId);
@@ -53,17 +55,19 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Asignatura recuperada de la base de datos");
 
             return subjectEntity;
+
         }
 
         /// <summary>
-        ///     Recupera la lista completa de asignaturas
+        ///     Recupera la lista completa de entidades asignatura
         ///     incluyendo los profesores asignados
         /// </summary>
         /// <returns>
-        ///     Retorna la lista de entidades asignaturas
+        ///     Retorna la lista de entidades asignatura
         /// </returns>
         public async Task<List<SubjectEntity>> GetAllIncludingAssignedTeacher()
         {
+
             List<SubjectEntity> subjectEntities = await _dbContext.SubjectEntities
                .Include(s => s.TeacherEntity)
                .OrderBy(s => s.Name)
@@ -72,23 +76,27 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Lista de asignaturas recuperada de la base de datos");
 
             return subjectEntities;
+
         }
 
 
         /// <summary>
-        ///     Guarda una nueva asignatura
+        ///     Inserta una nueva entidad asignatura
         /// </summary>
         /// <param name="subjectEntity">
         ///     La entidad asignatura a guardar
         /// </param>
+        /// <exception cref="SubjectNameDuplicateEntryException">
+        ///     Lanza SubjectNameDuplicateEntryException si el nombre de la
+        ///     asignatura ya existe
+        /// </exception>
         /// <returns>
-        ///     Retorna la asignatura guardada con su id
-        ///     generado por la base de datos o lanza
-        ///     SubjectNameDuplicateEntryException si
-        ///     el nombre de la asignatura ya existe en la tabla
+        ///     Retorna la entidad asignatura guardada 
+        ///     con el id generado 
         /// </returns>
         public async Task<SubjectEntity> Save(SubjectEntity subjectEntity)
         {
+
             try
             {
                 await _dbContext.SubjectEntities.AddAsync(subjectEntity);
@@ -113,21 +121,24 @@ namespace AttendanceControl.API.DataAccess.Repositories
             }
 
             return subjectEntity;
+
         }
 
         /// <summary>
-        ///     Actualiza el nombre de una asignatura
+        ///     Actualiza una entidad asignatura
         /// </summary>
         /// <param name="subjectEntity">
-        ///     La entidad asignatura con el nuevo nombre
         /// </param>
+        /// <exception cref="SubjectNameDuplicateEntryException">
+        ///     Lanza SubjectNameDuplicateEntryException si el nombre de la
+        ///     asignatura ya existe
+        /// </exception>
         /// <returns>
-        ///     Retorna la entidad asignatura modificada o lanza
-        ///     SubjectNameDuplicateEntryException si el nombre
-        ///     ya existe
+        ///     Retorna la entidad asignatura actualizada
         /// </returns>
         public async Task<SubjectEntity> Update(SubjectEntity subjectEntity)
         {
+
             //Recupera la asignatura a modificar 
             SubjectEntity entityToUpdate = await this.Get(subjectEntity.Id);
 
@@ -149,7 +160,6 @@ namespace AttendanceControl.API.DataAccess.Repositories
                     throw new SubjectNameDuplicateEntryException();
                 }
                 //Cualquier otra razón, lanzo la excepción
-
                 else
                 {
                     throw ex;
@@ -157,10 +167,11 @@ namespace AttendanceControl.API.DataAccess.Repositories
             }
 
             return entityToUpdate;
+
         }
 
         /// <summary>
-        ///     Actualiza el profesor asignado a una asignatura
+        ///     Actualiza la relacion entre una asignatura y un profesor
         /// </summary>
         /// <param name="subjectId">
         ///     El id de la asignatura
@@ -168,15 +179,17 @@ namespace AttendanceControl.API.DataAccess.Repositories
         /// <param name="teacherId">
         ///     El id del profesor(Opcional)
         /// </param>
-        /// <returns></returns>
+        /// <returns>
+        ///     Retorna la entidad asignatura actualizada
+        /// </returns>
         public async Task<SubjectEntity> UpdateAssignedTeacher(int subjectId, TeacherEntity? teacherEntity)
         {
+
             //Recupera la asignatura a modificar
             SubjectEntity subjectEntity = await this
                 .GetIncludingAssignedTeacher(subjectId);
 
-            //Si la entidad profesor es nula, la asignatura queda sin profesor
-            //asignado
+            //Si la entidad profesor es nula, la asignatura se queda sin profesor asignado
             if (teacherEntity is null)
             {
                 subjectEntity.TeacherId = null;
@@ -193,20 +206,24 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Profesor de la asignatura asignado correctamente");
 
             return subjectEntity;
+
         }
 
         /// <summary>
-        ///        Recupera la asignatura con el id introducido en parámetro
+        ///        obtiene una entidad asignatura por id
         /// </summary>
         /// <param name="subjectId">
         ///     El id de la entidad asignatura
         /// </param>
+        /// <exception cref="DataNotFoundException">
+        ///     Lanza DataNotFoundException si el id no existe
+        /// </exception>
         /// <returns>
-        ///     Retorna la entidad asignatura o lanza DataNotFoundException
-        ///     si no existe el id en la tabla
+        ///     Retorna la entidad asignatura
         /// </returns>
         public async Task<SubjectEntity> Get(int subjectId)
         {
+
             SubjectEntity subjectEntity = await _dbContext.SubjectEntities
                 .FirstOrDefaultAsync(s => s.Id == subjectId);
 
@@ -219,20 +236,22 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Asignatura recuperada de la base de datos");
 
             return subjectEntity;
+
         }
 
         /// <summary>
-        ///     Recupera la lista de todas las asignaturas dado un curso
-        ///     introducido por parámetro
+        ///     Recupera la lista de todas las entidades asignaturas 
+        ///     dado un curso
         /// </summary>
         /// <param name="courseId">
         ///     El id del curso
         /// </param>
         /// <returns>
-        ///     Retorna la lista de asignaturas del curso
+        ///     Retorna la lista de entidades asignatura del curso
         /// </returns>
         public async Task<List<SubjectEntity>> GetByCourse(int courseId)
         {
+
             List<SubjectEntity> subjectEntities = await _dbContext.SubjectEntities
                 .Join(_dbContext.CourseSubjectEntities
                     .Where(cs => cs.CourseId == courseId),
@@ -244,6 +263,8 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger.LogInformation("Lista de asignaturas del curso recuperada de la base de datos");
 
             return subjectEntities;
+
         }
+
     }
 }
