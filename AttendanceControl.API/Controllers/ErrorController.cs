@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 namespace AttendanceControl.API.Controllers
 {
     /// <summary>
-    ///     Cualquera excepción no gestionada es desviada 
+    ///     Cualquera excepción no gestionada localmente es enviada 
     ///     a la ruta /error
     /// </summary>
     public class ErrorController : Controller
@@ -26,12 +26,11 @@ namespace AttendanceControl.API.Controllers
         }
 
         /// <summary>
-        ///     GET /error
-        ///     Recupera la excepción y retorna un 500 
-        ///     con un objeto ApiError que contiene información sobre la
-        ///     excpcion
+        ///     Ruta que recupera cualquier excepción no manejada localmente   
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        ///     Retorna un error 500 con un objeto ApiError
+        /// </returns>
         [Route("error")]
         public IActionResult Error()
         {
@@ -50,6 +49,8 @@ namespace AttendanceControl.API.Controllers
             };
 
             return StatusCode(statusCode, apiError);
+
         }
+
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AttendanceControl.API.Application.Contracts.IServices;
-using AttendanceControl.API.Application.DTOs;
-using AttendanceControl.API.Business.Models;
+using AttendanceControl.API.Business.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -17,7 +14,8 @@ namespace AttendanceControl.API.Controllers
         private readonly IAbsenceService _absenceService;
         private readonly ILogger<AbsenceController> _logger;
 
-        public AbsenceController(IAbsenceService absenceService, ILogger<AbsenceController> logger)
+        public AbsenceController(IAbsenceService absenceService,
+                                 ILogger<AbsenceController> logger)
         {
             _absenceService = absenceService;
             _logger = logger;
@@ -48,9 +46,9 @@ namespace AttendanceControl.API.Controllers
 
         // PUT api/absences/{absenceId}
         /// <summary>
-        ///     Ruta de la petición para establecer si un una 
-        ///     ausencia esta justificada o no
-        ///      Reservada al administrador
+        ///     Ruta de la petición para establecer si una ausencia
+        ///     esta justificada o no.
+        ///     Ruta reservada al administrador
         /// </summary>
         /// <param name="absenceId">
         ///     El id de la ausencia 
@@ -58,31 +56,23 @@ namespace AttendanceControl.API.Controllers
         ///     Booleano que indica si la ausencia esta justificada o no
         /// </param>
         /// <returns>
-        ///     Retorna true indicando que el cambio se realizado correctamente
+        ///     Retorna true indicando que el cambio se ha realizado correctamente
         /// </returns>
+        [Authorize(Roles = Role.TEACHER)]
         [HttpPut("{absenceId}")]
-        public async Task<IActionResult> SetExcused(int absenceId, [FromBody] bool isExcused)
+        public async Task<IActionResult> SetExcused(int absenceId,
+                                                    [FromBody] bool isExcused)
         {
-            _logger.LogInformation("Petición para establecer la justificación de una ausencia recibida");
+            _logger.LogInformation("Petición para establecer la justificación " +
+                "de la ausencia con id " + absenceId);
 
             var result = await _absenceService.SetExcused(absenceId, isExcused);
 
-            _logger.LogInformation("Respuesta positiva a la petición para establecer la justificación de una ausencia, retornada");
+            _logger.LogInformation("Respuesta positiva a la petición para " +
+                "establecer la justificación de la ausencia con id " + absenceId);
 
             return Ok(result);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> Save([FromBody] AbsenceDto[] createAbsenceDtos)
-        {
-            _logger.LogInformation("Petición para guardar las ausencias de una clase");
-
-            var result = await _absenceService.Save(createAbsenceDtos);
-
-            _logger.LogInformation("Respuesta positiva a la petición para establecer la justificación de una ausencia, retornada");
-
-            return Ok(result);
-        }
-
+      
     }
 }

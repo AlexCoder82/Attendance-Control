@@ -1,7 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AttendanceControl.API.Application.Contracts.IServices;
+using AttendanceControl.API.Business.Enums;
 using AttendanceControl.API.Business.Exceptions;
 using AttendanceControl.API.Business.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -21,80 +24,93 @@ namespace AttendanceControl.API.Controllers
             _logger = logger;
         }
 
-        // PUT api/courses
+        // PUT api/courses/{courseId}/subjects/{subjectId}
         /// <summary>
-        ///     Ruta de la petición para asignar una
-        ///     asignatura a un curso
+        ///     Ruta de la petición para añadir una
+        ///     asignatura a un curso.
+        ///     Reservada al role Admin
         /// </summary>
-        /// <param name="course"></param>
+        /// <param name="courseId">
+        ///     El id del curso.
+        /// </param>
+        /// <param name="subjectId">
+        ///     El id de la asignatura
+        /// </param>
         /// <returns>
-        ///     Retorna true o retorna un 404 con un mensaje
-        ///     si por error se asigna dos veces la misma asignatura al curso
+        ///     Retorna true o retorna un 409 con un mensaje
+        ///     si por error se intenta añadir al curso una asignatura que ya tiene
         /// </returns>
+        [Authorize(Roles = Role.ADMIN)]
         [HttpPut("{courseId}/subjects/{subjectId}")]
         public async Task<IActionResult> AssignSubject(int courseId, int subjectId)
         {
-            _logger.LogInformation("Petición de actualización de las asignaturas de un curso");
+
+            _logger.LogInformation(string.Format("Petición para añadir la asignatura " +
+                "con id {0} al curso con id {1}", subjectId, courseId));
 
             try
             {
-                var result = await _courseService.AssignSubject(courseId,subjectId);
+                bool result = await _courseService.AssignSubject(courseId, subjectId);
 
-                _logger.LogInformation("Curso actualizado retornado");
+                _logger.LogInformation("Asignatura añadida con éxito");
 
                 return Ok(result);
             }
             catch (CourseSubjectDuplicateEntryException ex)
             {
-                return NotFound(ex.Message);
+                _logger.LogWarning("Error: El curso ya tiene la asignatura.");
+
+                return Conflict(ex.Message);
             }
+
         }
 
-        // DELETE api/courses
+        // DELETE api/courses/{courseId}/subjects/{subjectId}
         /// <summary>
-        ///     Ruta de la petición para asignar una
-        ///     asignatura a un curso
+        ///     Ruta de la petición para retirar una
+        ///     asignatura de un curso
         /// </summary>
-        /// <param name="course"></param>
+        /// <param name="courseId">
+        ///     El id del curso.
+        /// </param>
+        /// <param name="subjectId">
+        ///     El id de la asignatura
+        /// </param>
         /// <returns>
-        ///     Retorna true o retorna un 404 con un mensaje
-        ///     si por error se asigna dos veces la misma asignatura al curso
+        ///     Retorna true 
         /// </returns>
+        [Authorize(Roles = Role.ADMIN)]
         [HttpDelete("{courseId}/subjects/{subjectId}")]
         public async Task<IActionResult> RemoveAssignedSubject(int courseId, int subjectId)
         {
-            _logger.LogInformation("Petición de actualización de las asignaturas de un curso");
 
-            try
-            {
-                var result = await _courseService.RemoveAssignedSubject(courseId, subjectId);
+            _logger.LogInformation(string.Format("Petición para retirar la asignatura " +
+                "con id {0} del curso con id {1}", subjectId, courseId));
 
-                _logger.LogInformation("Curso actualizado retornado");
+            bool result = await _courseService.RemoveAssignedSubject(courseId, subjectId);
 
-                return Ok(result);
-            }
-            catch (CourseSubjectDuplicateEntryException ex)
-            {
-                return NotFound(ex.Message);
-            }
+            _logger.LogInformation("Asignatura retirada del curso con éxito");
+
+            return Ok(result);
+
         }
 
 
         // Get api/courses
         /// <summary>
-        ///     Ruta de la petición de  la lista de todos los cursos
+        ///     Ruta de la petición de la lista de todos los cursos
         /// </summary>
         /// <returns>
-        ///     La lista de todos los cursos
+        ///     Retorna la lista de todos los cursos
         /// </returns>
+        [Authorize(Roles = Role.ADMIN)]
         [HttpGet]
         public async Task<IActionResult> GetALL()
         {
 
             _logger.LogInformation("Petición de listado de todos los cursos recibida");
 
-
-            var result = await _courseService.GetAll();
+            List<Course> result = await _courseService.GetAll();
 
             _logger.LogInformation("Listado de todos los cursos retornado");
 

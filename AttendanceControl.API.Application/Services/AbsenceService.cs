@@ -39,14 +39,17 @@ namespace AttendanceControl.API.Application.Services
         /// <summary>
         ///     Recibe del repositorio la lista de entidades ausencias  
         ///     del alumno con el id introducido por parámetro
-        ///     y la transforma en lista de ausencias
+        ///     y la transforma en lista de objectos ausencias
         /// </summary>
-        /// <param name="studentId"></param>
+        /// <param name="studentId">
+        ///     El id del alumno
+        /// </param>
         /// <returns>
         ///     Retorna la lista de ausencias 
         /// </returns>
         public async Task<List<Absence>> GetByStudent(int studentId)
         {
+
             List<AbsenceEntity> studentEntities = await _absenceRepository
                 .GetByStudent(studentId);
 
@@ -54,46 +57,33 @@ namespace AttendanceControl.API.Application.Services
                 .Select(s => AbsenceMapper.MapIncludingSchedule(s)).ToList();
 
             return absences;
-        }
 
-        public async Task<bool> Save(AbsenceDto[] createAbsenceDtos)
-        {
-            AbsenceEntity[] absenceEntities = new AbsenceEntity[createAbsenceDtos.Length];
-
-            for(int i=0;i<createAbsenceDtos.Length;i++)
-            {
-                Console.WriteLine("EEEEEEEEEEEEE" + createAbsenceDtos[i].Type);
-                SchoolClassEntity schoolClassEntity = await _schoolClassRepository.Get(createAbsenceDtos[i].SchoolClassId);
-                StudentEntity studentEntity = await _studentRepository.Get(createAbsenceDtos[i].StudentId);
-                AbsenceEntity absenceEntity = new AbsenceEntity()
-                {
-                    Type = createAbsenceDtos[i].Type,
-                    Date = DateTime.Today,
-                    SchoolClassEntity = schoolClassEntity,
-                    StudentEntity = studentEntity
-                };
-                absenceEntities[i] = absenceEntity;
-            }
-
-            //bool absencesAreSaved = await _absenceRepository.Save(absenceEntities);
-
-            return true;
         }
 
         /// <summary>
-        ///    
-        ///     
+        ///    Obtiene del repositorio la entidad AbsenceEntity correspondiente
+        ///    al id y la envia de nuevo al repositorio para que la propriedad 
+        ///    isExcused sea modificada
         /// </summary>
-        /// <param name="absenceId"></param>
-        /// <param name="isExcused"></param>
-        /// <returns></returns>
+        /// <param name="absenceId">
+        ///     EL id de la ausencia
+        /// </param>
+        /// <param name="isExcused">
+        ///     bool que indica si la ausencia debe ser justificada o no
+        /// </param>
+        /// <returns>
+        ///     Retorna true
+        /// </returns>
         public async Task<bool> SetExcused(int absenceId, bool isExcused)
         {
+
             AbsenceEntity absenceEntity = await _absenceRepository.Get(absenceId);
 
-            var result = await _absenceRepository.SetExcused(absenceEntity, isExcused);
+            bool result = await _absenceRepository.SetExcused(absenceEntity, isExcused);
 
             return result;
+
         }
+
     }
 }

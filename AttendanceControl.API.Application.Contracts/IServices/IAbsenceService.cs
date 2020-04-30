@@ -7,7 +7,6 @@ namespace AttendanceControl.API.Application.Contracts.IServices
 {
     public interface IAbsenceService
     {
-        public Task<bool> Save(AbsenceDto[]  createAbsenceDtos);
         public Task<List<Absence>> GetByStudent(int studentId);
         public Task<bool> SetExcused(int absenceId, bool isExcused);
     }

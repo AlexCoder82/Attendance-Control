@@ -25,27 +25,8 @@ namespace AttendanceControl.API.DataAccess.Repositories
             _logger = logger;
         }
 
-        /// <summary>
-        ///     Borra un ciclo, los dos cursos relacionados y 
-        ///     la relacion de los cursos con las asignaturas asignadas en cascada
-        /// </summary>
-        /// <param name="id">
-        ///     El id del ciclo
-        /// </param>
-        /// <returns>
-        ///     Retorna true 
-        /// </returns>
-        public async Task<bool> Delete(int id)
-        {
-            CycleEntity cycleEntity = await _dbContext.CycleEntities.FirstOrDefaultAsync(c => c.Id == id);
+       
 
-            _dbContext.CycleEntities.Remove(cycleEntity);
-            await _dbContext.SaveChangesAsync();
-
-            _logger.LogInformation("El ciclo ha sido borrado de la base de datos.");
-
-            return true;
-        }
 
         /// <summary>
         ///     Recupera un ciclo de la base de datos por su Id
@@ -184,13 +165,14 @@ namespace AttendanceControl.API.DataAccess.Repositories
         ///     lanza GradeNameDuplicateEntryException 
         ///     si el nuevo nombre ya existe en la tabla    
         /// </returns>
-        public async Task<bool> UpdateName(int cycleId, string name)
+        public async Task<bool> Update(CycleEntity cycleEntity)
         {
-            CycleEntity cycleEntity = await this.Get(cycleId);
+            CycleEntity c = await this.Get(cycleEntity.Id);
 
             try
             {
-                cycleEntity.Name = name;
+                c.Name = cycleEntity.Name;
+                c.ShiftId = c.ShiftId;
                 await _dbContext.SaveChangesAsync();
 
                 _logger.LogInformation("El ciclo se ha actualizado correctamente");

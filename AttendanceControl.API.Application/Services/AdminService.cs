@@ -1,5 +1,5 @@
-﻿
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using AttendanceControl.API.Application.Contracts.DTOs;
 using AttendanceControl.API.Application.Contracts.IAuth;
 using AttendanceControl.API.Application.Contracts.IServices;
 using AttendanceControl.API.Application.Mappers;
@@ -15,16 +15,16 @@ namespace AttendanceControl.API.Application.Services
     {
         private readonly IAdminRepository _adminRepository;
         private readonly IAuthService _authService;
-        private ILogger<AdminService> _logger;
 
-        public AdminService(IAdminRepository adminRepository, IAuthService authService, ILogger<AdminService> logger)
+        public AdminService(IAdminRepository adminRepository,
+                            IAuthService authService,
+                            ILogger<AdminService> logger)
         {
             _adminRepository = adminRepository;
             _authService = authService;
-            _logger = logger;
         }
 
-        public async Task<string> SignIn(Admin admin)//Throw WrongCredentialsException
+        public async Task<AdminSignInResponse> SignIn(Admin admin)//Throw WrongCredentialsException
         {
             AdminEntity adminEntity = AdminMapper.Map(admin);
 
@@ -33,7 +33,14 @@ namespace AttendanceControl.API.Application.Services
             string token = _authService
                     .GenerateToken(signedInAdmin.AdminName + signedInAdmin.Password, Role.ADMIN);
 
-            return token;
+            AdminSignInResponse response = new AdminSignInResponse
+            {
+                Id = adminEntity.Id,
+                Role = Role.ADMIN,
+                Token = token
+            };
+
+            return response;
         }
 
     }

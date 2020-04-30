@@ -23,11 +23,6 @@ namespace AttendanceControl.API.Application.Services
             _logger = logger;
         }
 
-        public async Task<bool> Delete(int id)
-        {
-           return await _cycleRepository.Delete(id);
-        }
-
         public async Task<List<Cycle>> GetAll()
         {
             List<CycleEntity> cycleEntities = await _cycleRepository.GetAllIncludingCoursesSubjectsAndSchedules();
@@ -72,9 +67,11 @@ namespace AttendanceControl.API.Application.Services
             return cycle;
         }
 
-        public async Task<bool> UpdateName(int cycleId, string name)
+        public async Task<bool> Update(Cycle cycle)
         {
-            return await _cycleRepository.UpdateName(cycleId,name);
+            CycleEntity cycleEntity = CycleMapper.Map(cycle);
+
+            return await _cycleRepository.Update(cycleEntity);
         }
     }
 }
