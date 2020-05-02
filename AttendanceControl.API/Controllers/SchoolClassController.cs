@@ -72,12 +72,21 @@ namespace AttendanceControl.API.Controllers
 
             _logger.LogInformation("Petición para crear una clase");
 
-            SchoolClass result = await _schoolClassService.Save(schoolClass);
+            try
+            {
+                SchoolClass result = await _schoolClassService.Save(schoolClass);
 
-            _logger.LogInformation("Clase creada con éxito");
+                _logger.LogInformation("Clase creada con éxito");
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch(TeacherAlreadyTeachingException ex)
+            {
+                _logger.LogWarning(ex.Message);
 
+                return Conflict(ex.Message);
+            }
+           
         }
 
         // GET api/schoolclasses/courses/id

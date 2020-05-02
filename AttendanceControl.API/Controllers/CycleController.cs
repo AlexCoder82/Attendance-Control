@@ -51,7 +51,7 @@ namespace AttendanceControl.API.Controllers
 
                 return Ok(result);
             }
-            catch (GradeNameDuplicateEntryException ex)
+            catch (CycleNameDuplicateEntryException ex)
             {
                 _logger.LogWarning(ex.Message);
 
@@ -88,7 +88,7 @@ namespace AttendanceControl.API.Controllers
 
                 return Ok(result);
             }
-            catch (GradeNameDuplicateEntryException ex)
+            catch (CycleNameDuplicateEntryException ex)
             {
                 _logger.LogWarning("Error: el nombre del ciclo ya existe");
 

@@ -4,7 +4,10 @@ using AttendanceControl.API.DataAccess.Contracts.Entities;
 using AttendanceControl.API.DataAccess.Contracts.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -72,6 +75,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
                 .Include(c => c.CourseEntities)
                 .ThenInclude(co => co.CourseSubjectEntities)
                 .ThenInclude(cs => cs.SubjectEntity)
+                .Include(c => c.ShiftEntity)
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (cycleEntity is null)
@@ -97,8 +101,8 @@ namespace AttendanceControl.API.DataAccess.Repositories
         {
 
             List<CycleEntity> cycleEntities = await _dbContext.CycleEntities
-                .Include(c=>c.ShiftEntity)
-                .ThenInclude(s=>s.ScheduleEntities)
+                .Include(c => c.ShiftEntity)
+                .ThenInclude(s => s.ScheduleEntities)
                 .Include(c => c.CourseEntities)
                 .ThenInclude(co => co.CourseSubjectEntities)
                 .ThenInclude(cs => cs.SubjectEntity)
@@ -106,19 +110,23 @@ namespace AttendanceControl.API.DataAccess.Repositories
                 .ToListAsync();
 
             _logger.LogInformation("Lista de ciclos obtenida " +
-                "de la base de datos.");        
+                "de la base de datos.");
 
             return cycleEntities;
 
         }
 
         /// <summary>
-        ///     Inserta una entidad Ciclo
+        ///     Inserta una entidad Ciclo llamando a un procedimiento 
+        ///     de la base de datos que:
+        ///     -inserta el nuevo ciclo
+        ///     -inserta un registro por cada uno de los cursos del ciclo
+        ///     -retorna el id del ciclo insertado
         /// </summary>
         /// <param name="cycleEntity">
         /// </param>
-        /// <exception cref="GradeNameDuplicateEntryException">
-        ///     Lanza GradeNameDuplicateEntryException
+        /// <exception cref="CycleNameDuplicateEntryException">
+        ///     Lanza CycleNameDuplicateEntryException
         ///     si el nombre del ciclo ya existe en la base de datos
         /// </exception>
         /// <returns>
@@ -126,23 +134,54 @@ namespace AttendanceControl.API.DataAccess.Repositories
         /// </returns>
         public async Task<CycleEntity> Save(CycleEntity cycleEntity)
         {
-
+            DbCommand cmd = _dbContext.Database.GetDbConnection().CreateCommand();
             try
             {
-                await _dbContext.CycleEntities.AddAsync(cycleEntity);
-                await _dbContext.SaveChangesAsync();
+                var name = new MySqlParameter("@in_name", cycleEntity.Name);
+                var shiftId = new MySqlParameter("@in_shift_id", cycleEntity.ShiftEntity.Id);
+                var totalCourses = new MySqlParameter("@in_courses", cycleEntity.CourseEntities.Count);
+                var cycleId = new MySqlParameter("@out_cycle_id", SqlDbType.Int);
+                cycleId.Direction = ParameterDirection.Output;
 
-                _logger.LogInformation("Nuevo ciclo guardado en la base datos.");
+                
+                cmd.CommandText = "insert_new_cyle";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(name);
+                cmd.Parameters.Add(shiftId);
+                cmd.Parameters.Add(totalCourses);
+                cmd.Parameters.Add(cycleId);
+
+                //Al no usar entity framework para esta operacion, 
+                //hay que abrir la conexión a la base de datos
+                if (cmd.Connection.State != ConnectionState.Open)
+                {
+                    cmd.Connection.Open();
+                }
+
+                await cmd.ExecuteNonQueryAsync();
+
+                //Recupero el id del ciclo guarsado
+                int id = (int)cmd.Parameters["@out_cycle_id"].Value;
+
+                cmd.Connection.Close();
+
+                _logger.LogInformation("Nuevo ciclo guardado en la base datos con id: " + id);
+
+                cycleEntity.Id = id;
+
             }
-            catch (DbUpdateException ex)
+            catch (DbException ex)
             {
+                cmd.Connection.Close();
+
                 //Si la base de datos lamza un error Unique Constraint por el campo "name"
                 if (ex.InnerException.Message.Contains("UQ_cycle_name"))
                 {
                     _logger.LogWarning("El ciclo no se ha guardado " +
                         "porque su nombre ya existe");
-                  
-                    throw new GradeNameDuplicateEntryException();
+
+                    throw new CycleNameDuplicateEntryException();
                 }
                 //Por cualquier otra razón, se lanza la excepción
                 else
@@ -150,7 +189,6 @@ namespace AttendanceControl.API.DataAccess.Repositories
                     throw ex;
                 }
             }
-
 
             return cycleEntity;
 
@@ -162,7 +200,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
         /// <param name="cycleId">
         ///     El id del ciclo
         /// </param>
-        /// <exception cref="GradeNameDuplicateEntryException">
+        /// <exception cref="CycleNameDuplicateEntryException">
         ///     Lanza GradeNameDuplicateEntryException
         ///     si el nombre del ciclo ya existe en la base de datos
         /// </exception>
@@ -177,7 +215,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
             try
             {
                 c.Name = cycleEntity.Name;
-                c.ShiftId = c.ShiftId;
+                c.ShiftEntity = cycleEntity.ShiftEntity;
                 await _dbContext.SaveChangesAsync();
 
                 _logger.LogInformation("El ciclo se ha actualizado correctamente");
@@ -189,8 +227,8 @@ namespace AttendanceControl.API.DataAccess.Repositories
                 {
                     _logger.LogWarning("Error: El ciclo no se ha actualizado " +
                         "porque su nombre ya existe");
-                  
-                    throw new GradeNameDuplicateEntryException();
+
+                    throw new CycleNameDuplicateEntryException();
                 }
                 //Por cualquier otra razón, se lanza la excepción
                 else

@@ -50,10 +50,11 @@ namespace AttendanceControl.API.Application.Services
 
             foreach (int id in schoolClassIds)
             {
+                
                 //Alumnos que deben ir a cada clase
                 List<StudentEntity> studentEntities = await _studentRepository
                     .GetByCurrentSchoolClass(id);
-
+                _logger.LogInformation("AAAAAAAAAAAAAAA" + studentEntities.Count);
                 foreach (StudentEntity s in studentEntities)
                 {
                     //Para cada alumno de la lista, se mira si ya ha sido marcado como
@@ -75,6 +76,7 @@ namespace AttendanceControl.API.Application.Services
                 }
             }
 
+            ;
             return callList;
 
         }

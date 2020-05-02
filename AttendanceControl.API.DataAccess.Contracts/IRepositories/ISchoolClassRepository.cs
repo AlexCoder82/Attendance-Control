@@ -1,4 +1,5 @@
 ﻿using AttendanceControl.API.DataAccess.Contracts.Entities;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<List<SchoolClassEntity>> GetByTeacher(int teacherId);
         public Task<SchoolClassEntity> Save(SchoolClassEntity schoolClassEntity);
         public Task<bool> Cancel(int schoolClassId);
-       
+        public Task<bool> ExistsByTeacherDayAndSchedule(int teacherId, DayOfWeek day, int scheduleId);
+
+
     }
 }

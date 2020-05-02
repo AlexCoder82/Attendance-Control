@@ -220,6 +220,6 @@ namespace AttendanceControl.API.Controllers
             return Ok(result);
 
         }
-
     }
-}
+       
+    }

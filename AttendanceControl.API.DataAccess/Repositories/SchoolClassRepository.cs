@@ -1,4 +1,5 @@
-﻿using AttendanceControl.API.DataAccess.Contracts;
+﻿using AttendanceControl.API.Business.Exceptions;
+using AttendanceControl.API.DataAccess.Contracts;
 using AttendanceControl.API.DataAccess.Contracts.Entities;
 using AttendanceControl.API.DataAccess.Contracts.IRepositories;
 using Microsoft.EntityFrameworkCore;
@@ -78,10 +79,12 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
         }
 
-    
+
 
         /// <summary>
-        ///     Guarda una nueva entidad clase 
+        ///     Inserta una nueva entidad clase 
+        ///     Dispara un trigger que crea las relaciones entre los alumnos 
+        ///     del curso que estan matriculados en la asignatura y la clase
         /// </summary>
         /// <param name="schoolClassEntity"></param>
         /// <returns>
@@ -98,7 +101,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
             return schoolClassEntity;
 
         }
-    
+
 
         /// <summary>
         ///     Recupera la lista de entidades clase a la hora actual,
@@ -112,7 +115,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
         public async Task<List<SchoolClassEntity>> GetByTeacher(int teacherId)
         {
 
-            DayOfWeek day = DayOfWeek.Thursday;
+            DayOfWeek day = DateTime.Today.DayOfWeek;
 
             List<SchoolClassEntity> schoolClassEntities = await _dbContext.SchoolClassEntities
                 .Include(sc => sc.SubjectEntity)
@@ -127,5 +130,39 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
         }
 
+        /// <summary>
+        ///     Comprueba si un profesor ya esta dando clase
+        ///     dado su id, un dia y un hoario
+        /// </summary>
+        /// <param name="teacherId"></param>
+        /// <param name="day"></param>
+        /// <param name="scheduleId"></param>
+        /// <exception cref="TeacherAlreadyTeachingException">
+        ///     Lanza TeacherAlreadyTeachingException si existe
+        /// </exception>
+        /// <returns></returns>
+        public async Task<bool> ExistsByTeacherDayAndSchedule(int teacherId, DayOfWeek day, int scheduleId)
+        {
+
+            var schoolClassEntity = await _dbContext.SchoolClassEntities
+                .Include(sc => sc.SubjectEntity)
+                .Where(
+                    sc => sc.Day == day
+                    && sc.ScheduleId == scheduleId
+                    && sc.IsCurrent == true
+                    && sc.SubjectEntity.TeacherId == teacherId
+                )
+                .FirstOrDefaultAsync();
+
+            bool result = true;
+
+            if (schoolClassEntity is null)
+            {
+                result = false;
+            }
+
+            return result;
+
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<SubjectEntity> GetIncludingAssignedTeacher(int id);
         public Task<SubjectEntity> Get(int id);
         public Task<List<SubjectEntity>> GetByCourse(int courseId);
+        public Task<List<SubjectEntity>> GetByCourseIncludingAssignedTeacher(int courseId);
         public Task<List<SubjectEntity>> GetAllIncludingAssignedTeacher();   
         public Task<SubjectEntity> Save(SubjectEntity entity);
         public Task<SubjectEntity> Update(SubjectEntity entity);

@@ -60,10 +60,10 @@ namespace AttendanceControl.API.Application.Services
         {
 
             List<SubjectEntity> subjectEntities = await _subjectRepository
-                .GetByCourse(courseId);
+                .GetByCourseIncludingAssignedTeacher(courseId);
 
             List<Subject> subjects = subjectEntities
-                .Select(s => SubjectMapper.Map(s))
+                .Select(s => SubjectMapper.MapIncludingTeacher(s))
                 .ToList();
 
             return subjects;

@@ -28,7 +28,8 @@ namespace AttendanceControl.API.Application.Mappers
                 {
                     Year = c.Year
                 }).ToList(),
-                ShiftId = cycle.Shift.Id
+                ShiftId = cycle.Shift.Id,
+                ShiftEntity = ShiftMapper.Map(cycle.Shift)
             };
         }
 

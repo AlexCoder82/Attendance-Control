@@ -33,5 +33,28 @@ namespace AttendanceControl.API.Application.Mappers
 
         }
 
+        /// <summary>
+        ///     Mapea un objeto Shift en un objeto ShiftEntity
+        /// </summary>
+        /// <param name="shiftEntity"></param>
+        /// <returns></returns>
+        public static ShiftEntity Map(Shift shift)
+        {
+
+            if (shift is null)
+            {
+                return null;
+            }
+            else
+            {
+                return new ShiftEntity()
+                {
+                    Id = shift.Id,
+                    Description = shift.Description
+                };
+            }
+
+        }
+
     }
 }

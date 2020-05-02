@@ -201,7 +201,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
             }
 
 
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();//Dispara trigger 
 
             _logger.LogInformation("Profesor de la asignatura asignado correctamente");
 
@@ -266,5 +266,21 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
         }
 
+        public async  Task<List<SubjectEntity>> GetByCourseIncludingAssignedTeacher(int courseId)
+        {
+
+            List<SubjectEntity> subjectEntities = await _dbContext.SubjectEntities
+                .Include(s=>s.TeacherEntity)
+                .Join(_dbContext.CourseSubjectEntities
+                    .Where(cs => cs.CourseId == courseId),
+                    s => s.Id,
+                    cs => cs.SubjectId,
+                    (s, cs) => s)
+                .ToListAsync();
+
+            _logger.LogInformation("Lista de asignaturas del curso recuperada de la base de datos");
+
+            return subjectEntities;
+        }
     }
 }
