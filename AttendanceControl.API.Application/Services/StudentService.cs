@@ -130,7 +130,7 @@ namespace AttendanceControl.API.Application.Services
             await _studentRepository.UpdateCourse(studentId, courseId);
 
             StudentEntity studentEntity = await _studentRepository
-                .GetIncludingSubjects(studentId);
+                .GetIncludingCourseAndSubjects(studentId);
 
             Student student = StudentMapper
                 .MapIncludingAssignedCourseAndSubjects(studentEntity);

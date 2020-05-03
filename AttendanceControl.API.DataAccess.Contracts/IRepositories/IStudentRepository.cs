@@ -12,6 +12,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<StudentEntity> Save(StudentEntity studentEntity);
         public Task<StudentEntity> Get(int studentId);
         public Task<StudentEntity> GetIncludingSubjects(int studentId);
+        public Task<StudentEntity> GetIncludingCourseAndSubjects(int studentId);
         public Task<List<StudentEntity>> GetByPageLikeLastNameIncludingCourseAndSubjects(string lastName, int page);
         public Task<List<StudentEntity>> GetByPageIncludingCourseAndSubjects(int page);
         public Task<StudentEntity> Update(StudentEntity studentEntity);

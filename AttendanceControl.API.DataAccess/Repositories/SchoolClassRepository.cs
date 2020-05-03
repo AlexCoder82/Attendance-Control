@@ -131,7 +131,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
         }
 
         /// <summary>
-        ///     Comprueba si un profesor ya esta dando clase
+        ///     Comprueba si un profesor ya esta dando clase de otra asignatura
         ///     dado su id, un dia y un hoario
         /// </summary>
         /// <param name="teacherId"></param>
@@ -141,7 +141,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
         ///     Lanza TeacherAlreadyTeachingException si existe
         /// </exception>
         /// <returns></returns>
-        public async Task<bool> ExistsByTeacherDayAndSchedule(int teacherId, DayOfWeek day, int scheduleId)
+        public async Task<bool> ExistsByTeacherDayAndSchedule(int subjectId,int teacherId, DayOfWeek day, int scheduleId)
         {
 
             var schoolClassEntity = await _dbContext.SchoolClassEntities
@@ -151,6 +151,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
                     && sc.ScheduleId == scheduleId
                     && sc.IsCurrent == true
                     && sc.SubjectEntity.TeacherId == teacherId
+                    && sc.SubjectId != subjectId
                 )
                 .FirstOrDefaultAsync();
 

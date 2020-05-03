@@ -72,7 +72,9 @@ namespace AttendanceControl.API.Application.Services
            
             //Lanza excepcion si el profesor da otra clase
             bool isTeaching = await _schoolClassRepository
-                .ExistsByTeacherDayAndSchedule(subjectEntity.TeacherEntity.Id,
+                .ExistsByTeacherDayAndSchedule(
+                            subjectEntity.Id,
+                            subjectEntity.TeacherEntity.Id,
                             schoolClassEntity.Day,
                             schoolClassEntity.ScheduleId);
 

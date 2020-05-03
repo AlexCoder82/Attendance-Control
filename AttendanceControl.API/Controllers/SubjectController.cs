@@ -66,7 +66,7 @@ namespace AttendanceControl.API.Controllers
 
                 _logger.LogWarning(error.ToString());
 
-                return Conflict(error);
+                return Conflict(ex.Message);
             }
 
         }
@@ -110,7 +110,7 @@ namespace AttendanceControl.API.Controllers
 
                 _logger.LogWarning(error.ToString());
 
-                return Conflict(error);
+                return Conflict(ex.Message);
             }
 
         }

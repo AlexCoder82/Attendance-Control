@@ -329,5 +329,20 @@ namespace AttendanceControl.API.DataAccess.Repositories
             return studentEntity;
         }
 
+        public async Task<StudentEntity> GetIncludingCourseAndSubjects(int studentId)
+        {
+            StudentEntity studentEntity = await _dbContext.StudentEntities
+                .Include(s => s.StudentSubjectEntities)
+                    .ThenInclude(ss => ss.SubjectEntity)
+                .Include(s=>s.CourseEntity)
+                    .ThenInclude(co=>co.CycleEntity)
+                .FirstOrDefaultAsync(s => s.Id == studentId);
+
+
+            _logger.LogInformation("El alumno ha sido recuperado de la base de datos.");
+
+            return studentEntity;
+        }
+
     }
 }
