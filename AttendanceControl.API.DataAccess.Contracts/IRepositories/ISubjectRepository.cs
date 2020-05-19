@@ -9,6 +9,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
     /// </summary>
     public interface ISubjectRepository
     {   
+
         public Task<SubjectEntity> UpdateAssignedTeacher(int subjectId, TeacherEntity? teacherEntity);
         public Task<SubjectEntity> GetIncludingAssignedTeacher(int id);
         public Task<SubjectEntity> Get(int id);
@@ -17,5 +18,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<List<SubjectEntity>> GetAllIncludingAssignedTeacher();   
         public Task<SubjectEntity> Save(SubjectEntity entity);
         public Task<SubjectEntity> Update(SubjectEntity entity);
+
     }
 }

@@ -1,0 +1,1294 @@
+2020-05-19T09:34:37.0045545+02:00  [INF] Now listening on: "https://192.168.0.102:5001" (d826f4b8)
+2020-05-19T09:34:37.0136037+02:00  [INF] Now listening on: "http://192.168.0.102:5000" (d826f4b8)
+2020-05-19T09:34:37.0181854+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T09:34:37.0223916+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T09:34:37.0272571+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-05-19T09:43:49.7455469+02:00 0HLVRP0MS1EUS:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/teachers/sign-in/12345678R   (ca22a1cb)
+2020-05-19T09:43:49.7851584+02:00 0HLVRP0MS1EUS:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:43:49.8882367+02:00 0HLVRP0MS1EUS:00000001 [INF] Request finished in 127.91600000000001ms 204  (791a596a)
+2020-05-19T09:43:49.9619668+02:00 0HLVRP0MS1EUS:00000002 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/teachers/sign-in/12345678R  0 (ca22a1cb)
+2020-05-19T09:43:49.9673565+02:00 0HLVRP0MS1EUS:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:43:50.3949631+02:00 0HLVRP0MS1EUS:00000002 [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2020-05-19T09:43:50.5619584+02:00 0HLVRP0MS1EUS:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:43:50.8265446+02:00 0HLVRP0MS1EUS:00000002 [INF] Route matched with "{action = \"SignIn\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(System.String)" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:43:51.7055248+02:00 0HLVRP0MS1EUS:00000002 [INF] Petición de conexion del profesor con dni 12345678R (7ae676c2)
+2020-05-19T09:43:52.9021319+02:00 0HLVRP0MS1EUS:00000002 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-19T09:43:52.9960338+02:00 0HLVRP0MS1EUS:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:43:54.2782225+02:00 0HLVRP0MS1EUS:00000002 [INF] Executed DbCommand ("266"ms) [Parameters=["@__dni_0='?' (Size = 9)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`
+WHERE `t`.`dni` = @__dni_0
+LIMIT 1" (0723d8ff)
+2020-05-19T09:43:54.4539912+02:00 0HLVRP0MS1EUS:00000002 [INF] Profesor con dni 12345678Rreconocido (8050dd08)
+2020-05-19T09:43:54.8466284+02:00 0HLVRP0MS1EUS:00000002 [INF] Token de sesión generado (98744164)
+2020-05-19T09:43:56.3125931+02:00 0HLVRP0MS1EUS:00000002 [INF] Executed DbCommand ("1,327"ms) [Parameters=["@__day_0='?' (DbType = Int32), @__teacherId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `schedule` AS `s0` ON `s`.`schedule_id` = `s0`.`id`
+INNER JOIN `subject` AS `s1` ON `s`.`subject_id` = `s1`.`id`
+WHERE ((`s`.`day_of_week` = @__day_0) AND (`s`.`is_current` = TRUE)) AND (`s1`.`teacher_id` = @__teacherId_1)
+ORDER BY `s0`.`start`" (0723d8ff)
+2020-05-19T09:43:56.4223176+02:00 0HLVRP0MS1EUS:00000002 [INF] Profesor logeado con éxito (fae6f356)
+2020-05-19T09:43:56.4353941+02:00 0HLVRP0MS1EUS:00000002 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Application.Contracts.DTOs.TeacherSignInResponse"'. (8a1b66c8)
+2020-05-19T09:43:56.5227298+02:00 0HLVRP0MS1EUS:00000002 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)" in 5682.4123ms (afa2e885)
+2020-05-19T09:43:56.5266748+02:00 0HLVRP0MS1EUS:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:43:56.5401140+02:00 0HLVRP0MS1EUS:00000002 [INF] Request finished in 6578.448600000001ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:45:27.5168013+02:00 0HLVRP0MS1EUS:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:45:27.5222733+02:00 0HLVRP0MS1EUS:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:45:27.5383961+02:00 0HLVRP0MS1EUS:00000003 [INF] Request finished in 10.871ms 204  (791a596a)
+2020-05-19T09:45:27.5558994+02:00 0HLVRP0MS1EUS:00000004 [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:45:27.5600311+02:00 0HLVRP0MS1EUS:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:45:27.6882399+02:00 0HLVRP0MS1EUS:00000004 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:45:27.7007271+02:00 0HLVRP0MS1EUS:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:45:27.7831385+02:00 0HLVRP0MS1EUS:00000004 [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:45:27.8192730+02:00 0HLVRP0MS1EUS:00000004 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:45:27.8670359+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:45:27.9205572+02:00 0HLVRP0MS1EUS:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:45:29.0362040+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("1,045"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:45:29.7995145+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("679"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:29.8069008+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:45:29.8368683+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:29.8416805+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:45:29.8914448+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("43"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:29.8953642+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:45:29.9027576+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:29.9067096+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:45:29.9175516+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("4"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:29.9217726+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:45:29.9295277+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:29.9345353+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:45:29.9705497+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("31"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:29.9771038+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:45:30.0015969+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("15"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:30.0209852+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:45:30.1079000+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:30.1195613+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:45:30.1291546+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:45:30.1371090+02:00 0HLVRP0MS1EUS:00000004 [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:45:30.1428197+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1475742+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1524437+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1560337+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1603707+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1658512+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1700801+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1749381+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1804424+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1854217+02:00 0HLVRP0MS1EUS:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:45:30.1922376+02:00 0HLVRP0MS1EUS:00000004 [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:45:30.2002836+02:00 0HLVRP0MS1EUS:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:45:30.2248343+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 2436.6688ms (afa2e885)
+2020-05-19T09:45:30.2296678+02:00 0HLVRP0MS1EUS:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:45:30.2370469+02:00 0HLVRP0MS1EUS:00000004 [INF] Request finished in 2679.7135000000003ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:46:39.0237883+02:00 0HLVRP0MS1EUS:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/teachers/sign-in/undefined   (ca22a1cb)
+2020-05-19T09:46:39.0292613+02:00 0HLVRP0MS1EUS:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:39.0408164+02:00 0HLVRP0MS1EUS:00000005 [INF] Request finished in 10.777800000000001ms 204  (791a596a)
+2020-05-19T09:46:39.0483750+02:00 0HLVRP0MS1EUS:00000006 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/teachers/sign-in/undefined  0 (ca22a1cb)
+2020-05-19T09:46:39.0533338+02:00 0HLVRP0MS1EUS:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:39.0755191+02:00 0HLVRP0MS1EUS:00000006 [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2020-05-19T09:46:39.0807024+02:00 0HLVRP0MS1EUS:00000006 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:46:39.0881656+02:00 0HLVRP0MS1EUS:00000006 [INF] Route matched with "{action = \"SignIn\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(System.String)" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:46:39.1052260+02:00 0HLVRP0MS1EUS:00000006 [INF] Petición de conexion del profesor con dni undefined (efb90d90)
+2020-05-19T09:46:39.1192961+02:00 0HLVRP0MS1EUS:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:46:39.1295842+02:00 0HLVRP0MS1EUS:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__dni_0='?' (Size = 9)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`
+WHERE `t`.`dni` = @__dni_0
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:39.7818386+02:00 0HLVRP0MS1EUS:00000006 [WRN] 
+
+ERROR RETORNADO:	 19/05/2020 9:46:39	404	WrongDniException	No se reconoce tu dni.
+
+ (f43d50c5)
+2020-05-19T09:46:39.7876537+02:00 0HLVRP0MS1EUS:00000006 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-05-19T09:46:39.7972768+02:00 0HLVRP0MS1EUS:00000006 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)" in 701.2046ms (afa2e885)
+2020-05-19T09:46:39.8011888+02:00 0HLVRP0MS1EUS:00000006 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:46:39.8096807+02:00 0HLVRP0MS1EUS:00000006 [INF] Request finished in 758.4835ms 404 text/plain; charset=utf-8 (791a596a)
+2020-05-19T09:46:42.3384501+02:00 0HLVRP0MS1EUS:00000007 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/teachers/sign-in/12345678R   (ca22a1cb)
+2020-05-19T09:46:42.3448041+02:00 0HLVRP0MS1EUS:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:42.3496723+02:00 0HLVRP0MS1EUS:00000007 [INF] Request finished in 12.8694ms 204  (791a596a)
+2020-05-19T09:46:42.3564391+02:00 0HLVRP0MS1EUS:00000008 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/teachers/sign-in/12345678R  0 (ca22a1cb)
+2020-05-19T09:46:42.3604839+02:00 0HLVRP0MS1EUS:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:42.3658645+02:00 0HLVRP0MS1EUS:00000008 [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2020-05-19T09:46:42.3696946+02:00 0HLVRP0MS1EUS:00000008 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:46:42.3741992+02:00 0HLVRP0MS1EUS:00000008 [INF] Route matched with "{action = \"SignIn\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(System.String)" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:46:42.3848024+02:00 0HLVRP0MS1EUS:00000008 [INF] Petición de conexion del profesor con dni 12345678R (7ae676c2)
+2020-05-19T09:46:42.3898927+02:00 0HLVRP0MS1EUS:00000008 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:46:42.4011829+02:00 0HLVRP0MS1EUS:00000008 [INF] Executed DbCommand ("2"ms) [Parameters=["@__dni_0='?' (Size = 9)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`
+WHERE `t`.`dni` = @__dni_0
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:42.4063206+02:00 0HLVRP0MS1EUS:00000008 [INF] Profesor con dni 12345678Rreconocido (8050dd08)
+2020-05-19T09:46:42.4136456+02:00 0HLVRP0MS1EUS:00000008 [INF] Token de sesión generado (98744164)
+2020-05-19T09:46:42.4777851+02:00 0HLVRP0MS1EUS:00000008 [INF] Executed DbCommand ("55"ms) [Parameters=["@__day_0='?' (DbType = Int32), @__teacherId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`day_of_week`, `s`.`is_current`, `s`.`schedule_id`, `s`.`subject_id`, `s1`.`id`, `s1`.`name`, `s1`.`teacher_id`, `s0`.`id`, `s0`.`end`, `s0`.`shift_id`, `s0`.`start`
+FROM `school_class` AS `s`
+INNER JOIN `schedule` AS `s0` ON `s`.`schedule_id` = `s0`.`id`
+INNER JOIN `subject` AS `s1` ON `s`.`subject_id` = `s1`.`id`
+WHERE ((`s`.`day_of_week` = @__day_0) AND (`s`.`is_current` = TRUE)) AND (`s1`.`teacher_id` = @__teacherId_1)
+ORDER BY `s0`.`start`" (0723d8ff)
+2020-05-19T09:46:42.4829702+02:00 0HLVRP0MS1EUS:00000008 [INF] Profesor logeado con éxito (fae6f356)
+2020-05-19T09:46:42.4867103+02:00 0HLVRP0MS1EUS:00000008 [INF] Executing ObjectResult, writing value of type '"AttendanceControl.API.Application.Contracts.DTOs.TeacherSignInResponse"'. (8a1b66c8)
+2020-05-19T09:46:42.4915496+02:00 0HLVRP0MS1EUS:00000008 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)" in 113.27680000000001ms (afa2e885)
+2020-05-19T09:46:42.4955456+02:00 0HLVRP0MS1EUS:00000008 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:46:42.4998881+02:00 0HLVRP0MS1EUS:00000008 [INF] Request finished in 145.489ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:46:44.3870425+02:00 0HLVRP0MS1EUS:00000009 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:46:44.3915903+02:00 0HLVRP0MS1EUS:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:44.3977796+02:00 0HLVRP0MS1EUS:00000009 [INF] Request finished in 10.970600000000001ms 204  (791a596a)
+2020-05-19T09:46:44.4014562+02:00 0HLVRP0MS1EUS:0000000A [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:46:44.4046990+02:00 0HLVRP0MS1EUS:0000000A [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:44.4108014+02:00 0HLVRP0MS1EUS:0000000A [INF] Successfully validated the token. (60169667)
+2020-05-19T09:46:44.4149597+02:00 0HLVRP0MS1EUS:0000000A [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:46:44.4193168+02:00 0HLVRP0MS1EUS:0000000A [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:46:44.4240830+02:00 0HLVRP0MS1EUS:0000000A [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:46:44.4307047+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:46:44.4352456+02:00 0HLVRP0MS1EUS:0000000A [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:46:44.4637684+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("20"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:46:44.4784508+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("7"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.4818819+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:46:44.4964915+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5000191+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:46:44.5195465+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("13"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5230944+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:46:44.5318708+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5354400+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:46:44.5436311+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5477603+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:46:44.5620799+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("8"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5658424+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:46:44.5718781+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5757837+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:46:44.5826770+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5865567+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:46:44.5936513+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.5975023+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:46:44.6038874+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:46:44.6077506+02:00 0HLVRP0MS1EUS:0000000A [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:46:44.6116307+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6151852+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6206113+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6239833+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6292867+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6328849+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6361835+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6393657+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6436926+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6474641+02:00 0HLVRP0MS1EUS:0000000A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:46:44.6507232+02:00 0HLVRP0MS1EUS:0000000A [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:46:44.6549243+02:00 0HLVRP0MS1EUS:0000000A [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:46:44.6608232+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 236.8684ms (afa2e885)
+2020-05-19T09:46:44.6649140+02:00 0HLVRP0MS1EUS:0000000A [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:46:44.6696576+02:00 0HLVRP0MS1EUS:0000000A [INF] Request finished in 267.622ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:46:46.8389220+02:00 0HLVRP0MS1EUS:0000000B [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:46:46.8437558+02:00 0HLVRP0MS1EUS:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:46.8486889+02:00 0HLVRP0MS1EUS:0000000B [INF] Request finished in 11.0466ms 204  (791a596a)
+2020-05-19T09:46:46.8527030+02:00 0HLVRP0MS1EUS:0000000C [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:46:46.8562192+02:00 0HLVRP0MS1EUS:0000000C [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:46:46.8610367+02:00 0HLVRP0MS1EUS:0000000C [INF] Successfully validated the token. (60169667)
+2020-05-19T09:46:46.8654334+02:00 0HLVRP0MS1EUS:0000000C [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:46:46.8752381+02:00 0HLVRP0MS1EUS:0000000C [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:46:46.8824768+02:00 0HLVRP0MS1EUS:0000000C [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:46:46.9699152+02:00 0HLVRP0MS1EUS:0000000C [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:46:46.9888098+02:00 0HLVRP0MS1EUS:0000000C [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:46:47.0107091+02:00 0HLVRP0MS1EUS:0000000C [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:46:47.0142449+02:00 0HLVRP0MS1EUS:0000000C [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:46:47.0188033+02:00 0HLVRP0MS1EUS:0000000C [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:46:47.0262490+02:00 0HLVRP0MS1EUS:0000000C [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 144.49ms (afa2e885)
+2020-05-19T09:46:47.0299825+02:00 0HLVRP0MS1EUS:0000000C [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:46:47.0361515+02:00 0HLVRP0MS1EUS:0000000C [INF] Request finished in 181.8031ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:47:34.5643102+02:00 0HLVRP0MS1EUS:0000000D [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:47:34.5707972+02:00 0HLVRP0MS1EUS:0000000D [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:34.5873492+02:00 0HLVRP0MS1EUS:0000000D [INF] Request finished in 93.1846ms 204  (791a596a)
+2020-05-19T09:47:34.5967906+02:00 0HLVRP0MS1EUS:0000000E [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:47:34.6103893+02:00 0HLVRP0MS1EUS:0000000E [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:34.6265352+02:00 0HLVRP0MS1EUS:0000000E [INF] Successfully validated the token. (60169667)
+2020-05-19T09:47:34.6617122+02:00 0HLVRP0MS1EUS:0000000E [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:47:34.9154208+02:00 0HLVRP0MS1EUS:0000000E [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:47:35.1102466+02:00 0HLVRP0MS1EUS:0000000E [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:47:35.1889994+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:47:35.1995455+02:00 0HLVRP0MS1EUS:0000000E [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:47:35.2488771+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("4"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:47:35.2841599+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("19"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.2926662+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:47:35.3027171+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.3103406+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:47:35.3607528+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("36"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.3677891+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:47:35.3891166+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.3989431+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:47:35.4506546+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("15"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.4614481+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:47:35.4758531+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.4823257+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:47:35.4961985+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.5023851+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:47:35.5148734+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.5260580+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:47:35.5457806+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("4"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.5813228+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:47:35.5953528+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:35.6023052+02:00 0HLVRP0MS1EUS:0000000E [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:47:35.6127272+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6188001+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6257871+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6322971+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6380936+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6447249+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6505327+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6577935+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6631095+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6682343+02:00 0HLVRP0MS1EUS:0000000E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:35.6756665+02:00 0HLVRP0MS1EUS:0000000E [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:47:35.6826825+02:00 0HLVRP0MS1EUS:0000000E [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:47:35.6958236+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 771.3871ms (afa2e885)
+2020-05-19T09:47:35.7049535+02:00 0HLVRP0MS1EUS:0000000E [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:47:35.7156313+02:00 0HLVRP0MS1EUS:0000000E [INF] Request finished in 1118.7498ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:47:37.2494297+02:00 0HLVRP0MS1EUS:0000000F [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:47:37.2539222+02:00 0HLVRP0MS1EUS:0000000F [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:37.2614790+02:00 0HLVRP0MS1EUS:0000000F [INF] Request finished in 11.5038ms 204  (791a596a)
+2020-05-19T09:47:37.2658898+02:00 0HLVRP0MS1EUS:00000010 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:47:37.2699628+02:00 0HLVRP0MS1EUS:00000010 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:37.2767015+02:00 0HLVRP0MS1EUS:00000010 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:47:37.2820111+02:00 0HLVRP0MS1EUS:00000010 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:47:37.2873979+02:00 0HLVRP0MS1EUS:00000010 [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:47:37.2932145+02:00 0HLVRP0MS1EUS:00000010 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:47:37.3055320+02:00 0HLVRP0MS1EUS:00000010 [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:47:37.3110711+02:00 0HLVRP0MS1EUS:00000010 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:47:37.3150827+02:00 0HLVRP0MS1EUS:00000010 [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:47:37.3190147+02:00 0HLVRP0MS1EUS:00000010 [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:47:37.3235372+02:00 0HLVRP0MS1EUS:00000010 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:47:37.3293647+02:00 0HLVRP0MS1EUS:00000010 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 37.145900000000005ms (afa2e885)
+2020-05-19T09:47:37.3341490+02:00 0HLVRP0MS1EUS:00000010 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:47:37.3404584+02:00 0HLVRP0MS1EUS:00000010 [INF] Request finished in 72.9077ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:47:43.0794614+02:00 0HLVRP0MS1EUS:00000011 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:47:43.0854282+02:00 0HLVRP0MS1EUS:00000011 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:43.0957559+02:00 0HLVRP0MS1EUS:00000011 [INF] Request finished in 20.7937ms 204  (791a596a)
+2020-05-19T09:47:43.1020098+02:00 0HLVRP0MS1EUS:00000012 [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:47:43.1104337+02:00 0HLVRP0MS1EUS:00000012 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:43.1378117+02:00 0HLVRP0MS1EUS:00000012 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:47:43.1477257+02:00 0HLVRP0MS1EUS:00000012 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:47:43.1577534+02:00 0HLVRP0MS1EUS:00000012 [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:47:43.1667452+02:00 0HLVRP0MS1EUS:00000012 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:47:43.1798221+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:47:43.1899677+02:00 0HLVRP0MS1EUS:00000012 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:47:43.2080232+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("1"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:47:43.2171620+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.2213646+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:47:43.2295242+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.2340024+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:47:43.2608454+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("19"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.2650266+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:47:43.2922474+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("19"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.2967354+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:47:43.3209359+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("17"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.3286465+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:47:43.3471914+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.3527564+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:47:43.3706713+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("6"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.3857818+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:47:43.3983806+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.4031571+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:47:43.4233414+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("10"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.4325653+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:47:43.4434336+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:47:43.4485164+02:00 0HLVRP0MS1EUS:00000012 [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:47:43.4533660+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.4600368+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.4656398+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.4757596+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.4825607+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.4876692+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.4945127+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.4997270+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.5047703+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.5110489+02:00 0HLVRP0MS1EUS:00000012 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:47:43.5162720+02:00 0HLVRP0MS1EUS:00000012 [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:47:43.5238758+02:00 0HLVRP0MS1EUS:00000012 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:47:43.5317920+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 366.954ms (afa2e885)
+2020-05-19T09:47:43.5372797+02:00 0HLVRP0MS1EUS:00000012 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:47:43.5477005+02:00 0HLVRP0MS1EUS:00000012 [INF] Request finished in 441.8195ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:47:44.5937545+02:00 0HLVRP0MS1EUS:00000013 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:47:44.5978696+02:00 0HLVRP0MS1EUS:00000013 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:44.6035884+02:00 0HLVRP0MS1EUS:00000013 [INF] Request finished in 10.3261ms 204  (791a596a)
+2020-05-19T09:47:44.6085047+02:00 0HLVRP0MS1EUS:00000014 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:47:44.6158493+02:00 0HLVRP0MS1EUS:00000014 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:47:44.6228256+02:00 0HLVRP0MS1EUS:00000014 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:47:44.6276960+02:00 0HLVRP0MS1EUS:00000014 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:47:44.6326755+02:00 0HLVRP0MS1EUS:00000014 [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:47:44.6377870+02:00 0HLVRP0MS1EUS:00000014 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:47:44.6600592+02:00 0HLVRP0MS1EUS:00000014 [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:47:44.6669516+02:00 0HLVRP0MS1EUS:00000014 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:47:44.6708064+02:00 0HLVRP0MS1EUS:00000014 [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:47:44.6746749+02:00 0HLVRP0MS1EUS:00000014 [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:47:44.6787738+02:00 0HLVRP0MS1EUS:00000014 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:47:44.6842401+02:00 0HLVRP0MS1EUS:00000014 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 47.072500000000005ms (afa2e885)
+2020-05-19T09:47:44.6879346+02:00 0HLVRP0MS1EUS:00000014 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:47:44.6928716+02:00 0HLVRP0MS1EUS:00000014 [INF] Request finished in 84.7211ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:48:47.5945507+02:00 0HLVRP0MS1EUS:00000015 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:48:47.6063895+02:00 0HLVRP0MS1EUS:00000015 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:48:47.6314052+02:00 0HLVRP0MS1EUS:00000015 [INF] Request finished in 147.2738ms 204  (791a596a)
+2020-05-19T09:48:47.6745542+02:00 0HLVRP0MS1EUS:00000016 [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:48:47.6857747+02:00 0HLVRP0MS1EUS:00000016 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:48:47.6994489+02:00 0HLVRP0MS1EUS:00000016 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:48:47.7173512+02:00 0HLVRP0MS1EUS:00000016 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:48:47.7399659+02:00 0HLVRP0MS1EUS:00000016 [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:48:47.7487206+02:00 0HLVRP0MS1EUS:00000016 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:48:47.7610665+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:48:47.7745890+02:00 0HLVRP0MS1EUS:00000016 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:48:47.8139060+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("20"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:48:47.8481368+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:47.8834723+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:48:47.9306812+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:47.9436925+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:48:48.0026711+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("18"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.0130322+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:48:48.0443977+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.0513447+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:48:48.0686836+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("3"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.0772907+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:48:48.0880205+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.0953911+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:48:48.1049777+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.1247699+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:48:48.1412159+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.1479813+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:48:48.1663439+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("9"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.1749468+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:48:48.1857636+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:48:48.1930312+02:00 0HLVRP0MS1EUS:00000016 [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:48:48.2011326+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2073835+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2135438+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2199881+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2277292+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2333533+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2479666+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2561476+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2615599+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2677247+02:00 0HLVRP0MS1EUS:00000016 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:48:48.2721434+02:00 0HLVRP0MS1EUS:00000016 [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:48:48.2803307+02:00 0HLVRP0MS1EUS:00000016 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:48:48.2886775+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 541.6122ms (afa2e885)
+2020-05-19T09:48:48.3009326+02:00 0HLVRP0MS1EUS:00000016 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:48:48.3103475+02:00 0HLVRP0MS1EUS:00000016 [INF] Request finished in 643.7975ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:48:48.8669334+02:00 0HLVRP0MS1EUS:00000017 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:48:48.8719455+02:00 0HLVRP0MS1EUS:00000017 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:48:48.8766641+02:00 0HLVRP0MS1EUS:00000017 [INF] Request finished in 10.0479ms 204  (791a596a)
+2020-05-19T09:48:48.8838929+02:00 0HLVRP0MS1EUS:00000018 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:48:48.8948675+02:00 0HLVRP0MS1EUS:00000018 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:48:48.9059712+02:00 0HLVRP0MS1EUS:00000018 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:48:48.9101135+02:00 0HLVRP0MS1EUS:00000018 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:48:48.9148124+02:00 0HLVRP0MS1EUS:00000018 [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:48:48.9195482+02:00 0HLVRP0MS1EUS:00000018 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:48:48.9276702+02:00 0HLVRP0MS1EUS:00000018 [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:48:48.9341053+02:00 0HLVRP0MS1EUS:00000018 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:48:48.9389096+02:00 0HLVRP0MS1EUS:00000018 [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:48:48.9432565+02:00 0HLVRP0MS1EUS:00000018 [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:48:48.9506030+02:00 0HLVRP0MS1EUS:00000018 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:48:48.9591838+02:00 0HLVRP0MS1EUS:00000018 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 37.727900000000005ms (afa2e885)
+2020-05-19T09:48:48.9637337+02:00 0HLVRP0MS1EUS:00000018 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:48:48.9799990+02:00 0HLVRP0MS1EUS:00000018 [INF] Request finished in 86.7917ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:49:52.8925833+02:00 0HLVRP0MS1EUS:00000019 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:49:52.9650442+02:00 0HLVRP0MS1EUS:00000019 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:49:53.0042332+02:00 0HLVRP0MS1EUS:00000019 [INF] Request finished in 188.9181ms 204  (791a596a)
+2020-05-19T09:49:53.0973096+02:00 0HLVRP0MS1EUS:0000001A [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:49:53.1470763+02:00 0HLVRP0MS1EUS:0000001A [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:49:53.1595228+02:00 0HLVRP0MS1EUS:0000001A [INF] Successfully validated the token. (60169667)
+2020-05-19T09:49:53.1975082+02:00 0HLVRP0MS1EUS:0000001A [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:49:53.2076759+02:00 0HLVRP0MS1EUS:0000001A [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:49:53.2225978+02:00 0HLVRP0MS1EUS:0000001A [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:49:53.2333053+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:49:53.2505319+02:00 0HLVRP0MS1EUS:0000001A [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:49:53.2761716+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("1"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:49:53.3074119+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("19"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.3140433+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:49:53.3577073+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("20"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.3649536+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:49:53.4065788+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("33"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.4964483+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:49:53.6099371+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("93"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.6603435+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:49:53.6843327+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.6923345+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:49:53.7054961+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.7208933+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:49:53.7376521+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("0"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.7439072+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:49:53.7549026+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.7623405+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:49:53.7748512+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("3"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.7812864+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:49:53.7954359+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:49:53.8025126+02:00 0HLVRP0MS1EUS:0000001A [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:49:53.8081593+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8147593+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8224361+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8296287+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8372527+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8435476+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8614661+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8689779+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8734030+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8778741+02:00 0HLVRP0MS1EUS:0000001A [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:49:53.8897977+02:00 0HLVRP0MS1EUS:0000001A [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:49:53.8948023+02:00 0HLVRP0MS1EUS:0000001A [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:49:53.9054328+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 689.0412ms (afa2e885)
+2020-05-19T09:49:53.9095682+02:00 0HLVRP0MS1EUS:0000001A [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:49:53.9161573+02:00 0HLVRP0MS1EUS:0000001A [INF] Request finished in 865.3017000000001ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:49:55.0880857+02:00 0HLVRP0MS1EUS:0000001B [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:49:55.0934932+02:00 0HLVRP0MS1EUS:0000001B [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:49:55.1026821+02:00 0HLVRP0MS1EUS:0000001B [INF] Request finished in 12.9268ms 204  (791a596a)
+2020-05-19T09:49:55.1076831+02:00 0HLVRP0MS1EUS:0000001C [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:49:55.1123790+02:00 0HLVRP0MS1EUS:0000001C [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:49:55.1185119+02:00 0HLVRP0MS1EUS:0000001C [INF] Successfully validated the token. (60169667)
+2020-05-19T09:49:55.1236906+02:00 0HLVRP0MS1EUS:0000001C [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:49:55.1284300+02:00 0HLVRP0MS1EUS:0000001C [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:49:55.1332597+02:00 0HLVRP0MS1EUS:0000001C [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:49:55.1425470+02:00 0HLVRP0MS1EUS:0000001C [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:49:55.1474484+02:00 0HLVRP0MS1EUS:0000001C [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:49:55.1522403+02:00 0HLVRP0MS1EUS:0000001C [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:49:55.1562254+02:00 0HLVRP0MS1EUS:0000001C [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:49:55.1609325+02:00 0HLVRP0MS1EUS:0000001C [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:49:55.1665783+02:00 0HLVRP0MS1EUS:0000001C [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 33.4125ms (afa2e885)
+2020-05-19T09:49:55.1705626+02:00 0HLVRP0MS1EUS:0000001C [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:49:55.1756194+02:00 0HLVRP0MS1EUS:0000001C [INF] Request finished in 67.8144ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:50:11.0098588+02:00 0HLVRP0MS1EUS:0000001D [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:50:11.0395316+02:00 0HLVRP0MS1EUS:0000001D [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:11.1064320+02:00 0HLVRP0MS1EUS:0000001D [INF] Request finished in 191.4952ms 204  (791a596a)
+2020-05-19T09:50:11.1248058+02:00 0HLVRP0MS1EUS:0000001E [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:50:11.1456739+02:00 0HLVRP0MS1EUS:0000001E [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:11.1624123+02:00 0HLVRP0MS1EUS:0000001E [INF] Successfully validated the token. (60169667)
+2020-05-19T09:50:11.1768294+02:00 0HLVRP0MS1EUS:0000001E [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:50:11.1938333+02:00 0HLVRP0MS1EUS:0000001E [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:50:11.2453363+02:00 0HLVRP0MS1EUS:0000001E [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:50:11.2925606+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:50:11.3029815+02:00 0HLVRP0MS1EUS:0000001E [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:50:11.3126350+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("1"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:50:11.3223173+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.3274903+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:50:11.3743986+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("27"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.3799688+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:50:11.3916201+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.3988851+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:50:11.4093422+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.4150927+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:50:11.4410311+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("17"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.4466788+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:50:11.4569694+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.4632627+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:50:11.4753232+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.4829920+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:50:11.4916533+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.5023522+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:50:11.5099424+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.5162569+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:50:11.5252870+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:11.5360100+02:00 0HLVRP0MS1EUS:0000001E [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:50:11.5398001+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5444297+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5488333+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5548910+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5586389+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5711120+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5785673+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5845641+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5889118+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.5937865+02:00 0HLVRP0MS1EUS:0000001E [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:11.6072793+02:00 0HLVRP0MS1EUS:0000001E [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:50:11.6131189+02:00 0HLVRP0MS1EUS:0000001E [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:50:11.6251423+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 420.0831ms (afa2e885)
+2020-05-19T09:50:11.6297462+02:00 0HLVRP0MS1EUS:0000001E [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:50:11.6394562+02:00 0HLVRP0MS1EUS:0000001E [INF] Request finished in 523.3138ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:50:12.8465279+02:00 0HLVRP0MS1EUT:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:50:12.8505561+02:00 0HLVRP0MS1EUT:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:12.8555746+02:00 0HLVRP0MS1EUT:00000001 [INF] Request finished in 9.589500000000001ms 204  (791a596a)
+2020-05-19T09:50:12.9027746+02:00 0HLVRP0MS1EUT:00000002 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:50:12.9065816+02:00 0HLVRP0MS1EUT:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:12.9114830+02:00 0HLVRP0MS1EUT:00000002 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:50:12.9156817+02:00 0HLVRP0MS1EUT:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:50:12.9201282+02:00 0HLVRP0MS1EUT:00000002 [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:50:12.9245456+02:00 0HLVRP0MS1EUT:00000002 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:50:12.9315137+02:00 0HLVRP0MS1EUT:00000002 [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:50:12.9362839+02:00 0HLVRP0MS1EUT:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:50:12.9408773+02:00 0HLVRP0MS1EUT:00000002 [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:50:12.9450983+02:00 0HLVRP0MS1EUT:00000002 [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:50:12.9490882+02:00 0HLVRP0MS1EUT:00000002 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:50:12.9546498+02:00 0HLVRP0MS1EUT:00000002 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 29.751800000000003ms (afa2e885)
+2020-05-19T09:50:12.9591769+02:00 0HLVRP0MS1EUT:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:50:12.9643270+02:00 0HLVRP0MS1EUT:00000002 [INF] Request finished in 103.6145ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:50:56.1102817+02:00 0HLVRP0MS1EUT:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:50:56.2218561+02:00 0HLVRP0MS1EUT:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:56.2996753+02:00 0HLVRP0MS1EUT:00000003 [INF] Request finished in 302.3582ms 204  (791a596a)
+2020-05-19T09:50:56.3378221+02:00 0HLVRP0MS1EUT:00000004 [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:50:56.3445101+02:00 0HLVRP0MS1EUT:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:56.3570640+02:00 0HLVRP0MS1EUT:00000004 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:50:56.3697432+02:00 0HLVRP0MS1EUT:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:50:56.3952326+02:00 0HLVRP0MS1EUT:00000004 [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:50:56.4571027+02:00 0HLVRP0MS1EUT:00000004 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:50:56.4888991+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:50:56.5007116+02:00 0HLVRP0MS1EUT:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:50:56.5542707+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("35"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:50:56.5663602+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.5788470+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:50:56.6269566+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("21"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.6410207+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:50:56.6606881+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("12"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.6692117+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:50:56.6767232+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.6853824+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:50:56.6951492+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.7023215+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:50:56.7105714+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.7173506+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:50:56.7373915+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.7471974+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:50:56.7575295+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.7641581+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:50:56.7740516+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.7805492+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:50:56.7880991+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:50:56.7924218+02:00 0HLVRP0MS1EUT:00000004 [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:50:56.7966075+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8013041+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8118215+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8171795+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8213755+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8256678+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8333413+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8391172+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8437531+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8595785+02:00 0HLVRP0MS1EUT:00000004 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:50:56.8671611+02:00 0HLVRP0MS1EUT:00000004 [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:50:56.8712817+02:00 0HLVRP0MS1EUT:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:50:56.8770048+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 477.298ms (afa2e885)
+2020-05-19T09:50:56.8846825+02:00 0HLVRP0MS1EUT:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:50:56.8970460+02:00 0HLVRP0MS1EUT:00000004 [INF] Request finished in 563.9784000000001ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:50:57.8611028+02:00 0HLVRP0MS1EUT:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:50:57.8669255+02:00 0HLVRP0MS1EUT:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:57.8729647+02:00 0HLVRP0MS1EUT:00000005 [INF] Request finished in 10.6483ms 204  (791a596a)
+2020-05-19T09:50:57.8774354+02:00 0HLVRP0MS1EUT:00000006 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:50:57.8815312+02:00 0HLVRP0MS1EUT:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:50:57.8867732+02:00 0HLVRP0MS1EUT:00000006 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:50:57.8904630+02:00 0HLVRP0MS1EUT:00000006 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:50:57.8956121+02:00 0HLVRP0MS1EUT:00000006 [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:50:57.9004720+02:00 0HLVRP0MS1EUT:00000006 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:50:57.9097009+02:00 0HLVRP0MS1EUT:00000006 [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:50:57.9140478+02:00 0HLVRP0MS1EUT:00000006 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:50:57.9175649+02:00 0HLVRP0MS1EUT:00000006 [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:50:57.9209459+02:00 0HLVRP0MS1EUT:00000006 [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:50:57.9251355+02:00 0HLVRP0MS1EUT:00000006 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:50:57.9314763+02:00 0HLVRP0MS1EUT:00000006 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 30.401400000000002ms (afa2e885)
+2020-05-19T09:50:57.9347125+02:00 0HLVRP0MS1EUT:00000006 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:50:57.9391253+02:00 0HLVRP0MS1EUT:00000006 [INF] Request finished in 62.113600000000005ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:51:07.3757516+02:00 0HLVRP0MS1EUT:00000007 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:51:07.3880919+02:00 0HLVRP0MS1EUT:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:07.4662391+02:00 0HLVRP0MS1EUT:00000007 [INF] Request finished in 121.4839ms 204  (791a596a)
+2020-05-19T09:51:07.4881381+02:00 0HLVRP0MS1EUT:00000008 [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:51:07.5007575+02:00 0HLVRP0MS1EUT:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:07.5225231+02:00 0HLVRP0MS1EUT:00000008 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:51:07.5436452+02:00 0HLVRP0MS1EUT:00000008 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:51:07.5676627+02:00 0HLVRP0MS1EUT:00000008 [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:51:07.6437514+02:00 0HLVRP0MS1EUT:00000008 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:51:07.8168042+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:51:07.8750060+02:00 0HLVRP0MS1EUT:00000008 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:51:07.9479872+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("5"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:51:07.9829129+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:07.9883599+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:51:07.9955760+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.0006362+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:51:08.0475609+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("41"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.0533099+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:51:08.0626074+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.0716714+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:51:08.0807802+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.0884146+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:51:08.1082449+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.1182756+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:51:08.1244582+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.1335192+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:51:08.1411749+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.1466741+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:51:08.1558772+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.1613103+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:51:08.1710888+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:08.1755506+02:00 0HLVRP0MS1EUT:00000008 [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:51:08.1824417+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.1873827+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.1976799+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2048063+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2092316+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2224116+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2262766+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2313781+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2370780+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2443188+02:00 0HLVRP0MS1EUT:00000008 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:08.2506943+02:00 0HLVRP0MS1EUT:00000008 [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:51:08.2552369+02:00 0HLVRP0MS1EUT:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:51:08.2613278+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 688.773ms (afa2e885)
+2020-05-19T09:51:08.2668726+02:00 0HLVRP0MS1EUT:00000008 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:51:08.2731693+02:00 0HLVRP0MS1EUT:00000008 [INF] Request finished in 798.6779ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:51:09.2037002+02:00 0HLVRP0MS1EUT:00000009 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:51:09.2079351+02:00 0HLVRP0MS1EUT:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:09.2133241+02:00 0HLVRP0MS1EUT:00000009 [INF] Request finished in 10.4329ms 204  (791a596a)
+2020-05-19T09:51:09.2174296+02:00 0HLVRP0MS1EUT:0000000A [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:51:09.2214997+02:00 0HLVRP0MS1EUT:0000000A [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:09.2297680+02:00 0HLVRP0MS1EUT:0000000A [INF] Successfully validated the token. (60169667)
+2020-05-19T09:51:09.2340404+02:00 0HLVRP0MS1EUT:0000000A [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:51:09.2382227+02:00 0HLVRP0MS1EUT:0000000A [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:51:09.2429480+02:00 0HLVRP0MS1EUT:0000000A [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:51:09.2488642+02:00 0HLVRP0MS1EUT:0000000A [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:51:09.2539684+02:00 0HLVRP0MS1EUT:0000000A [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:51:09.2577170+02:00 0HLVRP0MS1EUT:0000000A [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:51:09.2612853+02:00 0HLVRP0MS1EUT:0000000A [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:51:09.2668110+02:00 0HLVRP0MS1EUT:0000000A [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:51:09.2713284+02:00 0HLVRP0MS1EUT:0000000A [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 28.803700000000003ms (afa2e885)
+2020-05-19T09:51:09.2755778+02:00 0HLVRP0MS1EUT:0000000A [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:51:09.2823458+02:00 0HLVRP0MS1EUT:0000000A [INF] Request finished in 62.4253ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:51:52.8490483+02:00 0HLVRP0MS1EUU:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:51:52.8639570+02:00 0HLVRP0MS1EUU:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:52.8764010+02:00 0HLVRP0MS1EUU:00000001 [INF] Request finished in 26.8243ms 204  (791a596a)
+2020-05-19T09:51:52.8926760+02:00 0HLVRP0MS1EUU:00000002 [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:51:52.8977210+02:00 0HLVRP0MS1EUU:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:52.9046305+02:00 0HLVRP0MS1EUU:00000002 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:51:52.9091865+02:00 0HLVRP0MS1EUU:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:51:52.9180609+02:00 0HLVRP0MS1EUU:00000002 [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:51:52.9248558+02:00 0HLVRP0MS1EUU:00000002 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:51:52.9573278+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:51:52.9686654+02:00 0HLVRP0MS1EUU:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:51:52.9837593+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:51:52.9980675+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.0043560+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:51:53.0142042+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.0182695+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:51:53.0537486+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("20"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.0574954+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:51:53.0675505+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.0715380+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:51:53.0801991+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.0840626+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:51:53.0957558+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.0997989+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:51:53.1068491+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.1126155+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:51:53.1204189+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.1246369+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:51:53.1360673+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.1401912+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:51:53.1535948+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:51:53.1667528+02:00 0HLVRP0MS1EUU:00000002 [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:51:53.1733427+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.1851941+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.1914532+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2150251+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2223796+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2326728+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2360481+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2409330+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2479291+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2524398+02:00 0HLVRP0MS1EUU:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:51:53.2559928+02:00 0HLVRP0MS1EUU:00000002 [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:51:53.2624702+02:00 0HLVRP0MS1EUU:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:51:53.2713317+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 345.50550000000004ms (afa2e885)
+2020-05-19T09:51:53.2762331+02:00 0HLVRP0MS1EUU:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:51:53.2846167+02:00 0HLVRP0MS1EUU:00000002 [INF] Request finished in 389.6922ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:51:54.3310610+02:00 0HLVRP0MS1EUU:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:51:54.3363988+02:00 0HLVRP0MS1EUU:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:54.3405372+02:00 0HLVRP0MS1EUU:00000003 [INF] Request finished in 9.4402ms 204  (791a596a)
+2020-05-19T09:51:54.3447521+02:00 0HLVRP0MS1EUU:00000004 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:51:54.3486138+02:00 0HLVRP0MS1EUU:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:51:54.3525902+02:00 0HLVRP0MS1EUU:00000004 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:51:54.3561428+02:00 0HLVRP0MS1EUU:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:51:54.3603379+02:00 0HLVRP0MS1EUU:00000004 [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:51:54.3648706+02:00 0HLVRP0MS1EUU:00000004 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:51:54.3697432+02:00 0HLVRP0MS1EUU:00000004 [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:51:54.3750070+02:00 0HLVRP0MS1EUU:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:51:54.3787603+02:00 0HLVRP0MS1EUU:00000004 [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:51:54.3825824+02:00 0HLVRP0MS1EUU:00000004 [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:51:54.3876724+02:00 0HLVRP0MS1EUU:00000004 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:51:54.3935820+02:00 0HLVRP0MS1EUU:00000004 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 27.2965ms (afa2e885)
+2020-05-19T09:51:54.4000073+02:00 0HLVRP0MS1EUU:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:51:54.4080257+02:00 0HLVRP0MS1EUU:00000004 [INF] Request finished in 59.251000000000005ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:52:22.4230970+02:00 0HLVRP0MS1EUV:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:52:22.4272984+02:00 0HLVRP0MS1EUV:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:52:22.4420320+02:00 0HLVRP0MS1EUV:00000001 [INF] Request finished in 7.5842ms 204  (791a596a)
+2020-05-19T09:52:22.4467476+02:00 0HLVRP0MS1EUV:00000002 [INF] Request starting HTTP/1.1 GET http://192.168.0.102:5000/api/call-list?schoolClassIds=87   (ca22a1cb)
+2020-05-19T09:52:22.4496983+02:00 0HLVRP0MS1EUV:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:52:22.4536423+02:00 0HLVRP0MS1EUV:00000002 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:52:22.4592034+02:00 0HLVRP0MS1EUV:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:52:22.4643327+02:00 0HLVRP0MS1EUV:00000002 [INF] Route matched with "{action = \"GetCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCallList(Int32[])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:52:22.4680468+02:00 0HLVRP0MS1EUV:00000002 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:52:22.4742557+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida (5a8baf05)
+2020-05-19T09:52:22.4819738+02:00 0HLVRP0MS1EUV:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:52:22.4899613+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__schoolClassId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `s`.`id`, `s`.`course_id`, `s`.`dni`, `s`.`firstname`, `s`.`lastname1`, `s`.`lastname2`, `s`.`total_absences`, `s`.`total_delays`
+FROM `student` AS `s`
+INNER JOIN `school_class_has_students` AS `s0` ON `s`.`id` = `s0`.`student_id`
+INNER JOIN `school_class` AS `s1` ON `s0`.`school_class_id` = `s1`.`id`
+WHERE (`s1`.`is_current` = TRUE) AND (`s1`.`id` = @__schoolClassId_0)" (0723d8ff)
+2020-05-19T09:52:22.5120992+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("11"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.5157045+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 3 de la clase con id 87 obtenida (22bb0e6d)
+2020-05-19T09:52:22.5366551+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("8"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.5399670+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 4 de la clase con id 87 obtenida (65af3f27)
+2020-05-19T09:52:22.5642622+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("16"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.5676410+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 5 de la clase con id 87 obtenida (016b8ea3)
+2020-05-19T09:52:22.5738116+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.5778335+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 6 de la clase con id 87 obtenida (671a9106)
+2020-05-19T09:52:22.5856135+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.5887507+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 7 de la clase con id 87 obtenida (dbf2ba1f)
+2020-05-19T09:52:22.5953805+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.5989371+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 8 de la clase con id 87 obtenida (1984c1af)
+2020-05-19T09:52:22.6045636+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.6079123+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 9 de la clase con id 87 obtenida (a0c73277)
+2020-05-19T09:52:22.6155798+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.6191705+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 11 de la clase con id 87 obtenida (eed4bb90)
+2020-05-19T09:52:22.6249292+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.6294946+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 14 de la clase con id 87 obtenida (32b8e3a4)
+2020-05-19T09:52:22.6354949+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__studentId_0='?' (DbType = Int32), @__schoolClassId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`id`, `a`.`date`, `a`.`is_excused`, `a`.`school_class_id`, `a`.`student_id`, `a`.`type`
+FROM `absence` AS `a`
+WHERE ((`a`.`student_id` = @__studentId_0) AND (`a`.`school_class_id` = @__schoolClassId_1)) AND (`a`.`date` = CURDATE())
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:22.6390198+02:00 0HLVRP0MS1EUV:00000002 [INF] Ausencia del alumno con id 16 de la clase con id 87 obtenida (356e4854)
+2020-05-19T09:52:22.6425587+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.6466198+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.6501493+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.6536591+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.6569550+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.6636757+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.6669863+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.6704750+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.7042928+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.7132013+02:00 0HLVRP0MS1EUV:00000002 [INF] Petición de listado de alumnos por un profesor recibida 87 (75fb0108)
+2020-05-19T09:52:22.7170370+02:00 0HLVRP0MS1EUV:00000002 [INF] Listado de alumnos retornado (36ab85b2)
+2020-05-19T09:52:22.7404741+02:00 0HLVRP0MS1EUV:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent, AttendanceControl.API.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-19T09:52:22.7543767+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)" in 276.9388ms (afa2e885)
+2020-05-19T09:52:22.8741343+02:00 0HLVRP0MS1EUV:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.GetCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:52:22.9525365+02:00 0HLVRP0MS1EUV:00000002 [INF] Request finished in 432.18670000000003ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:52:24.0823628+02:00 0HLVRP0MS1EUV:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/call-list   (ca22a1cb)
+2020-05-19T09:52:24.0883433+02:00 0HLVRP0MS1EUV:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:52:24.0959390+02:00 0HLVRP0MS1EUV:00000003 [INF] Request finished in 19.006500000000003ms 204  (791a596a)
+2020-05-19T09:52:24.1010511+02:00 0HLVRP0MS1EUV:00000004 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/call-list application/json 2170 (ca22a1cb)
+2020-05-19T09:52:24.1084808+02:00 0HLVRP0MS1EUV:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:52:24.1185770+02:00 0HLVRP0MS1EUV:00000004 [INF] Successfully validated the token. (60169667)
+2020-05-19T09:52:24.1246887+02:00 0HLVRP0MS1EUV:00000004 [INF] Executing endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:52:24.1461937+02:00 0HLVRP0MS1EUV:00000004 [INF] Route matched with "{action = \"PostCallList\", controller = \"CallList\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostCallList(System.Collections.Generic.List`1[AttendanceControl.API.Application.Contracts.DTOs.SchoolClassStudent])" on controller "AttendanceControl.API.Controllers.CallListController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:52:24.1528283+02:00 0HLVRP0MS1EUV:00000004 [INF] Authorization was successful. (0d575a54)
+2020-05-19T09:52:24.1598037+02:00 0HLVRP0MS1EUV:00000004 [INF] Petición de envio de listado de alumnos (43f6b126)
+2020-05-19T09:52:24.1787586+02:00 0HLVRP0MS1EUV:00000004 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:52:24.1832012+02:00 0HLVRP0MS1EUV:00000004 [INF] Ausencias guardas en la base de datos (66b778f4)
+2020-05-19T09:52:24.1869850+02:00 0HLVRP0MS1EUV:00000004 [INF] Envío realizado con éxito (cfdc8aae)
+2020-05-19T09:52:24.1920053+02:00 0HLVRP0MS1EUV:00000004 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-05-19T09:52:24.1971850+02:00 0HLVRP0MS1EUV:00000004 [INF] Executed action "AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)" in 46.532700000000006ms (afa2e885)
+2020-05-19T09:52:24.2009206+02:00 0HLVRP0MS1EUV:00000004 [INF] Executed endpoint '"AttendanceControl.API.Controllers.CallListController.PostCallList (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:52:24.2065015+02:00 0HLVRP0MS1EUV:00000004 [INF] Request finished in 106.1003ms 200 application/json; charset=utf-8 (791a596a)
+2020-05-19T09:52:48.1241834+02:00 0HLVRP0MS1EV0:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.0.102:5000/api/teachers/sign-in/effefe   (ca22a1cb)
+2020-05-19T09:52:48.1289499+02:00 0HLVRP0MS1EV0:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:52:48.1356299+02:00 0HLVRP0MS1EV0:00000001 [INF] Request finished in 10.5801ms 204  (791a596a)
+2020-05-19T09:52:48.1445665+02:00 0HLVRP0MS1EV0:00000002 [INF] Request starting HTTP/1.1 POST http://192.168.0.102:5000/api/teachers/sign-in/effefe  0 (ca22a1cb)
+2020-05-19T09:52:48.1476243+02:00 0HLVRP0MS1EV0:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-05-19T09:52:48.1512871+02:00 0HLVRP0MS1EV0:00000002 [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2020-05-19T09:52:48.1547010+02:00 0HLVRP0MS1EV0:00000002 [INF] Executing endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (500cc934)
+2020-05-19T09:52:48.1592407+02:00 0HLVRP0MS1EV0:00000002 [INF] Route matched with "{action = \"SignIn\", controller = \"Teacher\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(System.String)" on controller "AttendanceControl.API.Controllers.TeacherController" ("AttendanceControl.API"). (122b2fdf)
+2020-05-19T09:52:48.1640661+02:00 0HLVRP0MS1EV0:00000002 [INF] Petición de conexion del profesor con dni effefe (f8b67984)
+2020-05-19T09:52:48.1680942+02:00 0HLVRP0MS1EV0:00000002 [INF] Entity Framework Core "3.1.0" initialized '"AttendanceControlDBContext"' using provider '"Pomelo.EntityFrameworkCore.MySql"' with options: "None" (9958f5bb)
+2020-05-19T09:52:48.1812411+02:00 0HLVRP0MS1EV0:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__dni_0='?' (Size = 9)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `t`.`id`, `t`.`dni`, `t`.`firstname`, `t`.`lastname1`, `t`.`lastname2`
+FROM `teacher` AS `t`
+WHERE `t`.`dni` = @__dni_0
+LIMIT 1" (0723d8ff)
+2020-05-19T09:52:48.4747358+02:00 0HLVRP0MS1EV0:00000002 [WRN] 
+
+ERROR RETORNADO:	 19/05/2020 9:52:48	404	WrongDniException	No se reconoce tu dni.
+
+ (83647b3e)
+2020-05-19T09:52:48.4799477+02:00 0HLVRP0MS1EV0:00000002 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-05-19T09:52:48.4839440+02:00 0HLVRP0MS1EV0:00000002 [INF] Executed action "AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)" in 321.16900000000004ms (afa2e885)
+2020-05-19T09:52:48.4872375+02:00 0HLVRP0MS1EV0:00000002 [INF] Executed endpoint '"AttendanceControl.API.Controllers.TeacherController.SignIn (AttendanceControl.API)"' (99874f2b)
+2020-05-19T09:52:48.4935055+02:00 0HLVRP0MS1EV0:00000002 [INF] Request finished in 346.97610000000003ms 404 text/plain; charset=utf-8 (791a596a)

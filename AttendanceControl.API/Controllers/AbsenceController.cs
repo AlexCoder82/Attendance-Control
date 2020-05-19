@@ -32,6 +32,7 @@ namespace AttendanceControl.API.Controllers
         /// <returns>
         ///     Retorna la lista de ausencias del alumno
         /// </returns>
+        [Authorize(Roles = Role.ADMIN)]
         [HttpGet("students/{studentId}")]
         public async Task<IActionResult> GetByStudent(int studentId)
         {
@@ -58,7 +59,7 @@ namespace AttendanceControl.API.Controllers
         /// <returns>
         ///     Retorna true indicando que el cambio se ha realizado correctamente
         /// </returns>
-        [Authorize(Roles = Role.TEACHER)]
+        [Authorize(Roles = Role.ADMIN)]
         [HttpPut("{absenceId}")]
         public async Task<IActionResult> SetExcused(int absenceId,
                                                     [FromBody] bool isExcused)

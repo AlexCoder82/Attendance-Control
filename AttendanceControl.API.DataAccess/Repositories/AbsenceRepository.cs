@@ -52,6 +52,8 @@ namespace AttendanceControl.API.DataAccess.Repositories
                 throw new DataNotFoundException(message);
             }
 
+            _logger.LogInformation("Ausencia con id " + absenceId + " obetenida de la base de datos");
+
             return absenceEntity;
 
         }
@@ -70,12 +72,17 @@ namespace AttendanceControl.API.DataAccess.Repositories
         public async Task<List<AbsenceEntity>> GetByStudent(int studentId)
         {
 
-            return await _dbContext.AbsenceEntities
+            List<AbsenceEntity> entities = await _dbContext.AbsenceEntities
                 .Include(a => a.SchoolClassEntity).ThenInclude(sc => sc.ScheduleEntity)
                 .Include(a => a.SchoolClassEntity)
                     .ThenInclude(sc => sc.SubjectEntity)
                 .Where(a => a.StudentId == studentId)
                 .ToListAsync();
+
+            _logger.LogInformation("Lista de ausencias del alumno con id "
+                + studentId + " obtenidas de la base de datos");
+
+            return entities;
 
         }
 
@@ -91,9 +98,15 @@ namespace AttendanceControl.API.DataAccess.Repositories
         public async Task<AbsenceEntity> GetByStudentAndSchoolClass(int studentId, int schoolClassId)
         {
 
-            return await _dbContext.AbsenceEntities
+            AbsenceEntity entity =  await _dbContext.AbsenceEntities
                 .FirstOrDefaultAsync(a => a.StudentId == studentId
+                        && a.SchoolClassId == schoolClassId
                         && a.Date == DateTime.Today);
+
+            _logger.LogInformation("Ausencia del alumno con id "
+                + studentId + " de la clase con id " + schoolClassId + " obtenida");
+
+            return entity;
 
         }
 
@@ -126,7 +139,10 @@ namespace AttendanceControl.API.DataAccess.Repositories
 
             await _dbContext.SaveChangesAsync();
 
+            _logger.LogInformation("Ausencias guardas en la base de datos");
+
             return true;
+
         }
 
         /// <summary>
@@ -140,10 +156,15 @@ namespace AttendanceControl.API.DataAccess.Repositories
         /// </returns>
         public async Task<bool> SetExcused(AbsenceEntity absenceEntity, bool isExcused)
         {
+
             absenceEntity.IsExcused = isExcused;
             await _dbContext.SaveChangesAsync();
 
+            _logger.LogInformation("Justificacion de la ausencia con id " 
+                + absenceEntity.Id + " actualizada");
+
             return true;
+
         }
 
     }

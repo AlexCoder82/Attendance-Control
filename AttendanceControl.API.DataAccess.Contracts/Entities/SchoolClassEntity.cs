@@ -6,6 +6,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+
+    /// <summary>
+    ///    Entidad Clase mapeada con la tabla "school_class"
+    /// </summary>
     [Table("school_class")]
     public class SchoolClassEntity
     {

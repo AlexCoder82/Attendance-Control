@@ -34,9 +34,9 @@ namespace AttendanceControl.API.Controllers
         [Route("error")]
         public IActionResult Error()
         {
+
             var excepcionHandler = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
             var exception = excepcionHandler.Error;
-
             int statusCode = 500;
 
             ApiError apiError = new ApiError()
@@ -48,7 +48,9 @@ namespace AttendanceControl.API.Controllers
                 Path = excepcionHandler.Path
             };
 
-            return StatusCode(statusCode, apiError);
+            _logger.LogError(apiError.ToString());
+
+            return StatusCode(statusCode);
 
         }
 

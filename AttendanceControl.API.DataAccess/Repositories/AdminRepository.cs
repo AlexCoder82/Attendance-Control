@@ -15,7 +15,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
     public class AdminRepository : IAdminRepository
     {
         private readonly IAttendanceControlDBContext _dbBContext;
-        private ILogger<AdminRepository> _logger;
+        private readonly ILogger<AdminRepository> _logger;
 
         public AdminRepository(
                     IAttendanceControlDBContext dbContext,

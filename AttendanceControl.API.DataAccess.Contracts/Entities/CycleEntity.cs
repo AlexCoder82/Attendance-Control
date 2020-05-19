@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+    /// <summary>
+    ///    Entidad Ciclo mapeada con la tabla "cycle"
+    /// </summary>
     [Table("cycle")]
     public class CycleEntity
     {

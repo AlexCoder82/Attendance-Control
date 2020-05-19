@@ -40,9 +40,8 @@ namespace AttendanceControl.API.Application.Services
         ///     Lanza WrongCredentialsException 
         /// </exception>
         /// <returns>
-        ///     retorna un objeto que contiene el token creado, 
+        ///     retorna un objeto que contiene el token creado y
         ///     el id del administrador
-        ///     y el role del administrador
         /// </returns>
         public async Task<AdminSignInResponse> SignIn(Admin admin)//Throw WrongCredentialsException
         {
@@ -57,7 +56,6 @@ namespace AttendanceControl.API.Application.Services
             AdminSignInResponse response = new AdminSignInResponse
             {
                 Id = adminEntity.Id,
-                Role = Role.ADMIN,
                 Token = token
             };
 

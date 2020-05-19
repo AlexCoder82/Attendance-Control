@@ -115,9 +115,7 @@ namespace AttendanceControl.API.Application.Services
                  .GetByDni(dni);
 
             //Token único de sessión
-            string token = _authService
-                        .GenerateToken(teacherEntity.Dni,
-                             Role.TEACHER);
+            string token = _authService.GenerateToken(teacherEntity.Dni,Role.TEACHER);
 
             //Lista de las clases del dia del profesor
             List<SchoolClass> schoolClasses = await _schoolClassService

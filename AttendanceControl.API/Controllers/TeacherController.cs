@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 using AttendanceControl.API.Business.Enums;
 using AttendanceControl.API.Application.Contracts.DTOs;
+using System.Threading;
 
 namespace AttendanceControl.API.Controllers
 {
@@ -68,11 +69,19 @@ namespace AttendanceControl.API.Controllers
 
             _logger.LogInformation("Petición de alta de profesor recibida");
 
-            Teacher result = await _teacherService.Save(teacher);
+            try
+            {
+                Teacher result = await _teacherService.Save(teacher);
 
-            _logger.LogInformation("Profesor creado retornado");
+                _logger.LogInformation("Profesor creado retornado");
 
-            return Ok(result);
+                return Ok(result);
+
+            }
+            catch (DniDuplicateEntryException ex)
+            {
+                return Conflict(ex.Message);
+            }
 
         }
 
@@ -129,6 +138,7 @@ namespace AttendanceControl.API.Controllers
         [HttpPost("sign-in/{dni}")]
         public async Task<IActionResult> SignIn(string dni)
         {
+
             _logger.LogInformation("Petición de conexion del profesor con dni " + dni);
 
             try
@@ -151,7 +161,7 @@ namespace AttendanceControl.API.Controllers
 
                 _logger.LogWarning(error.ToString());
 
-                return NotFound(error);
+                return NotFound(ex.Message);
             }
 
         }

@@ -1,10 +1,13 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+
+    /// <summary>
+    ///    Entidad Horario mapeada con la tabla "schedule"
+    /// </summary>
     [Table("schedule")]
     public class ScheduleEntity
     {

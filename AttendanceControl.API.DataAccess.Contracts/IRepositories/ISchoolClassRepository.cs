@@ -16,6 +16,5 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<bool> Cancel(int schoolClassId);
         public Task<bool> ExistsByTeacherDayAndSchedule(int subjectId, int teacherId, DayOfWeek day, int scheduleId);
 
-
     }
 }

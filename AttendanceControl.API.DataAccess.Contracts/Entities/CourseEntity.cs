@@ -4,9 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+    /// <summary>
+    ///    Entidad Curso mapeada con la tabla "course"
+    /// </summary>
     [Table("course")]
     public class CourseEntity
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
@@ -26,5 +30,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         public virtual List<CourseSubjectEntity> CourseSubjectEntities { get; set; }
 
         public virtual ICollection<SchoolClassEntity> SchoolClassEntities { get; set; }
+
     }
 }

@@ -6,9 +6,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+    /// <summary>
+    ///    Entidad Ausencia mapeada con la tabla "absence"
+    /// </summary>
     [Table("absence")]
     public class AbsenceEntity
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
@@ -38,5 +42,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
 
         public virtual SchoolClassEntity SchoolClassEntity { get; set; }
         public virtual StudentEntity StudentEntity { get; set; }
+
     }
 }

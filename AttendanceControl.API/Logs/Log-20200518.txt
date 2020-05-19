@@ -1,0 +1,6 @@
+2020-05-18T17:43:51.3738382+02:00  [INF] Now listening on: "https://192.168.0.102:5001" (d826f4b8)
+2020-05-18T17:43:51.3843490+02:00  [INF] Now listening on: "http://192.168.0.102:5000" (d826f4b8)
+2020-05-18T17:43:51.4101634+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-18T17:43:51.4338499+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-18T17:43:51.4383857+02:00  [INF] Content root path: "C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API" (b5d60022)
+2020-05-18T17:43:52.6048406+02:00  [INF] Application is shutting down... (90f52c38)

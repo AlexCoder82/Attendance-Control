@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AttendanceControl.API.DataAccess
 {
     /// <summary>
-    ///     Configuración del contexto de la base de datos
+    ///     Configuración del contexto de la base de datos (Entity Framework)
     /// </summary>
     public class AttendanceControlDBContext : DbContext, IAttendanceControlDBContext
     {
@@ -15,6 +15,9 @@ namespace AttendanceControl.API.DataAccess
 
         }
 
+        /// <summary>
+        ///     Sets de todas las entidades
+        /// </summary>
         public DbSet<AbsenceEntity> AbsenceEntities { get; set; }
         public DbSet<ShiftEntity> ShiftEntities { get; set; }
         public DbSet<AdminEntity> AdminEntities { get; set; }
@@ -37,7 +40,6 @@ namespace AttendanceControl.API.DataAccess
         {
 
             //Propriedades que tienen un valor por defecto en la base de datos
-
             modelBuilder.Entity<SchoolClassEntity>()
             .Property(sc => sc.IsCurrent)
             .HasDefaultValue(true);
@@ -55,8 +57,7 @@ namespace AttendanceControl.API.DataAccess
             .HasDefaultValue(null);
 
 
-            // Primary keys de las relaciones n/m
-
+            // Primary keys de las relaciones many to many
             modelBuilder.Entity<SchoolClassStudentEntity>().HasKey(scs => new
             {
                 scs.StudentId,

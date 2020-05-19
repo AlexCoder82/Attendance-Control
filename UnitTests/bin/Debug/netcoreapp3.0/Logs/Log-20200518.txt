@@ -1,0 +1,258 @@
+2020-05-18T18:11:26.8135171+02:00 0HLVR8OF1MG6R [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2020-05-18T18:13:40.4107566+02:00 0HLVR8PMS164K [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2020-05-18T18:17:55.1417282+02:00 0HLVR8S2P6DBO [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2020-05-18T18:18:33.3586163+02:00 0HLVR8SE5NAAS [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2020-05-18T18:30:36.1696632+02:00 0HLVR935GEO8T [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:30:37.0085295+02:00 0HLVR935GEO8T [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:30:37.9831369+02:00 0HLVR935GEO8T [INF] Administrador reconocido (6a186038)
+2020-05-18T18:30:38.0073388+02:00 0HLVR935GEO8T [INF] Token de sesión generado (98744164)
+2020-05-18T18:30:38.0078255+02:00 0HLVR935GEO8T [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:31:12.0868417+02:00 0HLVR93G4CK8C [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:31:12.9575440+02:00 0HLVR93G4CK8C [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:31:13.8574530+02:00 0HLVR93G4CK8C [INF] Administrador reconocido (6a186038)
+2020-05-18T18:31:13.9095979+02:00 0HLVR93G4CK8C [INF] Token de sesión generado (98744164)
+2020-05-18T18:31:13.9133941+02:00 0HLVR93G4CK8C [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:32:36.4868384+02:00 0HLVR94999FPL [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:32:37.4063867+02:00 0HLVR94999FPL [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:32:38.5952285+02:00 0HLVR94999FPL [INF] Administrador reconocido (6a186038)
+2020-05-18T18:32:38.6627205+02:00 0HLVR94999FPL [INF] Token de sesión generado (98744164)
+2020-05-18T18:32:38.6686420+02:00 0HLVR94999FPL [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:33:32.9390042+02:00 0HLVR94Q485G9 [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:33:33.8711249+02:00 0HLVR94Q485G9 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:33:34.8445543+02:00 0HLVR94Q485G9 [INF] Administrador reconocido (6a186038)
+2020-05-18T18:33:34.8962281+02:00 0HLVR94Q485G9 [INF] Token de sesión generado (98744164)
+2020-05-18T18:33:34.9003221+02:00 0HLVR94Q485G9 [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:35:21.5479722+02:00 0HLVR95QG1A71 [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:35:22.4360058+02:00 0HLVR95QG1A71 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:35:23.4666278+02:00 0HLVR95QG1A71 [INF] Administrador reconocido (6a186038)
+2020-05-18T18:35:23.5191175+02:00 0HLVR95QG1A71 [INF] Token de sesión generado (98744164)
+2020-05-18T18:35:23.5247781+02:00 0HLVR95QG1A71 [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:37:06.0942433+02:00 0HLVR96PL6VC0 [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:37:06.9953329+02:00 0HLVR96PL6VC0 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:37:07.8782936+02:00 0HLVR96PL6VC0 [INF] Administrador reconocido (6a186038)
+2020-05-18T18:37:07.9311137+02:00 0HLVR96PL6VC0 [INF] Token de sesión generado (98744164)
+2020-05-18T18:37:07.9354681+02:00 0HLVR96PL6VC0 [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:38:01.9056155+02:00 0HLVR97A9A9K2 [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:38:02.8077104+02:00 0HLVR97A9A9K2 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:38:03.7845758+02:00 0HLVR97A9A9K2 [INF] Administrador reconocido (6a186038)
+2020-05-18T18:38:03.8383976+02:00 0HLVR97A9A9K2 [INF] Token de sesión generado (98744164)
+2020-05-18T18:38:03.8421452+02:00 0HLVR97A9A9K2 [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:42:52.0195454+02:00 0HLVR9A0LHERA [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:42:53.0084909+02:00 0HLVR9A0LHERA [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:42:53.9494411+02:00 0HLVR9A0LHERA [INF] Administrador reconocido (6a186038)
+2020-05-18T18:42:54.0067242+02:00 0HLVR9A0LHERA [INF] Token de sesión generado (98744164)
+2020-05-18T18:42:54.0112563+02:00 0HLVR9A0LHERA [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:49:18.1402583+02:00 0HLVR9DJQ5SSM [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:49:19.0832287+02:00 0HLVR9DJQ5SSM [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:49:20.0085605+02:00 0HLVR9DJQ5SSM [INF] Administrador reconocido (6a186038)
+2020-05-18T18:49:20.0815371+02:00 0HLVR9DJQ5SSM [INF] Token de sesión generado (98744164)
+2020-05-18T18:49:20.0862659+02:00 0HLVR9DJQ5SSM [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:54:50.2900447+02:00 0HLVR9GMQ0RIP [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:54:51.2155447+02:00 0HLVR9GMQ0RIP [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:54:52.0805211+02:00 0HLVR9GMQ0RIP [INF] Administrador reconocido (6a186038)
+2020-05-18T18:54:52.1319846+02:00 0HLVR9GMQ0RIP [INF] Token de sesión generado (98744164)
+2020-05-18T18:54:52.1374898+02:00 0HLVR9GMQ0RIP [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:54:52.3418555+02:00 0HLVR9GMQ0RIQ [INF] Petición de alta de profesor recibida (c65c8c67)
+2020-05-18T18:54:53.5381007+02:00 0HLVR9GMQ0RIQ [ERR] Failed executing DbCommand ("782"ms) [Parameters=["@p0='?' (Size = 9), @p1='?' (Size = 255), @p2='?' (Size = 255), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `teacher` (`dni`, `firstname`, `lastname1`, `lastname2`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`
+FROM `teacher`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (627a98df)
+2020-05-18T18:54:53.7748772+02:00 0HLVR9GMQ0RIQ [ERR] An exception occurred in the database while saving changes for context type '"AttendanceControl.API.DataAccess.AttendanceControlDBContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AttendanceControl.API.DataAccess.Repositories.TeacherRepository.Save(TeacherEntity entity) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess\Repositories\TeacherRepository.cs:line 131
+2020-05-18T18:54:53.9605336+02:00 0HLVR9GMQ0RIQ [WRN] El profesor no se ha actualizado porque su dni ya existe en la base de datos (03c9f85a)
+2020-05-18T18:54:54.5633585+02:00 0HLVR9GMQ0RIQ [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+AttendanceControl.API.Business.Exceptions.DniDuplicateEntryException: Ya existe un profesor con el mismo dni.
+   at AttendanceControl.API.DataAccess.Repositories.TeacherRepository.Save(TeacherEntity entity) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess\Repositories\TeacherRepository.cs:line 146
+   at AttendanceControl.API.Application.Services.TeacherService.Save(Teacher teacher) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\Services\TeacherService.cs:line 65
+   at AttendanceControl.API.Controllers.TeacherController.Save(Teacher teacher) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API\Controllers\TeacherController.cs:line 72
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-05-18T18:54:54.6078168+02:00 0HLVR9GMQ0RIQ [ERR] 
+
+ERROR RETORNADO:	 18/05/2020 18:54:54	500	AttendanceControl.API.Business.Exceptions.DniDuplicateEntryException	Ya existe un profesor con el mismo dni.
+
+ (be1316c5)
+2020-05-18T18:58:25.0326659+02:00 0HLVR9IMPMLS4 [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T18:58:25.9715932+02:00 0HLVR9IMPMLS4 [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T18:58:26.8523742+02:00 0HLVR9IMPMLS4 [INF] Administrador reconocido (6a186038)
+2020-05-18T18:58:26.9067090+02:00 0HLVR9IMPMLS4 [INF] Token de sesión generado (98744164)
+2020-05-18T18:58:26.9110414+02:00 0HLVR9IMPMLS4 [INF] Token de administrador retornado (d324caec)
+2020-05-18T18:58:27.1131044+02:00 0HLVR9IMPMLS5 [INF] Petición de alta de profesor recibida (c65c8c67)
+2020-05-18T18:58:27.5750210+02:00 0HLVR9IMPMLS5 [ERR] Failed executing DbCommand ("189"ms) [Parameters=["@p0='?' (Size = 9), @p1='?' (Size = 255), @p2='?' (Size = 255), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `teacher` (`dni`, `firstname`, `lastname1`, `lastname2`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`
+FROM `teacher`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (627a98df)
+2020-05-18T18:58:27.7375934+02:00 0HLVR9IMPMLS5 [ERR] An exception occurred in the database while saving changes for context type '"AttendanceControl.API.DataAccess.AttendanceControlDBContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AttendanceControl.API.DataAccess.Repositories.TeacherRepository.Save(TeacherEntity entity) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess\Repositories\TeacherRepository.cs:line 131
+2020-05-18T18:58:27.9344563+02:00 0HLVR9IMPMLS5 [WRN] El profesor no se ha actualizado porque su dni ya existe en la base de datos (03c9f85a)
+2020-05-18T19:03:35.5345059+02:00 0HLVR9LJAS6MS [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T19:03:36.7728425+02:00 0HLVR9LJAS6MS [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T19:03:37.6553682+02:00 0HLVR9LJAS6MS [INF] Administrador reconocido (6a186038)
+2020-05-18T19:03:37.7219787+02:00 0HLVR9LJAS6MS [INF] Token de sesión generado (98744164)
+2020-05-18T19:03:37.7262087+02:00 0HLVR9LJAS6MS [INF] Token de administrador retornado (d324caec)
+2020-05-18T19:03:38.2319608+02:00 0HLVR9LJAS6MT [INF] Petición de alta de profesor recibida (c65c8c67)
+2020-05-18T19:03:38.7694498+02:00 0HLVR9LJAS6MT [ERR] Failed executing DbCommand ("230"ms) [Parameters=["@p0='?' (Size = 9), @p1='?' (Size = 255), @p2='?' (Size = 255), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `teacher` (`dni`, `firstname`, `lastname1`, `lastname2`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `id`
+FROM `teacher`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();" (627a98df)
+2020-05-18T19:03:38.8899204+02:00 0HLVR9LJAS6MT [ERR] An exception occurred in the database while saving changes for context type '"AttendanceControl.API.DataAccess.AttendanceControlDBContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '12345678R' for key 'UQ_dni'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 774
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ResultSet.cs:line 49
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 130
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlDataReader.cs:line 391
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\CommandExecutor.cs:line 62
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AttendanceControl.API.DataAccess.Repositories.TeacherRepository.Save(TeacherEntity entity) in C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess\Repositories\TeacherRepository.cs:line 131
+2020-05-18T19:03:39.0781971+02:00 0HLVR9LJAS6MT [WRN] El profesor no se ha actualizado porque su dni ya existe en la base de datos (03c9f85a)
+2020-05-18T19:37:47.0726686+02:00 0HLVRA8MNR7GI [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T19:37:48.0053813+02:00 0HLVRA8MNR7GI [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T19:37:48.8773850+02:00 0HLVRA8MNR7GI [INF] Administrador reconocido (6a186038)
+2020-05-18T19:37:48.9474621+02:00 0HLVRA8MNR7GI [INF] Token de sesión generado (98744164)
+2020-05-18T19:37:48.9564606+02:00 0HLVRA8MNR7GI [INF] Token de administrador retornado (d324caec)
+2020-05-18T19:44:59.0069618+02:00 0HLVRACNF2TCP [INF] Petición de login del administrador recibida (bafb163c)
+2020-05-18T19:44:59.9237656+02:00 0HLVRACNF2TCP [WRN] The 'bool' property '"IsCurrent"' on entity type '"SchoolClassEntity"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2020-05-18T19:45:00.7687267+02:00 0HLVRACNF2TCP [INF] Administrador reconocido (6a186038)
+2020-05-18T19:45:00.8259175+02:00 0HLVRACNF2TCP [INF] Token de sesión generado (98744164)
+2020-05-18T19:45:00.8325857+02:00 0HLVRACNF2TCP [INF] Token de administrador retornado (d324caec)
+2020-05-18T19:45:01.0395237+02:00 0HLVRACNF2TCQ [INF] Petición de alta de profesor recibida (c65c8c67)
+2020-05-18T19:45:02.3967587+02:00 0HLVRACNF2TCQ [INF] El profesor se ha guardado correctamente (b806dc25)
+2020-05-18T19:45:02.4031758+02:00 0HLVRACNF2TCQ [INF] Profesor creado retornado (73a3b7b1)

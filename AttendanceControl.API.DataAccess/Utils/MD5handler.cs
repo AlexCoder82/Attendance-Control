@@ -24,5 +24,6 @@ namespace AttendanceControl.API.DataAccess.Utils
             return hashvalue;
 
         }
+
     }
 }

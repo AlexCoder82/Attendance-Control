@@ -54,11 +54,11 @@ namespace AttendanceControl.API.Application.Services
                 //Alumnos que deben ir a cada clase
                 List<StudentEntity> studentEntities = await _studentRepository
                     .GetByCurrentSchoolClass(id);
-                _logger.LogInformation("AAAAAAAAAAAAAAA" + studentEntities.Count);
+             
                 foreach (StudentEntity s in studentEntities)
                 {
                     //Para cada alumno de la lista, se mira si ya ha sido marcado como
-                    //ausente, en tal caso se instancia un objeto Absence dentro del objeto
+                    //ausente de la misma clase, en tal caso se instancia un objeto Absence dentro del objeto
                     //SchoolClassStudent para que el profesor no tenga que volver a marcar 
                     //a los ausentes cuando recibe la lista
 
@@ -69,7 +69,7 @@ namespace AttendanceControl.API.Application.Services
 
                     callList.Add(new SchoolClassStudent
                     {
-                        SchoolClassID = id,
+                        SchoolClassId = id,
                         Absence = absence,
                         Student = StudentMapper.Map(s)
                     });
@@ -99,7 +99,7 @@ namespace AttendanceControl.API.Application.Services
                 .Where(cl => !(cl.Absence is null))
                 .Select(cl => new AbsenceEntity
                 {
-                    SchoolClassId = cl.SchoolClassID,
+                    SchoolClassId = cl.SchoolClassId,
                     StudentId = cl.Student.Id,
                     Type = cl.Absence.Type
                 })

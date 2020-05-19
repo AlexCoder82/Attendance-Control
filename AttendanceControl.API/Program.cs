@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace AttendanceControl.API
 {
+    /// <summary>
+    ///     Clase principal de la aplicacion, ejecuta el servidor
+    /// </summary>
     public class Program
     {
         public static void Main(string[] args)

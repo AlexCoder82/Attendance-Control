@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AttendanceControl.API.Application.Contracts.IServices;
 using AttendanceControl.API.Business.Enums;
+using AttendanceControl.API.Business.Exceptions;
 using AttendanceControl.API.Business.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -70,14 +71,21 @@ namespace AttendanceControl.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Save([FromBody] Student student)
         {
+            try
+            {
+                _logger.LogInformation("Peticion para crear un nuevo alumno recibidad");
 
-            _logger.LogInformation("Peticion para crear un nuevo alumno recibidad");
+                Student result = await _studentService.Save(student);
 
-            Student result = await _studentService.Save(student);
+                _logger.LogInformation("Alumno creado retornado");
 
-            _logger.LogInformation("Alumno creado retornado");
+                return Ok(result);
 
-            return Ok(result);
+            }
+            catch (DniDuplicateEntryException ex)
+            {
+                return Conflict(ex.Message);
+            }
 
         }
 
@@ -95,14 +103,21 @@ namespace AttendanceControl.API.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] Student student)
         {
+            try
+            {
+                _logger.LogInformation("Peticion para actualizar el alumno con id " + student.Id);
 
-            _logger.LogInformation("Peticion para actualizar el alumno con id " + student.Id);
+                Student result = await _studentService.Update(student);
 
-            Student result = await _studentService.Update(student);
+                _logger.LogInformation("Alumno actualizado retornado");
 
-            _logger.LogInformation("Alumno actualizado retornado");
+                return Ok(result);
 
-            return Ok(result);
+            }
+            catch (DniDuplicateEntryException ex)
+            {
+                return Conflict(ex.Message);
+            }
 
         }
 
@@ -122,7 +137,7 @@ namespace AttendanceControl.API.Controllers
         /// </returns>
         [Authorize(Roles = Role.ADMIN)]
         [HttpPut("{studentId}/courses/{courseId}")]
-        public async Task<IActionResult> UpdateCourse(int studentId, int courseId)
+        public async Task<IActionResult> AssignCourse(int studentId, int courseId)
         {
 
             _logger.LogInformation("Peticion para asignar el curso " +

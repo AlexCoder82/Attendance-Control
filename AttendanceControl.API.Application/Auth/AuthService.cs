@@ -6,6 +6,8 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using AttendanceControl.API.Application.Contracts.IAuth;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+using AttendanceControl.API.Business.Enums;
 
 namespace AttendanceControl.API.Application.Auth
 {
@@ -14,21 +16,19 @@ namespace AttendanceControl.API.Application.Auth
     /// </summary>
     public class AuthService : IAuthService
     {
-        private ILogger<AuthService> _logger;
+        private readonly ILogger<AuthService> _logger;
+        public readonly IConfiguration _configuration;
 
-        public AuthService(ILogger<AuthService> logger)
+        public AuthService(ILogger<AuthService> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
-        public bool ValidateToken()
-        {
-            return true;
-        }
 
         /// <summary>
-        ///     Genera un token tanto para administrador como para
-        ///     un profesor
+        ///     Genera un token tanto para administrador 
+        ///     como para un profesor
         /// </summary>
         /// <param name="sub">
         ///     Cadena a partir de la cual se va crear el token
@@ -40,30 +40,36 @@ namespace AttendanceControl.API.Application.Auth
         public string GenerateToken(string sub, string role)
         {
 
-            //Tiempo de sesión
+            //Tiempo de sesión para cada role
+            int minutes = 0;
+            if (role == Role.TEACHER)
+            {
+                minutes =_configuration.GetValue<int>("Jwt:TeacherSessionExpirationTime");
+            }
+            if((role == Role.ADMIN))
+            {
+                minutes = _configuration.GetValue<int>("Jwt:AdminSessionExpirationTime");
+            }      
             DateTime date = DateTime.UtcNow;
-            TimeSpan validTime = TimeSpan.FromMinutes(30);
+            TimeSpan validTime = TimeSpan.FromMinutes(minutes);
             var expire = date.Add(validTime);
 
-            //Reclamaciones
+            //Reclamaciones para cada petición
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Sub, sub ),
-                new Claim(JwtRegisteredClaimNames.Iat,
-                    new DateTimeOffset(date).ToUniversalTime()
+                new Claim(JwtRegisteredClaimNames.Iat,new DateTimeOffset(date).ToUniversalTime()
                         .ToUnixTimeMilliseconds().ToString(),ClaimValueTypes.Integer64),
                 new Claim(ClaimTypes.Role, role)
             };
 
-
-            var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding
-                            .ASCII.GetBytes("AAfjoègfjèjf`jeof`jeòfjpo`jfo51561f456a4f")),
-                            SecurityAlgorithms.HmacSha256Signature);
+            //Generación del token a partir de la clave secreta
+            var key = Encoding.ASCII.GetBytes(_configuration.GetValue<string>("Jwt:Secret"));
+            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(key);
+            var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
             var jwt = new JwtSecurityToken(
-                issuer: "viva la pepa",
-                audience: "",
                 claims: claims,
                 notBefore: date,
                 expires: expire,
@@ -71,10 +77,9 @@ namespace AttendanceControl.API.Application.Auth
             );
 
             JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
-
             var token = jwtSecurityTokenHandler.WriteToken(jwt);
 
-            _logger.LogInformation("Token de administrador generado");
+            _logger.LogInformation("Token de sesión generado");
 
             return token;
 

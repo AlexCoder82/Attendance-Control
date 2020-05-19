@@ -30,12 +30,19 @@ namespace AttendanceControl.API.Controllers
         ///     Reservada al role Admin
         /// </summary>
         /// <param name="cycle">
-        ///     El objecto Cycle 
+        ///     El objeto Cycle 
         /// </param>
         /// <returns>
         ///     Retorna el ciclo creado o retorna un error 409 si se 
-        ///     intenta crear un ciclo con un nombre que ya tiene otro ciclo
+        ///     intenta crear un ciclo con un nombre que ya existe
         /// </returns>
+        /// 
+
+
+
+
+
+
         [Authorize(Roles = Role.ADMIN)]
         [HttpPost]
         public async Task<IActionResult> Save([FromBody] Cycle cycle)

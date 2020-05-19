@@ -67,7 +67,8 @@ namespace AttendanceControl.API.Application.Services
 
             //Comprueba primero que el mismo dia y a la misma hora, el profesor no esta dando
             //una clase de otra asignatura en otro curso
-            SubjectEntity subjectEntity = await _subjectRepository.GetIncludingAssignedTeacher(schoolClassEntity.SubjectId);
+            SubjectEntity subjectEntity = await _subjectRepository
+                .GetIncludingAssignedTeacher(schoolClassEntity.SubjectId);
 
            
             //Lanza excepcion si el profesor da otra clase

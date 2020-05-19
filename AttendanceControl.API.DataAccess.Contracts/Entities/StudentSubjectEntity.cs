@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+    /// <summary>
+    ///    Entidad que relaciona las asignaturas con los alumnos,
+    ///    mapeada con la tabla "student_has_subjects"
+    /// </summary>
     [Table("student_has_subjects")]
     public class StudentSubjectEntity
     {

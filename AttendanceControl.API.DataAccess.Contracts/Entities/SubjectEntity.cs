@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+    /// <summary>
+    ///    Entidad Asignatura mapeada con la tabla "subject"
+    /// </summary>
     [Table("subject")]
     public class SubjectEntity
     {

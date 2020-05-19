@@ -16,6 +16,14 @@ namespace AttendanceControl.API.Validators
             this.SetRuleForLastName2();
         }
 
+        private void SetRuleForDni()
+        {
+            RuleFor(p => p.Dni)
+               .Cascade(CascadeMode.StopOnFirstFailure)
+               .NotNull().WithMessage("El dni no es correcto.")
+               .Matches("^[0-9]{8}[a-zA-Z]{1}").WithMessage("El dni no es correcto.");
+        }
+
         private void SetRuleForLastName2()
         {
             RuleFor(p => p.LastName2)
@@ -44,12 +52,5 @@ namespace AttendanceControl.API.Validators
                .Matches("^[a-zA-Záéíóú'öüäïëñÑçâêôîêû ]*$").WithMessage("El nombre no es correcto");
         }
 
-        private void SetRuleForDni()
-        {
-            RuleFor(p => p.Dni)
-               .Cascade(CascadeMode.StopOnFirstFailure)
-               .NotNull().WithMessage("El dni no es correcto.")
-               .Matches("^[0-9]{8}[a-zA-Z]{1}").WithMessage("El dni no es correcto.");
-        }
     }
 }

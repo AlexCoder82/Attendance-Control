@@ -9,6 +9,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
     /// </summary>
     public interface IStudentRepository
     {
+
         public Task<StudentEntity> Save(StudentEntity studentEntity);
         public Task<StudentEntity> Get(int studentId);
         public Task<StudentEntity> GetIncludingSubjects(int studentId);
@@ -20,5 +21,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<bool> RemoveCourse(int studentId);
         public Task<bool> UpdateSubjects(int studentId,int[] subjectIds);
         public Task<List<StudentEntity>> GetByCurrentSchoolClass(int schoolClassId);
+
     }
 }

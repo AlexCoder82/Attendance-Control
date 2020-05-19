@@ -13,22 +13,36 @@ using Microsoft.Extensions.DependencyInjection;
 namespace AttendanceControl.API.CrossCutting.IocRegister
 {
     /// <summary>
-    ///     Objeto que registra todas las dependencias 
+    ///     Objeto que registra todas las dependencias para poder 
+    ///     inyectarlas donde sean necesarias
     /// </summary>
     public static class IOCRegister
     {
-        
+        /// <summary>
+        ///     Registra la clase AttendanceControlDBContext que permite acceder a la base de datos
+        /// </summary>
+        /// <param name="services">
+        ///     La coleccion de todos los servicios registrados
+        /// </param>
+        /// <param name="connection">
+        ///     La url de la base de datos 
+        /// </param>
+        /// <returns></returns>
         public static IServiceCollection AddDBContext(this IServiceCollection services, string connection)
         {
+
             services.AddScoped<IAttendanceControlDBContext, AttendanceControlDBContext>();
             services.AddDbContext<AttendanceControlDBContext>(options =>
                     options.UseMySql(connection)
                 );
 
             return services;
+
         }
 
-        //Registra los servicios
+        /// <summary>
+        ///     Registra todas las dependencias de la capa de servicio 
+        /// </summary>
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
 
@@ -48,7 +62,9 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
 
         }
 
-        //Registra los repositorios
+        /// <summary>
+        ///     Registra todas las dependencias de la capa repositorio
+        /// </summary>
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
 
@@ -65,5 +81,6 @@ namespace AttendanceControl.API.CrossCutting.IocRegister
             return services;
 
         }
+
     }
 }

@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AttendanceControl.API.DataAccess.Contracts.Entities
 {
+    /// <summary>
+    ///    Entidad Profesor mapeada con la tabla "teacher"
+    /// </summary>
     [Table("teacher")]
     public class TeacherEntity 
     {
@@ -25,7 +28,7 @@ namespace AttendanceControl.API.DataAccess.Contracts.Entities
         [Column("lastname1", TypeName = "varchar(255)")]
         public string LastName1 { get; set; }
 
-        [Column("lastname2", TypeName = "varchar(255)")]
+        [Column("lastname2", TypeName = "varchar(255)")]//Opcional
         public string LastName2 { get; set; }
 
         public virtual ICollection<SubjectEntity> SubjectEntities { get; set; }

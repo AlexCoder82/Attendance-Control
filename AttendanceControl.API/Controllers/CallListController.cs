@@ -23,7 +23,7 @@ namespace AttendanceControl.API.Controllers
             _logger = logger;
         }
 
-        // GET api/callList
+        // GET api/call-list
         /// <summary>
         ///     Ruta de la petición del listado de alumnos de una clase.
         ///     Reservador al role Profesor
@@ -36,13 +36,19 @@ namespace AttendanceControl.API.Controllers
         /// </returns>
         [Authorize(Roles = Role.TEACHER)]
         [HttpGet]
+       
         public async Task<IActionResult> GetCallList([FromQuery]int[] schoolClassIds)
         {
 
+           
             _logger.LogInformation("Petición de listado de alumnos por un profesor recibida");
 
             List<SchoolClassStudent> result = await _callListService.Get(schoolClassIds);
 
+            foreach (SchoolClassStudent i in result)
+            {
+                _logger.LogInformation("Petición de listado de alumnos por un profesor recibida " + i.SchoolClassId);
+            }
             _logger.LogInformation("Listado de alumnos retornado");
 
             return Ok(result);
@@ -64,7 +70,7 @@ namespace AttendanceControl.API.Controllers
         [Authorize(Roles = Role.TEACHER)]
         public async Task<IActionResult> PostCallList([FromBody]List<SchoolClassStudent> callList)
         {
-
+           
             _logger.LogInformation("Petición de envio de listado de alumnos");
             
             bool result = await _callListService.Post(callList);

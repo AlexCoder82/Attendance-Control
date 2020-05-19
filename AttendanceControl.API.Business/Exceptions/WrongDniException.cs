@@ -8,8 +8,7 @@ namespace AttendanceControl.API.Business.Exceptions
     /// </summary>
     public class WrongDniException : Exception
     {
-        public static readonly string MESSAGE = "El sistema no reconoce tu Dni, " +
-            "prueba otra vez o consulta con el administrador.";
+        public static readonly string MESSAGE = "No se reconoce tu dni.";
 
         public WrongDniException() : base(MESSAGE)
         {

@@ -9,8 +9,10 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
     /// </summary>
     public interface ICourseRepository 
     {
+
         public Task<bool> AssignSubject(int courseId, int subjectID);
         public Task<bool> RenoveAssignedSubject(int courseId, int subjectId);
         public Task<List<CourseEntity>> GetAll();
+
     }
 }

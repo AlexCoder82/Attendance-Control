@@ -9,6 +9,8 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
     /// </summary>
     public interface IShiftRepository
     {
+
         public Task<List<ShiftEntity>> GetAll();
+
     }
 }

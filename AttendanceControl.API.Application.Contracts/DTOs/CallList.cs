@@ -9,7 +9,7 @@ namespace AttendanceControl.API.Application.Contracts.DTOs
     public class SchoolClassStudent
     {
         public Student Student { get; set; }
-        public int SchoolClassID { get; set; }
+        public int SchoolClassId { get; set; }
         public Absence Absence { get; set; }     
     }
 }

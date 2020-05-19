@@ -115,11 +115,12 @@ namespace AttendanceControl.API.DataAccess.Repositories
         public async Task<List<SchoolClassEntity>> GetByTeacher(int teacherId)
         {
 
-            DayOfWeek day = DateTime.Today.DayOfWeek;
+            DayOfWeek day = DayOfWeek.Friday;//DateTime.Today.DayOfWeek;
 
             List<SchoolClassEntity> schoolClassEntities = await _dbContext.SchoolClassEntities
                 .Include(sc => sc.SubjectEntity)
                 .Include(sc => sc.ScheduleEntity)
+                .OrderBy(sc =>sc.ScheduleEntity.Start)
                 .Where(sc => sc.Day == day
                     && sc.IsCurrent == true
                     && sc.SubjectEntity.TeacherId == teacherId

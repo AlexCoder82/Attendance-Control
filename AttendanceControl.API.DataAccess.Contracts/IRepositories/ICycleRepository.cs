@@ -14,5 +14,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<List<CycleEntity>> GetAllIncludingCoursesSubjectsAndSchedules();
         public Task<CycleEntity> Save(CycleEntity cycleEntity);
         public Task<bool> Update(CycleEntity cycleEntity);
+
     }
 }

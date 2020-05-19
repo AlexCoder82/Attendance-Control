@@ -3,8 +3,8 @@
 namespace AttendanceControl.API.Errors
 {
     /// <summary>
-    ///     Objecto instanciado y retornado al cliente si se lanza 
-    ///     una excepción, contiene información
+    ///     Objecto instanciado si se lanza 
+    ///     una excepción no prevista, contiene información
     ///     sobre la excepción.
     /// </summary>
     public class ApiError

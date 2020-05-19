@@ -1,9 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using AttendanceControl.API.CrossCutting.IocRegister;
 using AttendanceControl.API.Filters;
 using AttendanceControl.API.Validators;
@@ -60,7 +56,7 @@ namespace AttendanceControl.API
             /// Agrega los controladores
             services.AddControllers();
 
-            //Agrega un middleware para autorizar el acceso a las rutas
+            //Autoriza el acceso a las rutas según el role
             services.AddAuthorization(options =>
             {
                 options.DefaultPolicy = new AuthorizationPolicyBuilder(JwtBearerDefaults
@@ -69,21 +65,19 @@ namespace AttendanceControl.API
                         .Build();
             });
 
-            //Agrega json web token 
+            //Valida el token 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters()
                     {
                         ClockSkew = TimeSpan.Zero,
-                        ValidateIssuer = true,
-                        ValidIssuer = "viva la pepa",
+                        ValidateIssuer = false,
                         ValidateAudience = false,
                         ValidateIssuerSigningKey = true,
                         ValidateLifetime = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding
-                            .ASCII
-                            .GetBytes("AAfjoègfjèjf`jeof`jeòfjpo`jfo51561f456a4f"))
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.ASCII.GetBytes(Configuration.GetValue<string>("Jwt:Secret")))
                     };
                 });
 
@@ -96,24 +90,25 @@ namespace AttendanceControl.API
                        .AllowAnyMethod()
                        .AllowCredentials()
                        .WithExposedHeaders(HeaderNames.ContentDisposition)
-                       .WithOrigins("http://localhost:4200")
+                       .WithOrigins("http://192.168.0.102:4200", "http://192.168.0.100:4200")
                        .Build();
                 });
             });
 
         }
-       
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            
+
             // CORS 
             app.UseCors("EnableCORS");
 
             //Logs
             loggerFactory.AddFile("Logs/Log-{Date}.txt");
 
-            //Controlador de errores
+            //Filtro de errores
             app.UseExceptionHandler("/error");
+
             //Middleware de autorizacion
             app.UseAuthorization();
             //Middleware de autenticacion
@@ -125,7 +120,7 @@ namespace AttendanceControl.API
             {
                 endpoints.MapControllers();
             });
-            //HTTPS
+            //HTTPSuhi
             app.UseHttpsRedirection();
             //MVC
             app.UseMvc();

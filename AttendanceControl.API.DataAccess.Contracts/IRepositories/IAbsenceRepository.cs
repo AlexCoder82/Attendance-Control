@@ -14,5 +14,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
         public Task<AbsenceEntity> GetByStudentAndSchoolClass(int studentId,int schoolClassId);
         public Task<bool> Save(List<AbsenceEntity> absenceEntities);
         public Task<bool> SetExcused(AbsenceEntity absenceEntity, bool isExcused);  
+
     }
 }

@@ -9,5 +9,6 @@ namespace AttendanceControl.API.DataAccess.Contracts.IRepositories
     public interface IAdminRepository
     {
         public Task<AdminEntity> Exists(AdminEntity adminEntity);
+
     }
 }
