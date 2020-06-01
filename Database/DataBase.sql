@@ -222,7 +222,7 @@ CREATE TABLE `cycle` (
 
 LOCK TABLES `cycle` WRITE;
 /*!40000 ALTER TABLE `cycle` DISABLE KEYS */;
-INSERT INTO `cycle` VALUES (1,'Desarrollo De Aplicaciones Multiplataforma',1),(2,'Administraci√≥n De Sistemas Inform√°ticos En Red',2),(3,'Administraci√≥n y Gesti√≥n',1),(4,'Comercio y Marketing',2),(5,'Hosteler√≠a y Turismo',1),(6,'Artes Gr√°ficas',2),(7,'Edificaci√≥n y obra civil',2);
+INSERT INTO `cycle` VALUES (1,'Desarrollo De Aplicaciones Multiplataforma',1),(2,'AdministraciÛn De Sistemas Inform·ticos En Red',2),(3,'AdministraciÛn y GestiÛn',1),(4,'Comercio y Marketing',2),(5,'HostelerÌa y Turismo',1),(6,'Artes Gr·ficas',2),(7,'EdificaciÛn y obra civil',2);
 /*!40000 ALTER TABLE `cycle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -387,7 +387,7 @@ CREATE TABLE `shift` (
 
 LOCK TABLES `shift` WRITE;
 /*!40000 ALTER TABLE `shift` DISABLE KEYS */;
-INSERT INTO `shift` VALUES (1,'Ma√±ana'),(2,'Tarde');
+INSERT INTO `shift` VALUES (1,'MaÒana'),(2,'Tarde');
 /*!40000 ALTER TABLE `shift` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -421,7 +421,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'21458464Q','David','Ruiz','Lopez',2,0,0),(2,'21578245W','Manuel','Gonzalez','Garcia',2,0,0),(3,'41254484Y','Pablo','Fernandez','Perez',2,0,0),(4,'41245745I','Jose','Moreno','Sevilla',4,0,0),(5,'58942145U','Javier','Diaz','Sanchez',4,0,0),(6,'54892415O','Roberto','Garc√≠a','Martinez',1,0,0),(7,'14578951I','Manuel','Perez','Ramirez',3,0,0),(8,'24158967U','Samuel','Gomez','Aguilar',6,0,0),(9,'14879525J','Jose','Placido','Carmona',5,0,0),(10,'24589412E','Alfonso','Sanchez','Ferm√≥n',1,0,0),(11,'21684972U','Ricardo','Rivera','Mart√≠n',3,0,0),(12,'54128945Y','Manuel','Gonzalez','Fernandez',5,0,0),(13,'58984249U','Juan','Sevilla','Lopez',6,0,0),(14,'54892514I','Jose','Garc√≠a','Castillo',1,0,0),(15,'91847625L','Mar√≠a','Sierra','Mart√≠n',4,0,0);
+INSERT INTO `student` VALUES (1,'21458464Q','David','Ruiz','Lopez',2,0,0),(2,'21578245W','Manuel','Gonzalez','Garcia',2,0,0),(3,'41254484Y','Pablo','Fernandez','Perez',2,0,0),(4,'41245745I','Jose','Moreno','Sevilla',4,0,0),(5,'58942145U','Javier','Diaz','Sanchez',4,0,0),(6,'54892415O','Roberto','GarcÌa','Martinez',1,0,0),(7,'14578951I','Manuel','Perez','Ramirez',3,0,0),(8,'24158967U','Samuel','Gomez','Aguilar',6,0,0),(9,'14879525J','Jose','Placido','Carmona',5,0,0),(10,'24589412E','Alfonso','Sanchez','FermÛn',1,0,0),(11,'21684972U','Ricardo','Rivera','MartÌn',3,0,0),(12,'54128945Y','Manuel','Gonzalez','Fernandez',5,0,0),(13,'58984249U','Juan','Sevilla','Lopez',6,0,0),(14,'54892514I','Jose','GarcÌa','Castillo',1,0,0),(15,'91847625L','MarÌa','Sierra','MartÌn',4,0,0);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -475,7 +475,7 @@ CREATE TABLE `subject` (
 
 LOCK TABLES `subject` WRITE;
 /*!40000 ALTER TABLE `subject` DISABLE KEYS */;
-INSERT INTO `subject` VALUES (1,'Entornos de desarrollo',NULL),(2,'Base de datos',NULL),(3,'Programaci√≥n',NULL),(4,'Sistemas inform√°ticos',NULL),(5,'Programaci√≥n multimedia y dispositivos m√≥viles',1),(6,'Sistemas de Gesti√≥n Empresarial',2),(7,'Acceso a datos',1),(8,'Desarrollo de interfaces',1),(9,'Programaci√≥n de procesos y servicios',2),(10,'Planificaci√≥n y administraci√≥n de redes',NULL),(11,'Implantaci√≥n de sistemas operativos',NULL),(12,'Fundamentos de hardware',NULL),(13,'Gesti√≥n de bases de datos',NULL),(14,'Administraci√≥n de sistemas operativos',3),(15,'Servicios de red e Internet',3),(16,'Implantaci√≥n de aplicaciones web',3),(17,'Administraci√≥n de sistemas gestores de bases de datos',3),(18,'Seguridad y alta disponibilidad',3),(19,'Lenguajes de marcas',NULL),(20,'Formaci√≥n Y Orientaci√≥n Laboral',6),(21,'Empresa e iniciativa emprendedora',4),(22,'Ingl√©s',5);
+INSERT INTO `subject` VALUES (1,'Entornos de desarrollo',NULL),(2,'Base de datos',NULL),(3,'ProgramaciÛn',NULL),(4,'Sistemas inform·ticos',NULL),(5,'ProgramaciÛn multimedia y dispositivos mÛviles',1),(6,'Sistemas de GestiÛn Empresarial',2),(7,'Acceso a datos',1),(8,'Desarrollo de interfaces',1),(9,'ProgramaciÛn de procesos y servicios',2),(10,'PlanificaciÛn y administraciÛn de redes',NULL),(11,'ImplantaciÛn de sistemas operativos',NULL),(12,'Fundamentos de hardware',NULL),(13,'GestiÛn de bases de datos',NULL),(14,'AdministraciÛn de sistemas operativos',3),(15,'Servicios de red e Internet',3),(16,'ImplantaciÛn de aplicaciones web',3),(17,'AdministraciÛn de sistemas gestores de bases de datos',3),(18,'Seguridad y alta disponibilidad',3),(19,'Lenguajes de marcas',NULL),(20,'FormaciÛn Y OrientaciÛn Laboral',6),(21,'Empresa e iniciativa emprendedora',4),(22,'InglÈs',5);
 /*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -534,7 +534,7 @@ CREATE TABLE `teacher` (
 
 LOCK TABLES `teacher` WRITE;
 /*!40000 ALTER TABLE `teacher` DISABLE KEYS */;
-INSERT INTO `teacher` VALUES (1,'12345678R','Juan','Fernandez','Gonzalez'),(2,'12345678U','Luis','Suarez','Ramirez'),(3,'45987142O','Maria','Manzano','Lozano'),(4,'16842874Y','Vanesa','Cruz','Mart√≠n'),(5,'53189412I','Jose','Flores','Gamez'),(6,'17458951E','Jesus','Martinez','Perez');
+INSERT INTO `teacher` VALUES (1,'12345678R','Juan','Fernandez','Gonzalez'),(2,'12345678U','Luis','Suarez','Ramirez'),(3,'45987142O','Maria','Manzano','Lozano'),(4,'16842874Y','Vanesa','Cruz','MartÌn'),(5,'53189412I','Jose','Flores','Gamez'),(6,'17458951E','Jesus','Martinez','Perez');
 /*!40000 ALTER TABLE `teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -643,7 +643,7 @@ BEGIN
 		WHERE id = in_student_id;
 	
 		/* SE ACTUALIZAN LAS ASIGNATURAS QUE EL ALUMNO 
-        TENDR√Å QUE CURSAR */
+        TENDR¡ QUE CURSAR */
         
         /* PRIMERO SE BORRAN LAS ANTIGUAS */
         DELETE FROM student_has_subjects

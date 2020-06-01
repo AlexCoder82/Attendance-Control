@@ -100,6 +100,7 @@ namespace AttendanceControl.API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
 
+            
             // CORS 
             app.UseCors("EnableCORS");
 
@@ -121,7 +122,7 @@ namespace AttendanceControl.API
                 endpoints.MapControllers();
             });
             //HTTPSuhi
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             //MVC
             app.UseMvc();
         }

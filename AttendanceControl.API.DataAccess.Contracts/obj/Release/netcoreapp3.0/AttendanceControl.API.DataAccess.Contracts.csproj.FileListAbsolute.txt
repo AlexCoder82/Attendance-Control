@@ -1,0 +1,11 @@
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.deps.json
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Release\netcoreapp3.0\AttendanceControl.API.Business.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\bin\Release\netcoreapp3.0\AttendanceControl.API.Business.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.csprojAssemblyReference.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.AssemblyInfoInputs.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.AssemblyInfo.cs
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.csproj.CopyComplete
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.DataAccess.Contracts\obj\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb

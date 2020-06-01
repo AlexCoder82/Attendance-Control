@@ -66,12 +66,12 @@ namespace AttendanceControl.API.DataAccess.Repositories
         /// </returns>
         public async Task<List<SchoolClassEntity>> GetByCourse(int courseId)
         {
-
             List<SchoolClassEntity> schoolClassEntities = await _dbContext.SchoolClassEntities
                 .Include(sc => sc.SubjectEntity)
                 .Include(sc => sc.ScheduleEntity)
                 .Where(sc => sc.CourseId == courseId && sc.IsCurrent == true)
                 .ToListAsync();
+
 
             _logger.LogInformation("La lista de clases ha sido obtenida de la base de datos.");
 
@@ -115,7 +115,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
         public async Task<List<SchoolClassEntity>> GetByTeacher(int teacherId)
         {
 
-            DayOfWeek day = DayOfWeek.Friday;//DateTime.Today.DayOfWeek;
+            DayOfWeek day = DateTime.Today.DayOfWeek;
 
             List<SchoolClassEntity> schoolClassEntities = await _dbContext.SchoolClassEntities
                 .Include(sc => sc.SubjectEntity)
@@ -127,6 +127,7 @@ namespace AttendanceControl.API.DataAccess.Repositories
                 )
                 .ToListAsync();
 
+            _logger.LogInformation(schoolClassEntities[0].SubjectEntity.Name);
             return schoolClassEntities;
 
         }
