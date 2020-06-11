@@ -88,9 +88,8 @@ namespace AttendanceControl.API
                 {
                     builder.AllowAnyHeader()
                        .AllowAnyMethod()
-                       .AllowCredentials()
                        .WithExposedHeaders(HeaderNames.ContentDisposition)
-                       .WithOrigins("http://192.168.0.102:4200", "http://192.168.0.100:4200")
+                       .AllowAnyOrigin()
                        .Build();
                 });
             });

@@ -12,6 +12,18 @@
           "bin/placeholder/AttendanceControl.API.Business.dll": {}
         }
       }
+    },
+    ".NETCoreApp,Version=v3.0/win-x64": {
+      "AttendanceControl.API.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/AttendanceControl.API.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AttendanceControl.API.Business.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -32,11 +44,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
       "projectName": "AttendanceControl.API.Application.Contracts",
-      "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
+      "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
       "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\obj\\",
+      "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,8 +64,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
-              "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+            "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+              "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
             }
           }
         }
@@ -82,6 +94,11 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
       }
     }
   }

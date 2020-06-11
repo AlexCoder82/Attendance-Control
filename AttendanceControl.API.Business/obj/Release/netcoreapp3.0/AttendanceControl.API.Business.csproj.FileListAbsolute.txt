@@ -6,3 +6,11 @@ C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceCon
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.AssemblyInfo.cs
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.dll
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\bin\Release\netcoreapp3.0\AttendanceControl.API.Business.deps.json
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\bin\Release\netcoreapp3.0\AttendanceControl.API.Business.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\bin\Release\netcoreapp3.0\AttendanceControl.API.Business.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.csprojAssemblyReference.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.AssemblyInfoInputs.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.AssemblyInfo.cs
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Business\obj\Release\netcoreapp3.0\AttendanceControl.API.Business.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj": {}
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
         "projectName": "AttendanceControl.API.Application.Contracts",
-        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
+        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj",
         "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj": {
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
+        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
         "projectName": "AttendanceControl.API.Application",
-        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
+        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj",
         "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\obj\\",
+        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,14 +88,14 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj"
               },
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
               },
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
               }
             }
           }
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj",
+        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj",
         "projectName": "AttendanceControl.API.Business",
-        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj",
+        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj",
         "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\obj\\",
+        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -195,14 +195,14 @@
         }
       }
     },
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj": {
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj",
+        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj",
         "projectName": "AttendanceControl.API.CrossCutting",
-        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj",
+        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj",
         "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\obj\\",
+        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -218,17 +218,17 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application.Contracts\\AttendanceControl.API.Application.Contracts.csproj"
               },
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Application\\AttendanceControl.API.Application.csproj"
               },
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
               },
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj"
               }
             }
           }
@@ -271,14 +271,14 @@
         }
       }
     },
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj",
         "projectName": "AttendanceControl.API.DataAccess.Contracts",
-        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj",
+        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj",
         "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -294,8 +294,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
               }
             }
           }
@@ -342,14 +342,14 @@
         }
       }
     },
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj": {
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj",
         "projectName": "AttendanceControl.API.DataAccess",
-        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj",
+        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\AttendanceControl.API.DataAccess.csproj",
         "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -365,11 +365,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.Business\\AttendanceControl.API.Business.csproj"
               },
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.DataAccess.Contracts\\AttendanceControl.API.DataAccess.Contracts.csproj"
               }
             }
           }
@@ -426,14 +426,14 @@
         }
       }
     },
-    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj": {
+    "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
+        "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
         "projectName": "AttendanceControl.API",
-        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
+        "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
         "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\obj\\publish\\win-x64\\",
+        "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -449,8 +449,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj": {
-                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj"
+              "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj": {
+                "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj"
               }
             }
           }

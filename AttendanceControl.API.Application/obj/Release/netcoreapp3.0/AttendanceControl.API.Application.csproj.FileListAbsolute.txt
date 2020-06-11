@@ -13,3 +13,18 @@ C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceCon
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.csproj.CopyComplete
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.dll
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.Application.deps.json
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.Application.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.Application.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.Application.Contracts.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.Business.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.Application.Contracts.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.Business.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\bin\Release\netcoreapp3.0\AttendanceControl.API.DataAccess.Contracts.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.csprojAssemblyReference.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.AssemblyInfoInputs.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.AssemblyInfo.cs
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.csproj.CopyComplete
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application\obj\Release\netcoreapp3.0\AttendanceControl.API.Application.pdb

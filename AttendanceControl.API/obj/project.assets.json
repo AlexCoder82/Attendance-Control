@@ -9156,11 +9156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
+      "projectUniqueName": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
       "projectName": "AttendanceControl.API",
-      "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
+      "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\AttendanceControl.API.csproj",
       "packagesPath": "C:\\Users\\alexm_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API\\obj\\",
+      "outputPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexm_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9176,8 +9176,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj": {
-              "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj"
+            "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\alexm_000\\Desktop\\AttendanceControl\\Codigo fuente\\AttendanceControl.API\\AttendanceControl.API.CrossCutting\\AttendanceControl.API.CrossCutting.csproj"
             }
           }
         }

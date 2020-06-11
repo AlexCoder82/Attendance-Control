@@ -31,3 +31,14 @@ C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceCon
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.csproj.CopyComplete
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.dll
 C:\Users\alexm_000\Desktop\AttendanceControl\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.deps.json
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Business.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\bin\Debug\netcoreapp3.0\AttendanceControl.API.Business.pdb
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.csprojAssemblyReference.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.AssemblyInfoInputs.cache
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.AssemblyInfo.cs
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.csproj.CopyComplete
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.dll
+C:\Users\alexm_000\Desktop\AttendanceControl\Codigo fuente\AttendanceControl.API\AttendanceControl.API.Application.Contracts\obj\Debug\netcoreapp3.0\AttendanceControl.API.Application.Contracts.pdb
